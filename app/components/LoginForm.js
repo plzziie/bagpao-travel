@@ -10,7 +10,6 @@ class LoginForm extends Component {
 
           <form onSubmit = "">
             <div className="form-group text-left">
-              <label>Username</label>
               <input
                 className='form-control'
                 placeholder='username'
