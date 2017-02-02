@@ -14,7 +14,8 @@ var styles = {
 	},
 	container: {
 		background: '#D0D3D4',
-		padding: '10px'
+		padding: '10px',
+		margin: '5px'
 	},
 	left: {
 		textAlign: 'left'
@@ -25,7 +26,20 @@ var styles = {
 	hlarge: {
 		fontSize: '50px',
 		textAlign: 'center'
+	},
+	header_menu: {
+	color: 'black',
+	fontFamily: 'sans-serif',
+	margin: '10px'
+	},
+
+	img_header: {
+	maxWidth: '100%',
+	height: 'auto',
+	marginLeft: 'auto',
+	marginRight: 'auto'
 	}
+
 };
 
 export default styles
