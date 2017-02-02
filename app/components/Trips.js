@@ -7,9 +7,9 @@ function Trips (props) {
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
         <h2>{props.header}</h2>
-        <div className = "col-sm-12">
+        <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.onSubmitUser}>
-            <div className = "form-group col-sm-6 col-sm-offset-3">
+            <div className = "form-group col-xs-6 col-xs-offset-3">
               <input
                 className = "form-control"
                 placeholder = 'Trip Name/ City/ Place'
@@ -17,7 +17,7 @@ function Trips (props) {
                 defaultValue = {props.username}
                 type = 'text' />
             </div>
-            <div className = "form-group col-sm-1">
+            <div className = "form-group col-xs-1">
               <button
                 className = "btn btn-block btn-success"
                 type = "submit">
@@ -29,18 +29,18 @@ function Trips (props) {
       </div>
 
       <div className = "row" style = {styles.space}>
-      <div className = "col-sm-4">
+      <div className = "col-xs-4" style = {styles.center}>
         <img className = "img" src = "https://i.ytimg.com/vi/HGwClTbsSns/maxresdefault.jpg" alt = "Nan" width = "200" height = "150"/>
         <h3>Nan</h3>
         <h5>by dammy</h5>
       </div>
-      <div className = "col-sm-4">
+      <div className = "col-xs-4" style = {styles.center}>
         <img className = "img" src = "https://www.thestar.com/content/dam/thestar/life/travel/asiatravel/2013/06/27/asia_travel_the_magical_mysteries_of_ayutthaya_thailand/temple_in_ayutthaya_thailand.jpg" alt = "Ayutthaya" width = "200" height = "150"/>
         <h3>Old Town</h3>
         <h5>by jahyon</h5>
       </div>
-      <div className  ="col-sm-4">
-        <img className ="img" src="http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/other-islands/pagePropertiesImage/top-samui-islands.jpg" alt = "Samui Island" width = "200" height = "150"/>
+      <div className  = "col-xs-4" style = {styles.center}>
+        <img className = "img" src="http://static.asiawebdirect.com/m/phuket/portals/kosamui-com/homepage/other-islands/pagePropertiesImage/top-samui-islands.jpg" alt = "Samui Island" width = "200" height = "150"/>
         <h3>Happy Island</h3>
         <h5>by poppypop</h5>
       </div>

@@ -7,13 +7,18 @@ import styles from '../styles'
 var Home = React.createClass({
   render: function () {
     return (
-     <div className = "jumbotron col-md-6 col-md-offset-3 text-center" style = {styles.transparentBg}>
-       <CreatePlan/>
-       <div className = "col-md-6 col-md-offset-3">
-     <h2 style = {styles.space}><u> POPULAR TRIPS </u></h2>
-     </div>
-     </div>
-     )
+      <div>
+        <div className = "jumbotron col-xs-6 col-xs-offset-3" style = {styles.transparentBg}>
+          <CreatePlan/>
+        </div>
+        <div className = "jumbotron col-xs-12 text-center" style = {styles.transparentBg}>
+          <h2><u> POPULAR TRIPS </u></h2>
+        </div>
+        <div className = "jumbotron col-xs-12 text-center" style = {styles.transparentBg}>
+          <h2><u> POPULAR PLACES </u></h2>
+        </div>
+      </div>
+    )
   }
 });
 

@@ -6,8 +6,8 @@ var Main = React.createClass({
   render: function () {
     return (
       <div>
-      <Navbar/>
-      {this.props.children}
+      	<Navbar/>
+      	{this.props.children}
       </div>
     )
   }

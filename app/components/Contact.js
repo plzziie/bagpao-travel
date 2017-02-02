@@ -5,9 +5,9 @@ import styles from '../styles'
 function Contact (props) {
     return(
     <div>
-      <div className = "jumbotron col-sm-6 col-sm-offset-3 text-center" style = {styles.transparentBg}>
+      <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
-        <div className = "col-sm-12">
+        <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.handleSubmit}>
             <div className = "form-group">
               <input
@@ -34,7 +34,7 @@ function Contact (props) {
                 rows = '5'
                 type='text' />
             </div>
-            <div className = "form-group col-sm-4 col-sm-offset-4">
+            <div className = "form-group col-xs-4 col-xs-offset-4">
               <button
                 className = "btn btn-block btn-success"
                 type = "submit">

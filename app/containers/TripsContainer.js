@@ -3,6 +3,7 @@ import styles from '../styles'
 import Trips from '../components/Trips'
  
 var TripsContainer = React.createClass({
+  
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },

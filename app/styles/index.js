@@ -5,6 +5,9 @@ var styles = {
 	space: {
 		marginTop: '100px'
 	},
+	gap: {
+		marginTop: '10px'
+	},
 	marginCreate: {
 		marginTop: '100px',
 		padding: '30px'
@@ -20,7 +23,8 @@ var styles = {
 		textAlign: 'center'
 	},
 	hlarge: {
-		fontSize: '50px'
+		fontSize: '50px',
+		textAlign: 'center'
 	}
 };
 
