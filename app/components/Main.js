@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Navbar from '../components/Navbar'
 import styles from '../styles'
 
-var Main = React.createClass({
-  render: function () {
+class Main extends Component {
+  render() {
     return (
       <div>
       	<Navbar/>
@@ -11,6 +11,6 @@ var Main = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default Main

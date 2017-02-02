@@ -5,6 +5,9 @@ var styles = {
 	space: {
 		marginTop: '100px'
 	},
+	gapp: {
+		marginTop: '30px'
+	},
 	gap: {
 		marginTop: '10px'
 	},

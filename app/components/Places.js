@@ -2,8 +2,8 @@ import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
 
-function Trips (props) {
-    return(
+function Places (props) {
+  return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
         <h2>{props.header}</h2>
@@ -12,7 +12,7 @@ function Trips (props) {
             <div className = "form-group col-xs-6 col-xs-offset-3">
               <input
                 className = "form-control"
-                placeholder = 'Trip Name/ City/ Place'
+                placeholder = 'Place/ City'
                 onChange = {props.onUpdateUser}
                 defaultValue = {props.username}
                 type = 'text' />
@@ -47,13 +47,6 @@ function Trips (props) {
       </div>
     </div>
     )
-  }
-
-  Trips.PropTypes = {
-  onSubmitUser: PropTypes.func.isRequired,
-  onUpdateUser: PropTypes.func.isRequired,
-  header: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
 }
 
-export default Trips
+export default Places

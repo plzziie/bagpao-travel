@@ -1,44 +1,45 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styles from '../styles'
 import Trips from '../components/Trips'
  
-var TripsContainer = React.createClass({
+class TripsContainer extends Component {
   
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  },
-
-  getInitialState: function() {
-    return {
+  constructor () {
+    super()
+    this.state = {
       username: ''
     }
-  },
+  }
 
-  handleUpdateUser: function(event) {
+  handleUpdateUser(event) {
     this.setState({
       username: event.target.value
     });
-  },
+  }
 
-  handleSubmitUser: function(e) {
+  handleSubmitUser(e) {
     e.preventDefault();
     var username = this.state.username;
     this.setState({
       username: ''
     });
       this.context.router.push('/trips/'+this.state.username)
-  },
+  }
 
-  render: function () {
+  render() {
     return(
      <Trips
-      onSubmitUser = {this.handleSubmitUser}
-      onUpdateUser = {this.handleUpdateUser}
+      onSubmitUser={(event) => this.handleSubmitUser(event)}
+      onUpdateUser={(event) => this.handleUpdateUser(event)}
       header = {this.props.route.header}
       username = {this.state.username}
       />
     )
   }
-});
+}
+
+TripsContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}
  
 export default TripsContainer;

@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styles from '../styles'
+import Places from '../components/Places' 
  
-var PlacesContainer = React.createClass({
-  render: function () {
+class PlacesContainer extends Component {
+  render() {
     return(
-      <div>
-      </div>
+     <Places
+      header = {this.props.route.header}
+      />
     )
   }
-});
+}
  
 export default PlacesContainer
