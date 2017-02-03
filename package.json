@@ -10,9 +10,14 @@
   "author": "1-2-9",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-validator": "^0.11.9",
     "react": "^15.4.2",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
+    "react-mailto": "^0.4.0",
+    "react-router": "^3.0.2",
+    "react-validation": "^2.10.9",
+    "validator": "^6.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

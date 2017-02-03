@@ -23,7 +23,6 @@ class TripsContainer extends Component {
     this.setState({
       username: ''
     });
-      this.context.router.push('/trips/'+this.state.username)
   }
 
   render() {

@@ -29,6 +29,17 @@ function Trips (props) {
       </div>
 
       <div className = "row" style = {styles.space}>
+      
+      <div className = "dropdown">
+      <h2 className = "col-xs-offset-2"><strong>All Trips</strong></h2>
+        <button className = "btn btn-default dropdown-toggle col-xs-offset-10" type = "button" data-toggle = "dropdown">
+        <span className = "caret"></span></button>
+        <ul className = "dropdown-menu col-xs-offset-10">
+          <li className = "active"><a href="#">Popular</a></li>
+          <li><a href="#">Recent</a></li>
+        </ul>
+      </div>
+      <div style = {styles.space}>
       <div className = "col-xs-4" style = {styles.center}>
         <img className = "img" src = "app/img/chiangmai.jpg" alt = "doisuthep" width = "200" height = "150"/>
         <h4 style = {styles.gapp}>Doi Suthep-Pui National Park</h4>
@@ -43,6 +54,7 @@ function Trips (props) {
         <img className = "img" src="app/img/huahin.jpg" alt = "samroiyot" width = "200" height = "150"/>
         <h4 style = {styles.gapp}>Khao Sam Roi Yot National Park</h4>
         <h5>Prachuap Khiri Khan</h5>
+      </div>
       </div>
       </div>
     </div>

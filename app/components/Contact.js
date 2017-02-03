@@ -1,5 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
+import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function Contact (props) {
@@ -8,31 +9,51 @@ function Contact (props) {
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
         <div className = "col-xs-12" style = {styles.gap}>
-          <form onSubmit = {props.handleSubmit}>
+          <form data-toggle="validator" role="form" onSubmit = {props.onSubmitUser}>
             <div className = "form-group">
               <input
                 className = 'form-control'
                 placeholder = 'Name'
-                type = 'text' />
+                onChange = {props.onUpdateName}
+                defaultValue = {props.name}
+                type = 'text'
+                data-error = "Please enter your name"
+                required />
+              <div className = "help-block with-errors"></div> 
             </div>
             <div className = "form-group">
               <input
                 className = 'form-control'
                 placeholder = 'E-mail'
-                type = 'text' />
+                onChange = {props.onUpdateEmail}
+                defaultValue = {props.email}
+                type = 'email'
+                data-error = "Email address is invalid"
+                required />
+              <div className = "help-block with-errors"></div> 
             </div>
             <div className = "form-group">
               <input
                 className = 'form-control'
                 placeholder = 'Subject'
-                type = 'text' />
+                onChange = {props.onUpdateSubject}
+                defaultValue = {props.subject}
+                type = 'text'
+                data-error = "Please Enter Subject"
+                required />
+              <div className = "help-block with-errors"></div> 
             </div>
             <div className = "form-group">
               <textarea
                 className = 'form-control'
                 placeholder = 'Message'
                 rows = '5'
-                type='text' />
+                onChange = {props.onUpdateMsg}
+                defaultValue = {props.message}
+                type='text'
+                data-error = "Please Enter Message"
+                required />
+              <div className = "help-block with-errors"></div> 
             </div>
             <div className = "form-group col-xs-4 col-xs-offset-4">
               <button
@@ -50,10 +71,14 @@ function Contact (props) {
 
   Contact.PropTypes = {
   onSubmitUser: PropTypes.func.isRequired,
-  sendFormData: PropTypes.func.isRequired,
-  requestBuildQueryString: PropTypes.func.isRequired,
-  getSelected: PropTypes.func.isRequired,
+  onUpdateName: PropTypes.func.isRequired,
+  onUpdateEmail: PropTypes.func.isRequired,
+  onUpdateSubject: PropTypes.func.isRequired,
+  onUpdateMsg: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  subject: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired
 }
 
