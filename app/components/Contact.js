@@ -4,6 +4,7 @@ import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function Contact (props) {
+    console.log(props)
     return(
     <div>
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>

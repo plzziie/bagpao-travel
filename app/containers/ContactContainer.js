@@ -15,7 +15,6 @@ class ContactContainer extends Component {
   }
 
   handleUpdateName(event) {
-  	console.log(event.target)
     this.setState({
       name: event.target.value
     });
