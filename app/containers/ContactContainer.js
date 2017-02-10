@@ -38,27 +38,53 @@ class ContactContainer extends Component {
     });
   }
 
+
   handleSubmitUser(e) {
     e.preventDefault();
     var name = this.state.name;
     var email = this.state.email;
     var subject = this.state.subject;
     var message = this.state.message;
+
+    //fetch(`http://localhost:3004/posts/${this.state.name}`)
+    //  .then(function (response) {
+    //    return response.text()
+    //  }).then(function (body) {
+    //    document.body.innerHTML = body
+    //  })
+
+      fetch(`http://localhost:1200/post/`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+      title: 'testt',
+      author: 'test',
+      })
+    })
+
     this.setState({
       name: '',
       email: '',
       subject: '',
       message: ''
     });
+
+
+
     <div className = "alert alert-success">
       <strong>Success!</strong> Indicates a successful or positive action.
     </div>
   }
 
+
+
+
   render() {
     return(
      <Contact
-     onSubmitUser = {(event) => this.handleSubmitUser(e)}
+     onSubmitUser = {(event) => this.handleSubmitUser(event)}
      onUpdateName = {(event) => this.handleUpdateName(event)}
      onUpdateEmail = {(event) => this.handleUpdateEmail(event)}
      onUpdateSubject = {(event) => this.handleUpdateSubject(event)}
@@ -72,5 +98,5 @@ class ContactContainer extends Component {
     )
   }
 }
- 
+
 export default ContactContainer
