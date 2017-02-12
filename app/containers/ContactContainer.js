@@ -75,7 +75,7 @@ class ContactContainer extends Component {
   render() {
     return(
      <Contact
-     onSubmitUser = {(event) => this.handleSubmitUser(event)}
+     onSubmitUser = {(event) => this.handleSubmitUser(e)}
      onUpdateName = {(event) => this.handleUpdateName(event)}
      onUpdateEmail = {(event) => this.handleUpdateEmail(event)}
      onUpdateSubject = {(event) => this.handleUpdateSubject(event)}
