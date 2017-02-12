@@ -46,23 +46,19 @@ class ContactContainer extends Component {
     var subject = this.state.subject;
     var message = this.state.message;
 
-    //fetch(`http://localhost:3004/posts/${this.state.name}`)
-    //  .then(function (response) {
-    //    return response.text()
-    //  }).then(function (body) {
-    //    document.body.innerHTML = body
-    //  })
-
-      fetch(`http://localhost:1200/post/`, {
+      fetch(`http://localhost:3004/contact`, {
         method: 'POST',
-        headers: {
+        headers:{
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-      title: 'testt',
-      author: 'test',
+        name: this.state.name,
+        email: this.state.email,
+        subject: this.state.subject,
+        message: this.state.message
       })
     })
+
 
     this.setState({
       name: '',
@@ -71,15 +67,10 @@ class ContactContainer extends Component {
       message: ''
     });
 
-
-
     <div className = "alert alert-success">
       <strong>Success!</strong> Indicates a successful or positive action.
     </div>
   }
-
-
-
 
   render() {
     return(
