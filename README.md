@@ -1,4 +1,4 @@
 # Project-Bagpao
-senior project
- travel planner 
- version es6
+Senior Project.
+A Travel Planner
+" Bagpao Travel "

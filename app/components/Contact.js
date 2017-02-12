@@ -4,6 +4,7 @@ import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function Contact (props) {
+    console.log(props)
     return(
     <div>
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
@@ -19,7 +20,7 @@ function Contact (props) {
                 type = 'text'
                 data-error = "Please enter your name"
                 required />
-              <div className = "help-block with-errors"></div> 
+              <div className = "help-block with-errors"></div>
             </div>
             <div className = "form-group">
               <input
@@ -30,7 +31,7 @@ function Contact (props) {
                 type = 'email'
                 data-error = "Email address is invalid"
                 required />
-              <div className = "help-block with-errors"></div> 
+              <div className = "help-block with-errors"></div>
             </div>
             <div className = "form-group">
               <input
@@ -41,7 +42,7 @@ function Contact (props) {
                 type = 'text'
                 data-error = "Please Enter Subject"
                 required />
-              <div className = "help-block with-errors"></div> 
+              <div className = "help-block with-errors"></div>
             </div>
             <div className = "form-group">
               <textarea
@@ -53,7 +54,7 @@ function Contact (props) {
                 type='text'
                 data-error = "Please Enter Message"
                 required />
-              <div className = "help-block with-errors"></div> 
+              <div className = "help-block with-errors"></div>
             </div>
             <div className = "form-group col-xs-4 col-xs-offset-4">
               <button

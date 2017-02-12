@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
-    "start": "webpack-dev-server --history-api-fallback"
+    "start": "webpack-dev-server --hot --inline --history-api-fallback"
   },
   "author": "1-2-9",
   "license": "ISC",
@@ -44,8 +44,9 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "html-webpack-plugin": "^2.25.0",
-    "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.25.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
