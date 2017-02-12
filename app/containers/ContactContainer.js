@@ -33,10 +33,11 @@ class ContactContainer extends Component {
   }
 
   handleUpdateMsg(event) {
-  	this.setState({
+    this.setState({
       message: event.target.value
     });
   }
+
 
   handleSubmitUser(e) {
     e.preventDefault();
@@ -44,12 +45,28 @@ class ContactContainer extends Component {
     var email = this.state.email;
     var subject = this.state.subject;
     var message = this.state.message;
+
+      fetch(`http://localhost:3004/contact`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        subject: this.state.subject,
+        message: this.state.message
+      })
+    })
+
+
     this.setState({
       name: '',
       email: '',
       subject: '',
       message: ''
     });
+
     <div className = "alert alert-success">
       <strong>Success!</strong> Indicates a successful or positive action.
     </div>
@@ -58,7 +75,7 @@ class ContactContainer extends Component {
   render() {
     return(
      <Contact
-     onSubmitUser = {(event) => this.handleSubmitUser(e)}
+     onSubmitUser = {(event) => this.handleSubmitUser(event)}
      onUpdateName = {(event) => this.handleUpdateName(event)}
      onUpdateEmail = {(event) => this.handleUpdateEmail(event)}
      onUpdateSubject = {(event) => this.handleUpdateSubject(event)}
@@ -72,5 +89,5 @@ class ContactContainer extends Component {
     )
   }
 }
- 
+
 export default ContactContainer

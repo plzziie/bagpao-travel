@@ -10,6 +10,12 @@ import Login from '../components/Login'
 import Trips from '../containers/TripsContainer'
 import Places from '../containers/PlacesContainer'
 import Contact from '../containers/ContactContainer'
+import Member from '../containers/MemberContainer'
+import EditProfile from '../components/EditProfile'
+import MyTrip from '../components/MyTrip'
+import Draft from '../components/Draft'
+import Favorite from '../components/Favorite'
+import DetailsForm from '../components/DetailsForm'
 
 var routes = (
   <Router history = {browserHistory}>
@@ -19,6 +25,12 @@ var routes = (
       <Route path = 'places' header = 'Find the places' component = {Places}/>
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
       <Route path = 'login' header = 'Login/Sign Up' component = {Login}/>
+      <Route path = 'member' component = {Member}/>
+      <Route path = 'editprofile' component = {EditProfile}/>
+      <Route path = 'mytrip' component = {MyTrip}/>
+      <Route path = 'draft' component = {Draft}/>
+      <Route path = 'favorite' component = {Favorite}/>
+      <Route path = 'places-details' component = {DetailsForm}/>
     </Route>
   </Router>
 );
