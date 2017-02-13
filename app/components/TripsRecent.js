@@ -1,9 +1,9 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
-import TripsRecent from '../components/TripsRecent'
+import Trips from '../containers/TripsContainer'
 
-function Trips (props) {
+function TripsRecent (props) {
     return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
@@ -35,8 +35,8 @@ function Trips (props) {
         <button className = "btn btn-default dropdown-toggle col-xs-offset-10" type = "button" data-toggle = "dropdown">
         <span className = "caret"></span></button>
         <ul className = "dropdown-menu col-xs-offset-10">
-          <li className = "active"><a href="/trips">Popular</a></li>
-          <li><a href="/tripsrecent">Recent</a></li>
+          <li><a href="/trips">Popular</a></li>
+          <li className = "active"><a href="/tripsrecent">Recent</a></li>
         </ul>
       </div>
       <div style = {styles.space}>
@@ -61,11 +61,4 @@ function Trips (props) {
     )
   }
 
-  Trips.PropTypes = {
-  onSubmitUser: PropTypes.func.isRequired,
-  onUpdateUser: PropTypes.func.isRequired,
-  header: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
-}
-
-export default Trips
+export default TripsRecent

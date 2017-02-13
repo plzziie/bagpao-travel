@@ -16,6 +16,8 @@ import MyTrip from '../components/MyTrip'
 import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
+import PlacesPop from '../components/PlacesPop'
+import TripsRecent from '../components/TripsRecent'
 
 var routes = (
   <Router history = {browserHistory}>
@@ -30,7 +32,9 @@ var routes = (
       <Route path = 'mytrip' component = {MyTrip}/>
       <Route path = 'draft' component = {Draft}/>
       <Route path = 'favorite' component = {Favorite}/>
-      <Route path = 'places-details' component = {DetailsForm}/>
+      <Route path = 'trips-details' component = {DetailsForm}/>
+      <Route path = 'placespop' component = {PlacesPop}/>
+      <Route path = 'tripsrecent' component = {TripsRecent}/>
     </Route>
   </Router>
 );

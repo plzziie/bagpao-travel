@@ -1,10 +1,10 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
-import TripsRecent from '../components/TripsRecent'
+import Places from '../containers/PlacesContainer'
 
-function Trips (props) {
-    return(
+function PlacesPop (props) {
+  return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
         <h2>{props.header}</h2>
@@ -13,7 +13,7 @@ function Trips (props) {
             <div className = "form-group col-xs-6 col-xs-offset-3">
               <input
                 className = "form-control"
-                placeholder = 'Trip Name/ City/ Place'
+                placeholder = 'Place/ City'
                 onChange = {props.onUpdateUser}
                 defaultValue = {props.username}
                 type = 'text' />
@@ -31,41 +31,33 @@ function Trips (props) {
 
       <div className = "row" style = {styles.space}>
       <div className = "dropdown">
-        <h2 className = "col-xs-offset-2"><strong>All Trips</strong></h2>
         <button className = "btn btn-default dropdown-toggle col-xs-offset-10" type = "button" data-toggle = "dropdown">
         <span className = "caret"></span></button>
         <ul className = "dropdown-menu col-xs-offset-10">
-          <li className = "active"><a href="/trips">Popular</a></li>
-          <li><a href="/tripsrecent">Recent</a></li>
+          <li ><a href="/places">Categories</a></li>
+          <li className = "active"><a href="/placespop">Popular</a></li>
         </ul>
       </div>
       <div style = {styles.space}>
       <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>North Now</h4>
-          <h5>by nokky</h5>
-        </div>
-        <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Phuket Get Away</h4>
-          <h5>by daojai</h5>
-        </div>
-        <div className  = "col-xs-4" style = {styles.center}>
-          <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>One Day Tour</h4>
-          <h5>by nanon</h5>
-        </div>
+        <img className = "img" src = "app/img/chiangmai.jpg" alt = "doisuthep" width = "200" height = "150"/>
+        <h4 style = {styles.gapp}>Doi Suthep-Pui National Park</h4>
+        <h5>Chiangmai</h5>
+      </div>
+      <div className = "col-xs-4" style = {styles.center}>
+        <img className = "img" src = "app/img/samui.jpg" alt = "samui" width = "200" height = "150"/>
+        <h4 style = {styles.gapp}>Samui Island</h4>
+        <h5>Surat Thani</h5>
+      </div>
+      <div className  = "col-xs-4" style = {styles.center}>
+        <img className = "img" src="app/img/huahin.jpg" alt = "samroiyot" width = "200" height = "150"/>
+        <h4 style = {styles.gapp}>Khao Sam Roi Yot National Park</h4>
+        <h5>Prachuap Khiri Khan</h5>
+      </div>
       </div>
       </div>
     </div>
     )
-  }
-
-  Trips.PropTypes = {
-  onSubmitUser: PropTypes.func.isRequired,
-  onUpdateUser: PropTypes.func.isRequired,
-  header: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
 }
 
-export default Trips
+export default PlacesPop
