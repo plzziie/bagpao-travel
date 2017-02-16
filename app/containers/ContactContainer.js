@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import styles from '../styles'
 import Contact from '../components/Contact'
 
+
 class ContactContainer extends Component {
 
   constructor () {
@@ -40,25 +41,24 @@ class ContactContainer extends Component {
 
 
   handleSubmitUser(event) {
-    event.preventDefault()
     var name = this.state.name;
     var email = this.state.email;
     var subject = this.state.subject;
     var message = this.state.message;
 
-    var response =  fetch(`http://localhost:1200/post`, {
-        method: 'POST',
+    fetch(`http://localhost:1200/get/${this.state.name}/${this.state.email}/${this.state.subject}/${this.state.message}`, {
+        method: 'GET',
         headers:{
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        subject: this.state.subject,
-        message: this.state.message
-      })
+      }
     })
-    console.log(response)
+
+    this.setState({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   }
 
   render() {
@@ -78,4 +78,5 @@ class ContactContainer extends Component {
     )
   }
 }
+
 export default ContactContainer
