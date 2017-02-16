@@ -4,13 +4,12 @@ import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function Contact (props) {
-    console.log(props)
     return(
     <div>
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
         <div className = "col-xs-12" style = {styles.gap}>
-          <form data-toggle="validator" role="form" onSubmit = {props.onSubmitUser}>
+          <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
             <div className = "form-group">
               <input
                 className = 'form-control'
