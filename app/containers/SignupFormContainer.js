@@ -33,7 +33,6 @@ class SignupFormContainer extends Component {
   }
 
   handleSubmitUser(event) {
-    event.preventDefault();
     var username = this.state.username;
     var password = this.state.password;
     var email = this.state.email;
@@ -49,12 +48,6 @@ class SignupFormContainer extends Component {
           email: this.state.email
         })
     })
-
-    this.setState({
-      username: '',
-      password: '',
-      email: ''
-    });
   }
 
   render() {
