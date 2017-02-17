@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 import validator from 'bootstrap-validator'
 import styles from '../styles'
-import LoginForm from '../components/LoginForm'
+import SignupForm from '../components/SignupForm'
 
-class LoginFormContainer extends Component {
+class SignupFormContainer extends Component {
 
   constructor () {
     super()
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     }
   }
 
@@ -25,10 +26,17 @@ class LoginFormContainer extends Component {
     });
   }
 
+  handleUpdateEmail(event) {
+    this.setState({
+      email: event.target.value
+    });
+  }
+
   handleSubmitUser(event) {
     event.preventDefault();
     var username = this.state.username;
     var password = this.state.password;
+    var email = this.state.email;
 
     fetch(`http://localhost:1200/signup`, {
         method: 'POST',
@@ -37,33 +45,35 @@ class LoginFormContainer extends Component {
       },
         body: JSON.stringify({
           username: this.state.username,
-          password: this.state.password
+          password: this.state.password,
+          email: this.state.email
         })
     })
 
     this.setState({
       username: '',
-      password: ''
+      password: '',
+      email: ''
     });
-
-    this.context.router.push(`/mytrip`)
   }
 
   render() {
     return(
-     <LoginForm
+     <SignupForm
      onSubmitUser = {(event) => this.handleSubmitUser(event)}
      onUpdateUsername = {(event) => this.handleUpdateUsername(event)}
      onUpdatePassword = {(event) => this.handleUpdatePassword(event)}
+     onUpdateEmail = {(event) => this.handleUpdateEmail(event)}
      username = {this.state.username}
      password = {this.state.password}
+     email = {this.state.email}
      />
     )
   }
 }
 
-LoginFormContainer.contextTypes = {
+SignupFormContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default LoginFormContainer
+export default SignupFormContainer

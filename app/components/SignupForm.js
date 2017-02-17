@@ -1,16 +1,19 @@
 import React, {Component} from 'react'
+import {PropTypes} from 'react'
 import validator from 'bootstrap-validator'
 import styles from '../styles'
 
-class SignupForm extends Component {
-  render() {
+function SignupForm (props) {
+  console.log(props)
     return (
       <div className = "jumbotron col-xs-8 col-xs-offset-2" style = {styles.transparentBg}>
-        <form data-toggle = "validator" role = "form">
+        <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
           <div className = "form-group">
             <input
               className = 'form-control'
               placeholder = 'username'
+              onChange = {props.onUpdateUsername}
+              defaultValue = {props.username}
               type = 'text'
               data-error = "Please enter your username"
               required />
@@ -20,6 +23,8 @@ class SignupForm extends Component {
             <input
               className = 'form-control'
               placeholder = 'password'
+              onChange = {props.onUpdatePassword}
+              defaultValue = {props.password}
               type = 'password'
               id = 'pass'
               data-error = "Please enter your password"
@@ -41,6 +46,8 @@ class SignupForm extends Component {
             <input
               className = 'form-control'
               placeholder = 'email'
+              onChange = {props.onUpdateEmail}
+              defaultValue = {props.email}
               type='email'
               data-error = "Email address is invalid"
               required />
@@ -57,6 +64,16 @@ class SignupForm extends Component {
       </div>
     );
   }
+
+
+ SignupForm.PropTypes = {
+  onSubmitUser: PropTypes.func.isRequired,
+  onUpdateUsername: PropTypes.func.isRequired,
+  onUpdatePassword: PropTypes.func.isRequired,
+  onUpdateEmail: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired
 }
 
 export default SignupForm
