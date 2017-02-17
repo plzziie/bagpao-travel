@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styles from '../styles'
-import LoginForm from '../components/LoginForm'
+import LoginFormContainer from '../containers/LoginFormContainer'
 import SignupForm from '../components/SignupForm'
 
 
@@ -14,7 +14,7 @@ class Login extends Component {
         </ul>
         <div className = "tab-content">
           <div id = "loginn" className = "tab-pane fade in active">
-          <center><LoginForm/></center>
+          <center><LoginFormContainer/></center>
           </div>
           <div id = "signup" className = "tab-pane fade">
             <center><SignupForm/></center>
