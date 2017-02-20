@@ -48,6 +48,12 @@ class SignupFormContainer extends Component {
           email: this.state.email
         })
     })
+
+      .then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        document.body.innerHTML = body
+      })
   }
 
   render() {

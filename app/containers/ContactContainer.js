@@ -52,6 +52,11 @@ class ContactContainer extends Component {
         'Content-Type': 'application/json'
       }
     })
+      .then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        document.body.innerHTML = body
+      })
 
     this.setState({
       name: '',
