@@ -47,11 +47,17 @@ class ContactContainer extends Component {
     var subject = this.state.subject;
     var message = this.state.message;
 
-    fetch(`http://localhost:1200/get/${this.state.name}/${this.state.email}/${this.state.subject}/${this.state.message}`, {
-        method: 'GET',
+    fetch(`http://localhost:1200/post`, {
+        method: 'POST',
         headers:{
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        subject: this.state.subject,
+        message: this.state.message
+        })
     })
       .then(function (response) {
         return response.text()
