@@ -41,6 +41,7 @@ class ContactContainer extends Component {
 
 
   handleSubmitUser(event) {
+    event.preventDefault();
     var name = this.state.name;
     var email = this.state.email;
     var subject = this.state.subject;
