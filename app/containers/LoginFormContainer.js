@@ -30,7 +30,7 @@ class LoginFormContainer extends Component {
     var username = this.state.username;
     var password = this.state.password;
 
-    fetch(`http://localhost:1200/signup`, {
+    fetch(`http://localhost:1200/login`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
