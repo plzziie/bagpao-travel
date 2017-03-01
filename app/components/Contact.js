@@ -9,6 +9,8 @@ function Contact (props) {
     <div>
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
+        <div className = "alert alert-success" id = "success" style = {styles.gapp}>
+        </div>
         <div className = "col-xs-12" style = {styles.gap}>
           <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
             <div className = "form-group">

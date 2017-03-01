@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styles from '../styles'
 import Contact from '../components/Contact'
-
+import axios from 'axios'
 
 class ContactContainer extends Component {
 
@@ -59,11 +59,13 @@ class ContactContainer extends Component {
         message: this.state.message
         })
     })
-      .then(function (response) {
-        return response.text()
-      }).then(function (body) {
-        document.body.innerHTML = body
-      })
+      
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      document.getElementById("success").innerHTML = myObj.message;
+    })
 
     this.setState({
       name: '',

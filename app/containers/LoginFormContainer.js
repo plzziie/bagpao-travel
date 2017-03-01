@@ -41,12 +41,26 @@ class LoginFormContainer extends Component {
         })
     })
 
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      document.body.innerHTML = myObj.message;
+    })
+
+    this.setState({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+
     this.setState({
       username: '',
       password: ''
     });
 
-    this.context.router.push(`/mytrip`)
+    //this.context.router.push(`/mytrip`)
   }
 
   render() {
