@@ -6,11 +6,13 @@ import styles from '../styles'
 function Contact (props) {
   console.log(props)
     return(
-    <div>
+    <div id = "y">
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
-        <div className = "alert alert-success" id = "success" style = {styles.gapp}>
-        </div>
+
+        {props.isLoading ? null : <div className = "alert alert-success" id = "success" style = {styles.gapp}>
+        Thank you ! Your message has been successfully sent. We will contact you very soon !</div>}
+
         <div className = "col-xs-12" style = {styles.gap}>
           <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
             <div className = "form-group">
@@ -67,6 +69,7 @@ function Contact (props) {
             </div>
           </form>
         </div>
+
       </div>
     </div>
     )
@@ -82,7 +85,8 @@ function Contact (props) {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired
 }
 
 export default Contact

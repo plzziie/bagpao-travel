@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 import styles from '../styles'
 import Contact from '../components/Contact'
-import axios from 'axios'
 
 class ContactContainer extends Component {
 
@@ -11,7 +11,8 @@ class ContactContainer extends Component {
       name: '',
       email: '',
       subject: '',
-      message: ''
+      message: '',
+      isLoading: true
     }
   }
 
@@ -39,7 +40,6 @@ class ContactContainer extends Component {
     });
   }
 
-
   handleSubmitUser(event) {
     event.preventDefault();
     var name = this.state.name;
@@ -59,20 +59,25 @@ class ContactContainer extends Component {
         message: this.state.message
         })
     })
-      
+
     .then(function (response) {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      document.getElementById("success").innerHTML = myObj.message;
-    })
+      if (myObj.message === 'success') {
+        this.setState ({
+          isLoading: false
+        })
+      }
+    }.bind(this))
+    setTimeout(() => { ReactDOM.unmountComponentAtNode(document.getElementById('Main'));}, 3000);
 
-    this.setState({
+    /*this.setState({
       name: '',
       email: '',
       subject: '',
       message: ''
-    });
+    });*/
   }
 
   render() {
@@ -88,6 +93,7 @@ class ContactContainer extends Component {
      email = {this.state.email}
      subject = {this.state.subject}
      message = {this.state.message}
+     isLoading = {this.state.isLoading}
      />
     )
   }
