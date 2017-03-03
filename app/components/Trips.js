@@ -39,7 +39,7 @@ function Trips (props) {
           <li><a href="/tripsrecent">Recent</a></li>
         </ul>
       </div>
-      <div style = {styles.space}>
+      <div className = "jumbotron text-center" id = "test" style = {styles.space, styles.transparentBg}>
       <div className = "col-xs-4" style = {styles.center}>
           <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
           <h4 style = {styles.gapp}>North Now</h4>

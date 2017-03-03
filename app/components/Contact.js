@@ -6,13 +6,29 @@ import styles from '../styles'
 function Contact (props) {
   console.log(props)
     return(
-    <div id = "y">
+    <div>
+      <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
+      <h2>Created by</h2>
+      <div style = {styles.gapp}>
+        <div className = "col-xs-4" style = {styles.center}>
+          <img className = "img" src = "#" alt = "Aime" width = "200" height = "150"/>
+          <h4 style = {styles.gapp}>Bhakwan</h4>
+        </div>
+        <div className = "col-xs-4" style = {styles.center}>
+          <img className = "img" src = "#" alt = "Arpa" width = "200" height = "150"/>
+          <h4 style = {styles.gapp}>Arpa</h4>
+        </div>
+        <div className  = "col-xs-4" style = {styles.center}>
+          <img className = "img" src="#" alt = "Pleng" width = "200" height = "150"/>
+          <h4 style = {styles.gapp}>Soravee</h4>
+        </div>
+      </div>
+      </div>
+
       <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
         <h2>{props.header}</h2>
-
         {props.isLoading ? null : <div className = "alert alert-success" id = "success" style = {styles.gapp}>
         Thank you ! Your message has been successfully sent. We will contact you very soon !</div>}
-
         <div className = "col-xs-12" style = {styles.gap}>
           <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
             <div className = "form-group">

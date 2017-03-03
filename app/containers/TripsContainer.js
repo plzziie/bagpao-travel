@@ -1,29 +1,44 @@
 import React, {Component} from 'react'
 import styles from '../styles'
 import Trips from '../components/Trips'
- 
+
 class TripsContainer extends Component {
-  
+
   constructor () {
     super()
     this.state = {
-      username: ''
+      name: ''
     }
   }
 
   handleUpdateUser(event) {
     this.setState({
-      username: event.target.value
+      name: event.target.value
     });
   }
 
-  handleSubmitUser(e) {
-    e.preventDefault();
-    var username = this.state.username;
-    this.setState({
-      username: ''
-    });
+  handleSubmitUser(event) {
+    event.preventDefault();
+    var name = this.state.name;
+
+    fetch(`http://localhost:1200/places`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name
+        })
+    })
+
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      document.getElementById('test').innerHTML = myObj.message;
+    })
   }
+
 
   render() {
     return(
@@ -40,5 +55,5 @@ class TripsContainer extends Component {
 TripsContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
- 
+
 export default TripsContainer;
