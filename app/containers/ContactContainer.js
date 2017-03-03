@@ -68,16 +68,9 @@ class ContactContainer extends Component {
         this.setState ({
           isLoading: false
         })
+        window.location.reload()
       }
     }.bind(this))
-    setTimeout(() => { ReactDOM.unmountComponentAtNode(document.getElementById('Main'));}, 3000);
-
-    /*this.setState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });*/
   }
 
   render() {
