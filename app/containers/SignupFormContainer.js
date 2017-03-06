@@ -11,7 +11,7 @@ class SignupFormContainer extends Component {
       username: '',
       password: '',
       email: '',
-      status: true
+      status: false
     }
   }
 
@@ -59,7 +59,7 @@ class SignupFormContainer extends Component {
         this.context.router.push({
           pathname: '/login',
           state: {
-            status: false
+            status: true
           }
         })
       }

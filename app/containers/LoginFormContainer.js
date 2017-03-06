@@ -11,7 +11,8 @@ class LoginFormContainer extends Component {
     this.state = {
       username: '',
       password: '',
-      status: true
+      status: false,
+      err: false
     }
   }
 
@@ -54,22 +55,27 @@ class LoginFormContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      document.body.innerHTML = myObj.message;
-    })
+      if (myObj.message === 'success') {
+        this.context.router.push({
+          pathname: '/mytrip',
+          state: {
+            username: myObj.username
+          }
+        })
+      }
+      else {
+        this.setState({
+          err: true,
+          status: false
+        });
 
-    this.setState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+      }
+    }.bind(this))
 
     this.setState({
       username: '',
       password: ''
     });
-
-    //this.context.router.push(`/mytrip`)
   }
 
   render() {
@@ -81,6 +87,7 @@ class LoginFormContainer extends Component {
      username = {this.state.username}
      password = {this.state.password}
      status = {this.state.status}
+     err = {this.state.err}
      />
     )
   }
