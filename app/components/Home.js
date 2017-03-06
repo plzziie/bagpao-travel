@@ -5,14 +5,6 @@ import CreatePlan from '../components/CreatePlan'
 import styles from '../styles'
 
 class Home extends Component {
-  //componentDidMout() {
-    //fetch(`http://localhost:3000/posts/1`)
-  //.then(function(response) {
-  //  return response.text()
-//  }).then(function(body) {
-//    document.body.innerHTML = body
-//  })
-  //}
   render() {
     return (
       <div>

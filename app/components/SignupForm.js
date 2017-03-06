@@ -38,9 +38,9 @@ function SignupForm (props) {
               type = 'password'
               data-match = "#pass"
               data-match-error = "Your password is not match"
-              data-error = "Please enter your password again" 
+              data-error = "Please enter your password again"
               required />
-            <div className = "help-block with-errors"></div> 
+            <div className = "help-block with-errors"></div>
           </div>
           <div className = "form-group">
             <input
@@ -59,6 +59,9 @@ function SignupForm (props) {
                type = "submit">
                 Submit
              </button>
+          </div>
+          <div className = "col-xs-12 text-center">
+            <h4>Already have an account ?<a href = "/login"> Login Here </a></h4>
           </div>
         </form>
       </div>

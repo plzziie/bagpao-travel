@@ -24,7 +24,7 @@ class Navbar extends Component {
             <div className = "collapse navbar-collapse" id = "bs-example-navbar-collapse-1">
               <div className = "row">
                 <ul className = "nav navbar-nav navbar-right">
-                  <li className = {styles.header_menu} ><a href = "/login"><h4>Login/Sign Up</h4 ></a></li>
+                  <li className = {styles.header_menu} ><a href = "/signup"><h4>Login/Sign Up</h4 ></a></li>
                 </ul>
               </div>
               <div className = "row">

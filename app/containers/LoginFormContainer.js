@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import validator from 'bootstrap-validator'
 import styles from '../styles'
 import LoginForm from '../components/LoginForm'
+//import SignupFormContainer from '../containers/SignupFormContainer'
 
 class LoginFormContainer extends Component {
 
@@ -9,9 +10,17 @@ class LoginFormContainer extends Component {
     super()
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      status: true
     }
   }
+
+  componentDidMount() {
+    this.setState ({
+      status: this.props.location.state.status
+    })
+  }
+
 
   handleUpdateUsername(event) {
     this.setState({
@@ -71,6 +80,7 @@ class LoginFormContainer extends Component {
      onUpdatePassword = {(event) => this.handleUpdatePassword(event)}
      username = {this.state.username}
      password = {this.state.password}
+     status = {this.state.status}
      />
     )
   }

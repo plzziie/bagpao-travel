@@ -7,6 +7,10 @@ function LoginForm (props) {
   console.log(props)
     return (
       <div className = "jumbotron col-xs-8 col-xs-offset-2" style = {styles.transparentBg}>
+
+      {props.status ? null : <div className = "alert alert-success" id = "success" style = {styles.gapp}>
+      Thank you ! Your message has been successfully sent. We will contact you very soon !</div>}
+
         <form data-toggle = "validator" role = "form" onSubmit = {props.onSubmitUser}>
           <div className = "form-group">
             <input
@@ -38,7 +42,7 @@ function LoginForm (props) {
             </button>
           </div>
         </form>
-      </div>  
+      </div>
     )
   }
 
@@ -47,7 +51,8 @@ function LoginForm (props) {
   onUpdateUsername: PropTypes.func.isRequired,
   onUpdatePassword: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired
+  password: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired
 }
 
 export default LoginForm

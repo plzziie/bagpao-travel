@@ -4,6 +4,7 @@ import styles from '../styles'
 import TripsRecent from '../components/TripsRecent'
 
 function Trips (props) {
+  console.log(props);
     return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
@@ -15,7 +16,7 @@ function Trips (props) {
                 className = "form-control"
                 placeholder = 'Trip Name/ City/ Place'
                 onChange = {props.onUpdateUser}
-                defaultValue = {props.username}
+                defaultValue = {props.name}
                 type = 'text' />
             </div>
             <div className = "form-group col-xs-1">
@@ -42,7 +43,7 @@ function Trips (props) {
       <div className = "jumbotron text-center" id = "test" style = {styles.space, styles.transparentBg}>
       <div className = "col-xs-4" style = {styles.center}>
           <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>North Now</h4>
+          <h4 style = {styles.gapp}>{props.message}</h4>
           <h5>by nokky</h5>
         </div>
         <div className = "col-xs-4" style = {styles.center}>
@@ -65,7 +66,9 @@ function Trips (props) {
   onSubmitUser: PropTypes.func.isRequired,
   onUpdateUser: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  myObj: PropTypes.array.isRequired
 }
 
 export default Trips

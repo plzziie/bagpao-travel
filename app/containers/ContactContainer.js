@@ -58,9 +58,7 @@ class ContactContainer extends Component {
         subject: this.state.subject,
         message: this.state.message
         })
-    })
-
-    .then(function (response) {
+    }).then(function (response) {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);

@@ -10,7 +10,8 @@ class SignupFormContainer extends Component {
     this.state = {
       username: '',
       password: '',
-      email: ''
+      email: '',
+      status: true
     }
   }
 
@@ -54,16 +55,22 @@ class SignupFormContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      document.body.innerHTML = myObj.message;
-    })
-
-    this.setState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+      if (myObj.message === 'success') {
+        this.context.router.push({
+          pathname: '/login',
+          state: {
+            status: false
+          }
+        })
+      }
+    }.bind(this))
   }
+
+  /*  this.setState({
+      username: '',
+      password: '',
+      email: ''
+    });*/
 
   render() {
     return(

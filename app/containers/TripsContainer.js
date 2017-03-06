@@ -7,7 +7,8 @@ class TripsContainer extends Component {
   constructor () {
     super()
     this.state = {
-      name: ''
+      name: '',
+      message: 'first'
     }
   }
 
@@ -19,8 +20,6 @@ class TripsContainer extends Component {
 
   handleSubmitUser(event) {
     event.preventDefault();
-    var name = this.state.name;
-
     fetch(`http://localhost:1200/places`, {
         method: 'POST',
         headers:{
@@ -35,8 +34,11 @@ class TripsContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      document.getElementById('test').innerHTML = myObj.message;
-    })
+      this.setState({
+        message: myObj.message
+      });
+      document.getElementById("test").innerHTML = myObj.message;
+    }.bind(this))
   }
 
 
@@ -46,7 +48,8 @@ class TripsContainer extends Component {
       onSubmitUser={(event) => this.handleSubmitUser(event)}
       onUpdateUser={(event) => this.handleUpdateUser(event)}
       header = {this.props.route.header}
-      username = {this.state.username}
+      name = {this.state.name}
+      message = {this.state.message}
       />
     )
   }
