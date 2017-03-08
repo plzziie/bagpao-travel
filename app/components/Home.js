@@ -2,19 +2,23 @@ import React, {Component} from 'react'
 import ReactRouter from 'react-router'
 import {Link} from 'react-router'
 import CreatePlan from '../components/CreatePlan'
-import styles from '../styles'
+import styles from '../styles/home.css'
+import style from '../styles'
+
 
 class Home extends Component {
+
   render() {
     return (
       <div>
-        <div className = "jumbotron col-xs-6 col-xs-offset-3" style = {styles.transparentBg}>
+        <div className = "container-fluid homebg1">
           <CreatePlan/>
+
         </div>
 
-        <div className = "jumbotron col-xs-12 text-center" style = {styles.transparentBg}>
+        <div className = "jumbotron col-xs-12 text-center transparentBg">
           <h2><u> POPULAR TRIPS </u></h2>
-        </div>
+
         <div className = "row" style = {styles.space}>
         <div className = "col-xs-4" style = {styles.center}>
           <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
@@ -32,10 +36,12 @@ class Home extends Component {
           <h5>by nanon</h5>
         </div>
         </div>
+        </div>
+
 
         <div className = "jumbotron col-xs-12 text-center" style = {styles.transparentBg}>
           <h2><u> POPULAR PLACES </u></h2>
-        </div>
+
         <div className = "row" style = {styles.space}>
         <div className = "col-xs-4" style = {styles.center}>
          <img className = "img" src = "app/img/chiangmai.jpg" alt = "doisuthep" width = "200" height = "150"/>
@@ -53,6 +59,7 @@ class Home extends Component {
           <h5>Prachuap Khiri Khan</h5>
         </div>
         </div>
+      </div>
       </div>
     )
   }
