@@ -71,11 +71,6 @@ class LoginFormContainer extends Component {
 
       }
     }.bind(this))
-
-    this.setState({
-      username: '',
-      password: ''
-    });
   }
 
   render() {

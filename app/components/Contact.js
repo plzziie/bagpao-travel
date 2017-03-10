@@ -11,15 +11,15 @@ function Contact (props) {
       <h2>Created by</h2>
       <div style = {styles.gapp}>
         <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "#" alt = "Aime" width = "200" height = "150"/>
+          <img className = "img img-circle" src = "app/img/aimetrip.jpg" alt = "Aime" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Bhakwan</h4>
         </div>
         <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "#" alt = "Arpa" width = "200" height = "150"/>
+          <img className = "img img-circle" src = "app/img/arpatrip.jpg" alt = "Arpa" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Arpa</h4>
         </div>
         <div className  = "col-xs-4" style = {styles.center}>
-          <img className = "img" src="#" alt = "Pleng" width = "200" height = "150"/>
+          <img className = "img img-circle" src="app/img/plengtrip.jpg" alt = "Pleng" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Soravee</h4>
         </div>
       </div>

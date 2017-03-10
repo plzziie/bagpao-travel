@@ -8,8 +8,13 @@ function Trips (props) {
   console.log(props);
     return(
     <div>
+
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
         <h2 className="title2">Find the trips</h2>
+
+      <div className = "jumbotron text-center" style = {styles.transparentBg}>
+        <h2>{props.header}</h2>
+
         <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.onSubmitUser}>
             <div className = "form-group col-xs-6 col-xs-offset-3">
@@ -89,7 +94,7 @@ function Trips (props) {
   header: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
-  myObj: PropTypes.array.isRequired
+  creator: PropTypes.array.isRequired
 }
 
 export default Trips
