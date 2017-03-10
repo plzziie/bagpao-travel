@@ -10,19 +10,19 @@
     border-radius: 15px;
     color: white;
     text-align: center;
-    margin-top: 20px;
-    width: 85%;
+    margin-top: 40px;
+    width: 88%;
 }
 
 .button:hover {
   opacity: 0.9;
 }
 
-.label {
+.fontwhite {
   color: white;
-  font-size: 90%;
 }
 
 .howlong {
   background-color: white;
+  width: 90%;
 }
