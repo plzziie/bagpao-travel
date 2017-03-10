@@ -8,7 +8,7 @@ function TripsRecent (props) {
     return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
-        <h2 className="title2">Find the trips</h2>
+        <h2 className="title2">{props.header}</h2>
         <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.onSubmitUser}>
             <div className = "form-group col-xs-6 col-xs-offset-3">
@@ -72,7 +72,7 @@ function TripsRecent (props) {
         </div>
       </div>
 
-    
+
 
     </div>
   </div>
