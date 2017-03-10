@@ -6,8 +6,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-      	<Navbar/>
-      	{this.props.children}
+      	<Navbar/>{this.props.children}
       </div>
     )
   }

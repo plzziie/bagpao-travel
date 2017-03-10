@@ -13,53 +13,63 @@ class Home extends Component {
       <div>
         <div className = "container-fluid homebg1">
           <CreatePlan/>
-
         </div>
 
-        <div className = "jumbotron col-xs-12 text-center transparentBg">
-          <h2><u> POPULAR TRIPS </u></h2>
+        <div className="container-fluid">
+        <div className = "col-md-offset-1 col-md-10 transparentBg" >
+            <h3 className="col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title ">Popular Trips</h3>
 
-        <div className = "row" style = {styles.space}>
-        <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>North Now</h4>
-          <h5>by nokky</h5>
-        </div>
-        <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Phuket Get Away</h4>
-          <h5>by daojai</h5>
-        </div>
-        <div className  = "col-xs-4" style = {styles.center}>
-          <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>One Day Tour</h4>
-          <h5>by nanon</h5>
-        </div>
-        </div>
-        </div>
-
-
-        <div className = "jumbotron col-xs-12 text-center" style = {styles.transparentBg}>
-          <h2><u> POPULAR PLACES </u></h2>
-
-        <div className = "row" style = {styles.space}>
-        <div className = "col-xs-4" style = {styles.center}>
-         <img className = "img" src = "app/img/chiangmai.jpg" alt = "doisuthep" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Doi Suthep-Pui National Park</h4>
-          <h5>Chiangmai</h5>
-        </div>
-        <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/samui.jpg" alt = "samui" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Samui Island</h4>
-          <h5>Surat Thani</h5>
-        </div>
-        <div className  = "col-xs-4" style = {styles.center}>
-          <img className = "img" src="app/img/huahin.jpg" alt = "samroiyot" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Khao Sam Roi Yot National Park</h4>
-          <h5>Prachuap Khiri Khan</h5>
-        </div>
+        <div className = "row">
+          <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+            <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width="376" height="251"/>
+            <div className="bottomleft1">North Now</div>
+            <div className="box"></div>
+            <div className="bottomleft2">by nokky</div>
+          </div>
+          <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+            <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway"  width="376" height="251"/>
+            <div className="bottomleft1">Phuket Get Away</div>
+            <div className="box"></div>
+            <div className="bottomleft2">by daojai</div>
+          </div>
+          <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+            <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour"  width="376" height="251"/>
+            <div className="bottomleft1">One Day Tour</div>
+            <div className="box"></div>
+            <div className="bottomleft2">by nanon</div>
+          </div>
         </div>
       </div>
+    </div>
+
+
+    <div className="container-fluid padding">
+    <div className = "col-md-offset-1 col-md-10 transparentBg" >
+        <h3 className="col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title ">Popular Places</h3>
+
+    <div className = "row">
+      <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+        <img className = "img" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="376" height="251"/>
+        <div className="bottomleft1">Doi Suthep-Pui National Park</div>
+        <div className="box"></div>
+        <div className="bottomleft2">Chiangmai</div>
+      </div>
+      <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+        <img className = "img" src = "app/img/samui.jpg" alt = "samui"  width="376" height="251"/>
+        <div className="bottomleft1">Samui Island</div>
+        <div className="box"></div>
+        <div className="bottomleft2">Surat Thani</div>
+      </div>
+      <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+        <img className = "img" src = "app/img/huahin.jpg" alt = "samroiyot"  width="376" height="251"/>
+        <div className="bottomleft1">Khao Sam Roi Yot National Park</div>
+        <div className="box"></div>
+        <div className="bottomleft2">Prachuap Khiri Khan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     )
   }

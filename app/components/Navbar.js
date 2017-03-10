@@ -7,8 +7,8 @@ class Navbar extends Component {
   render() {
     return (
 
-      <nav className="navbar navbar-default"  style = {styles.transparentBg}>
-    <div className="container">
+      <nav className="navbar navbar-default bgwhite"  >
+    <div className="container bgwhite">
 
 
         <div className="navbar">
