@@ -5,7 +5,6 @@ import CreatePlan from '../components/CreatePlan'
 import styles from '../styles/home.css'
 import style from '../styles'
 
-
 class Home extends Component {
 
   render() {

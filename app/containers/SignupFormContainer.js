@@ -66,12 +66,6 @@ class SignupFormContainer extends Component {
     }.bind(this))
   }
 
-  /*  this.setState({
-      username: '',
-      password: '',
-      email: ''
-    });*/
-
   render() {
     return(
      <SignupForm
