@@ -53,7 +53,7 @@ function Trips (props) {
       <div className = "col-md-offset-1 col-md-10 transparentBg" >
           <h3 className="title col-xs-offset-1 col-md-offset-0 col-sm-offset-0">Popular Trips</h3>
 
-      <div className = "row tripgap">
+      <div className = "row tripgap" id="test">
         <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
           <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width="376" height="251"/>
           <div className="bottomleft1">{props.message}</div>
