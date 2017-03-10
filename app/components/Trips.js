@@ -67,7 +67,7 @@ function Trips (props) {
   onUpdateUser: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.array.isRequired,
   creator: PropTypes.array.isRequired
 }
 

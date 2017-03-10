@@ -9,8 +9,7 @@ class TripsContainer extends Component {
     this.state = {
       name: '',
       message: [],
-      creator: [],
-      results: []
+      creator: []
     }
   }
 
@@ -36,13 +35,30 @@ class TripsContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
+      if(myObj.message === 'cannot found this trip') {
+        document.getElementById('test').innerHTML = myObj.message;
+      }
+      else {
+        var arrr = []
+        var tname = ''
+        var by = ''
+
         for(var i = 0; i < myObj.length; i++) {
           this.setState({
             message: myObj[i].message,
+            tname: myObj[i].name,
             creator: myObj[i].by
           });
-          results[i] = {message, creator}
+          var result_obj = {
+            tname: this.state.tname,
+            by : this.state.creator
+
+          }
+          arrr[i] = result_obj;
         }
+        document.getElementById('test').innerHTML = arrr[0].tname + '&nbsp; by &nbsp;' + arrr[0].by + '<br>' +
+        arrr[1].tname + '&nbsp; by &nbsp;' + arrr[1].by + '<br>' + arrr[2].tname + '&nbsp; by &nbsp;' + arrr[2].by + '<br>';
+      }
     }.bind(this))
   }
 
