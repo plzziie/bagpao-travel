@@ -2,6 +2,7 @@
   font-family: monospace;
   font-size: 40px;
   margin: 0 ;
+  margin-bottom: 10px;
 
 }
 
@@ -11,6 +12,7 @@
 
 .footergap {
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .dropdown {
