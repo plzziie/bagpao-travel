@@ -21,7 +21,7 @@ function Trips (props) {
                 defaultValue = {props.name}
                 type = 'text' />
             </div>
-            <div className = "form-group col-md-2 col-sm-2 col-xs-2">
+            <div className = "form-group col-xs-1">
               <button
                 className = "btn btn-block btn-success"
                 type = "submit">
@@ -32,12 +32,12 @@ function Trips (props) {
         </div>
       </div>
 
-      <div className = "container-fluid col-md-offset-1" style={styles.transparentBg}>
-        <div className = "col-md-offset-0 col-sm-offset-1 col-xs-offset-1 col-md-3 col-sm-3 col-xs-3" >
+      <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
+        <div className = "col-md-3 col-sm-4 col-xs-3" >
             <h2>All trips</h2>
 
         </div>
-        <div className = "col-md-offset-7 col-sm-offset-7 col-xs-offset-7 col-md-2 col-sm-1 col-xs-1" >
+        <div className = "col-md-offset-7 col-sm-offset-2 col-xs-offset-2 col-md-2 col-sm-3 col-xs-3" >
           <div className = "dropdown">
           <button className = "btn btn-default dropdown-toggle" type = "button" data-toggle = "dropdown">
           <span className = "caret"></span></button>
