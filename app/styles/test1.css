@@ -1,4 +1,11 @@
 
+
+.bgwhite {
+  background: #FFFFFF;
+
+}
+
+
 .dropdown-menu {
   left: 50%;
   right: auto;
@@ -83,4 +90,12 @@ margin: 8px auto;
 .container_con {
   background: #D0D3D4;
   padding: 10px;
+}
+.padding {
+  margin-bottom: 70px;
+}
+.footer {
+  padding:50px;
+  background: white;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.1);
 }

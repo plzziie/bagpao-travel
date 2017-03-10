@@ -2,13 +2,15 @@ import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
 import TripsRecent from '../components/TripsRecent'
+import style from '../styles/trips.css'
 
 function Trips (props) {
   console.log(props);
     return(
     <div>
-      <div className = "jumbotron text-center" style = {styles.transparentBg}>
-        <h2>{props.header}</h2>
+
+      <div className = "jumbotron text-center"  style = {styles.transparentBg}>
+        <h2 className="title2">{props.header}</h2>
         <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.onSubmitUser}>
             <div className = "form-group col-xs-6 col-xs-offset-3">
@@ -30,34 +32,55 @@ function Trips (props) {
         </div>
       </div>
 
-      <div className = "row" style = {styles.space}>
-      <div className = "dropdown">
-        <h2 className = "col-xs-offset-2"><strong>All Trips</strong></h2>
-        <button className = "btn btn-default dropdown-toggle col-xs-offset-10" type = "button" data-toggle = "dropdown">
-        <span className = "caret"></span></button>
-        <ul className = "dropdown-menu col-xs-offset-10">
-          <li className = "active"><a href="/trips">Popular</a></li>
-          <li><a href="/tripsrecent">Recent</a></li>
-        </ul>
-      </div>
-      <div className = "jumbotron text-center" id = "test" style = {styles.space, styles.transparentBg}>
-      <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>{props.message}</h4>
-          <h5>by nokky</h5>
+      <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
+        <div className = "col-md-3 col-sm-4 col-xs-3" >
+            <h2>All trips</h2>
+
         </div>
-        <div className = "col-xs-4" style = {styles.center}>
-          <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>Phuket Get Away</h4>
-          <h5>by daojai</h5>
+        <div className = "col-md-offset-7 col-sm-offset-2 col-xs-offset-2 col-md-2 col-sm-3 col-xs-3" >
+          <div className = "dropdown">
+          <button className = "btn btn-default dropdown-toggle" type = "button" data-toggle = "dropdown">
+          <span className = "caret"></span></button>
+          <ul className = "dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li className = "active"><a href="/trips">Popular</a></li>
+            <li><a href="/tripsrecent">Recent</a></li>
+          </ul>
         </div>
-        <div className  = "col-xs-4" style = {styles.center}>
-          <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour" width = "200" height = "150"/>
-          <h4 style = {styles.gapp}>One Day Tour</h4>
-          <h5>by nanon</h5>
+        </div>
+        </div>
+
+      <div className="container-fluid footergap">
+      <div className = "col-md-offset-1 col-md-10 transparentBg" >
+          <h3 className="title col-xs-offset-1 col-md-offset-0 col-sm-offset-0">Popular Trips</h3>
+
+      <div className = "row tripgap">
+        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+          <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width="376" height="251"/>
+          <div className="bottomleft1">{props.message}</div>
+          <div className="box"></div>
+          <div className="bottomleft2">by nokky</div>
+        </div>
+        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+          <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway"  width="376" height="251"/>
+          <div className="bottomleft1">Phuket Get Away</div>
+          <div className="box"></div>
+          <div className="bottomleft2">by daojai</div>
+        </div>
+        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+          <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour"  width="376" height="251"/>
+          <div className="bottomleft1">One Day Tour</div>
+          <div className="box"></div>
+          <div className="bottomleft2">by nanon</div>
         </div>
       </div>
-      </div>
+
+
+    </div>
+  </div>
+
+
+
+
     </div>
     )
   }
