@@ -50,7 +50,7 @@ function Places (props) {
       </div>
       </div>
       </div>
-    </div>
+      </div>
     )
 }
 

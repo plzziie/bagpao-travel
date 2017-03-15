@@ -11,7 +11,8 @@ class SignupFormContainer extends Component {
       username: '',
       password: '',
       email: '',
-      status: false
+      status: false,
+      err: false
     }
   }
 
@@ -63,6 +64,11 @@ class SignupFormContainer extends Component {
           }
         })
       }
+      else {
+        this.setState({
+          err: true
+        });
+      }
     }.bind(this))
   }
 
@@ -76,6 +82,7 @@ class SignupFormContainer extends Component {
      username = {this.state.username}
      password = {this.state.password}
      email = {this.state.email}
+     err = {this.state.err}
      />
     )
   }

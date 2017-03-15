@@ -20,6 +20,10 @@ import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
 import PlacesPop from '../components/PlacesPop'
 import TripsRecent from '../components/TripsRecent'
+import StepOne from '../containers/StepOneContainer'
+import StepTwo from '../containers/StepTwoContainer'
+import StepThree from '../components/StepThree'
+import StepFour from '../components/StepFour'
 
 var routes = (
   <Router history = {browserHistory}>
@@ -38,6 +42,10 @@ var routes = (
       <Route path = 'trips-details' component = {DetailsForm}/>
       <Route path = 'placespop' component = {PlacesPop}/>
       <Route path = 'tripsrecent' component = {TripsRecent}/>
+      <Route path = 'stepone' component = {StepOne}/>
+      <Route path = 'steptwo' component = {StepTwo}/>
+      <Route path = 'stepthree' component = {StepThree}/>
+      <Route path = 'stepfour' component = {StepFour}/>
     </Route>
   </Router>
 );

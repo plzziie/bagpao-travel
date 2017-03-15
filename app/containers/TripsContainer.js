@@ -52,10 +52,10 @@ class TripsContainer extends Component {
           var result_obj = {
             tname: this.state.tname,
             by : this.state.creator
-
           }
           arrr[i] = result_obj;
         }
+        console.log(arrr);
         document.getElementById('test').innerHTML = arrr[0].tname + '&nbsp; by &nbsp;' + arrr[0].by + '<br>' +
         arrr[1].tname + '&nbsp; by &nbsp;' + arrr[1].by + '<br>' + arrr[2].tname + '&nbsp; by &nbsp;' + arrr[2].by + '<br>';
       }

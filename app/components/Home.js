@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactRouter from 'react-router'
 import {Link} from 'react-router'
-import CreatePlan from '../components/CreatePlan'
+import CreatePlan from '../containers/CreatePlanContainer'
 import styles from '../styles/home.css'
 import style from '../styles'
 
