@@ -8,7 +8,7 @@ function TripsRecent (props) {
     return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
-        <h2 className="title2">{props.header}</h2>
+        <h2 className="title2">Find the trips</h2>
         <div className = "col-xs-12" style = {styles.gap}>
           <form onSubmit = {props.onSubmitUser}>
             <div className = "form-group col-xs-6 col-xs-offset-3">
@@ -16,10 +16,10 @@ function TripsRecent (props) {
                 className = "form-control"
                 placeholder = 'Trip Name/ City/ Place'
                 onChange = {props.onUpdateUser}
-                defaultValue = {props.username}
+                defaultValue = {props.name}
                 type = 'text' />
             </div>
-            <div className = "form-group col-xs-1">
+            <div className = "form-group col-md-2 col-sm-2 col-xs-2">
               <button
                 className = "btn btn-block btn-success"
                 type = "submit">
