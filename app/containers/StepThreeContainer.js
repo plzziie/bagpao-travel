@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepTwo from '../components/StepTwo'
+import StepThree from '../components/StepThree'
 
-class StepTwoContainer extends Component {
+class StepThreeContainer extends Component {
 
   constructor () {
     super()
@@ -18,7 +18,7 @@ class StepTwoContainer extends Component {
     }
   }
 
-  componentDidMount() {
+  /*componentDidMount() {
     fetch(`http://localhost:1200/transportation`, {
         method: 'POST',
         headers:{
@@ -47,7 +47,7 @@ class StepTwoContainer extends Component {
         }
       }
     }.bind(this))
-          /*var result_obj = {
+          var result_obj = {
             vehicles: this.state.vehicles,
             id: this.state.id,
             origin: this.state.origin,
@@ -60,8 +60,8 @@ class StepTwoContainer extends Component {
         }
         console.log(arrr);
       }
-    }.bind(this))*/
-  }
+    }.bind(this))
+  }*/
 
   handleUpdateDeparture(event) {
     this.setState({
@@ -78,7 +78,7 @@ class StepTwoContainer extends Component {
   handleSubmitTrip(event) {
     event.preventDefault();
     this.context.router.push({
-      pathname: '/stepthree',
+      pathname: '/stepfour',
       state: {
         daytrip: this.state.daytrip,
         vehicles: this.state.vehicles,
@@ -94,7 +94,7 @@ class StepTwoContainer extends Component {
 
   render() {
     return(
-     <StepTwo
+     <StepThree
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
      onUpdateDeparture = {(event) => this.handleUpdateDeparture(event)}
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
@@ -111,8 +111,8 @@ class StepTwoContainer extends Component {
   }
 }
 
-StepTwoContainer.contextTypes = {
+StepThreeContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default StepTwoContainer
+export default StepThreeContainer

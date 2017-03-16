@@ -16,6 +16,7 @@ function CreatePlan (props) {
             onChange = {props.onUpdateOrigin}
             defaultValue = {props.origin} />
         </div>
+
         <div className = "col-md-3 col-sm-6 col-xs-12" >
           <h4 className="fontwhite">To</h4>
             <input type = "text"
