@@ -1,0 +1,47 @@
+.photoo {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: relative;
+  margin-bottom: 10px;
+
+
+}
+
+.photoo img {
+    width: 32%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.photoo .text {
+ color: white;
+ font-size: 50px;
+ font-family: monospace;
+ opacity: 0;
+
+}
+.national {
+  position: absolute;
+  top: 40%;
+  left: 32%;
+}
+.temple {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+}
+.beach {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+}
+.photoo:hover .text{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.photoo:hover img {
+  opacity: 0.7;
+  cursor: pointer;
+}
