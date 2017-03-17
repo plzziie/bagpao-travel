@@ -42,9 +42,6 @@ function StepOne (props) {
             </select>
         </div>
       <div className = "col-xs-3 col-xs-offset-3" style = {styles.gapp}>
-        <button type = "button" className = "button form-control">
-           Save
-        </button>
         <button type = "submit" className = "button form-control">
            Next
         </button>
@@ -63,7 +60,8 @@ StepOne.PropTypes = {
   onUpdateDaytrip: PropTypes.func.isRequired,
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  daytrip: PropTypes.string.isRequired
+  daytrip: PropTypes.string.isRequired,
+  transportation: PropTypes.array.isRequired
 }
 
 export default StepOne

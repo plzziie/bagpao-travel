@@ -8,14 +8,11 @@ class StepOneContainer extends Component {
   constructor () {
     super()
     this.state = {
-      vehicles: '',
-      id: '',
       origin: '',
-      depart: '',
       destination: '',
-      arrive: '',
-      price: '',
-      daytrip: ''
+      daytrip: '',
+      numstep: 1,
+      transportation: []
     }
   }
 
@@ -39,14 +36,37 @@ class StepOneContainer extends Component {
 
   handleSubmitTrip(event) {
     event.preventDefault();
-    this.context.router.push({
-      pathname: '/steptwo',
-      state: {
+    fetch(`http://localhost:1200/planning`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         origin: this.state.origin,
         destination: this.state.destination,
-        daytrip: this.state.daytrip
+        numstep: this.state.numstep
+        })
+      }).then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        var myObj = JSON.parse(body);
+        if (myObj.message === undefined) {
+          this.setState({
+              transportation: myObj
+          });
+          this.context.router.push({
+            pathname: '/steptwo',
+            state: {
+              origin: this.state.origin,
+              destination: this.state.destination,
+              daytrip: this.state.daytrip,
+              transportation: this.state.transportation
+          }
+        })
       }
-    })
+    }.bind(this))
+  }
+
     /*fetch(`http://localhost:1200/transportation`, {
         method: 'POST',
         headers:{
@@ -94,7 +114,6 @@ class StepOneContainer extends Component {
         })
       }
     }.bind(this))*/
-  }
 
   render() {
     return(
@@ -106,6 +125,7 @@ class StepOneContainer extends Component {
      origin = {this.state.origin}
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
+     transportation = {this.state.transportation}
      />
     )
   }

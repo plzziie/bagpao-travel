@@ -14,11 +14,12 @@ class StepTwoContainer extends Component {
       depart: '',
       destination: '',
       arrive: '',
-      price: ''
+      price: '',
+      tst: []
     }
   }
 
-  componentDidMount() {
+/*  componentDidMount() {
     fetch(`http://localhost:1200/transportation`, {
         method: 'POST',
         headers:{
@@ -32,6 +33,18 @@ class StepTwoContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
+      //console.log(myObj)
+      /*var tst = myObj.map(function(transport) {
+        return (
+          transport
+        );
+      })
+      console.log(tst)
+      this.setState ({
+        tst: myObj
+      })
+      console.log(this.state.tst)
+    }.bind(this))
       if (myObj.message === undefined) {
         for(var i = 0; i < myObj.length; i++) {
           this.setState({
@@ -46,8 +59,11 @@ class StepTwoContainer extends Component {
           });
         }
       }
+      else {
+        console.log(myObj.message)
+      }
     }.bind(this))
-          /*var result_obj = {
+          var result_obj = {
             vehicles: this.state.vehicles,
             id: this.state.id,
             origin: this.state.origin,
@@ -60,18 +76,18 @@ class StepTwoContainer extends Component {
         }
         console.log(arrr);
       }
-    }.bind(this))*/
-  }
+    }.bind(this))
+}*/
 
   handleUpdateDeparture(event) {
     this.setState({
-      departure: event.target.value
+      depart: event.target.value
     });
   }
 
   handleUpdateReturn(event) {
     this.setState({
-      retrn: event.target.value
+      arrive: event.target.value
     });
   }
 
@@ -87,7 +103,8 @@ class StepTwoContainer extends Component {
         depart: this.state.depart,
         destination: this.state.destination,
         arrive: this.state.arrive,
-        price: this.state.price
+        price: this.state.price,
+        tst: this.state.tst
       }
     })
   }
@@ -106,6 +123,7 @@ class StepTwoContainer extends Component {
      vehicles = {this.state.vehicles}
      id = {this.state.id}
      price = {this.state.price}
+     tst = {this.state.tst}
      />
     )
   }

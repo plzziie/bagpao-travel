@@ -3,7 +3,7 @@ import {PropTypes} from 'react'
 import styles from '../styles'
 
 function StepTwo (props) {
-  console.log(props);
+  //console.log(props);
     return(
       <div>
 
@@ -20,7 +20,6 @@ function StepTwo (props) {
         <li className = "active"><a href="#departure" data-toggle = "tab">Departure</a></li>
         <li><a href="#return" data-toggle = "tab">Return</a></li>
       </ul>
-
 
       <form onSubmit = {props.onSubmitTrip}>
       <div className = "tab-content">
@@ -77,7 +76,8 @@ StepTwo.PropTypes = {
   daytrip: PropTypes.string.isRequired,
   vehicles: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
+  price: PropTypes.string.isRequired,
+  tst: PropTypes.array.isRequired
 }
 
 export default StepTwo
