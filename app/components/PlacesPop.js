@@ -18,7 +18,7 @@ function PlacesPop (props) {
                 defaultValue = {props.username}
                 type = 'text' />
             </div>
-            <div className = "form-group col-md-2 col-sm-2 col-xs-2">
+            <div className = "form-group col-md-1 col-xs-2">
               <button
                 className = "btn btn-block btn-success"
                 type = "submit">
@@ -30,15 +30,22 @@ function PlacesPop (props) {
       </div>
 
 
-      <div className = "dropdown">
-        <button className = "btn btn-default dropdown-toggle col-xs-offset-10" type = "button" data-toggle = "dropdown">
-        <span className = "caret"></span></button>
-        <ul className = "dropdown-menu col-xs-offset-10">
-          <li ><a href="/places">Categories</a></li>
-          <li className = "active"><a href="/placespop">Popular</a></li>
-        </ul>
-      </div>
-  
+      <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
+        <div className = "title2 col-md-offset-0 col-sm-offset-0 col-xs-offset-1 col-md-3 col-sm-3 col-xs-3" >
+            <h2>Popular</h2>
+        </div>
+        <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
+          <div className = "dropdown">
+          <button className = "btn btn-default dropdown-toggle" type = "button" data-toggle = "dropdown">
+          <span className = "caret"></span></button>
+          <ul className = "dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="/places">Categories</a></li>
+            <li className = "active"><a href="/placespop">Popular</a></li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
 
       <div className="container-fluid footergap">
       <div className = "col-md-offset-1 col-md-10 transparentBg" >

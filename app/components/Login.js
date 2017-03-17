@@ -7,6 +7,7 @@ import SignupFormContainer from '../containers/SignupFormContainer'
 class Login extends Component {
   render() {
     return(
+      <div className="container-fluid">
       <div className = "col-xs-6 col-xs-offset-3">
         <ul className = "nav nav-tabs nav-justified">
           <li className = "active"><a data-toggle = "tab" href = "#loginn"><h3>Login</h3></a></li>
@@ -21,6 +22,7 @@ class Login extends Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }

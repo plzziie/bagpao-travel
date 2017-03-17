@@ -6,6 +6,7 @@ import styles from '../styles'
 function LoginForm (props) {
   console.log(props)
     return (
+      <div className="container-fluid">
       <div className = "jumbotron col-xs-8 col-xs-offset-2" style = {styles.transparentBg}>
       {props.status ? <div className = "alert alert-success text-center" id = "success" style = {styles.gapp}>
       Success ! You can Login now !</div> : null}
@@ -43,6 +44,7 @@ function LoginForm (props) {
           </div>
         </form>
       </div>
+    </div>
     )
   }
 

@@ -6,7 +6,6 @@ import style from '../styles/test1.css'
 class Navbar extends Component {
   render() {
     return (
-
       <nav className="navbar navbar-default bgwhite"  >
     <div className="container bgwhite">
 
@@ -47,6 +46,7 @@ class Navbar extends Component {
 
     </div>
   </nav>
+
     );
   }
 }

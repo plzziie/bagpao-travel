@@ -2,23 +2,24 @@ import React from 'react'
 import {PropTypes} from 'react'
 import validator from 'bootstrap-validator'
 import styles from '../styles'
+import style from '../styles/contact.css'
 
 function Contact (props) {
   console.log(props);
     return(
-    <div>
-      <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
+    <div className="container-fluid">
+      <div className = "contact text-center" style = {styles.transparentBg}>
       <h2>Created by</h2>
       <div style = {styles.gapp}>
-        <div className = "col-xs-4" style = {styles.center}>
+        <div className = "col-xs-4 text-center" style = {styles.center}>
           <img className = "img img-circle" src = "app/img/aimetrip.jpg" alt = "Aime" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Bhakwan</h4>
         </div>
-        <div className = "col-xs-4" style = {styles.center}>
+        <div className = "col-xs-4 text-center" style = {styles.center}>
           <img className = "img img-circle" src = "app/img/arpatrip.jpg" alt = "Arpa" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Arpa</h4>
         </div>
-        <div className  = "col-xs-4" style = {styles.center}>
+        <div className  = "col-xs-4 text-center" style = {styles.center}>
           <img className = "img img-circle" src="app/img/plengtrip.jpg" alt = "Pleng" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Soravee</h4>
         </div>
@@ -88,6 +89,7 @@ function Contact (props) {
 
       </div>
     </div>
+
     )
   }
 

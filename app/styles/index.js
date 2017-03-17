@@ -21,9 +21,7 @@ var styles = {
 	left: {
 		textAlign: 'left'
 	},
-	center: {
-		textAlign: 'center'
-	},
+
 	hlarge: {
 		fontSize: '50px',
 		textAlign: 'center'

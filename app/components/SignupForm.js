@@ -6,6 +6,7 @@ import styles from '../styles'
 function SignupForm (props) {
   console.log(props)
     return (
+      <div className="container-fluid">
       <div className = "jumbotron col-xs-8 col-xs-offset-2" style = {styles.transparentBg}>
       {props.err ? <div className = "alert alert-danger text-center" id = "danger" style = {styles.gapp}>
       That username is taken. Try another !</div> : null}
@@ -67,6 +68,7 @@ function SignupForm (props) {
           </div>
         </form>
       </div>
+    </div>
     );
   }
 
