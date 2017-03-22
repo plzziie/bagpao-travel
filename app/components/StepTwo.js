@@ -3,10 +3,9 @@ import {PropTypes} from 'react'
 import styles from '../styles'
 
 function StepTwo (props) {
-  //console.log(props);
+  console.log(props);
     return(
       <div>
-
       <ul className = "nav nav-pills nav-justified">
         <li><a href = "/stepone">Step 1</a></li>
         <li><a href = "/steptwo">Step 2</a></li>
@@ -15,23 +14,33 @@ function StepTwo (props) {
       </ul>
 
       <div className = "col-xs-6 col-xs-offset-3" style = {styles.space}>
-
       <ul className = "nav nav-tabs nav-justified">
         <li className = "active"><a href="#departure" data-toggle = "tab">Departure</a></li>
         <li><a href="#return" data-toggle = "tab">Return</a></li>
       </ul>
-
-      <form onSubmit = {props.onSubmitTrip}>
       <div className = "tab-content">
-
         <div id = "departure" className = "tab-pane fade in active">
-          <form className = "form-horizontal" style = {styles.space}>
+          <form className = "form-horizontal" style = {styles.space} onSubmit = {props.onSubmitTrip}>
             <div className = "form-group">
               <div className = "col-xs-10">
               <p className = "form-control-static">{props.origin}</p>
-              <p className = "form-control-static" style = {styles.gapp}>VK123 Vietjet Airlines BKK 06.00 - HKT 08.00
-              <button type = "button" className = "btn btn-link">Change</button></p>
+
+              <select onChange = {props.onUpdateDeparture}>
+                  <option value = "transportation" disabled = "true">Transportation</option>
+                  <option value = "bus">Bus</option>
+                  <option value = "train">Train</option>
+                  <option value = "plane">Plane</option>
+               </select>
+
+
               <p className = "form-control-static">{props.destination}</p>
+
+              <div className = "col-xs-3 col-xs-offset-3" style = {styles.space}>
+                <button type = "submit" className = "button form-control">
+                 Next
+                 </button>
+                </div>
+
               </div>
             </div>
           </form>
@@ -50,15 +59,9 @@ function StepTwo (props) {
           </form>
         </div>
 
-        <div className = "col-xs-3 col-xs-offset-3" style = {styles.space}>
-          <button type = "submit" className = "button form-control">
-           Next
-           </button>
-          </div>
+
 
       </div>
-      </form>
-
       </div>
       </div>
 
@@ -77,7 +80,7 @@ StepTwo.PropTypes = {
   vehicles: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  tst: PropTypes.array.isRequired
+  transportation: PropTypes.array.isRequired
 }
 
 export default StepTwo
