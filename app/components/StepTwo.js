@@ -33,6 +33,12 @@ function StepTwo (props) {
                </select>
 
 
+
+               {props.transportation.map(function (
+                 i) { return i.trainnumber })}
+
+
+
               <p className = "form-control-static">{props.destination}</p>
 
               <div className = "col-xs-3 col-xs-offset-3" style = {styles.space}>
@@ -80,7 +86,7 @@ StepTwo.PropTypes = {
   vehicles: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  transportation: PropTypes.array.isRequired
+  transportation: PropTypes.object.isRequired
 }
 
 export default StepTwo
