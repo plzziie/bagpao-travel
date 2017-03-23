@@ -4,7 +4,7 @@ import styles from '../styles'
 
 function EditProfile (props) {
   return(
-    <div>
+    <div className="container-fluid">
     	<div className = "jumbotron col-xs-4 col-xs-offset-1 text-center">
         	<div><img className = "img-circle" src = "app/img/pic.jpg" alt = "profile" width = "200" height = "200"/></div>
         	<div><h4>Change</h4></div>
