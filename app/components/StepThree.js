@@ -35,25 +35,19 @@ function StepThree (props) {
       <div id = "place" className = "tab-pane fade in active">
 
               <div className="row between">
-                <div className="col-md-9 col-xs-8">
+                <div className="col-md-9 col-xs-8" onChange = {props.onUpdateSearch}>
                 <input type = "text"  className = "form-control " placeholder = "search"/>
                 </div>
                 <div className="col-md-3 col-xs-4">
                 <button type = "submit" className = "buttonplan form-control">search</button>
                 </div>
               </div>
-              <div className="dragbox"><div className="col-md-3">
+              {props.fromsearch === null ? <div className="dragbox"><div className="col-md-3">
                 <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
                 <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
               </div>
-              <div className="dragbox"><div className="col-md-3">
-                <img className = "img-circle" src = "app/img/samui.jpg" alt = "samui"  width="50" height="50"/></div>
-                <div className="col-md-8"><h5>Samui Island</h5> <h6>Surat Thani</h6></div>
-              </div>
-              <div className="dragbox"><div className="col-md-3">
-                <img className = "img-circle" src = "app/img/places/000031.jpg" alt = "watpho"  width="50" height="50"/></div>
-                <div className="col-md-8"><h5>Wat Pho</h5> <h6>Bangkok</h6></div>
-              </div>
+              : console.log(props.fromsearch)}
+
 
             </div>
 
@@ -111,17 +105,11 @@ function StepThree (props) {
 }
 
 StepThree.PropTypes = {
-  onSubmitTrip: PropTypes.func.isRequired,
-  onUpdateDeparture: PropTypes.func.isRequired,
-  onUpdateReturn: PropTypes.func.isRequired,
-  depart: PropTypes.string.isRequired,
-  arrive: PropTypes.string.isRequired,
-  origin: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
-  daytrip: PropTypes.string.isRequired,
-  vehicles: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
+
+  onUpdateSearch: PropTypes.func.isRequired,
+  fromsearch: PropTypes.string.isRequired,
+  search: PropTypes.string.isRequired
+
 }
 
 export default StepThree

@@ -9,27 +9,35 @@ class StepTwoContainer extends Component {
     super()
     this.state = {
       numstep: 2,
-      vehicles: '',
-      id: '',
+      vehiclesD: '',
+      vehiclesR: '',
       depart: '',
-      arrive: '',
+      return: '',
       price: ''
     }
   }
-  componentDidMount(){
+  componentWillMount(){
     this.setState({
       origin: this.props.location.state.origin,
       destination: this.props.location.state.destination,
       daytrip: this.props.location.state.daytrip,
       transportation: this.props.location.state.transportation
     })
-
-    this.state.transportation.map(function(t,k){
-      console.log(t)
-    })
   }
 
-  handleUpdateDeparture(event) {
+  handleUpdateVehiclesD(event) {
+    this.setState({
+      vehiclesD: event.target.value
+    });
+  }
+
+  handleUpdateVehiclesR(event) {
+    this.setState({
+      vehiclesR: event.target.value
+    });
+  }
+
+  handleUpdateDepart(event) {
     this.setState({
       depart: event.target.value
     });
@@ -37,7 +45,7 @@ class StepTwoContainer extends Component {
 
   handleUpdateReturn(event) {
     this.setState({
-      arrive: event.target.value
+      return: event.target.value
     });
   }
 
@@ -47,14 +55,13 @@ class StepTwoContainer extends Component {
       pathname: '/stepthree',
       state: {
         daytrip: this.state.daytrip,
-        vehicles: this.state.vehicles,
-        id: this.state.id,
+        vehiclesD: this.state.vehiclesD,
+        vehiclesR: this.state.vehiclesR,
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
-        arrive: this.state.arrive,
-        price: this.state.price,
-        transportation: this.state.transportation
+        return: this.state.return,
+        price: this.state.price
       }
     })
   }
@@ -63,14 +70,18 @@ class StepTwoContainer extends Component {
     return(
      <StepTwo
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
-     onUpdateDeparture = {(event) => this.handleUpdateDeparture(event)}
+     onUpdateVehicles = {(event) => this.handleUpdateVehicles(event)}
+     onUpdateDepart = {(event) => this.handleUpdateDepart(event)}
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
+     onUpdateVehiclesD = {(event) => this.handleUpdateVehiclesD(event)}
+     onUpdateVehiclesR = {(event) => this.handleUpdateVehiclesR(event)}
      depart = {this.state.depart}
-     arrive = {this.state.arrive}
+     return = {this.state.return}
      origin = {this.state.origin}
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
-     vehicles = {this.state.vehicles}
+     vehiclesD = {this.state.vehiclesD}
+     vehiclesR = {this.state.vehiclesR}
      id = {this.state.id}
      price = {this.state.price}
      transportation = {this.state.transportation}

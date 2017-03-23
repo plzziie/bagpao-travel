@@ -8,60 +8,51 @@ class StepThreeContainer extends Component {
   constructor () {
     super()
     this.state = {
-      vehicles: '',
-      id: '',
-      origin: '',
-      depart: '',
-      destination: '',
-      arrive: '',
-      price: ''
+      numstep: 3,
+      search: '',
+      fromsearch: ''
     }
   }
 
-  /*componentDidMount() {
-    fetch(`http://localhost:1200/transportation`, {
+  componentWillMount() {
+    this.setState({
+      origin: this.props.location.state.origin,
+      destination: this.props.location.state.destination,
+      daytrip: this.props.location.state.daytrip,
+      transportation: this.props.location.state.transportation,
+      vehiclesD: this.props.location.state.vehiclesD,
+      vehiclesR: this.props.location.state.vehiclesR,
+      depart: this.props.location.state.depart,
+      return: this.props.location.state.return,
+      price: this.props.location.state.price
+    })
+  }
+
+  handleUpdateSearch(event) {
+    this.setState({
+      search: event.target.value
+    });
+
+    fetch(`http://localhost:1200/planning`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        origin: this.props.location.state.origin,
-        destination: this.props.location.state.destination
+        numstep: this.state.numstep,
+        search: this.state.search
         })
-    }).then(function (response) {
-      return response.text()
-    }).then(function (body) {
-      var myObj = JSON.parse(body);
-      if (myObj.message === undefined) {
-        for(var i = 0; i < myObj.length; i++) {
+      }).then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        var myObj = JSON.parse(body);
+        if (myObj.message === undefined) {
           this.setState({
-            vehicles: myObj[i].vehicles,
-            id: myObj[i].id,
-            depart: myObj[i].depart,
-            arrive: myObj[i].arrive,
-            price: myObj[i].price,
-            origin: myObj[i].origin,
-            destination: myObj[i].destination,
-            daytrip: this.props.location.state.daytrip
+              fromsearch: myObj
           });
-        }
       }
     }.bind(this))
-          var result_obj = {
-            vehicles: this.state.vehicles,
-            id: this.state.id,
-            origin: this.state.origin,
-            depart: this.state.depart,
-            destination: this.state.destination,
-            arrive: this.state.arrive,
-            price: this.state.price
-          }
-          arrr[i] = result_obj;
-        }
-        console.log(arrr);
-      }
-    }.bind(this))
-  }*/
+  }
 
   handleUpdateDeparture(event) {
     this.setState({
@@ -98,6 +89,7 @@ class StepThreeContainer extends Component {
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
      onUpdateDeparture = {(event) => this.handleUpdateDeparture(event)}
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
+     onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
      depart = {this.state.depart}
      arrive = {this.state.arrive}
      origin = {this.state.origin}
@@ -106,6 +98,7 @@ class StepThreeContainer extends Component {
      vehicles = {this.state.vehicles}
      id = {this.state.id}
      price = {this.state.price}
+     fromsearch = {this.state.fromsearch}
      />
     )
   }
