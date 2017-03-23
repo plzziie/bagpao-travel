@@ -23,6 +23,10 @@ class StepTwoContainer extends Component {
       daytrip: this.props.location.state.daytrip,
       transportation: this.props.location.state.transportation
     })
+
+    this.state.transportation.map(function(t,k){
+      console.log(t)
+    })
   }
 
   handleUpdateDeparture(event) {
