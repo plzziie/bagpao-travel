@@ -22,7 +22,6 @@ class StepFourContainer extends Component {
       vehiclesR: this.props.location.state.vehiclesR,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return,
-      price: this.props.location.state.price,
       placess: this.props.location.state.placess
     })
   }
@@ -36,7 +35,7 @@ class StepFourContainer extends Component {
      onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
      onUpdatePlaces = {(event) => this.handleUpdatePlaces(event)}
      depart = {this.state.depart}
-     arrive = {this.state.arrive}
+     return = {this.state.return}
      origin = {this.state.origin}
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}

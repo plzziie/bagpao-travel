@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepThree from '../components/StepThree'
+import StepThree from '../components/StepThreeee'
 
 class StepThreeContainer extends Component {
 
@@ -25,8 +25,7 @@ class StepThreeContainer extends Component {
       vehiclesD: this.props.location.state.vehiclesD,
       vehiclesR: this.props.location.state.vehiclesR,
       depart: this.props.location.state.depart,
-      return: this.props.location.state.return,
-      price: this.props.location.state.price
+      return: this.props.location.state.return
     })
   }
 
@@ -46,7 +45,7 @@ class StepThreeContainer extends Component {
         var myObj = JSON.parse(body);
         if (myObj.message === undefined) {
           this.setState({
-            places : myObj
+            places: myObj
           });
       }
   }.bind(this))
@@ -62,7 +61,7 @@ class StepThreeContainer extends Component {
     const value = event.target.type === 'checkbox' ? event.target.value : null;
     var placess = this.state.placess
     this.setState({
-      [placess] : value
+      placess : value
     });
   }
 
@@ -72,13 +71,12 @@ class StepThreeContainer extends Component {
       pathname: '/stepfour',
       state: {
         daytrip: this.state.daytrip,
-        vehicles: this.state.vehicles,
-        id: this.state.id,
+        vehiclesD: this.state.vehiclesD,
+        vehiclesR: this.state.vehiclesR,
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
-        arrive: this.state.arrive,
-        price: this.state.price,
+        return: this.state.return,
         placess: this.state.placess
       }
     })
@@ -98,8 +96,6 @@ class StepThreeContainer extends Component {
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
      vehicles = {this.state.vehicles}
-     id = {this.state.id}
-     price = {this.state.price}
      fromsearch = {this.state.fromsearch}
      search = {this.state.search}
      places = {this.state.places}

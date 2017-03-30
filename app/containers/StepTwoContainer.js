@@ -12,8 +12,7 @@ class StepTwoContainer extends Component {
       vehiclesD: '',
       vehiclesR: '',
       depart: '',
-      return: '',
-      price: ''
+      return: ''
     }
   }
   componentWillMount(){
@@ -60,8 +59,7 @@ class StepTwoContainer extends Component {
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
-        return: this.state.return,
-        price: this.state.price
+        return: this.state.return
       }
     })
   }
@@ -82,8 +80,6 @@ class StepTwoContainer extends Component {
      daytrip = {this.state.daytrip}
      vehiclesD = {this.state.vehiclesD}
      vehiclesR = {this.state.vehiclesR}
-     id = {this.state.id}
-     price = {this.state.price}
      transportation = {this.state.transportation}
      />
     )
