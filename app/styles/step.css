@@ -7,7 +7,6 @@
 .step-bottom {
   margin-top: 20px;
   margin-bottom: 40px;
-
 }
 
 .button {
@@ -136,3 +135,19 @@ div.scrollmenu {
   background-color: grey;
   list-style: none;
 }
+
+/*step 4*/
+ .step4_header {
+  font-family: monospace;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.overall {
+  width: 65%;
+  background-color: #eff0f1; /*light grey*/
+  height: auto;
+  min-height: 300px;
+  margin: auto;
+ }
