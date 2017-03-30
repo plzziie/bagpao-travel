@@ -14,12 +14,13 @@ function StepTwo (props) {
           <li><a href = "stepfour">Step 4</a></li>
         </ul>
 
-      <div className = "col-xs-6 col-xs-offset-3" style = {styles.space}>
-        <form className = "form-horizontal" style = {styles.space} onSubmit = {props.onSubmitTrip}>
 
-            <div className = "form-group">
+        <form onSubmit = {props.onSubmitTrip}>
+          <div className="container">
+
+            <div className = "col-md-5 col-sm-offset-0 col-sm-6">
             <h2>Departure</h2>
-              <div className = "col-xs-10">
+              <div className = "col-xs-10 ">
               <p className = "form-control-static">{props.origin}</p>
               <select onChange = {props.onUpdateVehiclesD}>
                   <option value = "null">Transportation</option>
@@ -37,7 +38,7 @@ function StepTwo (props) {
               </div>
             </div>
 
-            <div className = "form-group">
+            <div className = "col-md-5 col-sm-offset-0 col-sm-6">
             <h2>Return</h2>
               <div className = "col-xs-10">
               <p className = "form-control-static">{props.destination}</p>
@@ -57,14 +58,15 @@ function StepTwo (props) {
               </div>
             </div>
 
-            <div className = "col-xs-3 col-xs-offset-3" style = {styles.space}>
-              <button type = "submit" className = "button form-control">
+            <div className = "col-xs-4 col-xs-offset-4" style = {styles.space}>
+              <button type = "submit" className = "step-bottom button form-control">
                Next
                </button>
             </div>
+          </div>
           </form>
         </div>
-        </div>
+
     )
 }
 
