@@ -1,16 +1,18 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepThree from '../components/StepThree'
+import StepThree from '../components/StepThreeee'
 
 class StepThreeContainer extends Component {
 
   constructor () {
     super()
     this.state = {
-      numstep: 3,
+      numstep: 2,
       search: '',
-      fromsearch: ''
+      fromsearch: '',
+      places: [],
+      placess: []
     }
   }
 
@@ -28,11 +30,7 @@ class StepThreeContainer extends Component {
     })
   }
 
-  handleUpdateSearch(event) {
-    this.setState({
-      search: event.target.value
-    });
-
+  componentDidMount() {
     fetch(`http://localhost:1200/planning`, {
         method: 'POST',
         headers:{
@@ -40,7 +38,7 @@ class StepThreeContainer extends Component {
       },
       body: JSON.stringify({
         numstep: this.state.numstep,
-        search: this.state.search
+        destination: this.state.destination
         })
       }).then(function (response) {
         return response.text()
@@ -48,26 +46,28 @@ class StepThreeContainer extends Component {
         var myObj = JSON.parse(body);
         if (myObj.message === undefined) {
           this.setState({
-              fromsearch: myObj
+            places : myObj
           });
       }
-    }.bind(this))
-  }
+  }.bind(this))
+}
 
-  handleUpdateDeparture(event) {
+  handleUpdateSearch(event) {
     this.setState({
-      departure: event.target.value
+      search: event.target.value
     });
   }
 
-  handleUpdateReturn(event) {
+  handleUpdatePlaces(event) {
+    const value = event.target.type === 'checkbox' ? event.target.value : null;
+    var placess = this.state.placess
     this.setState({
-      retrn: event.target.value
+      [placess] : value
     });
   }
 
   handleSubmitTrip(event) {
-    event.preventDefault();
+    event.preventDefault()
     this.context.router.push({
       pathname: '/stepfour',
       state: {
@@ -78,7 +78,8 @@ class StepThreeContainer extends Component {
         depart: this.state.depart,
         destination: this.state.destination,
         arrive: this.state.arrive,
-        price: this.state.price
+        price: this.state.price,
+        placess: this.state.placess
       }
     })
   }
@@ -90,6 +91,7 @@ class StepThreeContainer extends Component {
      onUpdateDeparture = {(event) => this.handleUpdateDeparture(event)}
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
      onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
+     onUpdatePlaces = {(event) => this.handleUpdatePlaces(event)}
      depart = {this.state.depart}
      arrive = {this.state.arrive}
      origin = {this.state.origin}
@@ -99,6 +101,9 @@ class StepThreeContainer extends Component {
      id = {this.state.id}
      price = {this.state.price}
      fromsearch = {this.state.fromsearch}
+     search = {this.state.search}
+     places = {this.state.places}
+     placess = {this.state.placess}
      />
     )
   }

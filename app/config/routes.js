@@ -22,8 +22,8 @@ import PlacesPop from '../components/PlacesPop'
 import TripsRecent from '../components/TripsRecent'
 import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
-import StepThree from '../components/StepThree'
-import StepFour from '../components/StepFour'
+import StepThree from '../containers/StepThreeContainer'
+import StepFour from '../containers/StepFourContainer'
 
 var routes = (
   <Router history = {browserHistory}>
