@@ -24,6 +24,7 @@ import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
 import StepThree from '../containers/StepThreeContainer'
 import StepFour from '../containers/StepFourContainer'
+import Step from '../components/test'
 
 var routes = (
   <Router history = {browserHistory}>
@@ -46,6 +47,7 @@ var routes = (
       <Route path = 'steptwo' component = {StepTwo}/>
       <Route path = 'stepthree' component = {StepThree}/>
       <Route path = 'stepfour' component = {StepFour}/>
+      <Route path = 'step' component = {Step}/>
     </Route>
   </Router>
 );

@@ -12,11 +12,49 @@ class StepThreeContainer extends Component {
       search: '',
       fromsearch: '',
       places: [],
-      placess: []
+      placess: [],
+      data: ''
     }
   }
 
-  componentWillMount() {
+  generateId () {
+    Math.floor(Math.random()*90000) + 10000;
+  }
+
+  handleNodeRemoval(nodeId) {
+    var data = this.state.data;
+    data = data.filter(function (el) {
+      return el.id !== nodeId;
+    });
+    this.setState({
+      data: this.state.data
+    })
+  }
+
+  handleSubmit(task) {
+		var data = this.state.data;
+		var id = this.generateId().toString();
+		var complete = 'false';
+		data = data.concat([{id, task, complete}]);
+		this.setState({
+      data: this.state.data
+    })
+	}
+
+	handleToggleComplete(nodeId) {
+		var data = this.state.data;
+		for (var i in data) {
+			if (data[i].id == nodeId) {
+				data[i].complete = data[i].complete === 'true' ? 'false' : 'true';
+				break;
+			}
+		}
+		this.setState({
+      data: this.state.data
+    })
+	}
+
+/*  componentWillMount() {
     this.setState({
       origin: this.props.location.state.origin,
       destination: this.props.location.state.destination,
@@ -80,7 +118,7 @@ class StepThreeContainer extends Component {
         placess: this.state.placess
       }
     })
-  }
+  }*/
 
   render() {
     return(
