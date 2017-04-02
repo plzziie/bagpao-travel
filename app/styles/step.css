@@ -49,6 +49,13 @@
   text-align: center;
   margin: 3px;
 }
+
+.todo {
+  display: inline-block;
+  margin: 10px;
+  height: 400px;
+
+}
 .planbox .day{
   font-family: monospace;
   font-size: 16px;

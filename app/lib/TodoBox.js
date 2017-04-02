@@ -31,23 +31,13 @@ var TodoBox = React.createClass({
 		data = data.concat([{id, task, complete}]);
 		this.setState({data});
 	},
-	handleToggleComplete: function (nodeId) {
-		var data = this.state.data;
-		for (var i in data) {
-			if (data[i].id == nodeId) {
-				data[i].complete = data[i].complete === 'true' ? 'false' : 'true';
-				break;
-			}
-		}
-		this.setState({data});
-		return;
-	},
+
 	render: function() {
 		return (
-			<div className="well">
-				<h1 className="vert-offset-top-0">To do:</h1>
-				<TodoList data={this.state.data} removeNode={this.handleNodeRemoval} toggleComplete={this.handleToggleComplete} />
+			<div>
 				<TodoForm onTaskSubmit={this.handleSubmit} />
+				<TodoList data={this.state.data} removeNode={this.handleNodeRemoval} />
+
 			</div>
 		);
 	}
@@ -58,15 +48,12 @@ var TodoList = React.createClass({
 		this.props.removeNode(nodeId);
 		return;
 	},
-	toggleComplete: function (nodeId) {
-		this.props.toggleComplete(nodeId);
-		return;
-	},
+
 	render: function() {
 		var listNodes = this.props.data.map(function (listItem) {
 			return (
 				<TodoItem key={listItem.id} nodeId={listItem.id} task={listItem.task} complete={listItem.complete}
-				removeNode={this.removeNode} toggleComplete={this.toggleComplete} />
+				removeNode={this.removeNode}  />
 			);
 		},this);
 		return (
@@ -100,7 +87,7 @@ var TodoItem = React.createClass({
 			<li className={classes}>
 				{this.props.task}
 				<div className="pull-right" role="group">
-					<button type="button" className="btn btn-xs btn-success img-circle" onClick={this.toggleComplete}>&#x2713;</button> <button type="button" className="btn btn-xs btn-danger img-circle" onClick={this.removeNode}>&#xff38;</button>
+					<button type="button" className="btn btn-xs btn-danger img-circle" onClick={this.removeNode}>&#xff38;</button>
 				</div>
 			</li>
 		);
@@ -120,20 +107,17 @@ var TodoForm = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="commentForm vert-offset-top-2">
+			<div className="commentForm ">
 				<hr />
 				<div className="clearfix">
 					<form className="todoForm form-horizontal" onSubmit={this.doSubmit}>
 						<div className="form-group">
-							<label htmlFor="task" className="col-md-2 control-label">Task</label>
-							<div className="col-md-10">
-								<input type="text" id="task" ref="task" className="form-control" placeholder="What do you need to do?" />
+							<div className="col-md-9">
+								<input type="text" id="task" ref="task" className="form-control" placeholder="Where you want to go?" />
 							</div>
+							<div className="col-md-1 text-right">
+								<input type="submit" value="add" className="btn btn-primary" />
 						</div>
-						<div className="row">
-							<div className="col-md-10 col-md-offset-2 text-right">
-								<input type="submit" value="Save Item" className="btn btn-primary" />
-							</div>
 						</div>
 					</form>
 				</div>

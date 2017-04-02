@@ -6,11 +6,11 @@ import Reviews from '../components/Reviews'
 
 function DetailsForm (props) {
   return(
-    <div>
+    <div className="container-fluid">
     	<div className = "jumbotron col-xs-12 text-center">
         	<h1> Trip Name </h1>
         </div>
-        <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}> 
+        <div className = "jumbotron col-xs-6 col-xs-offset-3 text-center" style = {styles.transparentBg}>
           <ul className = "nav nav-tabs nav-justified">
           		<li className = "active"><a data-toggle = "tab" href = "#details"><h3>Details</h3></a></li>
           		<li><a data-toggle = "tab" href = "#reviews"><h3>Reviews</h3></a></li>
