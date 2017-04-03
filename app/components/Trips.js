@@ -48,28 +48,17 @@ function Trips (props) {
         </div>
 
       <div className="container-fluid footergap">
-      <div className = "col-md-offset-1 col-md-10 transparentBg" >
+      <div className = "col-md-offset-1 col-md-10 transparentBg" id = "test">
 
-      <div className = "row tripgap" id="test">
-        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-          <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width="376" height="251"/>
-          <div className="bottomleft1">Chiang Dao</div>
-          <div className="box"></div>
-          <div className="bottomleft2">by nokky</div>
-        </div>
-        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-          <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway"  width="376" height="251"/>
-          <div className="bottomleft1">Phuket Get Away</div>
-          <div className="box"></div>
-          <div className="bottomleft2">by daojai</div>
-        </div>
-        <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-          <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour"  width="376" height="251"/>
-          <div className="bottomleft1">One Day Tour</div>
-          <div className="box"></div>
-          <div className="bottomleft2">by nanon</div>
-        </div>
-      </div>
+      {props.trips.map((val, index) => {
+           return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+             <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
+             <div className="bottomleft1">{val.name}</div>
+             <div className="box"></div>
+             <div className="bottomleft2">by {val.creator}</div>
+           </div>
+      })}
+
     </div>
   </div>
 </div>
@@ -81,9 +70,7 @@ function Trips (props) {
   onSubmitUser: PropTypes.func.isRequired,
   onUpdateUser: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  message: PropTypes.array.isRequired,
-  creator: PropTypes.array.isRequired
+  trips: PropTypes.object.isRequired
 }
 
 export default Trips

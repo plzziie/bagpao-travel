@@ -8,8 +8,7 @@ class TripsContainer extends Component {
     super()
     this.state = {
       name: '',
-      message: [],
-      creator: []
+      trips: []
     }
   }
 
@@ -30,34 +29,18 @@ class TripsContainer extends Component {
         name: this.state.name
         })
     })
-
     .then(function (response) {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      if(myObj.message === 'cannot found this trip') {
+      if (myObj.message == 'cannot found this trip') {
         document.getElementById('test').innerHTML = myObj.message;
       }
       else {
-        var arrr = []
-        var tname = ''
-        var by = ''
+        this.setState({
+            trips: myObj
+        })
 
-        for(var i = 0; i < myObj.length; i++) {
-          this.setState({
-            message: myObj[i].message,
-            tname: myObj[i].name,
-            creator: myObj[i].by
-          });
-          var result_obj = {
-            tname: this.state.tname,
-            by : this.state.creator
-          }
-          arrr[i] = result_obj;
-        }
-        console.log(arrr);
-        document.getElementById('test').innerHTML = arrr[0].tname + '&nbsp; by &nbsp;' + arrr[0].by + '<br>' +
-        arrr[1].tname + '&nbsp; by &nbsp;' + arrr[1].by + '<br>' + arrr[2].tname + '&nbsp; by &nbsp;' + arrr[2].by + '<br>';
       }
     }.bind(this))
   }
@@ -70,8 +53,7 @@ class TripsContainer extends Component {
       onUpdateUser={(event) => this.handleUpdateUser(event)}
       header = {this.props.route.header}
       name = {this.state.name}
-      message = {this.state.message}
-      creator = {this.state.creator}
+      trips = {this.state.trips}
       />
     )
   }
@@ -81,4 +63,4 @@ TripsContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default TripsContainer;
+export default TripsContainer

@@ -34,7 +34,6 @@ function StepThree (props) {
               <h3>Day 4</h3>
             <TodoBox/>
             </div>
-
           </div>
 
           <div className="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4 step-bottom " >
