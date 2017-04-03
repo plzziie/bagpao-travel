@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepThree from '../components/StepThree'
+import StepThree from '../components/StepThreeee'
 
 class StepThreeContainer extends Component {
 

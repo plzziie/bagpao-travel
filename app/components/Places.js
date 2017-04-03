@@ -6,6 +6,7 @@ import style from '../styles/trips.css'
 import sty from '../styles/places.css'
 
 function Places (props) {
+  console.log(props);
   return(
     <div>
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
@@ -49,37 +50,20 @@ function Places (props) {
         </div>
 
       <div className="container-fluid footergap">
-    <div className = "col-md-offset-1 col-md-10 transparentBg" >
+    <div className = "col-md-offset-1 col-md-10 transparentBg" id = "test">
 
-
-    <a href=""><div className="photoo">
-      <img src="app/img/places/HKM_9050.jpg"/>
-      <img src="app/img/places/000027.jpg"/>
-      <img src="app/img/places/000030.jpg"/>
-      <div className="text national">National Park</div>
-  </div></a>
-
-    <a href=""><div className="photoo">
-      <img src="app/img/places/000008.jpg"/>
-      <img src="app/img/places/000018.jpg"/>
-      <img src="app/img/places/000031.jpg"/>
-      <div className="text temple">Temple</div>
-  </div></a>
-
-    <a href=""><div className="photoo">
-      <img src="app/img/places/HKM_0504.jpg"/>
-      <img src="app/img/places/HKM_0353.jpg"/>
-      <img src="app/img/places/000015.jpg"/>
-      <div className="text beach">Beach</div>
-  </div></a>
-
-
-
-
+    {props.places.map((val, index) => {
+         return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+           <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+           <div className="bottomleft1">{val.name[0]}</div>
+           <div className="box"></div>
+           <div className="bottomleft2">{val.city[0]}</div>
+         </div>
+    })}
 
     </div>
   </div>
-      </div>
+  </div>
     )
 }
 
