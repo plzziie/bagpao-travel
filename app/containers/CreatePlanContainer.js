@@ -8,9 +8,11 @@ class CreatePlanContainer extends Component {
   constructor () {
     super()
     this.state = {
+      numstep: 1,
       origin: '',
       destination: '',
-      daytrip: ''
+      daytrip: '',
+      transportation: []
     }
   }
 
@@ -34,14 +36,35 @@ class CreatePlanContainer extends Component {
 
   handleSubmitTrip(event) {
     event.preventDefault();
-    this.context.router.push({
-      pathname: '/steptwo',
-      state: {
+    fetch(`http://localhost:1200/planning`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         origin: this.state.origin,
         destination: this.state.destination,
-        daytrip: this.state.daytrip
+        numstep: this.state.numstep
+        })
+      }).then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        var myObj = JSON.parse(body);
+        if (myObj.message === undefined) {
+          this.setState({
+              transportation: myObj
+          });
+          this.context.router.push({
+            pathname: '/steptwo',
+            state: {
+              origin: this.state.origin,
+              destination: this.state.destination,
+              daytrip: this.state.daytrip,
+              transportation: this.state.transportation
+          }
+        })
       }
-    })
+    }.bind(this))
   }
 
   render() {
@@ -54,6 +77,7 @@ class CreatePlanContainer extends Component {
      origin = {this.state.origin}
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
+     transportation = {this.state.transportation}
      />
     )
   }
