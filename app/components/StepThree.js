@@ -22,6 +22,7 @@ function StepThree (props) {
               <h3>Day 1</h3>
             <TodoBox/>
             </div>
+            
             <div className="todo">
               <h3>Day 2</h3>
             <TodoBox/>
