@@ -2,42 +2,19 @@ import React, {Component} from 'react'
 import ReactRouter from 'react-router'
 import styles from '../styles'
 import style from '../admin/admin.css'
-
+import Admin_navbar from '../admin/Admin_navbar'
+import {PropTypes} from 'react'
 
 class Admin extends Component {
   render() {
     return (
       <div className="container-fluid">
-           <ul className="nav nav-pills nav-stacked">
-               <li className="active">
-                   <a href="#">
-                       Transportation
-                   </a>
-               </li>
-               <li>
-                   <a href="#">Dashboard</a>
-               </li>
-               <li>
-                   <a href="#">Shortcuts</a>
-               </li>
-               <li>
-                   <a href="#">Overview</a>
-               </li>
-               <li>
-                   <a href="#">Events</a>
-               </li>
-               <li>
-                   <a href="#">About</a>
-               </li>
-               <li>
-                   <a href="#">Services</a>
-               </li>
-               <li>
-                   <a href="#">Contact</a>
-               </li>
-           </ul>
-
+        <h4>Admin</h4>
+        <div className=" sidebar">
+        <Admin_navbar/>
+      </div>
            <div className="admin_content">
+             {this.props.children}
            </div>
        </div>
 
@@ -64,5 +41,6 @@ class Admin extends Component {
     )
   }
 }
+
 
 export default Admin

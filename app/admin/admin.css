@@ -1,9 +1,37 @@
-.nav-stacked {
+.sidebar {
   width: 20%;
   float: left;
+  background-color: #d3d3d3;
 }
 
 .admin_content {
-width: 70%;
+width: 45%;
 float: left;
+margin-left: 10px;
+}
+
+.searchgap {
+  margin-bottom: 15px;
+}
+.bar {
+  background-color: #5bc0de;
+  padding: 2px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+.underline {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.fontsize {
+  font-size: 15px;
+}
+.roundbutton {
+  border-radius: 20px;
+}
+.bartrans {
+  width: 140%;
+  height: auto;
 }

@@ -25,6 +25,10 @@ import StepTwo from '../containers/StepTwoContainer'
 import StepThree from '../containers/StepThreeContainer'
 import StepFour from '../containers/StepFourContainer'
 import Admin from '../admin/Admin'
+import Admin_place from '../admin/Admin_place'
+import Admin_trip from '../admin/Admin_trip'
+import Admin_member from '../admin/Admin_member'
+import Admin_transport from '../admin/Admin_transport'
 
 var routes = (
   <Router history = {browserHistory}>
@@ -47,9 +51,16 @@ var routes = (
       <Route path = 'steptwo' component = {StepTwo}/>
       <Route path = 'stepthree' component = {StepThree}/>
       <Route path = 'stepfour' component = {StepFour}/>
-      <Route path = 'admin' component = {Admin}/>
     </Route>
+
+      <Route path = '/admin' component = {Admin}>
+        <Route path = '/admin_trip' component = {Admin_trip}/>
+        <Route path = '/admin_place' component = {Admin_place}/>
+        <Route path = '/admin_member' component = {Admin_member}/>
+        <Route path = '/admin_transport' component = {Admin_transport}/>
+      </Route>
   </Router>
+
 );
 
 export default routes
