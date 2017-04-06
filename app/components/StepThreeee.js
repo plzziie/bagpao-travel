@@ -38,21 +38,21 @@ var StepThreeee = React.createClass ({
           <div className="row scrollmenu">
             <div className="planbox" onDrop = {this.drop} onDragOver = {this.allowDrop}>
                  <div className="day">Day 1</div>
-                 <div className="dragbox"><div className="col-md-3">
+                 <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "ll"><div className="col-md-3">
                    <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="50" height="50"/></div>
                    <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                  </div>
             </div>
             <div className="planbox" onDrop = {this.drop} onDragOver = {this.allowDrop}>
                  <div className="day">Day 2</div>
-                 <div className="dragbox"><div className="col-md-3">
+                 <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "pp"><div className="col-md-3">
                    <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="50" height="50"/></div>
                    <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                  </div>
             </div>
             <div className="planbox" onDrop = {this.drop} onDragOver = {this.allowDrop}>
                  <div className="day">Day 3</div>
-                 <div className="dragbox"><div className="col-md-3">
+                 <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "mm"><div className="col-md-3">
                    <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="50" height="50"/></div>
                    <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                  </div>
@@ -80,7 +80,7 @@ var StepThreeee = React.createClass ({
                       </div>
                     </div>
 
-                    <ul className="searchbox">
+                    <ul className="searchbox" onDrop = {this.drop} onDragOver = {this.allowDrop}>
                       <li className="dragbox" draggable = "true" onDragStart = {this.drag} id = "dd">
                         <div className="col-md-3"><img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"
                         width="50" height="50"/></div><div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
