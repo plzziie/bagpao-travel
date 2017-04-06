@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepThree from '../components/StepThreeee'
+import StepThree from '../components/StepThree'
 
 class StepThreeContainer extends Component {
 
@@ -17,7 +17,22 @@ class StepThreeContainer extends Component {
     }
   }
 
-  generateId () {
+  allowDrop(event) {
+      event.preventDefault();
+  }
+
+  drag(event) {
+      event.dataTransfer.setData("text", event.target.id);
+  }
+
+  drop(event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData("text");
+      event.target.appendChild(document.getElementById(data));
+  }
+
+
+/*  generateId () {
     Math.floor(Math.random()*90000) + 10000;
   }
 
@@ -54,7 +69,7 @@ class StepThreeContainer extends Component {
     })
 	}
 
-/*  componentWillMount() {
+  componentWillMount() {
     this.setState({
       origin: this.props.location.state.origin,
       destination: this.props.location.state.destination,
@@ -128,6 +143,9 @@ class StepThreeContainer extends Component {
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
      onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
      onUpdatePlaces = {(event) => this.handleUpdatePlaces(event)}
+     allowDrop = {(event) => this.allowDrop(event)}
+     drop = {(event) => this.drop(event)}
+     drag = {(event) => this.drag(event)}
      depart = {this.state.depart}
      arrive = {this.state.arrive}
      origin = {this.state.origin}
@@ -136,8 +154,6 @@ class StepThreeContainer extends Component {
      vehicles = {this.state.vehicles}
      fromsearch = {this.state.fromsearch}
      search = {this.state.search}
-     places = {this.state.places}
-     placess = {this.state.placess}
      />
     )
   }

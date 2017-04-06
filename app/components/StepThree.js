@@ -15,35 +15,23 @@ function StepThree (props) {
           <li className="active"><a href = "/stepthree">Step 3</a></li>
           <li><a href = "stepfour">Step 4</a></li>
         </ul>
+
+
+        <h2>Drag and Drop</h2>
+        <p>Drag the image back and forth between the two div elements.</p>
+
+        <div style = {styles.dnd} onDrop = {props.drop} onDragOver = {props.allowDrop}>
+          <img src = "./app/img/chiangdao.jpg" draggable = "true" onDragStart = {props.drag} id = "drag1" width = "180" height = "90"/>
         </div>
-        <div className="container">
-          <div className="scrollmenu">
-            <div className="todo">
-              <h3>Day 1</h3>
-            <TodoBox/>
-            </div>
-            
-            <div className="todo">
-              <h3>Day 2</h3>
-            <TodoBox/>
-            </div>
-            <div className="todo">
-              <h3>Day 3</h3>
-            <TodoBox/>
-            </div>
-            <div className="todo">
-              <h3>Day 4</h3>
-            <TodoBox/>
-            </div>
-          </div>
+
+        <div style = {styles.dnd} onDrop = {props.drop} onDragOver = {props.allowDrop}></div>
 
           <div className="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4 step-bottom " >
               <button  type = "submit" className = "button form-control">
                  Next
               </button></div>
-        </div>
-
       </div>
+    </div>
 
 
     )
@@ -53,6 +41,9 @@ StepThree.PropTypes = {
   onSubmitTrip: PropTypes.func.isRequired,
   onUpdateDeparture: PropTypes.func.isRequired,
   onUpdateReturn: PropTypes.func.isRequired,
+  allowDrop: PropTypes.func.isRequired,
+  drop: PropTypes.func.isRequired,
+  drag: PropTypes.func.isRequired,
   depart: PropTypes.string.isRequired,
   arrive: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,

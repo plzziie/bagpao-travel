@@ -53,6 +53,15 @@ highlightedItem: {
 
 menu: {
 	border: 'solid 1px #ccc'
+},
+
+dnd: {
+  float: 'left',
+  width: '200px',
+  height: '100px',
+  margin: '10px',
+  padding: '5px',
+  border: '2px solid black'
 }
 
 };
