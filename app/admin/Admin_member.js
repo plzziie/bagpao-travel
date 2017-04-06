@@ -15,7 +15,7 @@ class Admin_member extends Component {
                   </div>
 
                     <button type="button" className="btn btn-info">Search</button>&nbsp;
-                    <button type="button" className="roundbutton btn btn-danger">+</button>
+                  
 
       </div>
 

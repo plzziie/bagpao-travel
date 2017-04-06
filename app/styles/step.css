@@ -129,8 +129,8 @@ div.scrollmenu {
   background-color: white;
   border-color: #F9F8F6;
   padding-top: 4px;
-  display: list-item;
   border-bottom: 1px solid #ddd;
+  text-decoration: none;
 }
 .dragbox:hover {
  cursor: move;

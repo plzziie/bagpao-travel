@@ -13,7 +13,8 @@ class Admin_place extends Component {
                   <div className="col-md-9">
                     <input  className = "form-control" placeholder = 'Place/City' type = 'text' />
                   </div>
-                    <button type="button" className="btn btn-info">Search</button>
+                    <button type="button" className="btn btn-info">Search</button>&nbsp;
+                    <button type="button" className="roundbutton btn btn-danger">+</button>
       </div>
 
                     <div  className="container-fluid bar">

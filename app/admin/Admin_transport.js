@@ -51,7 +51,7 @@ class Admin_transport extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td>Bus</td><td>Northen</td><td>Chiangmai</td><td>Chiangmai</td>
+                      <td>Train</td><td>Northen</td><td>Chiangmai</td><td>Chiangmai</td>
                       <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
                       <td>
                         <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
