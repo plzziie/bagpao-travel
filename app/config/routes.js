@@ -18,6 +18,7 @@ import MyTrip from '../components/MyTrip'
 import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
+import PlaceForm from '../components/PlaceForm'
 import PlacesPop from '../components/PlacesPop'
 import TripsRecent from '../components/TripsRecent'
 import StepOne from '../containers/StepOneContainer'
@@ -45,6 +46,7 @@ var routes = (
       <Route path = 'draft' component = {Draft}/>
       <Route path = 'favorite' component = {Favorite}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
+      <Route path = 'places-details' component = {PlaceForm}/>
       <Route path = 'placespop' component = {PlacesPop}/>
       <Route path = 'tripsrecent' component = {TripsRecent}/>
       <Route path = 'stepone' component = {StepOne}/>
