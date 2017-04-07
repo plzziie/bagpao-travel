@@ -42,7 +42,7 @@
   min-width: 200px;
   height: auto;
   min-height: 400px;
-  background-color: grey;
+  background-color: #eff0f1;
   margin: auto;
   display: inline-block;
   padding: 5px;
@@ -50,12 +50,6 @@
   margin: 3px;
 }
 
-.todo {
-  display: inline-block;
-  margin: 10px;
-  height: 400px;
-
-}
 .planbox .day{
   font-family: monospace;
   font-size: 16px;
@@ -152,9 +146,12 @@ div.scrollmenu {
 }
 
 .overall {
-  width: 65%;
-  background-color: #eff0f1; /*light grey*/
+  width: 75%;
+ /*light grey*/
   height: auto;
   min-height: 300px;
   margin: auto;
+ }
+ .right {
+   float: right;
  }

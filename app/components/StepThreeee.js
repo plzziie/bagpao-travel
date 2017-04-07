@@ -81,14 +81,14 @@ var StepThreeee = React.createClass ({
                     </div>
 
                     <ul className="searchbox" onDrop = {this.drop} onDragOver = {this.allowDrop}>
-                      <li className="dragbox" draggable = "true" onDragStart = {this.drag} id = "dd">
-                        <div className="col-md-3"><img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"
-                        width="50" height="50"/></div><div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
-                      </li>
-                      <li className="dragbox" draggable = "true" onDragStart = {this.drag} id = "gg">
-                        <div className="col-md-3"><img className = "img-circle" src = "app/img/chiangdao.jpg" alt = "doisuthep"
-                        width="50" height="50"/></div><div className="col-md-8"><h5>Chiangdao</h5> <h6>Chiangmai</h6></div>
-                      </li>
+                      <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "dd"><div className="col-md-3">
+                        <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="50" height="50"/></div>
+                        <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
+                      </div>
+                      <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "gg"><div className="col-md-3">
+                        <img className = "img-circle" src = "app/img/chiangdao.jpg" alt = "doisuthep" width="50" height="50"/></div>
+                        <div className="col-md-8"><h5>Chiangdao</h5> <h6>Chiangmai</h6></div>
+                      </div>
                     </ul>
                   </div>
 
@@ -124,7 +124,7 @@ var StepThreeee = React.createClass ({
                     </div>
                   </div>
 
-                  <ul className="searchbox">
+                <ul className="searchbox">
                     <li className="dragbox">
                       <div className="col-md-3"><img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"
                       width="50" height="50"/></div><div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>

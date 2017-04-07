@@ -33,7 +33,12 @@ function StepTwo (props) {
           <label className="radio-inline">
           <input type="radio" name="optradio"/>Public
           </label>
-          </div></div>
+          </div>
+          <div className="col-md-2">
+            <button type = "submit" className = "button form-control">dd</button>
+          </div>
+
+        </div>
 
           <div className="container step-bottom">
           <div className="overall">
