@@ -8,8 +8,59 @@ class TripsContainer extends Component {
     super()
     this.state = {
       name: '',
-      trips: []
+      trips: [],
+      show: [],
+      searching: false,
+      found: '',
+      err: '',
+      sort: true
     }
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:1200/show`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        do: "tp"
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            show: myObj
+        });
+      }
+    }.bind(this))
+  }
+
+  ChangeSort(event) {
+    fetch(`http://localhost:1200/show`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        do: event.target.value
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            show: myObj,
+            test: !this.state.test
+        });
+      }
+    }.bind(this))
+
   }
 
   handleUpdateUser(event) {
@@ -33,14 +84,19 @@ class TripsContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      if (myObj.message == 'cannot found this trip') {
-        document.getElementById('test').innerHTML = myObj.message;
+      if (myObj.message === undefined) {
+        this.setState({
+            trips: myObj,
+            searching: true,
+            found: true
+        })
       }
       else {
         this.setState({
-            trips: myObj
+            err: myObj.message,
+            searching: true,
+            found: false
         })
-
       }
     }.bind(this))
   }
@@ -51,9 +107,15 @@ class TripsContainer extends Component {
      <Trips
       onSubmitUser={(event) => this.handleSubmitUser(event)}
       onUpdateUser={(event) => this.handleUpdateUser(event)}
+      ChangeSort={(event) => this.ChangeSort(event)}
       header = {this.props.route.header}
       name = {this.state.name}
       trips = {this.state.trips}
+      show = {this.state.show}
+      searching = {this.state.searching}
+      found = {this.state.found}
+      err = {this.state.err}
+      sort = {this.state.sort}
       />
     )
   }

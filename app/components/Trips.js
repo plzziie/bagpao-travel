@@ -31,34 +31,42 @@ function Trips (props) {
         </div>
       </div>
 
-      <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
+
+        <div className = "jumbotron col-md-offset-1" style = {styles.transparentBg}>
         <div className = "title2 col-md-offset-0 col-sm-offset-0 col-xs-offset-1 col-md-3 col-sm-3 col-xs-3" >
-            <h2>Popular</h2>
+            {props.sort ? <h2>Popular</h2> : <h2>Recent</h2>}
         </div>
         <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
-          <div className = "dropdown">
-          <button className = "btn btn-default dropdown-toggle" type = "button" data-toggle = "dropdown">
-          <span className = "caret"></span></button>
-          <ul className = "dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li className = "active"><a href="/trips">Popular</a></li>
-            <li><a href="/tripsrecent">Recent</a></li>
-          </ul>
+        <select onChange = {props.ChangeSort}>
+          <option value = "tp">Popular</option>
+          <option value = "tr">Recent</option>
+        </select>
         </div>
         </div>
-        </div>
+
 
       <div className="container-fluid footergap">
-      <div className = "col-md-offset-1 col-md-10 transparentBg" id = "test">
+      <div className = "col-md-offset-1 col-md-10 transparentBg">
+      {props.searching ?
+        props.found ? props.trips.map((val, index) => {
+                        return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+                                  <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
+                                  <div className="bottomleft1">{val.name}</div>
+                                  <div className="box"></div>
+                                  <div className="bottomleft2">by {val.creator}</div>
+                                </div>
+                      })
+                    : <h4>{props.err}</h4>
 
-      {props.trips.map((val, index) => {
-           return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-             <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
-             <div className="bottomleft1">{val.name}</div>
-             <div className="box"></div>
-             <div className="bottomleft2">by {val.creator}</div>
-           </div>
-      })}
-
+      : props.show.map((val, index) => {
+       return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+         <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
+         <div className="bottomleft1">{val.name}</div>
+         <div className="box"></div>
+         <div className="bottomleft2">by {val.creator}</div>
+         </div>
+      })
+      }
     </div>
   </div>
 </div>
@@ -70,7 +78,13 @@ function Trips (props) {
   onSubmitUser: PropTypes.func.isRequired,
   onUpdateUser: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
-  trips: PropTypes.object.isRequired
+  trips: PropTypes.object.isRequired,
+  show: PropTypes.object.isRequired,
+  searching: PropTypes.bool.isRequired,
+  found: PropTypes.bool.isRequired,
+  err: PropTypes.string.isRequired,
+  do: PropTypes.string.isRequired,
+  test: PropTypes.bool.isRequired
 }
 
 export default Trips

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {PropTypes} from 'react'
 import ReactRouter from 'react-router'
 import {Link} from 'react-router'
 import CreatePlan from '../containers/CreatePlanContainer'
@@ -6,7 +7,8 @@ import styles from '../styles/home.css'
 import style from '../styles'
 
 function Home (props) {
-return(
+  console.log(props);
+    return(
   <div>
   <div className = "container-fluid homebg1">
     <CreatePlan/>
@@ -16,24 +18,16 @@ return(
     <div className = "col-md-offset-1 col-md-10 transparentBg">
       <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Popular Trips</h3>
         <div className = "row">
-          <a href="trips-details"><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-            <img className = "img" src = "app/img/chiangdao.jpg" alt = "Northnow" width="376" height="251"/>
-            <div className="bottomleft1">North Now</div>
-            <div className="box"></div>
-            <div className="bottomleft2">by nokky</div>
-          </div></a>
-          <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-            <img className = "img" src = "app/img/phuket.jpg" alt = "Phuketgetaway"  width="376" height="251"/>
-            <div className="bottomleft1">Phuket Get Away</div>
-            <div className="box"></div>
-            <div className="bottomleft2">by daojai</div>
-          </div>
-          <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-            <img className = "img" src="app/img/bkk.jpg" alt = "Onedaytour"  width="376" height="251"/>
-            <div className="bottomleft1">One Day Tour</div>
-            <div className="box"></div>
-            <div className="bottomleft2">by nanon</div>
-          </div>
+
+             {props.poptrip.map((val, index) => {
+                  return <a href="trips-details"><div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+                    <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
+                    <div className="bottomleft1">{val.name}</div>
+                    <div className="box"></div>
+                    <div className="bottomleft2">by {val.creator}</div>
+                  </div></a>
+             })}
+
         </div>
       </div>
     </div>
@@ -68,6 +62,10 @@ return(
 
       </div>
     )
+}
+
+Home.PropTypes = {
+  poptrip: PropTypes.object.isRequired
 }
 
 export default Home
