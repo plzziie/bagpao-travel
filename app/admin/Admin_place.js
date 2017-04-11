@@ -26,13 +26,14 @@ class Admin_place extends Component {
 
 
                     <h4><div className="col-md-6 fontsize">Doi Suthep–Pui National Park</div>
-                    <div className="col-md-4 fontsize">Chiangmai</div>
+                    <div className="col-md-3 fontsize">Chiangmai</div>
+                    <div className="col-md-3">
                     <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
                       <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                     </button></a>&nbsp;
                     <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
                       <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </button></h4>
+                    </button></div></h4>
                     <div className ="underline">
                   </div>
 

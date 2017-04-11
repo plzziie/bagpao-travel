@@ -54,10 +54,10 @@ function Places (props) {
 
     {props.places.map((val, index) => {
          return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-           <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+          <a href="places-details"> <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
            <div className="bottomleft1">{val.name[0]}</div>
            <div className="box"></div>
-           <div className="bottomleft2">{val.city[0]}</div>
+           <div className="bottomleft2">{val.city[0]}</div></a>
          </div>
     })}
 

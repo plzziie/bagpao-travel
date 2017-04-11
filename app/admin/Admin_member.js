@@ -15,7 +15,7 @@ class Admin_member extends Component {
                   </div>
 
                     <button type="button" className="btn btn-info">Search</button>&nbsp;
-                  
+
 
       </div>
 
@@ -27,7 +27,7 @@ class Admin_member extends Component {
 
 
                     <h4><div className="col-md-10 fontsize">arparpa</div>
-                    <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                    <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
                       <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                     </button></a>&nbsp;
                     <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
