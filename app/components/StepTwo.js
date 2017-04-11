@@ -57,7 +57,7 @@ function StepTwo (props) {
                       : null
                     : null
                   })}
-                  </select>
+              </select>
               <p className = "form-control-static">{props.origin}</p>
               </div>
             </div>
