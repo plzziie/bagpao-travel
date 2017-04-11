@@ -27,7 +27,7 @@ class Admin_place extends Component {
 
                     <h4><div className="col-md-6 fontsize">Doi Suthep–Pui National Park</div>
                     <div className="col-md-4 fontsize">Chiangmai</div>
-                    <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                    <a href="places-details" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
                       <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                     </button></a>&nbsp;
                     <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
@@ -35,7 +35,6 @@ class Admin_place extends Component {
                     </button></h4>
                     <div className ="underline">
                   </div>
-
 
 
       {/*   ------------------Pop Up----------------      */}

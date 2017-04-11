@@ -24,7 +24,7 @@ class Admin_trip extends Component {
 
 
               <h4 className="fontsize"><div className="col-md-10">Chiangmai Chalalala</div>&nbsp;&nbsp;
-              <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+              <a href="/trips-details" target="_blank"><button type="button" className="btn btn-xs btn-info">
                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
               </button></a>&nbsp;
               <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
@@ -34,7 +34,7 @@ class Admin_trip extends Component {
             </div>
 
             <h4 className="fontsize"><div className="col-md-10">Chiangmai Chalalala</div>&nbsp;&nbsp;
-            <a href="/"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+            <a href="/trips-details" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
               <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </button></a>&nbsp;
             <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">

@@ -16,3 +16,8 @@
 .dropdown {
   margin-top: 15px;
 }
+
+.select {
+  padding: 7px;
+  border-radius: 3px;
+}

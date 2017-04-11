@@ -74,10 +74,10 @@ class Admin_transport extends Component {
                         <div className="modal-content">
                           <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Delete Member</h4>
+                            <h4 className="modal-title">Delete Transport</h4>
                           </div>
                           <div className="modal-body">
-                            Are you sure you want to delete this member?
+                            Are you sure you want to delete this transportation?
                           </div>
                           <div className="modal-footer">
                             <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>

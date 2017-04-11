@@ -49,15 +49,14 @@
   text-align: center;
   margin: 3px;
 }
-.planboxleft{
-  width: 95%;
+.planboxright{
+  width: 99%;
   min-width: 200px;
   height: auto;
   min-height: 400px;
   background-color: #eff0f1;
   margin: auto;
   display: inline-block;
-  padding: 5px;
   text-align: center;
   margin: 3px;
 }
