@@ -61,7 +61,7 @@ function StepThree (props) {
                     </div>
 
 
-                    <div className="planboxleft" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                         {props.places.map((val, index) => {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
@@ -91,7 +91,7 @@ function StepThree (props) {
                       </div>
                     </div>
 
-                    <div className="planboxleft" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                         {props.places.map((val, index) => {
                           return (val.category == "restaurant")
                           ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
@@ -113,7 +113,7 @@ function StepThree (props) {
                       </div>
                     </div>
 
-                    <div className="planboxleft" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                         {props.places.map((val, index) => {
                           return (val.category == "accommodation")
                           ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
