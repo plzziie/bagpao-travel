@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import ReactDOM, {findDOMNode} from 'react-dom';
-import styles from '../styles'
 import style from '../styles/step.css'
+import styles from '../styles'
+
 
 var StepThreeee = React.createClass ({
 
@@ -84,7 +85,7 @@ var StepThreeee = React.createClass ({
                       </div>
                     </div>
 
-                    <div className="planboxleft" onDrop = {this.drop} onDragOver = {this.allowDrop}>
+                    <div className="planboxright" onDrop = {this.drop} onDragOver = {this.allowDrop}>
                          <div className="dragbox"  draggable = "true" onDragStart = {this.drag} id = "xx"><div className="col-md-3">
                            <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep" width="50" height="50"/></div>
                            <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>

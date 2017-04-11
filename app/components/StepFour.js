@@ -1,6 +1,7 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
+import styl from '../styles/stepfour.css'
 import style from '../styles/step.css'
 
 function StepTwo (props) {
@@ -35,7 +36,7 @@ function StepTwo (props) {
           </label>
           </div>
           <div className="col-md-2">
-            <button type = "submit" className = "button form-control">dd</button>
+            <button type = "submit" className = "button form-control btn-primary">Share</button>
           </div>
 
         </div>
@@ -45,21 +46,21 @@ function StepTwo (props) {
             <div className="row scrollmenu">
               <div className="planbox">
                    <div className="day">Day 1</div>
-                   <div className="dragbox"><div className="col-md-3">
+                   <div className="dragbox cursor"><div className="col-md-3">
                      <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
                      <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                    </div>
               </div>
               <div className="planbox">
                    <div className="day">Day 2</div>
-                   <div className="dragbox"><div className="col-md-3">
+                   <div className="dragbox cursor"><div className="col-md-3">
                      <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
                      <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                    </div>
               </div>
               <div className="planbox">
                    <div className="day">Day 3</div>
-                   <div className="dragbox"><div className="col-md-3">
+                   <div className="dragbox cursor"><div className="col-md-3">
                      <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
                      <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
                    </div>

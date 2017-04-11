@@ -37,7 +37,7 @@ function Trips (props) {
             {props.sort ? <h2>Popular</h2> : <h2>Recent</h2>}
         </div>
         <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
-        <select onChange = {props.ChangeSort} className="soflow">
+        <select onChange = {props.ChangeSort} className="select btn-info">
           <option value = "tp">Popular</option>
           <option value = "tr">Recent</option>
         </select>
