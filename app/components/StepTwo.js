@@ -22,7 +22,7 @@ function StepTwo (props) {
             <h2>Departure</h2>
               <div className = "col-xs-10 ">
               <p className = "form-control-static">{props.origin}</p>
-              <select onChange = {props.onUpdateVehiclesD}>
+              <select onChange = {props.onUpdateVehiclesD} >
                   <option value = "null">Transportation</option>
                   <option value = "bus">Bus</option>
                   <option value = "train">Train</option>
