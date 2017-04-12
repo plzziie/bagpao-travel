@@ -8,7 +8,8 @@ class HomeContainer extends Component {
     super()
     this.state = {
       do: 'tp',
-      poptrip: []
+      poptrip: [],
+      popplace: []
     }
   }
 
@@ -32,13 +33,34 @@ class HomeContainer extends Component {
         });
       }
     }.bind(this))
+
+    fetch(`http://localhost:1200/show`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        do: "pp"
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            popplace: myObj
+        });
+      }
+    }.bind(this))
   }
 
       render() {
         return(
           <Home
           poptrip = {this.state.poptrip}
-           />
+          popplace = {this.state.popplace}
+          />
         )
       }
     }

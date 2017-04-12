@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {PropTypes} from 'react'
+import ReactDOM, {findDOMNode} from 'react-dom';
 import styles from '../styles'
 import styl from '../styles/stepfour.css'
 import style from '../styles/step.css'
 
-function StepTwo (props) {
+function StepFour (props) {
   console.log(props);
     return(
       <div>
@@ -81,7 +82,8 @@ function StepTwo (props) {
   }
 
 
-StepTwo.PropTypes = {
+StepFour.PropTypes = {
+    data: PropTypes.object.isRequired
 }
 
-export default StepTwo
+export default StepFour

@@ -56,7 +56,7 @@ class TripsContainer extends Component {
       if (myObj.message === undefined) {
         this.setState({
             show: myObj,
-            test: !this.state.test
+            sort: !this.state.sort
         });
       }
     }.bind(this))

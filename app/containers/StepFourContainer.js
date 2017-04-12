@@ -4,7 +4,7 @@ import styles from '../styles'
 import StepFour from '../components/StepFour'
 
 class StepFourContainer extends Component {
-/*
+
   constructor () {
     super()
     this.state = {
@@ -12,20 +12,20 @@ class StepFourContainer extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
-      origin: this.props.location.state.origin,
+    /*  origin: this.props.location.state.origin,
       destination: this.props.location.state.destination,
       daytrip: this.props.location.state.daytrip,
       transportation: this.props.location.state.transportation,
       vehiclesD: this.props.location.state.vehiclesD,
       vehiclesR: this.props.location.state.vehiclesR,
       depart: this.props.location.state.depart,
-      return: this.props.location.state.return,
-      placess: this.props.location.state.placess
+      return: this.props.location.state.return,*/
+      data: this.props.location.state.data
     })
   }
-*/
+
   render() {
     return(
      <StepFour /*
@@ -46,14 +46,14 @@ class StepFourContainer extends Component {
      search = {this.state.search}
      places = {this.state.places}
      placess = {this.state.placess}*/
+     data = {this.state.data}
      />
     )
   }
 }
 
-/*
 StepFourContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
-} */
+}
 
 export default StepFourContainer

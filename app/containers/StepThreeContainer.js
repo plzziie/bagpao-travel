@@ -12,7 +12,7 @@ class StepThreeContainer extends Component {
       search: '',
       places: [],
       place: [],
-      data: ''
+      chg: true
     }
   }
 
@@ -88,11 +88,13 @@ handleUpdateSearch(event) {
         var myObj = JSON.parse(body);
         if (myObj.message === undefined) {
           this.setState({
-            place: myObj
+            place: myObj,
+            chg: false
           });
         }
       }.bind(this))
     }
+
   handleSubmitTrip(event) {
     event.preventDefault()
     this.context.router.push({
@@ -104,7 +106,7 @@ handleUpdateSearch(event) {
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
-        return: this.state.return,
+        return: this.state.return
       }
     })
   }
@@ -115,7 +117,6 @@ handleUpdateSearch(event) {
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
      onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
      onGetSearch = {(event) => this.handleGetSearch(event)}
-     onUpdatePlaces = {(event) => this.handleUpdatePlaces(event)}
      AllowDrop = {(event) => this.AllowDrop(event)}
      Drop = {(event) => this.Drop(event)}
      Drag = {(event) => this.Drag(event)}
@@ -129,6 +130,7 @@ handleUpdateSearch(event) {
      search = {this.state.search}
      places = {this.state.places}
      place = {this.state.place}
+     chg = {this.state.chg}
      />
     )
   }
