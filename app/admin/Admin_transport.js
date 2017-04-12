@@ -15,11 +15,44 @@ class Admin_transport extends Component {
                   </div>
 
                     <button type="button" className="btn btn-info">Search</button>&nbsp;
-                    <button type="button" className="roundbutton btn btn-danger">+</button>
+                      <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
+                    <div id="demo" className="collapse">
+                      <h2>Add new transportation</h2>
+                      <form className="form-inline">
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Type"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Route"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Origin"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="From"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Depart"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Destination"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="To"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Arrive"/>
+                        </div>
+                        <div className="form-group">
+                          <input type="email" className="form-control" placeholder="Price"/>
+                        </div>
+                        <button type="submit" className="btn btn-default">Submit</button>
+                      </form>
+                    </div>
 
       </div>
 
-              <div className="container bartrans">
+              <div className="container bartran">
 
                   <table className="table">
                     <thead className="bar"><tr>
@@ -38,7 +71,7 @@ class Admin_transport extends Component {
       {/*   ------------------------body-----------------*/}
 
                     <tbody>
-                    <tr>
+                  <tr>
                       <td>Bus</td><td>Northen</td><td>Chiangmai</td><td>Chiangmai</td>
                       <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
                       <td>

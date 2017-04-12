@@ -13,7 +13,7 @@ function Member (props) {
           <label className = "btn btn-default active">
             <input type = "radio" name = "public" id = "public" checked />Public
           </label>
-          <label className = "btn btn-default">
+          <label className = "btn btn-default ">
             <input type = "radio" name = "private" id = "private" />Private
           </label>
         </div>
