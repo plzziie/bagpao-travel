@@ -26,6 +26,9 @@ class Admin_transport extends Component {
                           <input type="text" className="form-control" placeholder="Route"/>
                         </div>
                         <div className="form-group">
+                          <input type="text" className="form-control" placeholder="Name"/>
+                        </div>
+                        <div className="form-group">
                           <input type="text" className="form-control" placeholder="Origin"/>
                         </div>
                         <div className="form-group">
@@ -58,6 +61,7 @@ class Admin_transport extends Component {
                     <thead className="bar"><tr>
                       <th>Type</th>
                       <th>Route</th>
+                      <th>Name</th>
                       <th>Origin</th>
                       <th>From</th>
                       <th>Depart</th>
@@ -72,7 +76,7 @@ class Admin_transport extends Component {
 
                     <tbody>
                   <tr>
-                      <td>Bus</td><td>Northen</td><td>Chiangmai</td><td>Chiangmai</td>
+                      <td>Bus</td><td>Northen</td><td>283</td><td>Chiangmai</td><td>Chiangmai</td>
                       <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
                       <td>
                         <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
@@ -84,7 +88,7 @@ class Admin_transport extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td>Train</td><td>Northen</td><td>Chiangmai</td><td>Chiangmai</td>
+                      <td>Train</td><td>Northen</td><td>273</td><td>Chiangmai</td><td>Chiangmai</td>
                       <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
                       <td>
                         <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
