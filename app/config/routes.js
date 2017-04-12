@@ -6,7 +6,6 @@ import { browserHistory } from 'react-router'
 import { IndexRoute } from 'react-router'
 import Main from '../components/Main'
 import Home from '../containers/HomeContainer'
-import Login from '../components/Login'
 import LoginForm from '../containers/LoginFormContainer'
 import SignupForm from '../containers/SignupFormContainer'
 import Trips from '../containers/TripsContainer'
@@ -19,8 +18,6 @@ import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
 import PlaceForm from '../components/PlaceForm'
-import PlacesPop from '../components/PlacesPop'
-import TripsRecent from '../components/TripsRecent'
 import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
 import StepThree from '../containers/StepThreeContainer'
@@ -38,7 +35,7 @@ var routes = (
       <Route path = 'trips' header = 'Find the trips' component = {Trips}/>
       <Route path = 'places' header = 'Find the places' component = {Places}/>
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
-      <Route path = 'login' header = 'Login/Sign Up' component = {LoginForm}/>
+      <Route path = 'login' header = 'Login' component = {LoginForm}/>
       <Route path = 'signup' header = 'Sign Up' component = {SignupForm}/>
       <Route path = 'member' component = {Member}/>
       <Route path = 'editprofile' component = {EditProfile}/>
@@ -47,8 +44,6 @@ var routes = (
       <Route path = 'favorite' component = {Favorite}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
       <Route path = 'places-details' component = {PlaceForm}/>
-      <Route path = 'placespop' component = {PlacesPop}/>
-      <Route path = 'tripsrecent' component = {TripsRecent}/>
       <Route path = 'stepone' component = {StepOne}/>
       <Route path = 'steptwo' component = {StepTwo}/>
       <Route path = 'stepthree' component = {StepThree}/>

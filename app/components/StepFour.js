@@ -83,7 +83,11 @@ function StepFour (props) {
 
 
 StepFour.PropTypes = {
-    data: PropTypes.object.isRequired
+  depart: PropTypes.string.isRequired,
+  return: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  daytrip: PropTypes.string.isRequired
 }
 
 export default StepFour

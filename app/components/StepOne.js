@@ -64,7 +64,7 @@ StepOne.PropTypes = {
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
   daytrip: PropTypes.string.isRequired,
-  transportation: PropTypes.array.isRequired
+  transportation: PropTypes.object.isRequired
 }
 
 export default StepOne

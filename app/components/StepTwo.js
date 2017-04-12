@@ -76,7 +76,6 @@ function StepTwo (props) {
 
 StepTwo.PropTypes = {
   onSubmitTrip: PropTypes.func.isRequired,
-  onUpdateVehicles: PropTypes.func.isRequired,
   onUpdateDepart: PropTypes.func.isRequired,
   onUpdateReturn: PropTypes.func.isRequired,
   onUpdateVehiclesDepart: PropTypes.func.isRequired,
@@ -88,8 +87,6 @@ StepTwo.PropTypes = {
   daytrip: PropTypes.string.isRequired,
   vehiclesD: PropTypes.string.isRequired,
   vehiclesR: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
   transportation: PropTypes.object.isRequired
 }
 

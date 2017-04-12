@@ -17,7 +17,7 @@ class TripsContainer extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
       headers:{

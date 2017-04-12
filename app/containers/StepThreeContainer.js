@@ -11,8 +11,7 @@ class StepThreeContainer extends Component {
       numstep: 2,
       search: '',
       places: [],
-      place: [],
-      chg: true
+      place: []
     }
   }
 
@@ -21,9 +20,6 @@ class StepThreeContainer extends Component {
       origin: this.props.location.state.origin,
       destination: this.props.location.state.destination,
       daytrip: this.props.location.state.daytrip,
-      transportation: this.props.location.state.transportation,
-      vehiclesD: this.props.location.state.vehiclesD,
-      vehiclesR: this.props.location.state.vehiclesR,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return
     })
@@ -88,8 +84,7 @@ handleUpdateSearch(event) {
         var myObj = JSON.parse(body);
         if (myObj.message === undefined) {
           this.setState({
-            place: myObj,
-            chg: false
+            place: myObj
           });
         }
       }.bind(this))
@@ -101,8 +96,6 @@ handleUpdateSearch(event) {
       pathname: '/stepfour',
       state: {
         daytrip: this.state.daytrip,
-        vehiclesD: this.state.vehiclesD,
-        vehiclesR: this.state.vehiclesR,
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
@@ -121,16 +114,13 @@ handleUpdateSearch(event) {
      Drop = {(event) => this.Drop(event)}
      Drag = {(event) => this.Drag(event)}
      depart = {this.state.depart}
-     arrive = {this.state.arrive}
+     return = {this.state.return}
      origin = {this.state.origin}
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
-     vehicles = {this.state.vehicles}
-     fromsearch = {this.state.fromsearch}
      search = {this.state.search}
      places = {this.state.places}
      place = {this.state.place}
-     chg = {this.state.chg}
      />
     )
   }

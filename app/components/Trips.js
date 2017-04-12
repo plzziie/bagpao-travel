@@ -1,7 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
-import TripsRecent from '../components/TripsRecent'
 import style from '../styles/trips.css'
 
 function Trips (props) {

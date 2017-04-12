@@ -1,7 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles'
-import PlacesPop from '../components/PlacesPop'
 import style from '../styles/trips.css'
 import sty from '../styles/places.css'
 
@@ -43,7 +42,7 @@ function Places (props) {
           <span className = "caret"></span></button>
           <ul className = "dropdown-menu" aria-labelledby="dropdownMenu1">
             <li className = "active"><a href="/places">Categories</a></li>
-            <li><a href="/placespop">Popular</a></li>
+            <li><a href="#">Popular</a></li>
           </ul>
         </div>
         </div>

@@ -8,7 +8,6 @@ class StepTwoContainer extends Component {
   constructor () {
     super()
     this.state = {
-      numstep: 2,
       vehiclesD: '',
       vehiclesR: '',
       depart: '',
@@ -54,8 +53,6 @@ class StepTwoContainer extends Component {
       pathname: '/stepthree',
       state: {
         daytrip: this.state.daytrip,
-        vehiclesD: this.state.vehiclesD,
-        vehiclesR: this.state.vehiclesR,
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
@@ -68,7 +65,6 @@ class StepTwoContainer extends Component {
     return(
      <StepTwo
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
-     onUpdateVehicles = {(event) => this.handleUpdateVehicles(event)}
      onUpdateDepart = {(event) => this.handleUpdateDepart(event)}
      onUpdateReturn = {(event) => this.handleUpdateReturn(event)}
      onUpdateVehiclesD = {(event) => this.handleUpdateVehiclesD(event)}

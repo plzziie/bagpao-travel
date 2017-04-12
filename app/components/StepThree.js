@@ -24,7 +24,6 @@ function StepThree (props) {
         </div>
 
         <div className="container">
-        <form onSubmit = {props.onSubmitTrip}>
           <div className="stepthree_day">
             <div className="row scrollmenu">
             {tmp.map((val, index) => {
@@ -32,7 +31,7 @@ function StepThree (props) {
                 <div className="day">Day {val+1}</div></div> })}
           </div>
         </div>
-      </form>
+
 
         <div className="stepthree_select">
           <div className="where">Where you want to go?</div>
@@ -109,11 +108,13 @@ function StepThree (props) {
                 </div>
             </div>
 
+            <form onSubmit = {props.onSubmitTrip}>
             <div className="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4 step-bottom">
              <button type = "submit" className = "button form-control">
                Next
              </button>
             </div>
+            </form>
     </div>
     </div>
     )
@@ -127,16 +128,12 @@ StepThree.PropTypes = {
   Drop: PropTypes.func.isRequired,
   Drag: PropTypes.func.isRequired,
   depart: PropTypes.string.isRequired,
-  arrive: PropTypes.string.isRequired,
+  return: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
   daytrip: PropTypes.string.isRequired,
-  vehicles: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
   places: PropTypes.object.isRequired,
-  place: PropTypes.object.isRequired,
-  chg: PropTypes.bool.isRequired
+  place: PropTypes.object.isRequired
 }
 
 export default StepThree
