@@ -14,27 +14,97 @@ class Admin_place extends Component {
                     <input  className = "form-control" placeholder = 'Place/City' type = 'text' />
                   </div>
                     <button type="button" className="btn btn-info">Search</button>&nbsp;
-                    <button type="button" className="roundbutton btn btn-danger">+</button>
+                    <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
+
+                    <div id="demo" className="collapse">
+
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
+
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name"/></div>
+                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name"/></div>
+
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude"/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude"/></div>
+                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture"/></div>
+
+                      <div className = "col-md-6 form-group">
+                        <textarea
+                          className = 'form-control' placeholder = 'Description' rows = '4'  type='text' />
+                      </div>
+                      <div className = "col-md-5 form-group">
+                        <textarea className = 'form-control' placeholder = 'Description' rows = '2' type='text'/>
+                      </div>
+                      <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
+
+                </div>
       </div>
 
-                    <div  className="container-fluid bar">
-                      <div className="col-md-6">Place Name</div>
-                      <div className="col-md-6">City</div>
-                    </div>
+      <div className="container bartrans">
 
-      {/*   ------------------------body-----------------      */}
+          <table className="table">
+            <thead className="bar"><tr>
+              <th colSpan="5">Place Name</th>
+              <th colSpan="5">City</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Picture</th>
+              <th>Description</th>
+              <th>Contact</th>
+              <th></th>
+            </tr></thead>
 
+{/*   ------------------------body-----------------*/}
 
-                    <h4><div className="col-md-6 fontsize">Doi Suthep–Pui National Park</div>
-                    <div className="col-md-4 fontsize">Chiangmai</div>
-                    <a href="places-details" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                      <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    </button></a>&nbsp;
-                    <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
-                      <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </button></h4>
-                    <div className ="underline">
-                  </div>
+            <tbody>
+            <tr>
+              <td>Wat Phra Kaew</td><td>The Emerald Buddha Temple</td><td>Wat Phra Si Rattana Satsadaram</td><td>วัดพระศรีรัตนศาสดาราม</td><td>วัดพระแก้ว</td>
+              <td>Bangkok</td><td>Phra Nakorn</td><td>กรุงเทพมหานคร</td><td>พระนคร</td><td></td>
+              <td>13.751591</td><td>100.492658</td>
+              <td>https://s3.amazonaws.com/gttwl/attachments/global/1408391264_large.jpeg</td>
+              <td>Wat Phra Kaew (Thai: วัดพระแก้ว) is regarded as the most sacred Buddhist temple (wat) in Thailand. The Emerald Buddha housed in the temple is a potent religio-political symbol and the palladium (protective image) of Thai society.It is located in Phra Nakhon District, the historic centre of Bangkok, </td>
+              <td>Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200</td>
+              <td>
+                <a href="/places_details" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </button></a>&nbsp;
+                <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button></a>&nbsp;
+                <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Wat Phra Kaew</td><td>The Emerald Buddha Temple</td><td>Wat Phra Si Rattana Satsadaram</td><td>วัดพระศรีรัตนศาสดาราม</td><td>วัดพระแก้ว</td>
+              <td>Bangkok</td><td>Phra Nakorn</td><td>กรุงเทพมหานคร</td><td>พระนคร</td><td></td>
+              <td>13.751591</td><td>100.492658</td>
+              <td>https://s3.amazona</td>
+              <td>Wat Phra Kaew (Thai: วัดพระแก้ว) is regarded as the most sacred Buddhist temple (wat) in Thailand. The Emerald Buddha housed in the temple is a potent religio-political symbol and the palladium (protective image) of Thai society.It is located in Phra Nakhon District, the historic centre of Bangkok, </td>
+              <td>Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200</td>
+              <td>
+                <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </button></a>&nbsp;
+                <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button></a>&nbsp;
+                <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                  <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
 
 
       {/*   ------------------Pop Up----------------      */}
