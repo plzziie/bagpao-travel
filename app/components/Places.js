@@ -1,5 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
+import {Link} from 'react-router'
 import styles from '../styles'
 import style from '../styles/trips.css'
 import sty from '../styles/places.css'
@@ -16,7 +17,7 @@ function Places (props) {
               <input
                 className = "form-control"
                 placeholder = 'Place/ City'
-                onChange = {props.onUpdateUser}
+                onChange = {props.onUpdateSearch}
                 defaultValue = {props.username}
                 type = 'text' />
             </div>
@@ -34,36 +35,68 @@ function Places (props) {
 
       <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
         <div className = "title2 col-md-offset-0 col-sm-offset-0 col-xs-offset-1 col-md-3 col-sm-3 col-xs-3" >
-            <h2>Categories</h2>
+            {props.sort ? <h2>Categories</h2> : <h2>Popular</h2>}
         </div>
         <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
-          <div className = "dropdown">
-          <button className = "btn btn-default dropdown-toggle" type = "button" data-toggle = "dropdown">
-          <span className = "caret"></span></button>
-          <ul className = "dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li className = "active"><a href="/places">Categories</a></li>
-            <li><a href="#">Popular</a></li>
-          </ul>
-        </div>
+        <select onChange = {props.ChangeSort} className = "select btn-info">
+          <option value = "pc">Categories</option>
+          <option value = "pp">Popular</option>
+        </select>
         </div>
         </div>
 
-      <div className="container-fluid footergap">
-    <div className = "col-md-offset-1 col-md-10 transparentBg" id = "test">
+        <div className="container-fluid footergap">
+        <div className = "col-md-offset-1 col-md-10 transparentBg">
+        {props.sort
+          ? <div> <a href=""><div className="photoo">
+                 <img src="app/img/places/HKM_9050.jpg"/>
+                 <img src="app/img/places/000027.jpg"/>
+                <img src="app/img/places/000030.jpg"/>
+                 <div className="text national">National Park</div>
+             </div></a>
 
-    {props.places.map((val, index) => {
-         return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-          <a href="places-details"> <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
-           <div className="bottomleft1">{val.name[0]}</div>
-           <div className="box"></div>
-           <div className="bottomleft2">{val.city[0]}</div></a>
-         </div>
-    })}
+               <a href=""><div className="photoo">
+                 <img src="app/img/places/000008.jpg"/>
+                <img src="app/img/places/000018.jpg"/>
+                 <img src="app/img/places/000031.jpg"/>
+                 <div className="text temple">Temple</div>
+            </div></a>
+
+               <a href=""><div className="photoo">
+                 <img src="app/img/places/HKM_0504.jpg"/>
+                 <img src="app/img/places/HKM_0353.jpg"/>
+                <img src="app/img/places/000015.jpg"/>
+                 <div className="text beach">Beach</div>
+            </div></a>
+            </div>
+
+            : props.show.map((val, index) => {
+             return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+               <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+               <div className="bottomleft1">{val.name[0]}</div>
+               <div className="box"></div>
+               <div className="bottomleft2">{val.city[0]}</div>
+               </div>
+            })
+            }
 
     </div>
   </div>
   </div>
     )
+}
+
+Places.PropTypes = {
+onSubmitUser: PropTypes.func.isRequired,
+onUpdateSearch: PropTypes.func.isRequired,
+ChangeSort: PropTypes.func.isRequired,
+Test: PropTypes.func.isRequired,
+header: PropTypes.string.isRequired,
+places: PropTypes.object.isRequired,
+show: PropTypes.object.isRequired,
+sort: PropTypes.bool.isRequired,
+searching: PropTypes.bool.isRequired,
+type: PropTypes.string.isRequired
 }
 
 export default Places

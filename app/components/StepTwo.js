@@ -23,12 +23,12 @@ function StepTwo (props) {
               <div className = "col-xs-10 ">
               <p className = "form-control-static">{props.origin}</p>
               <select onChange = {props.onUpdateVehiclesD} >
-                  <option value = "null">Transportation</option>
+                  <option value>Transportation</option>
                   <option value = "bus">Bus</option>
                   <option value = "train">Train</option>
                   <option value = "plane">Plane</option>
                </select>
-               <select onChange = {props.onUpdateDepart}> {props.transportation.map((val, index) => {
+               <select onChange = {props.onUpdateDepart}> <option value>Routes</option> {props.transportation.map((val, index) => {
                     return (val.type == props.vehiclesD)
                     ? (val.origin == props.origin)
                       ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive})</option>
@@ -45,12 +45,12 @@ function StepTwo (props) {
               <div className = "col-xs-10">
               <p className = "form-control-static">{props.destination}</p>
               <select onChange = {props.onUpdateVehiclesR}>
-                  <option value = "null">Transportation</option>
+                  <option value>Transportation</option>
                   <option value = "bus">Bus</option>
                   <option value = "train">Train</option>
                   <option value = "plane">Plane</option>
                </select>
-               <select onChange = {props.onUpdateReturn}> {props.transportation.map((val, index) => {
+               <select onChange = {props.onUpdateReturn}> <option value>Routes</option> {props.transportation.map((val, index) => {
                     return (val.type == props.vehiclesR)
                     ? (val.origin == props.destination)
                       ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive})</option>

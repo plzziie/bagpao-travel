@@ -10,6 +10,7 @@ class StepThreeContainer extends Component {
     this.state = {
       numstep: 2,
       search: '',
+      found: true,
       places: [],
       place: []
     }
@@ -76,7 +77,7 @@ handleUpdateSearch(event) {
       },
       body: JSON.stringify({
         numstep: 3,
-        search: this.state.search
+        name: this.state.search
         })
       }).then(function (response) {
         return response.text()
@@ -84,7 +85,13 @@ handleUpdateSearch(event) {
         var myObj = JSON.parse(body);
         if (myObj.message === undefined) {
           this.setState({
-            place: myObj
+            place: myObj,
+            found: true
+          });
+        }
+        else {
+          this.setState({
+            found: false
           });
         }
       }.bind(this))
@@ -121,6 +128,7 @@ handleUpdateSearch(event) {
      search = {this.state.search}
      places = {this.state.places}
      place = {this.state.place}
+     found = {this.state.found}
      />
     )
   }

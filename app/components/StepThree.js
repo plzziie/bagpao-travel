@@ -96,12 +96,14 @@ function StepThree (props) {
                   </form>
                   </div>
                     <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
-                    {props.place.map((val, index) => {
-                        return <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
-                              <img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
-                              <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
-                              </div>
-                      })}
+                      {props.found
+                        ? props.place.map((val, index) => {
+                          return <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
+                                <img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
+                                <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
+                                </div>
+                              })
+                        : <h5>Cannot found this place</h5> }
                     </div>
                   </div>
 
@@ -133,7 +135,8 @@ StepThree.PropTypes = {
   destination: PropTypes.string.isRequired,
   daytrip: PropTypes.string.isRequired,
   places: PropTypes.object.isRequired,
-  place: PropTypes.object.isRequired
+  place: PropTypes.object.isRequired,
+  found: PropTypes.bool.isRequired
 }
 
 export default StepThree

@@ -15,7 +15,7 @@ function Trips (props) {
               <input
                 className = "form-control"
                 placeholder = 'Trip Name/ City/ Place'
-                onChange = {props.onUpdateUser}
+                onChange = {props.onUpdateSearch}
                 defaultValue = {props.name}
                 type = 'text' />
             </div>
@@ -40,7 +40,6 @@ function Trips (props) {
           <option value = "tp">Popular</option>
           <option value = "tr">Recent</option>
         </select>
-
         </div>
         </div>
 
@@ -76,7 +75,7 @@ function Trips (props) {
 
   Trips.PropTypes = {
   onSubmitUser: PropTypes.func.isRequired,
-  onUpdateUser: PropTypes.func.isRequired,
+  onUpdateSearch: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
   trips: PropTypes.object.isRequired,
   show: PropTypes.object.isRequired,
@@ -84,7 +83,8 @@ function Trips (props) {
   found: PropTypes.bool.isRequired,
   err: PropTypes.string.isRequired,
   do: PropTypes.string.isRequired,
-  test: PropTypes.bool.isRequired
+  test: PropTypes.bool.isRequired,
+  sort: PropTypes.bool.isRequired
 }
 
 export default Trips

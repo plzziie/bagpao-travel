@@ -17,7 +17,7 @@ class TripsContainer extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
       headers:{
@@ -60,10 +60,9 @@ class TripsContainer extends Component {
         });
       }
     }.bind(this))
-
   }
 
-  handleUpdateUser(event) {
+  handleUpdateSearch(event) {
     this.setState({
       name: event.target.value
     });
@@ -106,7 +105,7 @@ class TripsContainer extends Component {
     return(
      <Trips
       onSubmitUser={(event) => this.handleSubmitUser(event)}
-      onUpdateUser={(event) => this.handleUpdateUser(event)}
+      onUpdateSearch={(event) => this.handleUpdateSearch(event)}
       ChangeSort={(event) => this.ChangeSort(event)}
       header = {this.props.route.header}
       name = {this.state.name}

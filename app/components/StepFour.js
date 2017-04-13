@@ -18,6 +18,7 @@ function StepFour (props) {
       </ul>
     </div>
     <div className="container">
+    <form onSubmit = {props.onSubmitTrip}>
       <div className = "container">
       <h4 className="step4_header">Successful! This is your plan.</h4>
       <div className = "col-md-offset-2 col-md-2">
@@ -25,21 +26,20 @@ function StepFour (props) {
       </div>
           <div className="col-md-5">
           <h5>Name</h5>
-          <input type = "text" className = "form-control"  placeholder = "Name"/>
+          <input type = "text" className = "form-control"  placeholder = "Name" onChange = {props.onUpdateName}/>
           </div>
           <div className="col-md-5">
           <h5>Privacy</h5>
           <label className="radio-inline">
-          <input type="radio" name="optradio"/>Private
+          <input type="radio" name="optradio" value = "private" onChange = {props.onUpdatePrivacy}/>Private
           </label>
           <label className="radio-inline">
-          <input type="radio" name="optradio"/>Public
+          <input type="radio" name="optradio" value = "public" defaultChecked={true} onChange = {props.onUpdatePrivacy}/>Public
           </label>
           </div>
           <div className="col-md-2">
             <button type = "submit" className = "button form-control btn-primary">Share</button>
           </div>
-
         </div>
 
           <div className="container step-bottom">
@@ -47,23 +47,7 @@ function StepFour (props) {
             <div className="row scrollmenu">
               <div className="planbox">
                    <div className="day">Day 1</div>
-                   <div className="dragbox cursor"><div className="col-md-3">
-                     <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
-                     <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
-                   </div>
-              </div>
-              <div className="planbox">
-                   <div className="day">Day 2</div>
-                   <div className="dragbox cursor"><div className="col-md-3">
-                     <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
-                     <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
-                   </div>
-              </div>
-              <div className="planbox">
-                   <div className="day">Day 3</div>
-                   <div className="dragbox cursor"><div className="col-md-3">
-                     <img className = "img-circle" src = "app/img/chiangmai.jpg" alt = "doisuthep"  width="50" height="50"/></div>
-                     <div className="col-md-8"><h5>Doi Suthep-Pui National Park</h5> <h6>Chiangmai</h6></div>
+                   <div className="dragbox cursor">
                    </div>
               </div>
             </div>
@@ -73,8 +57,9 @@ function StepFour (props) {
 
           <div className="col-md-offset-5 col-sm-offset-4 col-xs-offset-4 col-md-3 col-sm-4 col-xs-4 step-bottom " >
             <button  type = "submit" className = "button form-control">
-                Done</button></div>
-
+                Done</button>
+          </div>
+        </form>
   </div>
 </div>
 
@@ -83,11 +68,16 @@ function StepFour (props) {
 
 
 StepFour.PropTypes = {
+  onSubmitTrip: PropTypes.func.isRequired,
+  onUpdateName: PropTypes.func.isRequired,
+  onUpdatePrivacy: PropTypes.func.isRequired,
   depart: PropTypes.string.isRequired,
   return: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  daytrip: PropTypes.string.isRequired
+  daytrip: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  privacy: PropTypes.string.isRequired
 }
 
 export default StepFour
