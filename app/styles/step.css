@@ -17,6 +17,13 @@
   text-align: center;
 }
 /* step two */
+.steptwosub {
+  font-size: 16px;
+  padding-bottom: 25px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+}
 .styled-select {
    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
    height: 29px;
