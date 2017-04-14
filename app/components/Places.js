@@ -1,6 +1,5 @@
 import React from 'react'
 import {PropTypes} from 'react'
-import {Link} from 'react-router'
 import styles from '../styles'
 import style from '../styles/trips.css'
 import sty from '../styles/places.css'
@@ -48,31 +47,32 @@ function Places (props) {
         <div className="container-fluid footergap">
         <div className = "col-md-offset-1 col-md-10 transparentBg">
         {props.sort
-          ? <div> <a href=""><div className="photoo">
-                 <img src="app/img/places/HKM_9050.jpg"/>
-                 <img src="app/img/places/000027.jpg"/>
-                <img src="app/img/places/000030.jpg"/>
-                 <div className="text national">National Park</div>
-             </div></a>
+          ? <div> <div className = "photoo" onClick = {props.ChangeCategories} id = "nationalpark">
+                  <img src = "app/img/places/HKM_9050.jpg" id = "nationalpark"/>
+                  <img src = "app/img/places/000027.jpg" id = "nationalpark"/>
+                  <img src = "app/img/places/000030.jpg" id = "nationalpark"/>
+                  <div className = "text national" id = "nationalpark">National Park</div>
+                  </div>
 
-               <a href=""><div className="photoo">
-                 <img src="app/img/places/000008.jpg"/>
-                <img src="app/img/places/000018.jpg"/>
-                 <img src="app/img/places/000031.jpg"/>
-                 <div className="text temple">Temple</div>
-            </div></a>
+                  <div className = "photoo" onClick = {props.ChangeCategories} id = "temple">
+                  <img src = "app/img/places/000008.jpg" id = "temple"/>
+                  <img src = "app/img/places/000018.jpg" id = "temple"/>
+                  <img src = "app/img/places/000031.jpg" id = "temple"/>
+                  <div className = "text temple" id = "temple">Temple</div>
+                  </div>
 
-               <a href=""><div className="photoo">
-                 <img src="app/img/places/HKM_0504.jpg"/>
-                 <img src="app/img/places/HKM_0353.jpg"/>
-                <img src="app/img/places/000015.jpg"/>
-                 <div className="text beach">Beach</div>
-            </div></a>
+                  <div className = "photoo" onClick = {props.ChangeCategories} id = "beach">
+                  <img src = "app/img/places/HKM_0504.jpg"/>
+                  <img src = "app/img/places/HKM_0353.jpg"/>
+                  <img src = "app/img/places/000015.jpg"/>
+                  <div className = "text beach" id = "beach">Beach</div>
+                  </div>
             </div>
 
             : props.show.map((val, index) => {
-             return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-               <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+             return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo"
+             onClick = {props.SeeDetails} id = {val.name[0]}>
+               <img className = "img" src = {val.picture} alt = {val.name[0]} id = {val.name[0]} width="376" height="251"/>
                <div className="bottomleft1">{val.name[0]}</div>
                <div className="box"></div>
                <div className="bottomleft2">{val.city[0]}</div>
@@ -90,7 +90,8 @@ Places.PropTypes = {
 onSubmitUser: PropTypes.func.isRequired,
 onUpdateSearch: PropTypes.func.isRequired,
 ChangeSort: PropTypes.func.isRequired,
-Test: PropTypes.func.isRequired,
+ChangeCategories: PropTypes.func.isRequired,
+SeeDetails: PropTypes.func.isRequired,
 header: PropTypes.string.isRequired,
 places: PropTypes.object.isRequired,
 show: PropTypes.object.isRequired,

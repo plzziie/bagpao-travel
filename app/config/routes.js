@@ -10,6 +10,7 @@ import LoginForm from '../containers/LoginFormContainer'
 import SignupForm from '../containers/SignupFormContainer'
 import Trips from '../containers/TripsContainer'
 import Places from '../containers/PlacesContainer'
+import Place from '../containers/PlaceContainer'
 import Contact from '../containers/ContactContainer'
 import Member from '../containers/MemberContainer'
 import EditProfile from '../components/EditProfile'
@@ -17,7 +18,7 @@ import MyTrip from '../components/MyTrip'
 import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
-import PlaceForm from '../components/PlaceForm'
+import PlaceForm from '../containers/PlaceFormContainer'
 import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
 import StepThree from '../containers/StepThreeContainer'
@@ -43,11 +44,12 @@ var routes = (
       <Route path = 'draft' component = {Draft}/>
       <Route path = 'favorite' component = {Favorite}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
-      <Route path = 'places-details' component = {PlaceForm}/>
+      <Route path = 'places-details/:chse' component = {PlaceForm}/>
       <Route path = 'stepone' component = {StepOne}/>
       <Route path = 'steptwo' component = {StepTwo}/>
       <Route path = 'stepthree' component = {StepThree}/>
       <Route path = 'stepfour' component = {StepFour}/>
+      <Route path = 'places/:type' component = {Place}/>
     </Route>
 
       <Route path = '/admin' component = {Admin}>

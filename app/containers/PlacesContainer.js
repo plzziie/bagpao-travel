@@ -12,7 +12,8 @@ class PlacesContainer extends Component {
       show: [],
       sort: true,
       searching: false,
-      type: ''
+      type: '',
+      chse: ''
     }
   }
 
@@ -44,13 +45,20 @@ class PlacesContainer extends Component {
     });
   }
 
-  Test(event) {
+  ChangeCategories(event) {
     var type = this.state.type;
     this.setState({
       type: event.target.id
     });
+    this.context.router.push('/places/'+ this.state.type)
+  }
 
-    this.context.router.push('/')
+  SeeDetails(event) {
+    var chse = this.state.chse;
+    this.setState({
+      chse: event.target.id
+    });
+    this.context.router.push('/places-details/'+ this.state.chse)
   }
 
   handleCategories(event) {
@@ -119,7 +127,8 @@ class PlacesContainer extends Component {
       onSubmitUser={(event) => this.handleSubmitUser(event)}
       onUpdateSearch={(event) => this.handleUpdateSearch(event)}
       ChangeSort = {(event) => this.ChangeSort(event)}
-      Test = {(event) => this.Test(event)}
+      ChangeCategories = {(event) => this.ChangeCategories(event)}
+      SeeDetails = {(event) => this.SeeDetails(event)}
       header = {this.props.route.header}
       name = {this.state.name}
       places = {this.state.places}

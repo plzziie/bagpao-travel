@@ -8,6 +8,7 @@ class HomeContainer extends Component {
     super()
     this.state = {
       do: 'tp',
+      chse: '',
       poptrip: [],
       popplace: []
     }
@@ -55,9 +56,18 @@ class HomeContainer extends Component {
     }.bind(this))
   }
 
+  SeeDetails(event) {
+    var chse = this.state.chse;
+    this.setState({
+      chse: event.target.id
+    });
+    this.context.router.push('/places-details/'+ this.state.chse)
+  }
+
       render() {
         return(
           <Home
+          SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}
           />
