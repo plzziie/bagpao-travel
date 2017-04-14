@@ -17,6 +17,7 @@ class Admin_place extends Component {
                     <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
 
                     <div id="demo" className="collapse">
+                      <h2>Add new Place</h2>
 
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
                       <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Place name"/></div>
@@ -39,7 +40,7 @@ class Admin_place extends Component {
                           className = 'form-control' placeholder = 'Description' rows = '4'  type='text' />
                       </div>
                       <div className = "col-md-5 form-group">
-                        <textarea className = 'form-control' placeholder = 'Description' rows = '2' type='text'/>
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '2' type='text'/>
                       </div>
                       <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
 
