@@ -50,7 +50,6 @@ class LoginFormContainer extends Component {
           password: this.state.password
         })
     })
-
     .then(function (response) {
       return response.text()
     }).then(function (body) {

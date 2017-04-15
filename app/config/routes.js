@@ -29,6 +29,8 @@ import Admin_trip from '../admin/Admin_trip'
 import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 
+import {requireAuth} from '../lib/AuthService';
+
 var routes = (
   <Router history = {browserHistory}>
     <Route path = '/' component = {Main}>
@@ -38,17 +40,16 @@ var routes = (
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
       <Route path = 'login' header = 'Login' component = {LoginForm}/>
       <Route path = 'signup' header = 'Sign Up' component = {SignupForm}/>
-      <Route path = 'member' component = {Member}/>
-      <Route path = 'editprofile' component = {EditProfile}/>
-      <Route path = 'mytrip' component = {MyTrip}/>
-      <Route path = 'draft' component = {Draft}/>
-      <Route path = 'favorite' component = {Favorite}/>
+      <Route path = 'editprofile' component = {EditProfile} onEnter = {requireAuth}/>
+      <Route path = 'mytrip' component = {MyTrip} onEnter = {requireAuth}/>
+      <Route path = 'draft' component = {Draft} onEnter = {requireAuth}/>
+      <Route path = 'favorite' component = {Favorite} onEnter = {requireAuth}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
       <Route path = 'places-details/:chse' component = {PlaceForm}/>
-      <Route path = 'stepone' component = {StepOne}/>
-      <Route path = 'steptwo' component = {StepTwo}/>
-      <Route path = 'stepthree' component = {StepThree}/>
-      <Route path = 'stepfour' component = {StepFour}/>
+      <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>
+      <Route path = 'steptwo' component = {StepTwo} onEnter = {requireAuth}/>
+      <Route path = 'stepthree' component = {StepThree} onEnter = {requireAuth}/>
+      <Route path = 'stepfour' component = {StepFour} onEnter = {requireAuth}/>
       <Route path = 'places/:type' component = {Place}/>
     </Route>
 
