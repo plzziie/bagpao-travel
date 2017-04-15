@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import validator from 'bootstrap-validator'
+import AuthService from '../lib/AuthService'
 import styles from '../styles'
 
 function LoginForm (props) {
@@ -43,7 +44,7 @@ function LoginForm (props) {
             </button>
           </div>
           <div className = "col-xs-12 text-center">
-            <h4>Don't have an account ?<a href = "/signup"> Signup Here </a></h4>
+            <h4>Dont have an account ?<a href = "/signup"> Signup Here </a></h4>
           </div>
         </form>
       </div>

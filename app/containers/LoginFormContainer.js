@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import validator from 'bootstrap-validator'
+import {login} from '../lib/AuthService';
 import styles from '../styles'
 import LoginForm from '../components/LoginForm'
-//import SignupFormContainer from '../containers/SignupFormContainer'
+
 
 class LoginFormContainer extends Component {
 
@@ -21,7 +22,6 @@ class LoginFormContainer extends Component {
       status: this.props.location.state.status
     })
   }
-
 
   handleUpdateUsername(event) {
     this.setState({
@@ -56,6 +56,7 @@ class LoginFormContainer extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       if (myObj.message === 'success') {
+        login(myObj.username)
         this.context.router.push({
           pathname: '/mytrip',
           state: {

@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import ReactRouter from 'react-router'
+import { login, logout, isLoggedIn, getIdToken} from '../lib/AuthService';
 import styles from '../styles'
 import style from '../styles/test1.css'
+
 
 class Navbar extends Component {
   render() {
@@ -29,7 +31,9 @@ class Navbar extends Component {
         <div className = "collapse navbar-collapse" id = "bs-example-navbar-collapse-1" >
 
           <ul className = "nav navbar-nav navbar-right">
-            <li className = "header_menu"><a href = "/login"><h4>Login/Sign Up</h4 ></a></li>
+            <li className = "header_menu">{(isLoggedIn()) ? (<a><h4 onClick={() => logout()}>Logout</h4></a>)
+            : (<a href = "/login"><h4>Login/Sign Up</h4 ></a>)} </li>
+
           </ul>
 
           <div className=" col-sm-offset-3 col-md-offset-4 ">

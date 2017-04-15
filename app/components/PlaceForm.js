@@ -23,10 +23,6 @@ console.log(props);
          <div className="col-md-offset-5 buttongap">
            <a className="btn btn-success col-md-3" href="/places" role="button">Back</a>
          </div>
-
-
-
-
     </div>
     )
   }
