@@ -1,3 +1,12 @@
-.cursor:hover{
-  cursor: default;
+.dragboxx {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border-color: #F9F8F6;
+  padding-top: 4px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+}
+.dragboxx:hover {
+ cursor: default;
 }

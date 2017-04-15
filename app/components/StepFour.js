@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import ReactDOM, {findDOMNode} from 'react-dom';
-import styles from '../styles'
 import styl from '../styles/stepfour.css'
+import styles from '../styles'
 import style from '../styles/step.css'
 
 function StepFour (props) {
@@ -47,7 +47,7 @@ function StepFour (props) {
             <div className="row scrollmenu">
               <div className="planbox">
                    <div className="day">Day 1</div>
-                   <div className="dragbox cursor">
+                   <div className="dragboxx">
                    </div>
               </div>
             </div>
