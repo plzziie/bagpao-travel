@@ -13,7 +13,8 @@ class PlacesContainer extends Component {
       sort: true,
       searching: false,
       type: '',
-      chse: ''
+      err: '',
+      found: ''
     }
   }
 
@@ -45,47 +46,12 @@ class PlacesContainer extends Component {
     });
   }
 
-  ChangeCategories(event) {
-    var type = this.state.type;
-    this.setState({
-      type: event.target.id
-    });
-    this.context.router.push('/places/'+ this.state.type)
+  ChangeCategories(type) {
+    this.context.router.push('/places/'+ type)
   }
 
-  SeeDetails(event) {
-    var chse = this.state.chse;
-    this.setState({
-      chse: event.target.id
-    });
-    this.context.router.push('/places-details/'+ this.state.chse)
-  }
-
-  handleCategories(event) {
-    event.preventDefault();
-    fetch(`http://localhost:1200/show`, {
-        method: 'POST',
-        headers:{
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: this.state.name
-        })
-    })
-    .then(function (response) {
-      return response.text()
-    }).then(function (body) {
-      var myObj = JSON.parse(body);
-      if (myObj.message == 'cannot found this place') {
-        document.getElementById('test').innerHTML = myObj.message;
-      }
-      else {
-        this.setState({
-            places: myObj,
-            searching: true
-        })
-      }
-    }.bind(this))
+  SeeDetails(id) {
+    this.context.router.push('/places-details/'+ id)
   }
 
   handleUpdateSearch(event) {
@@ -109,12 +75,18 @@ class PlacesContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      if (myObj.message == 'cannot found this place') {
-        document.getElementById('test').innerHTML = myObj.message;
+      if (myObj.message === undefined) {
+        this.setState({
+            places: myObj,
+            searching: true,
+            found: true
+        })
       }
       else {
         this.setState({
-            places: myObj
+            err: myObj.message,
+            searching: true,
+            found: false
         })
       }
     }.bind(this))
@@ -136,6 +108,8 @@ class PlacesContainer extends Component {
       sort = {this.state.sort}
       searching = {this.state.searching}
       type = {this.state.type}
+      err = {this.state.err}
+      found = {this.state.found}
       />
     )
   }

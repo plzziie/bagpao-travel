@@ -26,8 +26,8 @@ function Place (props) {
         <div className = "col-md-offset-1 col-md-10 transparentBg">
         {props.show.map((val, index) => {
              return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo"
-             onClick = {props.SeeDetails} id = {val.name[0]}>
-               <img className = "img" src = {val.picture} alt = {val.name[0]} id = {val.name[0]} width="376" height="251"/>
+             onClick={() => props.SeeDetails(val.name[0])}>
+               <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
                <div className="bottomleft1">{val.name[0]}</div>
                <div className="box"></div>
                <div className="bottomleft2">{val.city[0]}</div>
