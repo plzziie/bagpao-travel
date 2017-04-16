@@ -34,45 +34,55 @@ function Places (props) {
 
       <div className = "jumbotron col-md-offset-1" style={styles.transparentBg}>
         <div className = "title2 col-md-offset-0 col-sm-offset-0 col-xs-offset-1 col-md-3 col-sm-3 col-xs-3" >
-            {props.sort ? <h2>Categories</h2> : <h2>Popular</h2>}
+            {props.searching ? <h2>Results</h2> : props.sort ? <h2>Categories</h2> : <h2>Popular</h2>}
         </div>
-        <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
+        {props.searching ? null : <div className = "col-md-offset-7 col-sm-offset-6 col-xs-offset-5 col-md-2 col-sm-3 col-xs-3" >
         <select onChange = {props.ChangeSort} className = "select btn-info">
           <option value = "pc">Categories</option>
           <option value = "pp">Popular</option>
         </select>
-        </div>
+        </div> }
         </div>
 
         <div className="container-fluid footergap">
         <div className = "col-md-offset-1 col-md-10 transparentBg">
-        {props.sort
-          ? <div> <div className = "photoo" onClick = {props.ChangeCategories} id = "nationalpark">
-                  <img src = "app/img/places/HKM_9050.jpg" id = "nationalpark"/>
-                  <img src = "app/img/places/000027.jpg" id = "nationalpark"/>
-                  <img src = "app/img/places/000030.jpg" id = "nationalpark"/>
-                  <div className = "text national" id = "nationalpark">National Park</div>
+        {props.searching
+          ? props.found ? props.places.map((val, index) => {
+                          return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+                                    <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+                                    <div className="bottomleft1">{val.name[0]}</div>
+                                    <div className="box"></div>
+                                    <div className="bottomleft2">{val.city[0]}</div>
+                                  </div>
+                        })
+                      : <h4>{props.err}</h4>
+          : props.sort
+          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("nationalpark")}>
+                  <img src = "app/img/places/HKM_9050.jpg"/>
+                  <img src = "app/img/places/000027.jpg"/>
+                  <img src = "app/img/places/000030.jpg"/>
+                  <div className = "text national">National Park</div>
                   </div>
 
-                  <div className = "photoo" onClick = {props.ChangeCategories} id = "temple">
-                  <img src = "app/img/places/000008.jpg" id = "temple"/>
-                  <img src = "app/img/places/000018.jpg" id = "temple"/>
-                  <img src = "app/img/places/000031.jpg" id = "temple"/>
-                  <div className = "text temple" id = "temple">Temple</div>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("temple")}>
+                  <img src = "app/img/places/000008.jpg"/>
+                  <img src = "app/img/places/000018.jpg"/>
+                  <img src = "app/img/places/000031.jpg"/>
+                  <div className = "text temple">Temple</div>
                   </div>
 
-                  <div className = "photoo" onClick = {props.ChangeCategories} id = "beach">
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
                   <img src = "app/img/places/HKM_0504.jpg"/>
                   <img src = "app/img/places/HKM_0353.jpg"/>
                   <img src = "app/img/places/000015.jpg"/>
-                  <div className = "text beach" id = "beach">Beach</div>
+                  <div className = "text beach">Beach</div>
                   </div>
             </div>
 
             : props.show.map((val, index) => {
              return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo"
-             onClick = {props.SeeDetails} id = {val.name[0]}>
-               <img className = "img" src = {val.picture} alt = {val.name[0]} id = {val.name[0]} width="376" height="251"/>
+             onClick={() => props.SeeDetails(val.name[0])}>
+               <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
                <div className="bottomleft1">{val.name[0]}</div>
                <div className="box"></div>
                <div className="bottomleft2">{val.city[0]}</div>
@@ -97,7 +107,8 @@ places: PropTypes.object.isRequired,
 show: PropTypes.object.isRequired,
 sort: PropTypes.bool.isRequired,
 searching: PropTypes.bool.isRequired,
-type: PropTypes.string.isRequired
+type: PropTypes.string.isRequired,
+found: PropTypes.bool.isRequired
 }
 
 export default Places
