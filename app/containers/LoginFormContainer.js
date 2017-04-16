@@ -56,12 +56,22 @@ class LoginFormContainer extends Component {
       var myObj = JSON.parse(body);
       if (myObj.message === 'success') {
         login(myObj.username)
-        this.context.router.push({
-          pathname: '/mytrip',
-          state: {
-            username: myObj.username
-          }
-        })
+        if (myObj.username == "admin") {
+          this.context.router.push({
+            pathname: '/admin',
+            state: {
+              username: myObj.username
+            }
+          })
+        }
+        else {
+          this.context.router.push({
+            pathname: '/mytrip',
+            state: {
+              username: myObj.username
+            }
+          })
+        }
       }
       else {
         this.setState({

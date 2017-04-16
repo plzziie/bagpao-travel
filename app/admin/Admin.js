@@ -12,7 +12,7 @@ class Admin extends Component {
         <h4>Admin</h4>
         <div className=" sidebar">
         <Admin_navbar/>
-      </div>
+        </div>
            <div className="admin_content">
              {this.props.children}
            </div>

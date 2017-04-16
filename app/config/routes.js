@@ -29,7 +29,7 @@ import Admin_trip from '../admin/Admin_trip'
 import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 
-import {requireAuth} from '../lib/AuthService';
+import {requireAuth, requireAdmin} from '../lib/AuthService';
 
 var routes = (
   <Router history = {browserHistory}>
@@ -45,7 +45,7 @@ var routes = (
       <Route path = 'draft' component = {Draft} onEnter = {requireAuth}/>
       <Route path = 'favorite' component = {Favorite} onEnter = {requireAuth}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
-      <Route path = 'places-details/:chse' component = {PlaceForm}/>
+      <Route path = 'places-details/:id' component = {PlaceForm}/>
       <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>
       <Route path = 'steptwo' component = {StepTwo} onEnter = {requireAuth}/>
       <Route path = 'stepthree' component = {StepThree} onEnter = {requireAuth}/>
@@ -53,11 +53,11 @@ var routes = (
       <Route path = 'places/:type' component = {Place}/>
     </Route>
 
-      <Route path = '/admin' component = {Admin}>
-        <Route path = '/admin_trip' component = {Admin_trip}/>
-        <Route path = '/admin_place' component = {Admin_place}/>
-        <Route path = '/admin_member' component = {Admin_member}/>
-        <Route path = '/admin_transport' component = {Admin_transport}/>
+      <Route path = '/admin' component = {Admin} onEnter = {requireAdmin}>
+        <Route path = '/admin_trip' component = {Admin_trip} onEnter = {requireAdmin}/>
+        <Route path = '/admin_place' component = {Admin_place} onEnter = {requireAdmin}/>
+        <Route path = '/admin_member' component = {Admin_member} onEnter = {requireAdmin}/>
+        <Route path = '/admin_transport' component = {Admin_transport} onEnter = {requireAdmin}/>
       </Route>
   </Router>
 
