@@ -7,8 +7,7 @@ class HomeContainer extends Component {
   constructor () {
     super()
     this.state = {
-      do: 'tp',
-      chse: '',
+      do: 'th',
       poptrip: [],
       popplace: []
     }
@@ -41,7 +40,7 @@ class HomeContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        do: "pp"
+        do: "ph"
       })
     })
     .then(function (response) {
@@ -56,12 +55,8 @@ class HomeContainer extends Component {
     }.bind(this))
   }
 
-  SeeDetails(event) {
-    var chse = this.state.chse;
-    this.setState({
-      chse: event.target.id
-    });
-    this.context.router.push('/places-details/'+ this.state.chse)
+  SeeDetails(id) {
+    this.context.router.push('/places-details/'+ id)
   }
 
       render() {

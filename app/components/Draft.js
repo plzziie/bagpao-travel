@@ -6,7 +6,7 @@ function Draft (props) {
 	return (
 		<div className="container-fluid">
 		<Member />
-	</div>
+		</div>
     )
   }
 

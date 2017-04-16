@@ -1,5 +1,5 @@
 import decode from 'jwt-decode';
-import { browserHistory } from 'react-router';
+import {browserHistory} from 'react-router';
 import Auth0Lock from 'auth0-lock';
 const ID_TOKEN_KEY = 'id_token';
 
@@ -28,7 +28,18 @@ export function logout() {
 
 export function requireAuth(nextState, replace) {
   if (!isLoggedIn()) {
-    replace({pathname: '/'});
+    replace({pathname: '/login'});
+  }
+}
+
+export function requireAdmin(nextState, replace) {
+  if (!isLoggedIn()) {
+    replace({pathname: '/login'});
+  }
+  else {
+    if (getIdToken() != "admin") {
+      replace({pathname: '/mytrip'});
+    }
   }
 }
 
@@ -51,12 +62,9 @@ export function isLoggedIn() {
 
 function getTokenExpirationDate(encodedToken) {
   const token = encodedToken;
-  console.log(token);
   //if (!token.exp) { return null; }
-
   const date = new Date(0);
   date.setUTCSeconds(token.exp);
-
   return date;
 }
 

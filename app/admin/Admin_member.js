@@ -4,39 +4,87 @@ import style from '../admin/admin.css'
 
 
 class Admin_member extends Component {
+
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  }
+
+  constructor () {
+    super()
+    this.state = {
+      username: '',
+      err: '',
+      profile: []
+    }
+    this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
+    this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+  }
+
+  handleUpdateSearch(event) {
+    this.setState({
+      username: event.target.value
+    });
+  }
+
+  handleSubmitSearch(event) {
+    event.preventDefault();
+    fetch(`http://localhost:1200/show`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        do: "mem",
+        username: this.state.username
+        })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            profile: myObj
+        })
+      }
+      else {
+        this.setState({
+            err: myObj.message
+        })
+      }
+    }.bind(this))
+  }
+
   render() {
     return (
 
       <div className="container-fluid">
       {/*   ------------------------head----------------      */}
+      <form onSubmit = {this.handleSubmitSearch}>
       <div className="searchgap">
-                  <div className="col-md-9">
-                    <input  className = "form-control" placeholder = 'Name' type = 'text' />
-                  </div>
-
-                    <button type="button" className="btn btn-info">Search</button>&nbsp;
-
-
+        <div className="col-md-9">
+          <input  className = "form-control" placeholder = 'Name' type = 'text' onChange = {this.handleUpdateSearch} />
+        </div>
+        <button type="submit" className="btn btn-info">Search</button>&nbsp;
       </div>
-
-                    <div  className="container-fluid bar">
-                      <div className="col-md-6">Member Name</div>
-                    </div>
+      </form>
+      <div  className="container-fluid bar">
+        <div className="col-md-6">Member Name</div>
+      </div>
 
       {/*   ------------------------body-----------------      */}
 
-
-                    <h4><div className="col-md-10 fontsize">arparpa</div>
-                    <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                      <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                    </button></a>&nbsp;
-                    <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
-                      <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </button></h4>
-                    <div className ="underline">
-                  </div>
-
-
+      { this.state.profile.map((val, index) => {
+       return <div key = {index}><h4><div className="col-md-10 fontsize">{val.username}</div>
+       <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+         <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+       </button></a>&nbsp;
+       <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+         <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+       </button></h4>
+       <div className ="underline">
+     </div></div>
+   })}
 
       {/*   ------------------Pop Up----------------      */}
                     <div className="modal fade" id="myModal" role="dialog">

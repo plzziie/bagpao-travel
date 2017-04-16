@@ -44,7 +44,7 @@ function LoginForm (props) {
             </button>
           </div>
           <div className = "col-xs-12 text-center">
-            <h4>Dont have an account ?<a href = "/signup"> Signup Here </a></h4>
+            <h4>Do not have an account ?<a href = "/signup"> Signup Here </a></h4>
           </div>
         </form>
       </div>

@@ -14,7 +14,8 @@ function CreatePlan (props) {
             className = "form-control"
             placeholder = "Enter your origin"
             onChange = {props.onUpdateOrigin}
-            defaultValue = {props.origin} />
+            defaultValue = {props.origin}
+            required />
         </div>
 
         <div className = "col-md-3 col-sm-6 col-xs-12" >
@@ -23,7 +24,8 @@ function CreatePlan (props) {
             className = "form-control"
             placeholder = "Enter your destination"
             onChange = {props.onUpdateDestination}
-            defaultValue = {props.destination} />
+            defaultValue = {props.destination}
+            required />
         </div>
 
         <div className = "col-md-3 col-sm-6 col-xs-6">
@@ -45,13 +47,13 @@ function CreatePlan (props) {
             </select>
         </div>
 
-      <div className="col-md-3 col-sm-6 col-xs-6">
-        <button type = "submit" className = "button form-control">
-           Search&nbsp;<span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
-      </div>
-      </form>
-      </div>
+        <div className="col-md-3 col-sm-6 col-xs-6">
+          <button type = "submit" className = "button form-control">
+             Search&nbsp;<span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+          </button>
+        </div>
+        </form>
+        </div>
     </div>
     )
   }
