@@ -11,7 +11,7 @@ console.log(props);
       <div className="container">
 
         { props.show.map((val, index) => {
-          return <div key = {index}><div className = "text-center"><div className = "detail_header">{val.name[0]}</div>
+          return <div key = {index}><div className = "text-center"><div className = "detail_header">{val.name[0].toUpperCase()}</div>
                  <img className = "img " src={val.picture} alt = {val.name[0]}  width = "376" height = "251"/></div>
                  <div className = "contentdetail col-md-offset-3 col-md-6">
                  <label>Description</label>
