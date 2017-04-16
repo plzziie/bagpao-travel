@@ -18,6 +18,7 @@ class Admin_member extends Component {
     }
     this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+    this.DeleteMember = this.DeleteMember.bind(this);
   }
 
   handleUpdateSearch(event) {
@@ -55,6 +56,27 @@ class Admin_member extends Component {
     }.bind(this))
   }
 
+  DeleteMember(ev) {
+    event.preventDefault();
+    fetch(`http://localhost:1200/admin`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        admin: "delete",
+        types: "member",
+        name: ev
+        })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      console.log(myObj);
+  })
+  }
+
   render() {
     return (
 
@@ -79,13 +101,13 @@ class Admin_member extends Component {
        <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
        </button></a>&nbsp;
-       <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+       <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal" >
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
        </button></h4>
        <div className ="underline">
      </div></div>
    })}
-
+{/*onClick={() => this.DeleteMember(val.username)}*/}
       {/*   ------------------Pop Up----------------      */}
                     <div className="modal fade" id="myModal" role="dialog">
                       <div className="modal-dialog">

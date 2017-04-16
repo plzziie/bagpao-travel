@@ -35,6 +35,7 @@ class Admin_place extends Component {
       this.handleUpdateContact = this.handleUpdateContact.bind(this);
       this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
       this.handleSubmitNew = this.handleSubmitNew.bind(this);
+      this.DeletePlace = this.DeletePlace.bind(this);
     }
 
     handleUpdateSearch(event) {
@@ -122,7 +123,7 @@ class Admin_place extends Component {
         },
         body: JSON.stringify({
           admin: "add",
-          type: "place",
+          types: "place",
           name: this.state.place,
           city: this.state.city,
           latitude: this.state.latitude,
@@ -140,6 +141,27 @@ class Admin_place extends Component {
         console.log(myObj);
     })
   }
+
+  DeletePlace(ev) {
+    event.preventDefault();
+    fetch(`http://localhost:1200/admin`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        admin: "delete",
+        types: "place",
+        name: ev
+        })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      console.log(myObj);
+  })
+}
 
   render() {
     return (
@@ -209,7 +231,7 @@ class Admin_place extends Component {
                  <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
                    <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                  </button></a>&nbsp;
-                 <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                 <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" >
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
                </td></tr>
@@ -217,6 +239,8 @@ class Admin_place extends Component {
             </tbody>
           </table>
       </div>
+
+      {/*onClick={() => this.DeletePlace(val.name[0])}*/}
 
 
       {/*   ------------------Pop Up----------------      */}
