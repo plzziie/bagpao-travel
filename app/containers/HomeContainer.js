@@ -7,7 +7,7 @@ class HomeContainer extends Component {
   constructor () {
     super()
     this.state = {
-      do: 'tp',
+      do: 'th',
       poptrip: [],
       popplace: []
     }
@@ -40,7 +40,7 @@ class HomeContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        do: "pp"
+        do: "ph"
       })
     })
     .then(function (response) {
