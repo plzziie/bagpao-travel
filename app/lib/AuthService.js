@@ -62,7 +62,6 @@ export function isLoggedIn() {
 
 function getTokenExpirationDate(encodedToken) {
   const token = encodedToken;
-  console.log(token);
   //if (!token.exp) { return null; }
   const date = new Date(0);
   date.setUTCSeconds(token.exp);
