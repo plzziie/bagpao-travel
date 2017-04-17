@@ -35,6 +35,28 @@ class Admin_transport extends Component {
     this.handleUpdatePrice = this.handleUpdatePrice.bind(this);
     this.handleSubmitNew = this.handleSubmitNew.bind(this);
     this.DeleteTransport = this.DeleteTransport.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:1200/admin`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        admin: "show",
+        types: "trans"
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+        this.setState({
+            transportation: myObj.message
+        });
+    }.bind(this))
   }
 
   handleUpdateType(event) {
@@ -146,11 +168,7 @@ DeleteTransport(ev) {
       {/*   ------------------------head----------------      */}
       <div className="searchgap">
 
-                  <div className="col-md-9">
-                    <input  className = "form-control" placeholder = 'Name' type = 'text' />
-                  </div>
-
-                    <button type="button" className="btn btn-info">Search</button>&nbsp;
+  
                       <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
 
                     <div id="demo" className="collapse">
@@ -212,30 +230,21 @@ DeleteTransport(ev) {
       {/*   ------------------------body-----------------*/}
 
                     <tbody>
-                  <tr>
-                      <td>Bus</td><td>Northen</td><td>283</td><td>Chiangmai</td><td>Chiangmai</td>
-                      <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
-                      <td>
-                        <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                          <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                        </button></a>&nbsp;
-                        <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
-                          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Train</td><td>Northen</td><td>273</td><td>Chiangmai</td><td>Chiangmai</td>
-                      <td>22:30</td><td>Bangkok</td><td>Mochit</td><td>7:30</td><td>900</td>
-                      <td>
-                        <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                          <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                        </button></a>&nbsp;
-                        <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
-                          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button>
-                      </td>
-                    </tr>
+                    { this.state.transportation.map((val, index) => {
+                     return <tr key ={index}>
+                         <td>{val.type}</td><td>{val.route}</td><td>{val.name}</td><td>{val.origin}</td><td>{val.stationstart}</td>
+                         <td>{val.depart}</td><td>{val.destination}</td><td>{val.stationend}</td><td>{val.arrive}</td><td>{val.price}</td>
+                         <td>
+                           <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                             <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                           </button></a>&nbsp;
+                           <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                             <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                           </button>
+                         </td>
+                       </tr>
+                 })}
+
                     </tbody>
                   </table>
               </div>
