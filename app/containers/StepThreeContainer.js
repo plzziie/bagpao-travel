@@ -12,7 +12,8 @@ class StepThreeContainer extends Component {
       search: '',
       found: true,
       places: [],
-      place: []
+      place: [],
+      test: []
     }
   }
 
@@ -64,6 +65,10 @@ Drop(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("text");
     event.target.appendChild(document.getElementById(data));
+    console.log(event.target);
+    this.setState({
+      test: event.target.children
+    });
 }
 
 handleUpdateSearch(event) {
@@ -133,6 +138,7 @@ handleUpdateSearch(event) {
      places = {this.state.places}
      place = {this.state.place}
      found = {this.state.found}
+     test = {this.state.test}
      />
     )
   }

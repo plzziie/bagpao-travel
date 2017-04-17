@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import {getIdToken} from '../lib/AuthService';
 import styles from '../styles'
 import StepFour from '../components/StepFour'
 
@@ -44,6 +45,7 @@ class StepFourContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        username: getIdToken(),
         numstep: this.state.numstep,
         origin: this.state.origin,
         destination: this.state.destination,

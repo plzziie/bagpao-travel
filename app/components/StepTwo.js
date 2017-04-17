@@ -33,7 +33,7 @@ function StepTwo (props) {
                <select className="select" onChange = {props.onUpdateDepart}> <option value>Routes</option> {props.transportation.map((val, index) => {
                     return (val.type == props.vehiclesD)
                     ? (val.origin == props.origin)
-                      ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive})</option>
+                      ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive})  => {val.price} Baht</option>
                       : null
                     : null
                   })}
@@ -57,7 +57,7 @@ function StepTwo (props) {
                <select className="select" onChange = {props.onUpdateReturn}> <option value>Routes</option> {props.transportation.map((val, index) => {
                     return (val.type == props.vehiclesR)
                     ? (val.origin == props.destination)
-                      ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive})</option>
+                      ? <option value = {val.name} key = {index}>From {val.stationstart} ({val.depart}) To {val.stationend} ({val.arrive}) => {val.price} Baht</option>
                       : null
                     : null
                   })}
