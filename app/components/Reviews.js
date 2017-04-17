@@ -5,14 +5,18 @@ import styles from '../styles'
 function Reviews (props) {
   return(
     <div className="review-size">
-      <div className="container" >
-        <div className="jumbotron commentbox">
-          <div className="col-md-1 imggap"><img src = "app/img/places/000008.jpg" alt = "doisuthep"  width="40" height="40"/></div>
+
+      <div className="container-fluid">
+        <div className="container commentbox">
+          <div className="col-md-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
           <div className="username col-md-11"><b>Arpa Assawabenjang</b></div>
           <div className="comment col-md-9">First comment! ee eeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeee</div>
       </div>
+      <div className="container commentbox">
+        <div className="col-md-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
+        <div className="username col-md-11"><b>Arpa Assawabenjang</b></div>
+        <div className="comment col-md-9">First comment! ee eeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeee</div>
     </div>
-
 
     	<ul className = "breadcrumb" style = {styles.space}>
   			<li className = "active"><a href="#">1</a></li>
@@ -34,25 +38,34 @@ function Reviews (props) {
                   Send
               </button>
         </div>
-        <div>
-        	<div style = {styles.space}>
+      </div>
+
+
+        <div className="creatorbox">
+        	<div>
         		<h4 className = "text-left">Creator</h4>
-        		<div className = "well well-lg">
-				</div>
+        		<div className = "reviewbox">
+              <div className="col-md-1 "><img className="img-circle" src = "app/img/places/000015.jpg" alt = "doisuthep"  width="50" height="50"/></div>
+              <div className="col-md-4 text-left creator"><b>John Smith</b></div>
+				    </div>
 			</div>
+
 			<div style = {styles.gapp}>
         		<h4 className = "text-left">Others</h4>
-        		<div className = "well well-lg">
-				</div>
+              <div className = "reviewbox">
+                <div className="col-md-1 "><img className="img-circle" src = "app/img/places/000015.jpg" alt = "doisuthep"  width="50" height="50"/></div>
+                <div className="col-md-4 text-left creator"><b>John Smith</b></div>
+  				    </div>
 			</div>
+
 			<div style = {styles.gap}>
-        		<div className = "well well-lg">
-				</div>
+        <div className = "reviewbox">
+          <div className="col-md-1 "><img className="img-circle" src = "app/img/places/000015.jpg" alt = "doisuthep"  width="50" height="50"/></div>
+          <div className="col-md-4 text-left creator"><b>John Smith</b></div>
+        </div>
+
 			</div>
-			<div style = {styles.gap}>
-        		<div className = "well well-lg">
-				</div>
-			</div>
+
 		</div>
     </div>
    )
