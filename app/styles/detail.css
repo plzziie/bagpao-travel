@@ -35,3 +35,38 @@
 .buttongap {
   margin-bottom: 20px;
 }
+
+/*review*/
+
+.review-size{
+  width: 70%;
+}
+.commentbox{
+  width: 100%;
+  height: auto;
+  padding: 4px;
+  border-bottom: 1px solid #ddd;
+}
+.commentbox .username{
+  text-align: left;
+}
+.comment{
+  text-align: left;
+}
+.imggap {
+  padding-top: 3px;
+}
+.reviewbox{
+  width: 100%;
+  height: 60px;
+}
+.creator {
+  padding-top: 14px;
+  padding-left: 22px;
+}
+
+.creatorbox {
+  padding: 5px;
+  border: 1px solid #dfe3ee;
+
+}

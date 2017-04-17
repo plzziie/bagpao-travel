@@ -35,8 +35,10 @@ class Navbar extends Component {
              : null }</li>
              <li className="header_menu">{(isLoggedIn()) ? (<a href="/mytrip"><h4>{getIdToken()}</h4></a>)
               : null }</li>
-            <li className = "header_menu">{(isLoggedIn()) ? (<a><h4 onClick={() => logout()}>Logout</h4></a>)
+            <li className = "header_menu">{(isLoggedIn()) ? (<a className="arrow"><h4 onClick={() => logout()}>Logout</h4></a>)
+
              : (<a href = "/login"><h4>Login/Sign Up</h4 ></a>)} </li>
+
 
           </ul>
 

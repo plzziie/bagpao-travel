@@ -36,6 +36,25 @@
   top: 40%;
   left: 43%;
 }
+
+.safari {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+}
+
+.market {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+}
+
+.museum {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+}
+
 .photoo:hover .text{
   opacity: 1;
   cursor: pointer;

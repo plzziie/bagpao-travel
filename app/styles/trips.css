@@ -21,3 +21,8 @@
   padding: 7px;
   border-radius: 3px;
 }
+
+.fav::after{
+  color: red;
+  background-color: red;
+}

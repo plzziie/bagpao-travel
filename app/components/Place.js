@@ -7,7 +7,7 @@ import sty from '../styles/places.css'
 function Place (props) {
   console.log(props);
   return(
-    <div>
+    <div className="container-fluid step-bottom">
       <div className = "jumbotron text-center"  style = {styles.transparentBg}>
         <h2 className="title2">{props.header}</h2>
       </div>
@@ -34,6 +34,10 @@ function Place (props) {
                </div>
             })}
         </div>
+        </div>
+
+        <div className="col-md-offset-5">
+          <a className="btn btn-success col-md-3" href="/places" role="button">Back</a>
         </div>
   </div>
     )
