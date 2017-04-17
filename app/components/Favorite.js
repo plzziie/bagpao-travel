@@ -1,11 +1,11 @@
 import React from 'react'
 import {PropTypes} from 'react'
-import Member from '../components/Member'
+import MyTripContainer from '../containers/MyTripContainer'
 
 function Favorite (props) {
 	return (
 		<div className="container-fluid">
-		<Member />
+		<MyTripContainer />
 		</div>
     )
   }

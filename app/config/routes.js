@@ -12,9 +12,9 @@ import Trips from '../containers/TripsContainer'
 import Places from '../containers/PlacesContainer'
 import Place from '../containers/PlaceContainer'
 import Contact from '../containers/ContactContainer'
-import Member from '../containers/MemberContainer'
+import Member from '../components/Member'
 import EditProfile from '../components/EditProfile'
-import MyTrip from '../components/MyTrip'
+import MyTrip from '../containers/MyTripContainer'
 import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
 import DetailsForm from '../components/DetailsForm'
@@ -29,7 +29,7 @@ import Admin_trip from '../admin/Admin_trip'
 import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 
-import {requireAuth, requireAdmin} from '../lib/AuthService';
+import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
 
 var routes = (
   <Router history = {browserHistory}>
@@ -40,10 +40,10 @@ var routes = (
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
       <Route path = 'login' header = 'Login' component = {LoginForm}/>
       <Route path = 'signup' header = 'Sign Up' component = {SignupForm}/>
-      <Route path = 'editprofile' component = {EditProfile} onEnter = {requireAuth}/>
-      <Route path = 'mytrip' component = {MyTrip} onEnter = {requireAuth}/>
-      <Route path = 'draft' component = {Draft} onEnter = {requireAuth}/>
-      <Route path = 'favorite' component = {Favorite} onEnter = {requireAuth}/>
+      <Route path = 'editprofile' component = {EditProfile} onEnter = {requireUser}/>
+      <Route path = 'mytrip' component = {MyTrip} onEnter = {requireUser}/>
+      <Route path = 'draft' component = {Draft} onEnter = {requireUser}/>
+      <Route path = 'favorite' component = {Favorite} onEnter = {requireUser}/>
       <Route path = 'trips-details' component = {DetailsForm}/>
       <Route path = 'places-details/:id' component = {PlaceForm}/>
       <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>

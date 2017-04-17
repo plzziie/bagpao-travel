@@ -43,6 +43,17 @@ export function requireAdmin(nextState, replace) {
   }
 }
 
+export function requireUser(nextState, replace) {
+  if (!isLoggedIn()) {
+    replace({pathname: '/login'});
+  }
+  else {
+    if (getIdToken() == "admin") {
+      replace({pathname: '/admin'});
+    }
+  }
+}
+
 function setIdToken(idToken) {
   sessionStorage.setItem(ID_TOKEN_KEY, idToken);
 }
