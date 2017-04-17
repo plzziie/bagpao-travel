@@ -35,3 +35,25 @@
 .buttongap {
   margin-bottom: 20px;
 }
+
+/*review*/
+
+.review-size{
+  width: 70%;
+}
+.commentbox{
+  width: 100%;
+  background-color: pink;
+  height: auto;
+  padding: 4px;
+  border-bottom: 1px solid #ddd;
+}
+.. commentbox .username{
+  text-align: left;
+}
+.comment{
+  text-align: left;
+}
+.imggap {
+  padding-top: 3px;
+}

@@ -77,6 +77,27 @@ function Places (props) {
                   <img src = "app/img/places/000015.jpg"/>
                   <div className = "text beach">Beach</div>
                   </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "app/img/places/safari.jpg"/>
+                  <img src = "app/img/places/safari2.jpg"/>
+                  <img src = "app/img/places/safari3.jpg"/>
+                  <div className = "text safari">Safari</div>
+                  </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "app/img/places/HKM_0504.jpg"/>
+                  <img src = "app/img/places/HKM_0353.jpg"/>
+                  <img src = "app/img/places/000015.jpg"/>
+                  <div className = "text market">Market</div>
+                  </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "app/img/places/HKM_0504.jpg"/>
+                  <img src = "app/img/places/HKM_0353.jpg"/>
+                  <img src = "app/img/places/000015.jpg"/>
+                  <div className = "text museum">Museum</div>
+                  </div>
             </div>
 
             : props.show.map((val, index) => {

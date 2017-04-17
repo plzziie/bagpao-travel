@@ -4,7 +4,16 @@ import styles from '../styles'
 
 function Reviews (props) {
   return(
-    <div>
+    <div className="review-size">
+      <div className="container" >
+        <div className="jumbotron commentbox">
+          <div className="col-md-1 imggap"><img src = "app/img/places/000008.jpg" alt = "doisuthep"  width="40" height="40"/></div>
+          <div className="username col-md-11"><b>Arpa Assawabenjang</b></div>
+          <div className="comment col-md-9">First comment! ee eeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeee</div>
+      </div>
+    </div>
+
+
     	<ul className = "breadcrumb" style = {styles.space}>
   			<li className = "active"><a href="#">1</a></li>
   			<li><a href="#">2</a></li>

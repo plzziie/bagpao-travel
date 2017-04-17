@@ -6,7 +6,7 @@ import Reviews from '../components/Reviews'
 
 function DetailsForm (props) {
   return(
-    <div className="container-fluid">
+    <div className="container-fluid step-bottom">
 
       <div className = "text-center">
           <div className="detail_header "> Trip Name </div>
@@ -25,6 +25,10 @@ function DetailsForm (props) {
           		</div>
         	</div>
         </div>
+
+                <div className="col-md-offset-5">
+                  <a className="btn btn-success col-md-3" href="/trips" role="button">Back</a>
+                </div>
     </div>
     )
   }
