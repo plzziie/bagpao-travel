@@ -69,19 +69,22 @@ function EditProfile (props) {
   				<h4 className = "col-sm-3">Interest</h4>
   				<div className = "col-sm-8">
     				<div className = "checkbox-inline">
- 						<label><input type = "checkbox" value = "" />Sea</label>
+ 						<label><input type = "checkbox" value = "" />Market</label>
 					</div>
 					<div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "" />Beach</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "" />Forest</label>
+  						<label><input type = "checkbox" value = "" />Museum</label>
 					</div>
 					<div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "" />National Park</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "" />Museum</label>
+  						<label><input type = "checkbox" value = "" />Safari</label>
+					</div>
+          <div className = "checkbox-inline">
+  						<label><input type = "checkbox" value = "" />Temple</label>
 					</div>
   				</div>
 			</div>

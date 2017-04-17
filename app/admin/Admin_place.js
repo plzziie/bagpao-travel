@@ -181,19 +181,40 @@ class Admin_place extends Component {
                       <h2>Add new Place</h2>
 
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name (required)" onChange = {this.handleUpdatePlace} required/></div>
-
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name (required)" onChange = {this.handleUpdateCity} required/></div>
-
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude}/></div>
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} /></div>
-                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} /></div>
 
-                      <div className = "col-md-6 form-group">
+                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} /></div>
+                      <div className = "col-md-7 form-group">
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} />
+                      </div>
+                      <div className = "col-md-5 form-group">
                         <textarea
                           className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} />
                       </div>
-                      <div className = "col-md-5 form-group">
-                        <textarea className = 'form-control' placeholder = 'Contact' rows = '2' type='text' onChange = {this.handleUpdateContact} />
+                      <div className="col-md-6">
+                      <p>Choose the categories that fit in.</p>
+                        <form>
+                          <label className="radio-inline">
+                            <input type="radio" name="National Park"/>National Park
+                          </label>
+                          <label className="radio-inline">
+                            <input type="radio" name="Temple"/>Temple
+                          </label>
+                          <label className="radio-inline">
+                            <input type="radio" name="Beach"/>Beach
+                          </label>
+                          <label className="radio-inline">
+                            <input type="radio" name="Safari"/>Safari
+                          </label>
+                          <label className="radio-inline">
+                            <input type="radio" name="Market"/>Market
+                          </label>
+                          <label className="radio-inline">
+                            <input type="radio" name="Museum"/>Museum
+                          </label>
+                        </form>
                       </div>
                       <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
                 </div>
