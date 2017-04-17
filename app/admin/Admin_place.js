@@ -13,12 +13,8 @@ class Admin_place extends Component {
       super()
       this.state = {
         name: '',
-        placeO: '',
-        placeTW: '',
-        placeTH: '',
-        placeF: '',
-        cityEN: '',
-        cityTH: '',
+        place: '',
+        city: '',
         latitude: '',
         longitude: '',
         category: '',
@@ -29,12 +25,8 @@ class Admin_place extends Component {
         places: []
       }
       this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
-      this.handleUpdatePlaceO = this.handleUpdatePlaceO.bind(this);
-      this.handleUpdatePlaceTW = this.handleUpdatePlaceTW.bind(this);
-      this.handleUpdatePlaceTH = this.handleUpdatePlaceTH.bind(this);
-      this.handleUpdatePlaceF = this.handleUpdatePlaceF.bind(this);
-      this.handleUpdateCityEN = this.handleUpdateCityEN.bind(this);
-      this.handleUpdateCityTH = this.handleUpdateCityTH.bind(this);
+      this.handleUpdatePlace = this.handleUpdatePlace.bind(this);
+      this.handleUpdateCity = this.handleUpdateCity.bind(this);
       this.handleUpdateLatitude = this.handleUpdateLatitude.bind(this);
       this.handleUpdateLongitude = this.handleUpdateLongitude.bind(this);
       this.handleUpdateCategory = this.handleUpdateCategory.bind(this);
@@ -43,6 +35,7 @@ class Admin_place extends Component {
       this.handleUpdateContact = this.handleUpdateContact.bind(this);
       this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
       this.handleSubmitNew = this.handleSubmitNew.bind(this);
+      this.DeletePlace = this.DeletePlace.bind(this);
     }
 
     handleUpdateSearch(event) {
@@ -50,36 +43,14 @@ class Admin_place extends Component {
         name: event.target.value
       });
     }
-
-    handleUpdatePlaceO(event) {
+    handleUpdatePlace(event) {
       this.setState({
-        placeO: event.target.value
+        place: event.target.value
       });
     }
-
-    handleUpdatePlaceTW(event) {
+    handleUpdateCity(event) {
       this.setState({
-        placeTW: event.target.value
-      });
-    }
-    handleUpdatePlaceTH(event) {
-      this.setState({
-        placeTH: event.target.value
-      });
-    }
-    handleUpdatePlaceF(event) {
-      this.setState({
-        placeF: event.target.value
-      });
-    }
-    handleUpdateCityEN(event) {
-      this.setState({
-        cityEN: event.target.value
-      });
-    }
-    handleUpdateCityTH(event) {
-      this.setState({
-        cityTH: event.target.value
+        city: event.target.value
       });
     }
     handleUpdateLatitude(event) {
@@ -151,9 +122,10 @@ class Admin_place extends Component {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          admin: "place",
-          name: [this.state.placeO, this.state.placeTW, this.state.placeTH, this.state.placeF],
-          city: [this.state.cityEN, this.state.cityTH],
+          admin: "add",
+          types: "place",
+          name: this.state.place,
+          city: this.state.city,
           latitude: this.state.latitude,
           longitude: this.state.longitude,
           category: this.state.category,
@@ -169,6 +141,27 @@ class Admin_place extends Component {
         console.log(myObj);
     })
   }
+
+  DeletePlace(ev) {
+    event.preventDefault();
+    fetch(`http://localhost:1200/admin`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        admin: "delete",
+        types: "place",
+        name: ev
+        })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      console.log(myObj);
+  })
+}
 
   render() {
     return (
@@ -187,13 +180,9 @@ class Admin_place extends Component {
                     <div id="demo" className="collapse">
                       <h2>Add new Place</h2>
 
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name (required)" onChange = {this.handleUpdatePlaceO} required/></div>
-                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name" onChange = {this.handleUpdatePlaceTW} /></div>
-                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name" onChange = {this.handleUpdatePlaceTH} /></div>
-                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name" onChange = {this.handleUpdatePlaceF} /></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name (required)" onChange = {this.handleUpdatePlace} required/></div>
 
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name (required)" onChange = {this.handleUpdateCityEN} required/></div>
-                      <div className="col-md-2 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name" onChange = {this.handleUpdateCityTH} /></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name (required)" onChange = {this.handleUpdateCity} required/></div>
 
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude}/></div>
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} /></div>
@@ -242,7 +231,7 @@ class Admin_place extends Component {
                  <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
                    <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                  </button></a>&nbsp;
-                 <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                 <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" >
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
                </td></tr>
@@ -250,6 +239,8 @@ class Admin_place extends Component {
             </tbody>
           </table>
       </div>
+
+      {/*onClick={() => this.DeletePlace(val.name[0])}*/}
 
 
       {/*   ------------------Pop Up----------------      */}
