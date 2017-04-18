@@ -7,6 +7,7 @@ import style from '../styles/step.css'
 
 function StepFour (props) {
   console.log(props);
+  console.log(typeof(props.result));
     return(
       <div>
       <div className="container-fluid">
@@ -77,7 +78,8 @@ StepFour.PropTypes = {
   destination: PropTypes.string.isRequired,
   daytrip: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  privacy: PropTypes.string.isRequired
+  privacy: PropTypes.string.isRequired,
+  result: PropTypes.object.isRequired
 }
 
 export default StepFour

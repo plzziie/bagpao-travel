@@ -8,7 +8,7 @@ class Admin_editplace extends Component {
 
       <div className = "container-fluid">
       <div>
-        <h2>Add new Place</h2>
+        <h2>Edit Place</h2>
 
         <div className="col-md-3"><input type = "text" className = "col-md-3 form-control" placeholder = "Place Name" required/></div>
         <div className="col-md-3"><input type = "text" className = "col-md-3 form-control" placeholder = "City Name" required/></div>
