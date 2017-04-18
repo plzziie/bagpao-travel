@@ -60,7 +60,7 @@ var routes = (
         <Route path = '/admin_place' component = {Admin_place} onEnter = {requireAdmin}/>
         <Route path = '/admin_member' component = {Admin_member} onEnter = {requireAdmin}/>
         <Route path = '/admin_transport' component = {Admin_transport} onEnter = {requireAdmin}/>
-        <Route path = '/editplace' component = {Admin_editplace} onEnter = {requireAdmin}/>
+        <Route path = '/editplace/:name' component = {Admin_editplace} onEnter = {requireAdmin}/>
         <Route path = '/admin_edittransport' component = {Admin_edittransport} onEnter = {requireAdmin}/>
       </Route>
   </Router>

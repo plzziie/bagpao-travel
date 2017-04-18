@@ -21,7 +21,8 @@ class StepFourContainer extends Component {
       destination: this.props.location.state.destination,
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
-      return: this.props.location.state.return
+      return: this.props.location.state.return,
+      result: this.props.location.state.result
     })
   }
 
@@ -45,6 +46,7 @@ class StepFourContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        numstep: 4,
         username: getIdToken(),
         numstep: this.state.numstep,
         origin: this.state.origin,
@@ -53,7 +55,8 @@ class StepFourContainer extends Component {
         depart: this.state.depart,
         return: this.state.return,
         name: this.state.name,
-        privacy: this.state.privacy
+        privacy: this.state.privacy,
+        place: this.state.result
         })
       })
       this.context.router.push({
@@ -74,6 +77,7 @@ class StepFourContainer extends Component {
      daytrip = {this.state.daytrip}
      name = {this.state.name}
      privacy = {this.state.privacy}
+     result = {this.state.result}
      />
     )
   }

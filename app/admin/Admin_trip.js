@@ -55,6 +55,11 @@ class Admin_trip extends Component {
     }.bind(this))
   }
 
+  EditTrip(ev) {
+    event.preventDefault();
+    window.open("/editplace");
+  }
+
   DeleteTrip(ev) {
     event.preventDefault();
     fetch(`http://localhost:1200/admin`, {
@@ -107,10 +112,10 @@ class Admin_trip extends Component {
 
               { this.state.trips.map((val, index) => {
                return <tr key = {index}><td>{val.name}</td>
-               <td><a href="/trips-details" target="_blank"><button type="button" className="btn btn-xs btn-info">
-                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-               </button></a>&nbsp;
-               <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+               <td><button type="button" className="btn btn-xs btn-info">
+                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true" onClick={() => this.EditTrip(val.name)}></span>
+               </button>&nbsp;
+               <button type="button" className="btn btn-xs btn-danger">
                  <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                </button>
              </td></tr>
@@ -120,27 +125,8 @@ class Admin_trip extends Component {
             </tbody>
           </table>
 
-{/*onClick={() => this.DeleteTrip(val.name)}*/}
-{/*   ------------------Pop Up----------------      */}
-              <div className="modal fade" id="myModal" role="dialog">
-                <div className="modal-dialog">
-
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <button type="button" className="close" data-dismiss="modal">&times;</button>
-                      <h4 className="modal-title">Delete Trip</h4>
-                    </div>
-                    <div className="modal-body">
-                      Are you sure you want to delete this trip?
-                    </div>
-                    <div className="modal-footer">
-                      <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
-                    </div>
-                  </div>
-            </div>
-            </div>
-          </div>
+          {/*onClick={() => this.DeleteTrip(val.name)}*/}
+        </div>
         </div>
 
       )

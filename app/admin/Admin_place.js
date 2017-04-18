@@ -5,10 +5,6 @@ import style from '../admin/admin.css'
 
 class Admin_place extends Component {
 
-    contextTypes: {
-      router: React.PropTypes.object.isRequired
-    }
-
     constructor () {
       super()
       this.state = {
@@ -36,6 +32,7 @@ class Admin_place extends Component {
       this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
       this.handleSubmitNew = this.handleSubmitNew.bind(this);
       this.DeletePlace = this.DeletePlace.bind(this);
+      this.EditPlace = this.EditPlace.bind(this);
     }
 
     handleUpdateSearch(event) {
@@ -145,8 +142,8 @@ class Admin_place extends Component {
 
   EditPlace(ev) {
     event.preventDefault();
-    window.open("/editplace");
-}
+    this.context.router.push('/editplace/'+ev);
+  }
 
   DeletePlace(ev) {
     event.preventDefault();
@@ -187,40 +184,41 @@ class Admin_place extends Component {
                     <div id="demo" className="collapse">
                       <h2>Add new Place</h2>
 
-                      <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place Name" onChange = {this.handleUpdatePlace} required/></div>
-                      <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City Name" onChange = {this.handleUpdateCity} required/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place Name" onChange = {this.handleUpdatePlace} required/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City Name" onChange = {this.handleUpdateCity} required/></div>
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude} required/></div>
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} required/></div>
 
-                      <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
-                      <div className = "col-md-7 addmore">
-                        <textarea className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
+                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
+                      <div className = "col-md-7 form-group">
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} required/>
                       </div>
-                      <div className = "col-md-5 addmore">
-                        <textarea className = 'form-control' placeholder = 'Contact' rows = '4' type='text' onChange = {this.handleUpdateContact} required/>
+                      <div className = "col-md-5 form-group">
+                        <textarea
+                          className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
                       </div>
-                      <div className="col-md-12">
+                      <div className="col-md-6">
                       <p>Choose the categories that fit in.</p>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "National Park"/>National Park
+                          <label className="radio-inline">
+                            <input type="radio" value="National Park" onChange = {this.handleUpdateCategory}/>National Park
                           </label>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Temple"/>Temple
+                          <label className="radio-inline">
+                            <input type="radio" value="Temple" onChange = {this.handleUpdateCategory}/>Temple
                           </label>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Beach"/>Beach
+                          <label className="radio-inline">
+                            <input type="radio" value="Beach" onChange = {this.handleUpdateCategory}/>Beach
                           </label>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Safari"/>Safari
+                          <label className="radio-inline">
+                            <input type="radio" value="Safari" onChange = {this.handleUpdateCategory}/>Safari
                           </label>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Market"/>Market
+                          <label className="radio-inline">
+                            <input type="radio" value="Market" onChange = {this.handleUpdateCategory}/>Market
                           </label>
-                          <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Museum"/>Museum
+                          <label className="radio-inline">
+                            <input type="radio" value="Museum" onChange = {this.handleUpdateCategory}/>Museum
                           </label>
                       </div>
-                      <div className="col-md-2 button-bottom col-md-offset-5"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
+                      <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
                 </div>
           </form>
       </div>
@@ -232,7 +230,6 @@ class Admin_place extends Component {
               <th>Place Name</th>
               <th>City</th>
               <th>Picture</th>
-              <th>Category</th>
               <th></th>
             </tr></thead>
 
@@ -242,51 +239,27 @@ class Admin_place extends Component {
               { this.state.places.map((val, index) => {
                return <tr key = {index}><td>{val.name[0]}</td><td>{val.city[0]}</td>
                <td><img className = "img" src = {val.picture} alt = {val.name[0]} width="120" height="100"/></td>
-               <td>National Park</td>
                <td>
                  <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
-                   <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                   <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                  </button>&nbsp;
-                 <button type="button" className = "btn btn-xs btn-danger"  data-toggle="modal" data-target="#myModal">
+                 <button type="button" className = "btn btn-xs btn-danger">
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
-
-
-                 <div className="modal fade" id="myModal" role="dialog">
-                   <div className="modal-dialog">
-
-                     <div className="modal-content">
-                       <div className="modal-header">
-                         <button type="button" className="close" data-dismiss="modal">&times;</button>
-                         <h4 className="modal-title">Delete Trip</h4>
-                       </div>
-                       <div className="modal-body">
-                         Are you sure you want to delete this trip?
-                       </div>
-                       <div className="modal-footer">
-                         <button type="button" className="btn btn-default" data-dismiss="modal">Cancle</button>
-                         <button type="button" className="btn btn-danger" data-dismiss="modal" >Delete</button>
-                         {/*onClick={() => this.DeletePlace(val.name[0])}*/}
-
-                         <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
-                         <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
-                       </div>
-                     </div>
-               </div>
-               </div>
                </td></tr>
              })}
 
             </tbody>
           </table>
-
-
-
+            {/*onClick={() => this.DeletePlace(val.name[0])}*/}
       </div>
-
     </div>
       )
     }
+  }
+
+  Admin_place.contextTypes = {
+    router: React.PropTypes.object.isRequired
   }
 
 export default Admin_place

@@ -27,8 +27,8 @@ function StepThree (props) {
           <div className="stepthree_day">
             <div className="row scrollmenu">
             {tmp.map((val, index) => {
-              return <div key = {index} className="planbox" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
-                <div className="day" id ={index+101}>Day {val+1}</div></div> })}
+              return <div key = {index} className="planbox">
+                <div className="day" onDrop = {props.Drop} onDragOver = {props.AllowDrop} id ={index+1}>Day {val+1}</div></div> })}
           </div>
         </div>
 
@@ -137,7 +137,8 @@ StepThree.PropTypes = {
   places: PropTypes.object.isRequired,
   place: PropTypes.object.isRequired,
   found: PropTypes.bool.isRequired,
-  test: PropTypes.object.isRequired
+  test: PropTypes.object.isRequired,
+  result: PropTypes.object.isRequired
 }
 
 export default StepThree
