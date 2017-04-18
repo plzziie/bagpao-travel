@@ -61,7 +61,7 @@ class Admin_editplace extends Component {
 
   handleUpdatePlace(event) {
     this.setState({
-      place: event.target.value
+      name: event.target.value
     });
   }
   handleUpdateCity(event) {
@@ -110,7 +110,7 @@ class Admin_editplace extends Component {
       body: JSON.stringify({
         admin: "update",
         types: "place",
-        name: this.state.place,
+        name: this.state.name,
         city: this.state.city,
         latitude: this.state.latitude,
         longitude: this.state.longitude,
@@ -124,6 +124,8 @@ class Admin_editplace extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
+      console.log(myObj);
+      location.replace('/Admin_place');
   })
 }
 
@@ -139,7 +141,7 @@ class Admin_editplace extends Component {
         { this.state.places.map((val, index) => {
          return <form onSubmit = {this.handleSubmitEdit} key={index}>
 
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.name} onChange = {this.handleUpdatePlace} /></div>
+        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.name} onChange = {this.handleUpdatePlace} required/></div>
         <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.city} onChange = {this.handleUpdateCity} /></div>
         <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.latitude}  onChange = {this.handleUpdateLatitude} /></div>
         <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.longitude} onChange = {this.handleUpdateLongitude} /></div>
