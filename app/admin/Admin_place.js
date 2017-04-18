@@ -5,10 +5,6 @@ import style from '../admin/admin.css'
 
 class Admin_place extends Component {
 
-    contextTypes: {
-      router: React.PropTypes.object.isRequired
-    }
-
     constructor () {
       super()
       this.state = {
@@ -36,6 +32,7 @@ class Admin_place extends Component {
       this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
       this.handleSubmitNew = this.handleSubmitNew.bind(this);
       this.DeletePlace = this.DeletePlace.bind(this);
+      this.EditPlace = this.EditPlace.bind(this);
     }
 
     handleUpdateSearch(event) {
@@ -145,8 +142,8 @@ class Admin_place extends Component {
 
   EditPlace(ev) {
     event.preventDefault();
-    window.open("/editplace");
-}
+    this.context.router.push('/editplace/'+ev);
+  }
 
   DeletePlace(ev) {
     event.preventDefault();
@@ -246,41 +243,23 @@ class Admin_place extends Component {
                  <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
                    <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                  </button>&nbsp;
-                 <button type="button" className = "btn btn-xs btn-danger"  data-toggle="modal" data-target="#myModal">
+                 <button type="button" className = "btn btn-xs btn-danger">
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
-
-                 <div className="modal fade" id="myModal" role="dialog">
-                   <div className="modal-dialog">
-
-                     <div className="modal-content">
-                       <div className="modal-header">
-                         <button type="button" className="close" data-dismiss="modal">&times;</button>
-                         <h4 className="modal-title">Delete Trip</h4>
-                       </div>
-                       <div className="modal-body">
-                         Are you sure you want to delete this trip?
-                       </div>
-                       <div className="modal-footer">
-                         <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
-                         <button type="button" className="btn btn-danger" data-dismiss="modal" >Delete</button>
-                       </div>
-                     </div>
-               </div>
-               </div>
                </td></tr>
              })}
 
             </tbody>
           </table>
-
-
-
+            {/*onClick={() => this.DeletePlace(val.name[0])}*/}
       </div>
-      {/*onClick={() => this.DeletePlace(val.name[0])}*/}
     </div>
       )
     }
+  }
+
+  Admin_place.contextTypes = {
+    router: React.PropTypes.object.isRequired
   }
 
 export default Admin_place

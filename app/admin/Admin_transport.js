@@ -141,6 +141,11 @@ class Admin_transport extends Component {
   })
 }
 
+EditTransport(ev) {
+  event.preventDefault();
+  window.open("/editplace");
+}
+
 DeleteTransport(ev) {
   event.preventDefault();
   fetch(`http://localhost:1200/admin`, {
@@ -236,10 +241,10 @@ DeleteTransport(ev) {
                          <td>{val.type}</td><td>{val.route}</td><td>{val.name}</td><td>{val.origin}</td><td>{val.stationstart}</td>
                          <td>{val.depart}</td><td>{val.destination}</td><td>{val.stationend}</td><td>{val.arrive}</td><td>{val.price}</td>
                          <td>
-                           <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                          <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditTransport(val._id)}>
                              <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                           </button></a>&nbsp;
-                           <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                           </button>&nbsp;
+                           <button type="button" className="btn btn-xs btn-danger">
                              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                            </button>
                          </td>
@@ -250,26 +255,7 @@ DeleteTransport(ev) {
                   </table>
               </div>
 
-{/*onClick={() => this.DeleteTransport(val._id)}*/}
-      {/*   ------------------Pop Up----------------*/}
-                    <div className="modal fade" id="myModal" role="dialog">
-                      <div className="modal-dialog">
-
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Delete Transport</h4>
-                          </div>
-                          <div className="modal-body">
-                            Are you sure you want to delete this transportation?
-                          </div>
-                          <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
-                          </div>
-                        </div>
-                  </div>
-                  </div>
+              {/*onClick={() => this.DeleteTransport(val._id)}*/}
                 </div>
 
       )
