@@ -109,22 +109,19 @@ margin: 8px auto;
 }
 
 /*like*/
-input[type=checkbox]{
-opacity: 0;
-}
-
-
 .cb_position {
   position: absolute;
   bottom: 11px;
   left: 58px;
   cursor: pointer;
+  opacity: 0;
 }
 .checklike {
   position: absolute;
   bottom: 8px;
   left: 23px;
   cursor: pointer;
+  opacity: 0;
 }
 
  .heart {

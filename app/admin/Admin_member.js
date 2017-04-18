@@ -95,25 +95,36 @@ class Admin_member extends Component {
         <button type="submit" className="btn btn-info">Search</button>&nbsp;
       </div>
       </form>
-      <div  className="container-fluid bar">
-        <div className="col-md-6">Member Name</div>
-      </div>
+
+      <div className="container-fluid">
+
+          <table className="table">
+            <thead className="bar"><tr>
+              <th>Member</th>
+              <th></th>
+            </tr></thead>
 
       {/*   ------------------------body-----------------      */}
 
+      <tbody>
+
       { this.state.profile.map((val, index) => {
-       return <div key = {index}><h4><div className="col-md-10 fontsize">{val.username}</div>
+       return <tr key = {index}><td>{val.username}</td>
+       <td>
        <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditMember(val.username)}>
          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
        </button>&nbsp;
        <button type="button" className="btn btn-xs btn-danger">
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-       </button></h4>
-       <div className ="underline">
-     </div></div>
+       </button></td></tr>
+
    })}
-   {/*onClick={() => this.DeleteMember(val.username)}*/}
+
+ </tbody>
+</table>
+      {/*onClick={() => this.DeleteMember(val.username)}*/}
    </div>
+ </div>
 
       )
     }
