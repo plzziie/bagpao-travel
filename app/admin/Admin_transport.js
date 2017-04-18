@@ -169,15 +169,14 @@ DeleteTransport(ev) {
       {/*   ------------------------head----------------      */}
       <div className="searchgap">
 
+                  <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
 
-                      <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
-
-                    <div id="demo" className="collapse">
-                      <h2>Add new transportation</h2>
-                      <form className="form-inline" onSubmit = {this.handleSubmitNew}>
-                        <div className="form-group">
-                          <input type="text" className="form-control" placeholder="Type" onChange = {this.handleUpdateType}/>
-                        </div>
+                  <div id="demo" className="collapse">
+                    <h2>Add new transportation</h2>
+                    <form className="form-inline" onSubmit = {this.handleSubmitNew}>
+                      <div className="form-group">
+                      <input type="text" className="form-control" placeholder="Type" onChange = {this.handleUpdateType}/>
+                      </div>
                         <div className="form-group">
                           <input type="text" className="form-control" placeholder="Route" onChange = {this.handleUpdateRoute}/>
                         </div>

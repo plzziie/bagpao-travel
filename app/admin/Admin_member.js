@@ -90,47 +90,42 @@ class Admin_member extends Component {
         <button type="submit" className="btn btn-info">Search</button>&nbsp;
       </div>
       </form>
-      <div  className="container-fluid bar">
-        <div className="col-md-6">Member Name</div>
-      </div>
+
+      <div className="container-fluid">
+
+          <table className="table">
+            <thead className="bar"><tr>
+              <th>Member</th>
+              <th></th>
+            </tr></thead>
 
       {/*   ------------------------body-----------------      */}
 
+      <tbody>
       { this.state.profile.map((val, index) => {
-       return <div key = {index}><h4><div className="col-md-10 fontsize">{val.username}</div>
-       <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+       return <tr key = {index}>
+         <td>{val.username}</td>
+       <td><a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info">
          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
        </button></a>&nbsp;
        <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
-       </button></h4>
-       <div className ="underline">
-     </div></div>
-   })}
-{/*onClick={() => this.DeleteMember(val.username)}*/}
-      {/*   ------------------Pop Up----------------      */}
-                    <div className="modal fade" id="myModal" role="dialog">
-                      <div className="modal-dialog">
+       </button>
+     </td>
+    </tr>
 
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Delete Member</h4>
-                          </div>
-                          <div className="modal-body">
-                            Are you sure you want to delete this member?
-                          </div>
-                          <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
-                          </div>
-                        </div>
-                  </div>
-                  </div>
+   })}
+     </tbody>
+   </table>
+{/*onClick={() => this.DeleteMember(val.username)}*/}
+
+
                 </div>
+              </div>
 
       )
     }
   }
+
 
 export default Admin_member

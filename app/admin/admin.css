@@ -35,8 +35,16 @@ margin-left: 10px;
 .bartran {
   width: 150%;
 }
+.bartrans {
+  width: auto;
+}
 
 .addmore {
-  margin-top: 5px;
+margin-top: 5px;
 margin-bottom: 5px;
+}
+
+.button-bottom {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
