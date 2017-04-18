@@ -139,8 +139,14 @@ class Admin_place extends Component {
       }).then(function (body) {
         var myObj = JSON.parse(body);
         console.log(myObj);
+        window.location.reload()
     })
   }
+
+  EditPlace(ev) {
+    event.preventDefault();
+    window.open("/editplace");
+}
 
   DeletePlace(ev) {
     event.preventDefault();
@@ -160,6 +166,7 @@ class Admin_place extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       console.log(myObj);
+      window.location.reload()
   })
 }
 
@@ -180,41 +187,39 @@ class Admin_place extends Component {
                     <div id="demo" className="collapse">
                       <h2>Add new Place</h2>
 
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place name (required)" onChange = {this.handleUpdatePlace} required/></div>
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City name (required)" onChange = {this.handleUpdateCity} required/></div>
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude}/></div>
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} /></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place Name" onChange = {this.handleUpdatePlace} required/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City Name" onChange = {this.handleUpdateCity} required/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude} required/></div>
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} required/></div>
 
-                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} /></div>
+                      <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
                       <div className = "col-md-7 form-group">
-                        <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} />
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} required/>
                       </div>
                       <div className = "col-md-5 form-group">
                         <textarea
-                          className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} />
+                          className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
                       </div>
                       <div className="col-md-6">
                       <p>Choose the categories that fit in.</p>
-                        <form>
                           <label className="radio-inline">
-                            <input type="radio" name="National Park"/>National Park
+                            <input type="radio" value="National Park" onChange = {this.handleUpdateCategory}/>National Park
                           </label>
                           <label className="radio-inline">
-                            <input type="radio" name="Temple"/>Temple
+                            <input type="radio" value="Temple" onChange = {this.handleUpdateCategory}/>Temple
                           </label>
                           <label className="radio-inline">
-                            <input type="radio" name="Beach"/>Beach
+                            <input type="radio" value="Beach" onChange = {this.handleUpdateCategory}/>Beach
                           </label>
                           <label className="radio-inline">
-                            <input type="radio" name="Safari"/>Safari
+                            <input type="radio" value="Safari" onChange = {this.handleUpdateCategory}/>Safari
                           </label>
                           <label className="radio-inline">
-                            <input type="radio" name="Market"/>Market
+                            <input type="radio" value="Market" onChange = {this.handleUpdateCategory}/>Market
                           </label>
                           <label className="radio-inline">
-                            <input type="radio" name="Museum"/>Museum
+                            <input type="radio" value="Museum" onChange = {this.handleUpdateCategory}/>Museum
                           </label>
-                        </form>
                       </div>
                       <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
                 </div>
@@ -225,13 +230,9 @@ class Admin_place extends Component {
 
           <table className="table">
             <thead className="bar"><tr>
-              <th colSpan="4">Place Name</th>
-              <th colSpan="2">City</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
+              <th>Place Name</th>
+              <th>City</th>
               <th>Picture</th>
-              <th>Description</th>
-              <th>Contact</th>
               <th></th>
             </tr></thead>
 
@@ -239,20 +240,13 @@ class Admin_place extends Component {
 
             <tbody>
               { this.state.places.map((val, index) => {
-               return <tr key = {index}><td>{val.name[0]}</td><td>{val.name[1]}</td><td>{val.name[2]}</td><td>{val.name[3]}</td>
-               <td>{val.city[0]}</td><td>{val.city[1]}</td>
-               <td>{val.latitude}</td><td>{val.longitude}</td>
-               <td><img className = "img" src = {val.picture} alt = {val.name[0]} width="60" height="50"/></td>
-               <td>{val.description}</td>
-               <td>{val.contact}</td>
+               return <tr key = {index}><td>{val.name[0]}</td><td>{val.city[0]}</td>
+               <td><img className = "img" src = {val.picture} alt = {val.name[0]} width="120" height="100"/></td>
                <td>
-                 <a href="/places_details" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+                 <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
                    <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                 </button></a>&nbsp;
-                 <a href="#"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
-                   <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                 </button></a>&nbsp;
-                 <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" >
+                 </button>&nbsp;
+                 <button type="button" className = "btn btn-xs btn-danger" onClick={() => this.DeletePlace(val.name[0])}>
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
                </td></tr>
@@ -260,31 +254,8 @@ class Admin_place extends Component {
             </tbody>
           </table>
       </div>
-
       {/*onClick={() => this.DeletePlace(val.name[0])}*/}
-
-
-      {/*   ------------------Pop Up----------------      */}
-                    <div className="modal fade" id="myModal" role="dialog">
-                      <div className="modal-dialog">
-
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Delete Place</h4>
-                          </div>
-                          <div className="modal-body">
-                            Are you sure you want to delete this place?
-                          </div>
-                          <div className="modal-footer">
-                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
-                          </div>
-                        </div>
-                  </div>
-                  </div>
-                </div>
-
+    </div>
       )
     }
   }

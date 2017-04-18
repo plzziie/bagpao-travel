@@ -85,14 +85,14 @@ function Places (props) {
                   <div className = "text safari">Safari</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("market")}>
                   <img src = "app/img/places/market1.jpg"/>
                   <img src = "app/img/places/market2.jpg"/>
                   <img src = "app/img/places/market3.jpg"/>
                   <div className = "text market">Market</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("museum")}>
                   <img src = "app/img/places/museum1.jpg"/>
                   <img src = "app/img/places/museum2.jpg"/>
                   <img src = "app/img/places/museum3.jpg"/>

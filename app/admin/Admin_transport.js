@@ -56,6 +56,7 @@ class Admin_transport extends Component {
         this.setState({
             transportation: myObj.message
         });
+        console.log(this.state.transportation);
     }.bind(this))
   }
 
@@ -150,7 +151,7 @@ DeleteTransport(ev) {
     body: JSON.stringify({
       admin: "delete",
       types: "trans",
-      name: ev
+      id: ev
       })
   })
   .then(function (response) {
@@ -168,7 +169,7 @@ DeleteTransport(ev) {
       {/*   ------------------------head----------------      */}
       <div className="searchgap">
 
-  
+
                       <button type="button" className="roundbutton btn btn-danger" data-toggle="collapse" data-target="#demo">+</button>
 
                     <div id="demo" className="collapse">
@@ -249,7 +250,7 @@ DeleteTransport(ev) {
                   </table>
               </div>
 
-
+{/*onClick={() => this.DeleteTransport(val._id)}*/}
       {/*   ------------------Pop Up----------------*/}
                     <div className="modal fade" id="myModal" role="dialog">
                       <div className="modal-dialog">

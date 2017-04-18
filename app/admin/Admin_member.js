@@ -101,7 +101,7 @@ class Admin_member extends Component {
        <a href="/mytrip" target="_blank"><button type="button" className="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
        </button></a>&nbsp;
-       <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal" >
+       <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
        </button></h4>
        <div className ="underline">
