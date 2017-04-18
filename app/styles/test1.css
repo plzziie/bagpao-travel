@@ -107,3 +107,56 @@ margin: 8px auto;
 .arrow {
   cursor: pointer;
 }
+
+/*like*/
+input[type=checkbox]{
+opacity: 0;
+}
+
+
+.cb_position {
+  position: absolute;
+  bottom: 11px;
+  left: 58px;
+  cursor: pointer;
+}
+.checklike {
+  position: absolute;
+  bottom: 8px;
+  left: 23px;
+  cursor: pointer;
+}
+
+ .heart {
+   background-image: url("http://csscheckbox.com/checkboxes/u/csscheckbox_1437560032a3e1345ce3a7bb5fec77cc.png");
+   background-size: 20px 38px;
+ }
+
+input[type=checkbox] + .heart {
+  padding-left:20px;
+  height:20px;
+  display:inline-block;
+  line-height:20px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  font-size:16px;
+  vertical-align:middle;
+  cursor:pointer;
+}
+input[type=checkbox]:checked + .heart {
+  background-position: 0 -20px;
+}
+.like {
+  font-family: monospace;
+}
+.like:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+input[type=checkbox]:checked + .like {
+  color:#3b5998;
+}
+.share:hover {
+text-decoration-line: underline;
+cursor: pointer;
+}

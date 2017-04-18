@@ -58,13 +58,13 @@ function Trips (props) {
                     : <h4>{props.err}</h4>
 
       : props.show.map((val, index) => {
-       return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
-         <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
-         <div className="bottomleft1">{val.name.toUpperCase()}</div>
-         <div className="box"></div>
-         <div className="bottomleft2">by {val.creator.toUpperCase()}</div>
-         </div>
-      })
+                   return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0  photo">
+                        <img className = "img" src = {val.picture} alt = {val.name} width="376" height="251"/>
+                       <div className="bottomleft1">{val.name.toUpperCase()}</div>
+                       <div className="box"></div>
+                       <div className="bottomleft2">by {val.creator.toUpperCase()}</div>
+                     </div>
+                  })
       }
     </div>
   </div>
