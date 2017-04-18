@@ -282,7 +282,7 @@ class Admin_place extends Component {
 
 
       </div>
-      {/*onClick={() => this.DeletePlace(val.name[0])}*/}
+      
     </div>
       )
     }
