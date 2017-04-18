@@ -226,7 +226,7 @@ class Admin_place extends Component {
           </form>
       </div>
 
-      <div className="container bartrans">
+      <div className="container-fluid">
 
           <table className="table">
             <thead className="bar"><tr>
@@ -246,13 +246,36 @@ class Admin_place extends Component {
                  <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
                    <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                  </button>&nbsp;
-                 <button type="button" className = "btn btn-xs btn-danger" onClick={() => this.DeletePlace(val.name)}>
+                 <button type="button" className = "btn btn-xs btn-danger"  data-toggle="modal" data-target="#myModal">
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
+
+                 <div className="modal fade" id="myModal" role="dialog">
+                   <div className="modal-dialog">
+
+                     <div className="modal-content">
+                       <div className="modal-header">
+                         <button type="button" className="close" data-dismiss="modal">&times;</button>
+                         <h4 className="modal-title">Delete Trip</h4>
+                       </div>
+                       <div className="modal-body">
+                         Are you sure you want to delete this trip?
+                       </div>
+                       <div className="modal-footer">
+                         <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
+                         <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
+                       </div>
+                     </div>
+               </div>
+               </div>
                </td></tr>
              })}
+
             </tbody>
           </table>
+
+
+
       </div>
       {/*onClick={() => this.DeletePlace(val.name[0])}*/}
     </div>

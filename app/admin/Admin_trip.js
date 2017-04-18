@@ -89,23 +89,36 @@ class Admin_trip extends Component {
               <button type="submit" className="btn btn-info">Search</button>
 </div>
 </form>
-            <div  className="container-fluid bar">
-                    <div className="col-md-12">Trip Name</div>
-            </div>
+
+
+            <div className="container-fluid">
+
+                <table className="table">
+                  <thead className="bar"><tr>
+                    <th>Trip name</th>
+                    <th></th>
+
+                  </tr></thead>
+
 
 {/*   ------------------------body-----------------      */}
 
-{ this.state.trips.map((val, index) => {
- return <div key = {index}><h4 className="fontsize"><div className="col-md-10">{val.name}</div>&nbsp;&nbsp;
- <a href="/trips-details" target="_blank"><button type="button" className="btn btn-xs btn-info">
-   <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
- </button></a>&nbsp;
- <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
-   <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
- </button></h4>
- <div className ="underline">
-</div></div>
-})}
+            <tbody>
+
+              { this.state.trips.map((val, index) => {
+               return <tr key = {index}><td>{val.name}</td>
+               <td><a href="/trips-details" target="_blank"><button type="button" className="btn btn-xs btn-info">
+                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+               </button></a>&nbsp;
+               <button type="button" className="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal">
+                 <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+               </button>
+             </td></tr>
+
+
+              })}
+            </tbody>
+          </table>
 
 {/*onClick={() => this.DeleteTrip(val.name)}*/}
 {/*   ------------------Pop Up----------------      */}
@@ -128,9 +141,7 @@ class Admin_trip extends Component {
             </div>
             </div>
           </div>
-
-
-
+        </div>
 
       )
     }
