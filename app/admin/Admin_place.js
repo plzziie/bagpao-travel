@@ -267,22 +267,23 @@ class Admin_place extends Component {
                          <button type="button" className="btn btn-default" data-dismiss="modal">Cancle</button>
                          <button type="button" className="btn btn-danger" data-dismiss="modal" >Delete</button>
                          {/*onClick={() => this.DeletePlace(val.name[0])}*/}
+
+                         <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
+                         <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
                        </div>
                      </div>
                </div>
                </div>
                </td></tr>
+             })}
 
-
-
-           })}
             </tbody>
           </table>
 
 
 
       </div>
-      
+
     </div>
       )
     }
