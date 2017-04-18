@@ -141,38 +141,43 @@ class Admin_editplace extends Component {
         { this.state.places.map((val, index) => {
          return <form onSubmit = {this.handleSubmitEdit} key={index}>
 
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.name} onChange = {this.handleUpdatePlace} required/></div>
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.city} onChange = {this.handleUpdateCity} /></div>
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.latitude}  onChange = {this.handleUpdateLatitude} /></div>
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = {val.longitude} onChange = {this.handleUpdateLongitude} /></div>
+        <div className="col-md-12"><label>Place</label>
+          <input type = "text" className = "col-md-3 form-control" placeholder = {val.name} onChange = {this.handleUpdatePlace} /></div>
+        <div className="col-md-12"><label>City</label>
+        <input type = "text" className = "col-md-3 form-control" placeholder = {val.city} onChange = {this.handleUpdateCity} /></div>
+        <div className="col-md-12"><label>Latitude</label>
+        <input type = "text" className = "col-md-3 form-control" placeholder = {val.latitude}  onChange = {this.handleUpdateLatitude} /></div>
+        <div className="col-md-12"><label>Longitude</label>
+        <input type = "text" className = "col-md-3 form-control" placeholder = {val.longitude} onChange = {this.handleUpdateLongitude} /></div>
 
-        <div className="col-md-12"><input type = "text" className = "col-md-3 form-control" placeholder = "Picture" onChange = {this.handleUpdatePicture} /></div>
-        <div className = "col-md-12 form-group">
+        <div className="col-md-12"><label>Picture</label>
+        <input type = "text" className = "col-md-3 form-control" placeholder = "Picture" onChange = {this.handleUpdatePicture} /></div>
+        <div className = "col-md-12 form-group"><label>Contact</label>
           <textarea className = 'form-control' placeholder = {val.contact} rows = '1' type='text' onChange = {this.handleUpdateContact} />
         </div>
-        <div className = "col-md-12 form-group">
+        <div className = "col-md-12 form-group"><label>Description</label>
           <textarea
             className = 'form-control' placeholder = {val.description} rows = '4'  type='text' onChange = {this.handleUpdateDescription} />
         </div>
         <div className="col-md-12">
         <p>Choose the categories that fit in.</p>
-            <label className = "radio-inline">
-              <input type = "radio" value = "National Park" onChange = {this.handleUpdateCategory} />National Park
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "National Park" onChange = {this.handleUpdateCategory} />National Park
             </label>
-            <label className = "radio-inline">
-              <input type = "radio" value = "Temple" onChange = {this.handleUpdateCategory} />Temple
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "Temple" onChange = {this.handleUpdateCategory} />Temple
             </label>
-            <label className = "radio-inline">
-              <input type = "radio" value = "Beach" onChange = {this.handleUpdateCategory}/>Beach
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "Beach" onChange = {this.handleUpdateCategory}/>Beach
             </label>
-            <label className = "radio-inline">
-              <input type = "radio" value = "Safari" onChange = {this.handleUpdateCategory} />Safari
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "Safari" onChange = {this.handleUpdateCategory} />Safari
             </label>
-            <label className = "radio-inline">
-              <input type = "radio" value = "Market" onChange = {this.handleUpdateCategory} />Market
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "Market" onChange = {this.handleUpdateCategory} />Market
             </label>
-            <label className = "radio-inline">
-              <input type = "radio" value = "Museum" onChange = {this.handleUpdateCategory} />Museum
+            <label className = "checkbox-inline">
+              <input type = "checkbox" value = "Museum" onChange = {this.handleUpdateCategory} />Museum
             </label>
         </div>
 
