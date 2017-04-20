@@ -36,6 +36,7 @@ class HomeContainer extends Component {
       }
     }.bind(this))
 
+
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
       headers:{
@@ -55,6 +56,10 @@ class HomeContainer extends Component {
         });
       }
     }.bind(this))
+  }
+
+  SeeTripsDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
   }
 
   SeeDetails(id) {
@@ -77,6 +82,7 @@ class HomeContainer extends Component {
       render() {
         return(
           <Home
+          SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}

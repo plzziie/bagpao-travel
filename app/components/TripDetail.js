@@ -9,7 +9,7 @@ console.log(props);
     <div className="container-fluid">
       <div className="row scrollmenu">
     <div className = "container">
-                  <div className = "text-center"><div className = "detail_header">Name</div>
+                  <div className = "text-center"><div className = "detail_header">Names</div>
                   <div className = "col-md-offset-2 col-md-2">
                       <img className = "img " src="#" alt = "name" width = "376" height = "251"/></div>
                   </div>
