@@ -22,7 +22,8 @@ class StepFourContainer extends Component {
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return,
-      result: this.props.location.state.result
+      result: this.props.location.state.result,
+      places: this.props.location.state.places
     })
   }
 
@@ -78,6 +79,7 @@ class StepFourContainer extends Component {
      name = {this.state.name}
      privacy = {this.state.privacy}
      result = {this.state.result}
+     places = {this.state.places}
      />
     )
   }

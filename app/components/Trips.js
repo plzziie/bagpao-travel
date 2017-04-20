@@ -48,11 +48,12 @@ function Trips (props) {
       <div className = "col-md-offset-1 col-md-10 transparentBg">
       {props.searching
         ? props.found ? props.trips.map((val, index) => {
-          return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-                    <a href="trips-details" ><img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
+          return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo"
+          onClick={() => props.SeeDetails(val.name)}>
+                    <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
                     <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                     <div className="boxtrip"></div>
-                    <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div></a>
+                    <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                     <input type="checkbox" id="like" className="checklike"/><label className="like">Like</label>
                     <input type="checkbox" id="fav"  className="cb_position"/>&nbsp;&nbsp;<label className="heart"></label>
                     <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
@@ -63,11 +64,12 @@ function Trips (props) {
                     : <h4>{props.err}</h4>
 
       : props.show.map((val, index) => {
-        return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-                  <a href="trips-details" ><img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
+        return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo"
+        onClick={() => props.SeeDetails(val.name)}>
+                  <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
                   <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                   <div className="boxtrip"></div>
-                  <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div></a>
+                  <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                   <input type="checkbox" id="like" className="checklike"/><label className="like">Like</label>
                   <input type="checkbox" id="fav"  className="cb_position"/>&nbsp;&nbsp;<label className="heart"></label>
                   <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
@@ -86,6 +88,7 @@ function Trips (props) {
   Trips.PropTypes = {
   onSubmitUser: PropTypes.func.isRequired,
   onUpdateSearch: PropTypes.func.isRequired,
+  SeeDetails: PropTypes.func.isRequired,
   header: PropTypes.string.isRequired,
   trips: PropTypes.object.isRequired,
   show: PropTypes.object.isRequired,

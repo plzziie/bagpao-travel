@@ -111,7 +111,8 @@ Drop(event) {
         depart: this.state.depart,
         destination: this.state.destination,
         return: this.state.return,
-        result: this.state.result
+        result: this.state.result,
+        places: this.state.places
       }
     })
   }
