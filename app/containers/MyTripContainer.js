@@ -8,7 +8,8 @@ class MyTripContainer extends Component {
     super()
     this.state = {
       username: '',
-      member: []
+      member: [],
+      mytrip: []
     }
   }
 
@@ -44,13 +45,37 @@ class MyTripContainer extends Component {
         })
       }
     }.bind(this))
+
+    fetch(`http://localhost:1200/mytrips`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        username: this.state.username
+      })
+  })
+  .then(function (response) {
+    return response.text()
+  }).then(function (body) {
+    var myObj = JSON.parse(body);
+    if (myObj.message === undefined) {
+      this.setState({
+          mytrip: myObj
+      });
+    }
+      else { console.log(myObj.message)}
+
+  }.bind(this))
   }
+
 
   render() {
     return(
      <MyTrip
      username = {this.state.username}
      member = {this.state.member}
+     mytrip = {this.state.mytrip}
       />
     )
   }

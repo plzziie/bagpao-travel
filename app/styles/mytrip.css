@@ -1,0 +1,41 @@
+.myphoto {
+margin-bottom: 20px;
+}
+.myphoto img {
+  width: 100%;
+  height: auto;
+  float: left;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+.myphoto img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+
+}
+
+.mybox {
+  display: inline-block;
+  background: white;
+  width: 80%;
+  height: 1.5px;
+  margin-bottom: 30px;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+}
+
+.mybottomleft1 {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    font-size: 16px;
+    color: white;
+}
+.mybottomleft2 {
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    font-size: 14px;
+    color: white;
+}

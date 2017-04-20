@@ -58,14 +58,6 @@ class HomeContainer extends Component {
     }.bind(this))
   }
 
-  SeeTripsDetails(id) {
-    this.context.router.push('/trips-details/'+ id)
-  }
-
-  SeeDetails(id) {
-    this.context.router.push('/places-details/'+ id)
-  }
-
 
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
@@ -78,15 +70,37 @@ class HomeContainer extends Component {
       })
   })
 }
+    handleUpdateView(view) {
+    fetch(`http://localhost:1200/view`, {
+    method: 'POST',
+    headers:{
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: view
+    })
+})
+}
+
+SeeTripsDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
+  }
+
+SeeDetails(id) {
+    this.context.router.push('/places-details/'+ id)
+  }
 
       render() {
         return(
           <Home
+
           SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}
-          onUpdateLike= {(event) => this.handleUpdateLike(event)}
+          onUpdateLike = {(event) => this.handleUpdateLike(event)}
+          UpdateView = {(event) => this.handleUpdateView(event)}
+          SeeDetails = {(event) => this.SeeDetails(event)}
           />
         )
       }
