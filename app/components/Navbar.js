@@ -33,7 +33,7 @@ class Navbar extends Component {
           <ul className = "nav navbar-nav navbar-right">
             <li className="header_menu">{(isLoggedIn()) ? (<a href = "/stepone"><h4>Plan</h4></a>)
              : null }</li>
-             <li className="header_menu">{(isLoggedIn()) ? (<a href="/mytrip"><h4>{getIdToken()}</h4></a>)
+             <li className="header_menu">{(isLoggedIn()) ? (<a href="/profile"><h4>{getIdToken()}</h4></a>)
               : null }</li>
             <li className = "header_menu">{(isLoggedIn()) ? (<a className="arrow"><h4 onClick={() => logout()}>Logout</h4></a>)
 

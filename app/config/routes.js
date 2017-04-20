@@ -14,9 +14,6 @@ import Place from '../containers/PlaceContainer'
 import Contact from '../containers/ContactContainer'
 import Member from '../components/Member'
 import EditProfile from '../containers/EditProfileContainer'
-import MyTrip from '../containers/MyTripContainer'
-import Draft from '../components/Draft'
-import Favorite from '../components/Favorite'
 import TripForm from '../containers/TripDetailContainer'
 import PlaceForm from '../containers/PlaceFormContainer'
 import StepOne from '../containers/StepOneContainer'
@@ -30,6 +27,7 @@ import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 import Admin_edittransport from '../admin/Admin_edittransport'
 import Admin_editplace from '../admin/Admin_editplace'
+import Profile from '../containers/ProfileContainer'
 
 import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
 
@@ -43,9 +41,6 @@ var routes = (
       <Route path = 'login' header = 'Login' component = {LoginForm}/>
       <Route path = 'signup' header = 'Sign Up' component = {SignupForm}/>
       <Route path = 'editprofile' component = {EditProfile} onEnter = {requireUser}/>
-      <Route path = 'mytrip' component = {MyTrip} onEnter = {requireUser}/>
-      <Route path = 'draft' component = {Draft} onEnter = {requireUser}/>
-      <Route path = 'favorite' component = {Favorite} onEnter = {requireUser}/>
       <Route path = 'trips-details/:id' component = {TripForm}/>
       <Route path = 'places-details/:id' component = {PlaceForm}/>
       <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>
@@ -53,6 +48,7 @@ var routes = (
       <Route path = 'stepthree' component = {StepThree} onEnter = {requireAuth}/>
       <Route path = 'stepfour' component = {StepFour} onEnter = {requireAuth}/>
       <Route path = 'places/:type' component = {Place}/>
+      <Route path = 'profile' component={Profile} onEnter = {requireUser}/>
     </Route>
 
       <Route path = '/admin' component = {Admin} onEnter = {requireAdmin}>

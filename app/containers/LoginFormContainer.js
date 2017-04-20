@@ -66,7 +66,7 @@ class LoginFormContainer extends Component {
         }
         else {
           this.context.router.push({
-            pathname: '/mytrip',
+            pathname: '/Profile',
             state: {
               username: myObj.username
             }

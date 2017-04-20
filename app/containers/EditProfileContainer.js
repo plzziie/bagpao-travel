@@ -120,7 +120,7 @@ class EditProfileContainer extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       console.log(myObj);
-      location.replace('/mytrip');
+      location.replace('/profile');
   })
 }
 
