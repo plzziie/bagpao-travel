@@ -9,8 +9,10 @@ class HomeContainer extends Component {
     this.state = {
       do: 'th',
       poptrip: [],
-      popplace: []
+      popplace: [],
+      name: ''
     }
+
   }
 
   componentDidMount() {
@@ -59,12 +61,26 @@ class HomeContainer extends Component {
     this.context.router.push('/places-details/'+ id)
   }
 
+
+  handleUpdateLike(like) {
+  fetch(`http://localhost:1200/like`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        name: like
+      })
+  })
+}
+
       render() {
         return(
           <Home
           SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}
+          onUpdateLike= {(event) => this.handleUpdateLike(event)}
           />
         )
       }

@@ -200,22 +200,22 @@ class Admin_place extends Component {
                       <div className="col-md-12">
                       <p>Choose the categories that fit in.</p>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "National Park" onChange = {this.handleUpdateCategory} />National Park
+                            <input type = "checkbox" value = "national Park" onChange = {this.handleUpdateCategory} />National Park
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Temple" onChange = {this.handleUpdateCategory} />Temple
+                            <input type = "checkbox" value = "temple" onChange = {this.handleUpdateCategory} />Temple
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Beach" onChange = {this.handleUpdateCategory}/>Beach
+                            <input type = "checkbox" value = "beach" onChange = {this.handleUpdateCategory}/>Beach
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Safari" onChange = {this.handleUpdateCategory} />Safari
+                            <input type = "checkbox" value = "safari" onChange = {this.handleUpdateCategory} />Safari
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Market" onChange = {this.handleUpdateCategory} />Market
+                            <input type = "checkbox" value = "market" onChange = {this.handleUpdateCategory} />Market
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "Museum" onChange = {this.handleUpdateCategory} />Museum
+                            <input type = "checkbox" value = "museum" onChange = {this.handleUpdateCategory} />Museum
                           </label>
                       </div>
                       <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>

@@ -46,10 +46,12 @@ function MyTrip (props) {
 
       <div className = "row" style = {styles.space}>
 			{ props.member.map((val, index) => {
-			 return  <div className = "col-xs-6" style = {styles.center} key = {index}>
-			         <img className = "img" src = {val.picture} width = "200" height = "150"/>
-			         <h4 style = {styles.gapp}>{val.username}</h4>
-			         <h5>{val.username}</h5>
+			 return  <div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo" key = {index}>
+			         <a href="trips-details" ><img className = "img" src = {val.picture}  width="376" height="251"/></a>
+							 <div className="bottomlefttrip1">{val.name}</div>
+							 <div className="boxtrip"></div>
+							 <div className="bottomlefttrip2">by {val.username}</div>
+
 			       </div>
 		 })
 	 }

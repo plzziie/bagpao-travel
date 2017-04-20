@@ -8,13 +8,11 @@ class EditProfileContainer extends Component {
   constructor () {
     super()
     this.state = {
-      name: '',
       password: '',
       email: '',
-      display:'',
       birthday: '',
       currentcity: '',
-      interest: '',
+      interest: [],
       picture: '',
       bio: '',
       status: '',
@@ -47,19 +45,20 @@ class EditProfileContainer extends Component {
         console.log(myObj.message);
       }
     }.bind(this))
+    .then(function (set) {
+      this.setState({
+        password: this.state.member[0].password,
+        email: this.state.member[0].email,
+        birthday: this.state.member[0].birthday,
+        currentcity: this.state.member[0].currentcity,
+        interest: this.state.member[0].interest,
+        picture: this.state.member[0].picture,
+        bio: this.state.member[0].bio,
+        status: this.state.member[0].status,
+      });
+    }.bind(this))
   }
 
-  handleUpdateName(event) {
-    this.setState({
-      name: event.target.value
-    });
-  }
-
-  handleUpdateDisplay(event) {
-    this.setState({
-      display: event.target.value
-    });
-  }
   handleUpdatePassword(event) {
     this.setState({
       password: event.target.value
@@ -81,8 +80,9 @@ class EditProfileContainer extends Component {
     });
   }
   handleUpdateInterest(event) {
+    var cat = event.target.value
     this.setState({
-      interest: event.target.value
+      interest: this.state.interest.concat(cat)
     });
   }
   handleUpdateBio(event) {
@@ -104,10 +104,9 @@ class EditProfileContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: this.state.name,
+        username: this.state.member[0].username,
         password: this.state.password,
         email: this.state.email,
-        display: this.state.display,
         birthday: this.state.birthday,
         currentcity: this.state.currentcity,
         interest: this.state.interest,
@@ -130,24 +129,21 @@ render() {
    <EditProfile
    onSubmitEdit={(event) => this.handleSubmitEdit(event)}
    onUpdatePassword={(event) => this.handleUpdatePassword(event)}
-   onUpdateDisplay={(event) => this.handleUpdateDisplay(event)}
    onUpdateCity={(event) => this.handleUpdateCity(event)}
    onUpdateEmail={(event) => this.handleUpdateEmail(event)}
    onUpdateBirthday={(event) => this.handleUpdateBirthday(event)}
    onUpdateInterest={(event) => this.handleUpdateInterest(event)}
    onUpdateBio={(event) => this.handleUpdateBio(event)}
    onUpdateStatus={(event) => this.handleUpdateStatus(event)}
-   onUpdateName={(event) => this.handleUpdateName(event)}
-   name = {this.state.name}
    password = {this.state.password}
    email = {this.state.email}
-   display = {this.state.display}
    birthday = {this.state.birthday}
    currentcity = {this.state.currentcity}
    interest = {this.state.interest}
    picture = {this.state.picture}
    bio = {this.state.bio}
    status = {this.state.status}
+   member = {this.state.member}
     />
   )
 }

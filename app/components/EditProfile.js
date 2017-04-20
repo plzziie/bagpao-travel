@@ -6,16 +6,18 @@ function EditProfile (props) {
   console.log(props);
   return(
     <div className="container-fluid">
-      <form onSubmit = {props.onSubmitEdit}>
+
+    {props.member.map((val, index) => {
+         return <form key = {index} onSubmit = {props.onSubmitEdit}>
     	<div className = "jumbotron col-xs-4 col-xs-offset-1 text-center">
         	<div><img className = "img-circle" src = "app/img/pic.jpg" alt = "profile" width = "200" height = "200"/></div>
         	<div><h4>Change</h4></div>
-        	<div className = "btn-group" data-toggle = "buttons" style = {styles.gap}>
-          		<label className = "btn btn-default active">
-            		<input type = "radio" name = "public" id = "public" checked onChange = {props.onUpdateStatus} />Public
+        	<div className = "btn-group" data-toggle = "buttons" style = {styles.gap} onChange = {props.onUpdateStatus}>
+          		<label className = "btn btn-default">
+            		<input type = "radio" name = "public" value = "public"/>Public
           		</label>
           		<label className = "btn btn-default">
-            		<input type = "radio" name = "private" id = "private" onChange = {props.onUpdateStatus} />Private
+            		<input type = "radio" name = "private" value = "private"/>Private
           		</label>
         	</div>
       	</div>
@@ -35,44 +37,38 @@ function EditProfile (props) {
 			<div className = "form-group row" style = {styles.space}>
   				<h4 className = "col-sm-3">Username</h4>
   				<div className = "col-sm-8">
-    				<input className = "form-control" type = "text" disabled onChange = {props.onUpdateName} />
+    				<input className = "form-control" type = "text" value = {val.username} disabled/>
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Password</h4>
   				<div className = "col-sm-8">
-    				<input className = "form-control" type = "password" onChange = {props.onUpdatePassword} />
+    				<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Email</h4>
   				<div className = "col-sm-8">
-    				<input className = "form-control" type = "email" onChange = {props.onUpdateEmail} />
-  				</div>
-			</div>
-			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Display Name</h4>
-  				<div className = "col-sm-8">
-    				<input className = "form-control" type = "text" onChange = {props.onUpdateDisplay} />
+    				<input className = "form-control" type = "email" placeholder = {val.email} onChange = {props.onUpdateEmail} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Birthday</h4>
   				<div className = "col-sm-8">
-    				<input className = "form-control" type = "date" onChange = {props.onUpdateBirthday} />
+    				<input className = "form-control" type = "date" placeholder = {val.birthday} onChange = {props.onUpdateBirthday} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Current City</h4>
   				<div className = "col-sm-8">
-    				<input className = "form-control" type = "text" onChange = {props.onUpdateCity} />
+    				<input className = "form-control" type = "text" placeholder = {val.currentcity} onChange = {props.onUpdateCity} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Interest</h4>
   				<div className = "col-sm-8">
-    				<div className = "checkbox-inline">
- 						<label><input type = "checkbox" value = "market" onChange = {props.onUpdateInterest} />Market</label>
+    				<div className = "checkbox-inline" onChange = {props.onUpdateInterest}>
+ 						<label><input type = "checkbox" value = "market"  />Market</label>
 					</div>
 					<div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "beach" onChange = {props.onUpdateInterest} />Beach</label>
@@ -94,7 +90,7 @@ function EditProfile (props) {
 			<div className = "form-group row">
   				<h4 className = "col-sm-3">Bio</h4>
   				<div className = "col-sm-8">
-    				<textarea className = "form-control" rows = "5" type = "text"  onChange = {props.onUpdateBio} />
+    				<textarea className = "form-control" rows = "5" type = "text" placeholder = {val.bio} onChange = {props.onUpdateBio} />
   				</div>
 			</div>
 			<div className = "form-group col-xs-4 col-xs-offset-5" style = {styles.gapp}>
@@ -105,13 +101,13 @@ function EditProfile (props) {
               </button>
             </div>
             </form>
+          })}
 		</div>
     )
 }
 
 EditProfile.PropTypes = {
 onUpdateBio: PropTypes.func.isRequired,
-onUpdateName: PropTypes.func.isRequired,
 onUpdatePassword: PropTypes.func.isRequired,
 onUpdateEmail: PropTypes.func.isRequired,
 onUpdateCity: PropTypes.func.isRequired,
@@ -119,12 +115,9 @@ onUpdateBirthday: PropTypes.func.isRequired,
 onUpdateInterest: PropTypes.func.isRequired,
 onUpdateStatus: PropTypes.func.isRequired,
 onUpdateDisplay: PropTypes.func.isRequired,
-member: PropTypes.bool.isRequired,
-username: PropTypes.string.isRequired,
-name: PropTypes.string.isRequired,
+member: PropTypes.object.isRequired,
 password: PropTypes.string.isRequired,
 email: PropTypes.string.isRequired,
-display: PropTypes.string.isRequired,
 birthday: PropTypes.string.isRequired,
 currentcity: PropTypes.string.isRequired,
 interest: PropTypes.string.isRequired,

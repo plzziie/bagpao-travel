@@ -104,6 +104,18 @@ class TripsContainer extends Component {
     }.bind(this))
   }
 
+  handleUpdateLike(like) {
+  fetch(`http://localhost:1200/like`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        name: like
+      })
+  })
+}
+
 
   render() {
     return(
@@ -120,6 +132,7 @@ class TripsContainer extends Component {
       found = {this.state.found}
       err = {this.state.err}
       sort = {this.state.sort}
+      onUpdateLike= {(event) => this.handleUpdateLike(event)}
       />
     )
   }
