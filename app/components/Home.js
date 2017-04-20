@@ -44,7 +44,7 @@ function Home (props) {
             {props.popplace.map((val, index) => {
                 return <div key = {index} className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo"
                 onClick={() => props.SeeDetails(val.name[0])}>
-                <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251"/>
+                <img className = "img" src = {val.picture} alt = {val.name[0]} width="376" height="251" onClick={() => props.UpdateView(val.name[0])}/>
                 <div className="bottomleft1">{val.name[0].toUpperCase()}</div>
                 <div className="box"></div>
                 <div className="bottomleft2">{val.city[0].toUpperCase()}</div>
@@ -64,7 +64,8 @@ Home.PropTypes = {
   poptrip: PropTypes.object.isRequired,
   popplace: PropTypes.object.isRequired,
   SeeDetails: PropTypes.func.isRequired,
-  onUpdateLike: PropTypes.func.isRequired
+  onUpdateLike: PropTypes.func.isRequired,
+  UpdateView: PropTypes.func.isRequired
 }
 
 export default Home
