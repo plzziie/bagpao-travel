@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import ReactRouter from 'react-router'
 import styles from '../styles'
-import Details from '../components/Details'
+import TripDetailContainer from '../containers/TripDetailContainer'
 import Reviews from '../components/Reviews'
 
-function DetailsForm (props) {
+function TripForm (props) {
+  console.log(props);
   return(
     <div className="container-fluid step-bottom">
 
@@ -18,7 +19,7 @@ function DetailsForm (props) {
         	</ul>
         	<div className = "tab-content">
           		<div id = "details" className = "tab-pane fade in active">
-          			<center><Details/></center>
+          			<center><TripDetailContainer/></center>
           		</div>
           		<div id = "reviews" className = "tab-pane fade">
             		<center><Reviews/></center>

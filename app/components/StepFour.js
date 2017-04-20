@@ -7,7 +7,6 @@ import style from '../styles/step.css'
 
 function StepFour (props) {
   console.log(props);
-  console.log(typeof(props.result));
     return(
       <div>
       <div className="container-fluid">
@@ -38,20 +37,16 @@ function StepFour (props) {
           <input type="radio" name="optradio" value = "public" defaultChecked={true} onChange = {props.onUpdatePrivacy}/>Public
           </label>
           </div>
-          <div className="col-md-2">
-            <button type = "submit" className = "button form-control btn-primary">Share</button>
-          </div>
         </div>
 
           <div className="container step-bottom">
           <div className="overall">
-            <div className="row scrollmenu">
-              <div className="planbox">
-                   <div className="day">Day 1</div>
-                   <div className="dragboxx">
-                   </div>
-              </div>
-            </div>
+
+          {props.result.map((val, index) => {
+              return <div key = {index} className="dragbox"  draggable = "true" id = {val.placeid}>
+                    <div className="col-md-8"><h4>{val.days}</h4> <h5>{val.placeid}</h5></div>
+                    </div>
+            })}
           </div>
         </div>
 
@@ -79,7 +74,8 @@ StepFour.PropTypes = {
   daytrip: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   privacy: PropTypes.string.isRequired,
-  result: PropTypes.object.isRequired
+  result: PropTypes.object.isRequired,
+  places: PropTypes.object.isRequired
 }
 
 export default StepFour

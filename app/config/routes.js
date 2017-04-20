@@ -17,7 +17,7 @@ import EditProfile from '../containers/EditProfileContainer'
 import MyTrip from '../containers/MyTripContainer'
 import Draft from '../components/Draft'
 import Favorite from '../components/Favorite'
-import DetailsForm from '../components/DetailsForm'
+import TripForm from '../containers/TripDetailContainer'
 import PlaceForm from '../containers/PlaceFormContainer'
 import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
@@ -46,7 +46,7 @@ var routes = (
       <Route path = 'mytrip' component = {MyTrip} onEnter = {requireUser}/>
       <Route path = 'draft' component = {Draft} onEnter = {requireUser}/>
       <Route path = 'favorite' component = {Favorite} onEnter = {requireUser}/>
-      <Route path = 'trips-details' component = {DetailsForm}/>
+      <Route path = 'trips-details/:id' component = {TripForm}/>
       <Route path = 'places-details/:id' component = {PlaceForm}/>
       <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>
       <Route path = 'steptwo' component = {StepTwo} onEnter = {requireAuth}/>

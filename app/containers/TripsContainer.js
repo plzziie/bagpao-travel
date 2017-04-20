@@ -62,6 +62,10 @@ class TripsContainer extends Component {
     }.bind(this))
   }
 
+  SeeDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
+  }
+
   handleUpdateSearch(event) {
     this.setState({
       name: event.target.value
@@ -107,6 +111,7 @@ class TripsContainer extends Component {
       onSubmitUser={(event) => this.handleSubmitUser(event)}
       onUpdateSearch={(event) => this.handleUpdateSearch(event)}
       ChangeSort={(event) => this.ChangeSort(event)}
+      SeeDetails={(event) => this.SeeDetails(event)}
       header = {this.props.route.header}
       name = {this.state.name}
       trips = {this.state.trips}
