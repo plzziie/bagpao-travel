@@ -2,9 +2,44 @@ import React, {Component} from 'react'
 import TripDetail from '../components/TripDetail'
 
 class TripDetailContainer extends Component {
+
+  constructor () {
+    super()
+    this.state = {
+      name: '',
+      show: []
+    }
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:1200/show`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        do: "showdetailtrip",
+        name: this.props.params.id
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            show: myObj
+        });
+      }
+    }.bind(this))
+  }
+
   render() {
     return(
-     <TripDetail/>
+      
+     <TripDetail
+     show = {this.state.show}
+     />
     )
   }
 }
