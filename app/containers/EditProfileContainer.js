@@ -15,7 +15,6 @@ class EditProfileContainer extends Component {
       interest: [],
       picture: '',
       bio: '',
-      status: '',
       err: '',
       member: []
     }
@@ -52,8 +51,7 @@ class EditProfileContainer extends Component {
         birthday: this.state.member[0].birthday,
         currentcity: this.state.member[0].currentcity,
         picture: this.state.member[0].picture,
-        bio: this.state.member[0].bio,
-        status: this.state.member[0].status,
+        bio: this.state.member[0].bio
       });
     }.bind(this))
   }
@@ -89,11 +87,6 @@ class EditProfileContainer extends Component {
       bio: event.target.value
     });
   }
-  handleUpdateStatus(event) {
-    this.setState({
-      status: event.target.value
-    });
-  }
 
   handleSubmitEdit(event) {
     event.preventDefault();
@@ -110,8 +103,7 @@ class EditProfileContainer extends Component {
         currentcity: this.state.currentcity,
         interest: this.state.interest,
         picture: this.state.picture,
-        bio: this.state.bio,
-        status: this.state.status,
+        bio: this.state.bio
         })
     })
     .then(function (response) {
@@ -133,7 +125,6 @@ render() {
    onUpdateBirthday={(event) => this.handleUpdateBirthday(event)}
    onUpdateInterest={(event) => this.handleUpdateInterest(event)}
    onUpdateBio={(event) => this.handleUpdateBio(event)}
-   onUpdateStatus={(event) => this.handleUpdateStatus(event)}
    password = {this.state.password}
    email = {this.state.email}
    birthday = {this.state.birthday}
@@ -141,7 +132,6 @@ render() {
    interest = {this.state.interest}
    picture = {this.state.picture}
    bio = {this.state.bio}
-   status = {this.state.status}
    member = {this.state.member}
     />
   )

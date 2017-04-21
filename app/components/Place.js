@@ -12,16 +12,6 @@ function Place (props) {
         <h2 className="title2">{props.header}</h2>
       </div>
 
-    {/*  <div className = "form-group col-md-1 col-xs-2" style={styles.transparentBg}>
-        <button
-          className = "btn btn-block btn-success"
-          type = "submit">
-            Search
-        </button>
-      </div>
-
-      อยากได้ปุ่ม back เด้ออ */}
-
         <div className="container-fluid footergap">
         <div className = "col-md-offset-1 col-md-10 transparentBg">
         {props.show.map((val, index) => {

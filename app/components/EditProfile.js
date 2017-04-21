@@ -8,33 +8,12 @@ function EditProfile (props) {
     <div className="container-fluid">
 
     {props.member.map((val, index) => {
-         return <form key = {index} onSubmit = {props.onSubmitEdit}>
-    	<div className = "jumbotron col-xs-4 col-xs-offset-1 text-center">
-        	<div><img className = "img-circle" src = "app/img/pic.jpg" alt = "profile" width = "200" height = "200"/></div>
-        	<div><h4>Change</h4></div>
-        	<div className = "btn-group" data-toggle = "buttons" style = {styles.gap}>
-          		<label>
-            		<input className = "switch" type = "checkbox" name = "public" value = "public" onChange = {props.onUpdateStatus} />Public
-          		</label>
-          		<label className = "btn btn-default">
-            		<input type = "checkbox" name = "private" value = "private" onChange = {props.onUpdateStatus} />
-                <div className = "slider">Private</div>
-          		</label>
-        	</div>
-      	</div>
-      	<div className = "jumbotron col-xs-6 text-center" style = {styles.transparentBg}>
-      		<nav className = "navbar navbar-default" style = {styles.transparentBg}>
-        		<div className = "row">
-          			<div className = "col-xs-offset-3">
-            			<ul className = "nav navbar-nav">
-              				<li><a href = "/mytrip"><h4>My Trips</h4></a></li>
-              				<li><a href = "/draft"><h4>Draft</h4></a></li>
-              				<li><a href = "/favorite"><h4>Favorite</h4></a></li>
-            			</ul>
-          			</div>
-        		</div>
-    		</nav>
-        </div>
+         return <div key={index}>
+    	          <div className = "jumbotron col-xs-4 col-xs-offset-4 text-center">
+        	      <div><img className = "img-circle" src = "app/img/icon.png" alt = "profile" width = "200" height = "200"/></div>
+        	      <div><h4>Change</h4></div>
+      	        </div>
+      <form onSubmit = {props.onSubmitEdit}>
 			<div className = "form-group row" style = {styles.space}>
   				<h4 className = "col-sm-3">Username</h4>
   				<div className = "col-sm-8">
@@ -102,6 +81,7 @@ function EditProfile (props) {
               </button>
             </div>
             </form>
+            </div>
           })}
 		</div>
     )
@@ -114,7 +94,6 @@ onUpdateEmail: PropTypes.func.isRequired,
 onUpdateCity: PropTypes.func.isRequired,
 onUpdateBirthday: PropTypes.func.isRequired,
 onUpdateInterest: PropTypes.func.isRequired,
-onUpdateStatus: PropTypes.func.isRequired,
 onUpdateDisplay: PropTypes.func.isRequired,
 member: PropTypes.object.isRequired,
 password: PropTypes.string.isRequired,
@@ -123,8 +102,7 @@ birthday: PropTypes.string.isRequired,
 currentcity: PropTypes.string.isRequired,
 interest: PropTypes.string.isRequired,
 picture: PropTypes.string.isRequired,
-bio: PropTypes.string.isRequired,
-status: PropTypes.string.isRequired
+bio: PropTypes.string.isRequired
 }
 
 export default EditProfile

@@ -17,21 +17,13 @@ function Profile (props) {
   		 return <div className = "jumbotron col-xs-3 col-xs-offset-1 text-center" key= {index}>
   			 <div><img className = "img-circle" src = {val.picture} alt = "profile" width = "200" height = "200"/></div>
   			 <div><Link to = "/editprofile">Edit Profile</Link></div>
-  			 <div className = "btn-group" data-toggle = "buttons" style = {styles.gap}>
-  				 <label className = "btn btn-default active">
-  					 <input type = "radio" name = "public" id = "public" checked />Public
-  				 </label>
-  				 <label className = "btn btn-default ">
-  					 <input type = "radio" name = "private" id = "private" />Private
-  				 </label>
-  			 </div>
   			 <div style = {styles.gapp}>
   				 <h4><u>Interest</u></h4>
-  				 <div className = 'well'>{val.interest}</div>
+  				 <div className = 'textbox'>{val.interest}</div>
   			 </div>
   			 <div style = {styles.gapp}>
   				 <h4><u>Bio</u></h4>
-  				 <div className = 'well well-lg'>{val.bio}</div>
+  				 <div className = 'textbox'>{val.bio}</div>
   			 </div>
   		 </div>
   	 })
@@ -53,7 +45,7 @@ function Profile (props) {
 
             	<div className = "tab-content">
               		<div id = "details" className = "tab-pane fade in active">
-              	<MyTripContainer/>s
+              	<MyTripContainer/>
               		</div>
               		<div id = "reviews" className = "tab-pane fade">
 								<FavoriteContainer/>

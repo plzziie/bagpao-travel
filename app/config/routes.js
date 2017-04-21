@@ -8,11 +8,11 @@ import Main from '../components/Main'
 import Home from '../containers/HomeContainer'
 import LoginForm from '../containers/LoginFormContainer'
 import SignupForm from '../containers/SignupFormContainer'
+import Profile from '../containers/ProfileContainer'
 import Trips from '../containers/TripsContainer'
 import Places from '../containers/PlacesContainer'
 import Place from '../containers/PlaceContainer'
 import Contact from '../containers/ContactContainer'
-import Member from '../components/Member'
 import EditProfile from '../containers/EditProfileContainer'
 import TripForm from '../containers/TripDetailContainer'
 import PlaceForm from '../containers/PlaceFormContainer'
@@ -27,7 +27,7 @@ import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 import Admin_edittransport from '../admin/Admin_edittransport'
 import Admin_editplace from '../admin/Admin_editplace'
-import Profile from '../containers/ProfileContainer'
+
 
 import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
 
