@@ -29,7 +29,7 @@ function StepThree (props) {
             {tmp.map((val, index) => {
               return <div key = {index} className="day" id ={index+1}>
                 <div className="inday">Day {val+1}</div>
-                <div className="planbox" onDrop = {props.Drop} onDragOver = {props.AllowDrop} ></div>
+                <div className="planbox" id = {index+1} onDrop = {props.Drop} onDragOver = {props.AllowDrop} ></div>
                 </div>})}
           </div>
         </div>

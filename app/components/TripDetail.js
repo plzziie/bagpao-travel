@@ -66,6 +66,7 @@ var tmp = [];
         {tmp.map((val, index) => {
           return <div key = {index} className="planbox">
             <div className="day">Day {val+1}
+
                     {props.show.map((vals, indexs) => {
                         return (vals.place[val].days == index+1) ? <div key = {indexs} className="dragbox"><div className="col-md-3">
                         <img className = "img-circle" src = {vals.place[val].picture} alt = {vals.place[val].name[0]} width="50" height="50"/></div>

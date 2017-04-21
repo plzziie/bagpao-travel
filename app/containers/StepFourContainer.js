@@ -43,8 +43,11 @@ class StepFourContainer extends Component {
         if (myObj.message === undefined) {
           this.setState({
             details: myObj
-          });
+          })
       }
+      else {
+        console.log(myObj.message);
+      };
     }.bind(this))
   }
 
