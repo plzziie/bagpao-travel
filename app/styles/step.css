@@ -39,47 +39,60 @@
 
 /* step three */
 .stepthree_day {
-  width: 60%;
+  width: 62%;
   background-color: #eff0f1; /*light grey*/
-  height: auto;
+  height: 450px;
   float: left;
+  padding-left: 20px;
+  overflow: auto;
+  white-space: nowrap;
 }
-.planbox{
-  width: 40%;
-  min-width: 200px;
-  height: auto;
-  min-height: 400px;
-  background-color: #eff0f1;
-  margin: auto;
-  display: inline-block;
-  padding: 5px;
-  text-align: center;
-  margin: 3px;
-}
+
 .planboxright{
   width: 99%;
   min-width: 200px;
-  height: auto;
-  min-height: 400px;
+  height: 310px;
   background-color: #eff0f1;
   margin: auto;
   display: inline-block;
   text-align: center;
   margin: 3px;
-}
+  padding-bottom:40px;
+  overflow: auto;
 
-.planbox .day{
+}
+ .day{
+  width: 50%;
+  min-width: 300px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
   font-family: monospace;
   font-size: 16px;
-  margin-bottom: 2%;
+  margin-bottom: 5px;
   background-color: #008ca8;
   border-radius: 6px;
-  padding: 5px;
-  padding-bottom:200px;
+  color: white;
+  height: auto;
+  padding: 2px;
+  padding-bottom: 15px;
+
+
+
 }
-div.scrollmenu {
-    overflow: auto;
-    white-space: nowrap;
+.planbox {
+  width: 100%;
+  background-color: #eff0f1;
+  padding-bottom: 30px;
+  white-space: normal;
+  min-height: 300px;
+  height: auto;
+
+
+}
+.inday {
+  width: auto;
+  height: 28px;
 }
 
 .stepthree_select {
@@ -136,13 +149,15 @@ div.scrollmenu {
 
 }
 .dragbox {
+  font-family: sans-serif;
   width: 100%;
-  height: 80px;
+  height: 70px;
   background-color: white;
   border-color: #F9F8F6;
   padding-top: 4px;
   border-bottom: 1px solid #ddd;
   text-decoration: none;
+  color: black;
 }
 .dragbox:hover {
  cursor: move;

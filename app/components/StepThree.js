@@ -27,8 +27,10 @@ function StepThree (props) {
           <div className="stepthree_day">
             <div className="row scrollmenu">
             {tmp.map((val, index) => {
-              return <div key = {index} className="planbox">
-                <div className="day" onDrop = {props.Drop} onDragOver = {props.AllowDrop} id ={index+1}>Day {val+1}</div></div> })}
+              return <div key = {index} className="day" id ={index+1}>
+                <div className="inday">Day {val+1}</div>
+                <div className="planbox" onDrop = {props.Drop} onDragOver = {props.AllowDrop} ></div>
+                </div>})}
           </div>
         </div>
 
