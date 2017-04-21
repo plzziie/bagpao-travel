@@ -7,7 +7,7 @@ class TripDetailContainer extends Component {
     super()
     this.state = {
       name: '',
-      show: []
+      show: [],
     }
   }
 
@@ -34,9 +34,10 @@ class TripDetailContainer extends Component {
     }.bind(this))
   }
 
+
+
   render() {
     return(
-
      <TripDetail
      show = {this.state.show}
      />

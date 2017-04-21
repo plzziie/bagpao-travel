@@ -9,12 +9,12 @@ function Reviews (props) {
       <div className="container">
         <div className="container commentbox">
           <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
-          &nbsp;<div className="username col-md-10 col-sm-10"><b>Arpa Assawabenjang</b></div>
-          <div className="comment col-md-11 col-sm-10">First comment! ee eeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeee</div>
+          &nbsp;<div className="username col-md-10 col-sm-10"><b>arpa</b></div>
+          <div className="comment col-md-11 col-sm-10">55555555555555555555555</div>
       </div>
       <div className="container commentbox">
         <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
-        <div className="username col-md-10 col-sm-11"><b>Arpa Assawabenjang</b></div>
+        <div className="username col-md-10 col-sm-11"><b>arpa</b></div>
         <div className="comment col-md-11 col-sm-11">First comment! ee eeeeeeeeeeeeeeeeeee	ประกาศ: เรียนผู้ใช้งานระบบ Internet ของสถาบัน ฯ ที่ใช้ Web Browser ที่ระบบ Authen ของสถาบันฯรองรับคือ IE10 หรือต่ำกว่า
 Mozilla, Firefox, Chrome ทางสำนักบริการคอมพิวเตอร์ของอภัยในความไม่สะดวก eeee eeeeeeeeeeeee eeeeeeeeeeeee</div>
     </div>
