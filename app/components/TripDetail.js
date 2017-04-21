@@ -15,7 +15,7 @@ var tmp = [];
     tmp.push(i);
   }
   return(
-    <div className="container-fluid">
+    <div className="container-fluid step-bottom">
       <div className="container">
         <div className="container">
         { props.show.map((val, index) => {
