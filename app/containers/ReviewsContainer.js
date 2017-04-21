@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {getIdToken} from '../lib/AuthService';
 import Reviews from '../components/Reviews'
 
 class ReviewsContainer extends Component {
@@ -19,7 +20,8 @@ class ReviewsContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        tripname: this.props.params.id
+        // tripname: this.props.params.id
+        tripname: "gocnx5"
       })
     })
     .then(function (response) {
@@ -48,11 +50,15 @@ class ReviewsContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        tripname: this.props.params.id,
+        // tripname: this.props.params.id,
+        tripname: "gocnx5",
         comment: this.state.comment,
         username: getIdToken()
         })
+    }).then(function (body){
+      location.replace('/review')
     })
+  }
 
 
   render() {
