@@ -49,7 +49,7 @@ function CreatePlan (props) {
 
         <div className="col-md-3 col-sm-6 col-xs-6">
           <button type = "submit" className = "button form-control">
-             Search&nbsp;<span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+             Let's Plan&nbsp;<span className="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
           </button>
         </div>
         </form>
