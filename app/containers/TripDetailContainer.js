@@ -7,7 +7,9 @@ class TripDetailContainer extends Component {
     super()
     this.state = {
       name: '',
-      show: []
+      show: [],
+      comment: '',
+      daytrip: ''
     }
   }
 
@@ -28,17 +30,25 @@ class TripDetailContainer extends Component {
       var myObj = JSON.parse(body);
       if (myObj.message === undefined) {
         this.setState({
-            show: myObj
+            show: myObj,
+            daytrip: myObj[0].daytrip,
+            name: myObj[0].name,
+            picture: myObj[0].picture
         });
+      }
+      else {
+        console.log(myObj.message);
       }
     }.bind(this))
   }
 
   render() {
     return(
-
      <TripDetail
      show = {this.state.show}
+     daytrip = {this.state.daytrip}
+     name = {this.state.name}
+     picture = {this.state.picture}
      />
     )
   }

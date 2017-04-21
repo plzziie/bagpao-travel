@@ -7,12 +7,10 @@ import style from '../styles/step.css'
 
 function StepFour (props) {
   console.log(props);
-
   var tmp = [];
   for (var i = 0; i < props.daytrip; i++) {
     tmp.push(i);
   }
-
     return(
       <div>
       <div className="container-fluid">
@@ -50,7 +48,7 @@ function StepFour (props) {
             <div className="row scrollmenu">
             {tmp.map((val, index) => {
               return <div key = {index} className="planbox">
-                <div className="day" onDrop = {props.Drop} onDragOver = {props.AllowDrop} id ={index+1}>Day {val+1}
+                <div className="day">Day {val+1}
                         {props.details.map((vals, indexs) => {
                             return (vals.days == index+1) ? <div key = {indexs} className="dragbox"><div className="col-md-3">
                             <img className = "img-circle" src = {vals.picture} alt = {vals.name[0]} width="50" height="50"/></div>

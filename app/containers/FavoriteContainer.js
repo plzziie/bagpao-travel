@@ -54,7 +54,7 @@ class FavoriteContainer extends Component {
   }
 }
 
-MyTripContainer.contextTypes = {
+FavoriteContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 

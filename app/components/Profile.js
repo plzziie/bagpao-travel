@@ -4,6 +4,7 @@ import {Link} from 'react-router'
 import styles from '../styles'
 import style from '../styles/mytrip.css'
 import MyTripContainer from '../containers/MyTripContainer'
+import FavoriteContainer from '../containers/FavoriteContainer'
 
 
 
@@ -52,9 +53,10 @@ function Profile (props) {
 
             	<div className = "tab-content">
               		<div id = "details" className = "tab-pane fade in active">
-              	<MyTripContainer/>
+              	<MyTripContainer/>s
               		</div>
               		<div id = "reviews" className = "tab-pane fade">
+									<FavoriteContainer/>q
 
               		</div>
             	</div>
