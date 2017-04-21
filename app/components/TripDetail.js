@@ -46,7 +46,7 @@ var tmp = [];
                     console.log("array in place",tmp2);
                     console.log("val :",val, "day val{"+val+"}",vals.place[val].days,"index",index+1);
                         {tmp2.map((j, indexj) => {
-                         console.log("j",j,"day{"+j+"}",vals.place[j].days);
+                         console.log("j",j,"day{"+j+"}",vals.place[j].days,"index",index+1);
                            return (vals.place[j].days == index+1) ?
                               <div key = {indexj}>
                               <div>
