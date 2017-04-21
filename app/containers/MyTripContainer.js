@@ -4,6 +4,7 @@ import styles from '../styles'
 import MyTrip from '../components/MyTrip'
 
 class MyTripContainer extends Component {
+
   constructor () {
     super()
     this.state = {
@@ -19,7 +20,6 @@ class MyTripContainer extends Component {
   }
 
   componentDidMount() {
-
     fetch(`http://localhost:1200/mytrips`, {
       method: 'POST',
       headers:{
@@ -40,8 +40,9 @@ class MyTripContainer extends Component {
     }
       else { console.log(myObj.message)}
 
-  }.bind(this))
+    }.bind(this))
   }
+
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
       method: 'POST',
@@ -53,7 +54,6 @@ class MyTripContainer extends Component {
       })
   })
 }
-
 
   render() {
     return(
@@ -69,6 +69,5 @@ class MyTripContainer extends Component {
 MyTripContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
-
 
 export default MyTripContainer

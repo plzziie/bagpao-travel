@@ -11,7 +11,8 @@ class StepFourContainer extends Component {
     this.state = {
       numstep: 4,
       name: '',
-      privacy: 'public'
+      privacy: 'public',
+      details: []
     }
   }
 
@@ -22,9 +23,29 @@ class StepFourContainer extends Component {
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return,
-      result: this.props.location.state.result,
-      places: this.props.location.state.places
+      result: this.props.location.state.result
     })
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:1200/getplaces`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        place: this.state.result
+        })
+      }).then(function (response) {
+        return response.text()
+      }).then(function (body) {
+        var myObj = JSON.parse(body);
+        if (myObj.message === undefined) {
+          this.setState({
+            details: myObj
+          });
+      }
+    }.bind(this))
   }
 
   handleUpdateName(event) {
@@ -79,7 +100,7 @@ class StepFourContainer extends Component {
      name = {this.state.name}
      privacy = {this.state.privacy}
      result = {this.state.result}
-     places = {this.state.places}
+     details = {this.state.details}
      />
     )
   }

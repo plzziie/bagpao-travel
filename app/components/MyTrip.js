@@ -7,14 +7,8 @@ import style from '../styles/mytrip.css'
 function MyTrip (props) {
 	console.log(props);
 	return (
+
 		<div className="container-fluid">
-
-
-
-
-
-
-
 			<div className = "row">
 						{ props.mytrip.map((val, index) => {
 						 return  <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0 photo " >
@@ -31,17 +25,11 @@ function MyTrip (props) {
 					 })
 				 }
 			      </div>
-
-
-
-
-
-
     </div>
     )
   }
 
-	MyTrip.PropTypes = {
+MyTrip.PropTypes = {
 	username: PropTypes.string.isRequired,
 	mytrip: PropTypes.object.isRequired,
 	onUpdateLike: PropTypes.func.isRequired

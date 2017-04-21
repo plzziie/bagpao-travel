@@ -51,7 +51,6 @@ class EditProfileContainer extends Component {
         email: this.state.member[0].email,
         birthday: this.state.member[0].birthday,
         currentcity: this.state.member[0].currentcity,
-        interest: this.state.member[0].interest,
         picture: this.state.member[0].picture,
         bio: this.state.member[0].bio,
         status: this.state.member[0].status,
