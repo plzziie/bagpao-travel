@@ -14,7 +14,7 @@ function Profile (props) {
 		<div className="container-fluid">
 
       { props.member.map((val, index) => {
-  		 return <div className = "jumbotron col-xs-4 col-xs-offset-1 text-center" key= {index}>
+  		 return <div className = "jumbotron col-xs-3 col-xs-offset-1 text-center" key= {index}>
   			 <div><img className = "img-circle" src = {val.picture} alt = "profile" width = "200" height = "200"/></div>
   			 <div><Link to = "/editprofile">Edit Profile</Link></div>
   			 <div className = "btn-group" data-toggle = "buttons" style = {styles.gap}>
@@ -38,7 +38,7 @@ function Profile (props) {
    }
 
 
-      <div className = "jumbotron col-md-6 col-sm-6 col-xs-6 text-center" style = {styles.transparentBg}>
+      <div className = "jumbotron col-md-7 col-sm-7 col-xs-7 text-center" style = {styles.transparentBg}>
         <nav className = "navbar navbar-default" style = {styles.transparentBg}>
           <div className = "row">
             <div className = "col-md-offset-3 col-xs-offset-1">
@@ -56,17 +56,11 @@ function Profile (props) {
               	<MyTripContainer/>s
               		</div>
               		<div id = "reviews" className = "tab-pane fade">
-									<FavoriteContainer/>q
-
+								<FavoriteContainer/>
               		</div>
             	</div>
             </div>
-
-
           </div>
-
-
-
     )
   }
 

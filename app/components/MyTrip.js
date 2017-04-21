@@ -11,16 +11,17 @@ function MyTrip (props) {
 		<div className="container-fluid">
 			<div className = "row">
 						{ props.mytrip.map((val, index) => {
-						 return  <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0 myphoto" >
-						         <a href="trips-details" ><img className = "img" src = {val.picture}  width="376" height="251" /></a>
-										 <div className="mybottomleft1">{val.name}</div>
-										 <div className="mybox"></div>
-										 <div className="mybottomleft2">by {val.creator}</div>
-										 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
-										 <input type="checkbox" id="fav"  className="cb_position"/>&nbsp;&nbsp;<label className="heart"></label>
-										 <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
-									 </div>
+						 return  <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0 photo " >
+											 <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
+											 <div className="bottomlefttrip1">{val.name}</div>
+											 <div className="boxtrip"></div>
+											 <div className="bottomlefttrip2">by {val.creator}</div>
+											 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
+											 <input type="checkbox" id="fav"  className="cb_position"/>&nbsp;&nbsp;<label className="heart"></label>
+											 <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
+
 						      </div>
+								</div>
 					 })
 				 }
 			      </div>

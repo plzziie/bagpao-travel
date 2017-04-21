@@ -42,6 +42,8 @@ class TripDetailContainer extends Component {
     }.bind(this))
   }
 
+
+
   render() {
     return(
      <TripDetail
