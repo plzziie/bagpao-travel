@@ -21,13 +21,13 @@ var tmp = [];
         {tmp.map((val, index) => {
           return <div key = {index} className="planbox">
             <div className="day">Day {val+1}
-                    {props.show.map((vals, indexs) => {
-                        return (vals.place[val].days == index+1) ? <div key = {indexs} className="dragbox"><div className="col-md-3">
-                        <img className = "img-circle" src = {vals.place[val].picture} alt = {vals.place[val].name[0]} width="50" height="50"/></div>
-                        <div className="col-md-8"><h5>{vals.place[val].name[0]}</h5> <h6>{vals.place[val].city[0]}</h6></div>
-                        </div>
-                      : null })}
-            </div></div> })}
+                {props.show.map((vals, indexs) => {
+                    return (vals.place[index].days == index+1) ? <div key = {indexs} className="dragbox"><div className="col-md-3">
+                    <img className = "img-circle" src = {vals.place[val].picture} alt = {vals.place[val].name[0]} width="50" height="50"/></div>
+                    <div className="col-md-8"><h5>{vals.place[val].name[0]}</h5> <h6>{vals.place[val].city[0]}</h6></div>
+                    </div>
+                : null })}
+          </div></div> })}
       </div>
     </div>
        </div>
