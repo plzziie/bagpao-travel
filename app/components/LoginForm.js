@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import validator from 'bootstrap-validator'
-import {statusChangeCallback} from '../lib/Facebook'
 import styles from '../styles'
 
 function LoginForm (props) {

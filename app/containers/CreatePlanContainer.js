@@ -12,6 +12,7 @@ class CreatePlanContainer extends Component {
       origin: '',
       destination: '',
       daytrip: '',
+      multiple: false,
       transportation: []
     }
   }
@@ -78,6 +79,7 @@ class CreatePlanContainer extends Component {
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
      transportation = {this.state.transportation}
+     multiple = {this.state.multiple}
      />
     )
   }

@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
 import ReactRouter from 'react-router'
+import {PropTypes} from 'react'
 import styles from '../styles'
 
 function Reviews (props) {
+  console.log(props);
   return(
     <div className="review-size">
-
       <div className="container">
+        { props.show.map((vals, index) => {
+          console.log("test:",vals.comment);
+          return
         <div className="container commentbox">
           <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
-          &nbsp;<div className="username col-md-10 col-sm-10"><b>arpa</b></div>
-          <div className="comment col-md-11 col-sm-10">55555555555555555555555</div>
+          &nbsp;<div className="username col-md-10 col-sm-10"><b>{vals.user}</b></div>
+          <div className="comment col-md-11 col-sm-10">{vals.comment}</div>
       </div>
+
+       })}
       <div className="container commentbox">
         <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
         <div className="username col-md-10 col-sm-11"><b>arpa</b></div>
@@ -24,12 +30,14 @@ Mozilla, Firefox, Chrome ทางสำนักบริการคอมพ�
   			<li><a href="#">2</a></li>
   			<li><a href="#">3</a></li>
 		</ul>
+    <form onSubmit = {props.onUpdateComment}>
 		<div className = "form-group">
               <textarea
                 className = 'form-control'
                 placeholder = 'Write your comment'
                 rows = '5'
                 type='text'
+                onChange = {props.onUpdateReview}
                />
         </div>
         <div className = "form-group col-xs-4 col-xs-offset-4">
@@ -39,9 +47,10 @@ Mozilla, Firefox, Chrome ทางสำนักบริการคอมพ�
                   Send
               </button>
         </div>
+        </form>
       </div>
 
-
+{/*
         <div className="creatorbox">
         	<div>
         		<h4 className = "text-left">Creator</h4>
@@ -67,9 +76,15 @@ Mozilla, Firefox, Chrome ทางสำนักบริการคอมพ�
 
 			</div>
 
-		</div>
+		</div> */}
     </div>
    )
+ }
+
+ Reviews.PropTypes = {
+ onUpdateReview: PropTypes.func.isRequired,
+ onUpdateComment: PropTypes.func.isRequired
+
  }
 
 export default Reviews

@@ -66,6 +66,8 @@ Drop(event) {
     event.preventDefault();
     var placeid = event.dataTransfer.getData("text");
     var days = event.target.id
+    console.log(days);
+    console.log(placeid);
     event.target.appendChild(document.getElementById(placeid));
     this.setState({
       result: this.state.result.concat([{days,placeid}])
