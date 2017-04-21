@@ -9,7 +9,9 @@ class MyTripContainer extends Component {
     super()
     this.state = {
       username: '',
-      mytrip: []
+      name: '',
+      mytrip: [],
+      add: ''
     }
   }
 
@@ -54,6 +56,21 @@ class MyTripContainer extends Component {
       })
   })
 }
+handleAddFav(fav) {
+fetch(`http://localhost:1200/favorite`, {
+    method: 'POST',
+    headers:{
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: fav,
+      username: this.state.username,
+      add: "add"
+    })
+  }).then(function (body) {
+    location.replace('/profile');
+  })
+}
 
   render() {
     return(
@@ -61,6 +78,7 @@ class MyTripContainer extends Component {
      username = {this.state.username}
      mytrip = {this.state.mytrip}
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
+     onAddFav = {(event) => this.handleAddFav(event)}
       />
     )
   }

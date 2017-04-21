@@ -42,6 +42,21 @@ class FavoriteContainer extends Component {
 
   }.bind(this))
   }
+  handleRemoveFav(fav) {
+  fetch(`http://localhost:1200/favorite`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        name: fav,
+        username: this.state.username
+      })
+  })
+  .then(function (body) {
+    location.replace('/profile');
+})
+  }
 
 
   render() {
@@ -49,6 +64,7 @@ class FavoriteContainer extends Component {
      <Favorite
      username = {this.state.username}
      favtrip = {this.state.favtrip}
+     onRemoveFav = {(event) => this.handleRemoveFav(event)}
       />
     )
   }

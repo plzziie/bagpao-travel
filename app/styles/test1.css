@@ -153,7 +153,10 @@ input[type=checkbox]:checked + .heart {
 input[type=checkbox]:checked + .like {
   color:#3b5998;
 }
-.share:hover {
+/*.share:hover {
 text-decoration-line: underline;
 cursor: pointer;
+}*/
+.share{
+  opacity: 0;
 }

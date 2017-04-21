@@ -27,3 +27,40 @@
     font-size: 14px;
     color: white;
 }
+
+.invi{
+  visibility: hidden;
+  opacity: 0;
+}
+.heartfav {
+  margin-top: 0px;
+  background-image: url("http://csscheckbox.com/checkboxes/u/csscheckbox_1437560032a3e1345ce3a7bb5fec77cc.png");
+  background-size: 20px 38px;
+  position: absolute;
+  bottom: -15px;
+  left: 36px;
+  z-index: -1;
+}
+
+.fav_position {
+  position: absolute;
+  bottom: -2px;
+  left: 40px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+input[type=checkbox] + .heartfav {
+  padding-left:20px;
+  height:20px;
+  display:inline-block;
+  line-height:20px;
+  background-repeat:no-repeat;
+  background-position: 0px -20px;
+  font-size:16px;
+
+  cursor:pointer;
+}
+input[type=checkbox]:checked + .heartfav {
+  background-position: 0px 0px;
+}

@@ -33,7 +33,7 @@ function Profile (props) {
       <div className = "jumbotron col-md-7 col-sm-7 col-xs-7 text-center" style = {styles.transparentBg}>
         <nav className = "navbar navbar-default" style = {styles.transparentBg}>
           <div className = "row">
-            <div className = "col-md-offset-3 col-xs-offset-1">
+            <div className = "col-md-offset-4 col-xs-offset-1">
               <ul className = "nav nav-pills step-bottom">
 
               	<li className = "active"><a data-toggle = "tab" href = "#details"><h3>My Trip</h3></a></li>

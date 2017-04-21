@@ -9,44 +9,46 @@ function EditProfile (props) {
 
     {props.member.map((val, index) => {
          return <div key={index}>
+           <div className="container step-bottom">
     	          <div className = "jumbotron col-xs-4 col-xs-offset-4 text-center">
         	      <div><img className = "img-circle" src = "app/img/icon.png" alt = "profile" width = "200" height = "200"/></div>
         	      <div><h4>Change</h4></div>
       	        </div>
-      <form onSubmit = {props.onSubmitEdit}>
-			<div className = "form-group row" style = {styles.space}>
-  				<h4 className = "col-sm-3">Username</h4>
-  				<div className = "col-sm-8">
+              </div>
+      <form onSubmit = {props.onSubmitEdit} className = "col-md-offset-2">
+			<div className = "form-group row">
+  				<h4 className = "col-sm-2">Username</h4>
+  				<div className = "col-sm-7">
     				<input className = "form-control" type = "text" value = {val.username} disabled/>
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Password</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Password</h4>
+  				<div className = "col-sm-7">
     				<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Email</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Email</h4>
+  				<div className = "col-sm-7">
     				<input className = "form-control" type = "email" placeholder = {val.email} onChange = {props.onUpdateEmail} />
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Birthday</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Birthday</h4>
+  				<div className = "col-sm-7">
     				<input className = "form-control" type = "date" placeholder = {val.birthday} onChange = {props.onUpdateBirthday} />
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Current City</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Current City</h4>
+  				<div className = "col-sm-7">
     				<input className = "form-control" type = "text" placeholder = {val.currentcity} onChange = {props.onUpdateCity} />
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Interest</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Interest</h4>
+  				<div className = "col-sm-7">
     				<div className = "checkbox-inline" onChange = {props.onUpdateInterest}>
  						<label><input type = "checkbox" value = "market"  />Market</label>
 					</div>
@@ -68,16 +70,13 @@ function EditProfile (props) {
   				</div>
 			</div>
 			<div className = "form-group row">
-  				<h4 className = "col-sm-3">Bio</h4>
-  				<div className = "col-sm-8">
+  				<h4 className = "col-sm-2">Bio</h4>
+  				<div className = "col-sm-7">
     				<textarea className = "form-control" rows = "5" type = "text" placeholder = {val.bio} onChange = {props.onUpdateBio} />
   				</div>
 			</div>
-			<div className = "form-group col-xs-4 col-xs-offset-5" style = {styles.gapp}>
-              <button
-                className = "btn btn-block btn-success"
-                type = "submit">
-                  Submit
+			<div className = "form-group col-md-2 col-md-offset-4" style = {styles.gapp}>
+              <button className = "btn btn-block btn-success" type = "submit">Submit
               </button>
             </div>
             </form>
