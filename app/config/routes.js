@@ -27,6 +27,7 @@ import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 import Admin_edittransport from '../admin/Admin_edittransport'
 import Admin_editplace from '../admin/Admin_editplace'
+import ReviewsContainer from '../containers/ReviewsContainer'
 
 
 import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
@@ -49,6 +50,7 @@ var routes = (
       <Route path = 'stepfour' component = {StepFour} onEnter = {requireAuth}/>
       <Route path = 'places/:type' component = {Place}/>
       <Route path = 'profile' component={Profile} onEnter = {requireUser}/>
+      <Route path = 'review' component = {ReviewsContainer}/>
     </Route>
 
       <Route path = '/admin' component = {Admin} onEnter = {requireAdmin}>

@@ -34,4 +34,4 @@ function TripForm (props) {
     )
   }
 
-export default DetailsForm
+export default TripForm
