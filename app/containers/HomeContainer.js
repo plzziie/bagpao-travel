@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styles from '../styles'
 import Home from '../components/Home'
+import {getIdToken} from '../lib/AuthService';
 
 class HomeContainer extends Component {
 
@@ -10,9 +11,15 @@ class HomeContainer extends Component {
       do: 'th',
       poptrip: [],
       popplace: [],
-      name: ''
+      name: '',
+      username: ''
     }
 
+  }
+  componentWillMount() {
+    this.setState({
+        username: getIdToken()
+    });
   }
 
   componentDidMount() {
@@ -81,6 +88,19 @@ class HomeContainer extends Component {
     })
 })
 }
+handleAddFav(fav) {
+fetch(`http://localhost:1200/favorite`, {
+    method: 'POST',
+    headers:{
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: fav,
+      username: this.state.username,
+      add: "add"
+    })
+  })
+}
 
 SeeTripsDetails(id) {
     this.context.router.push('/trips-details/'+ id)
@@ -99,6 +119,7 @@ SeeDetails(id) {
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}
           onUpdateLike = {(event) => this.handleUpdateLike(event)}
+          AddFav = {(event) => this.handleAddFav(event)}
           UpdateView = {(event) => this.handleUpdateView(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
           />

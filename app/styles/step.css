@@ -41,7 +41,7 @@
 .stepthree_day {
   width: 62%;
   background-color: #eff0f1; /*light grey*/
-  height: 450px;
+  height: 420px;
   float: left;
   padding-left: 20px;
   overflow: auto;
@@ -85,7 +85,7 @@
   background-color: #eff0f1;
   padding-bottom: 30px;
   white-space: normal;
-  min-height: 300px;
+  min-height: 350px;
   height: auto;
 
 

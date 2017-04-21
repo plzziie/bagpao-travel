@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styles from '../styles'
+import {getIdToken} from '../lib/AuthService';
 import Trips from '../components/Trips'
 
 class TripsContainer extends Component {
@@ -13,8 +14,14 @@ class TripsContainer extends Component {
       searching: false,
       found: '',
       err: '',
-      sort: true
+      sort: true,
+      username: ''
     }
+  }
+  componentWillMount() {
+    this.setState({
+        username: getIdToken()
+    });
   }
 
   componentDidMount() {
@@ -104,6 +111,21 @@ class TripsContainer extends Component {
     }.bind(this))
   }
 
+  handleAddFav(fav) {
+  fetch(`http://localhost:1200/favorite`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        name: fav,
+        username: this.state.username,
+        add: "add"
+      })
+    })
+  }
+
+
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
       method: 'POST',
@@ -133,6 +155,7 @@ class TripsContainer extends Component {
       err = {this.state.err}
       sort = {this.state.sort}
       onUpdateLike= {(event) => this.handleUpdateLike(event)}
+      AddFav = {(event) => this.handleAddFav(event)}
       />
     )
   }

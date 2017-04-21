@@ -7,8 +7,8 @@ import style from '../styles/detail.css'
 function PlaceForm (props) {
 console.log(props);
   return(
-    <div className="container-fluid">
-      <div className="container">
+    <div className="container-fluid step-bottom">
+      <div className="container step-bottom ">
 
         { props.show.map((val, index) => {
           return <div key = {index}><div className = "text-center"><div className = "detail_header">{val.name[0].toUpperCase()}</div>
@@ -20,8 +20,8 @@ console.log(props);
                </div></div>
          })}
        </div>
-         <div className="col-md-offset-5 buttongap">
-           <a className="btn btn-success col-md-3" href="/places" role="button">Back</a>
+         <div className="col-md-offset-5 col-xs-offset-5 col-sm-offset-5">
+           <a className="btn btn-success col-md-3 col-sm-2 col-xs-3" href="/places" role="button">Back</a>
          </div>
     </div>
     )

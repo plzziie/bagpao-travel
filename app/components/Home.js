@@ -19,14 +19,13 @@ function Home (props) {
       <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Popular Trips</h3>
         <div className = "row">
              {props.poptrip.map((val, index) => {
-                  return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo"
-                  onClick={() => props.SeeTripsDetails(val.name)}>
-                            <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
+                  return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+                            <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeTripsDetails(val.name)}/>
                             <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                             <div className="boxtrip"></div>
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                             <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
-                            <input type="checkbox" id="fav"  className="cb_position"/>&nbsp;&nbsp;<label className="heart"></label>
+                            <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                             <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
 
                           </div>
@@ -66,7 +65,8 @@ Home.PropTypes = {
   popplace: PropTypes.object.isRequired,
   SeeDetails: PropTypes.func.isRequired,
   onUpdateLike: PropTypes.func.isRequired,
-  UpdateView: PropTypes.func.isRequired
+  UpdateView: PropTypes.func.isRequired,
+  AddFav: PropTypes.func.isRequired
 }
 
 export default Home

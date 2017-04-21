@@ -78,6 +78,8 @@ class Admin_trip extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       console.log(myObj);
+  }).then(function (body) {
+    location.replace('/admin_trip');
   })
   }
 
@@ -116,7 +118,7 @@ class Admin_trip extends Component {
                  <span className="glyphicon glyphicon-eye-open" aria-hidden="true" onClick={() => this.EditTrip(val.name)}></span>
                </button>&nbsp;
                <button type="button" className="btn btn-xs btn-danger">
-                 <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                 <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteTrip(val.name)}></span>
                </button>
              </td></tr>
 
