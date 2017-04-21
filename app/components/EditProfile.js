@@ -12,12 +12,13 @@ function EditProfile (props) {
     	<div className = "jumbotron col-xs-4 col-xs-offset-1 text-center">
         	<div><img className = "img-circle" src = "app/img/pic.jpg" alt = "profile" width = "200" height = "200"/></div>
         	<div><h4>Change</h4></div>
-        	<div className = "btn-group" data-toggle = "buttons" style = {styles.gap} onChange = {props.onUpdateStatus}>
-          		<label className = "btn btn-default">
-            		<input type = "radio" name = "public" value = "public"/>Public
+        	<div className = "btn-group" data-toggle = "buttons" style = {styles.gap}>
+          		<label>
+            		<input className = "switch" type = "checkbox" name = "public" value = "public" onChange = {props.onUpdateStatus} />Public
           		</label>
           		<label className = "btn btn-default">
-            		<input type = "radio" name = "private" value = "private"/>Private
+            		<input type = "checkbox" name = "private" value = "private" onChange = {props.onUpdateStatus} />
+                <div className = "slider">Private</div>
           		</label>
         	</div>
       	</div>

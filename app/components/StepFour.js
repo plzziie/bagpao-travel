@@ -7,6 +7,12 @@ import style from '../styles/step.css'
 
 function StepFour (props) {
   console.log(props);
+
+  var tmp = [];
+  for (var i = 0; i < props.daytrip; i++) {
+    tmp.push(i);
+  }
+
     return(
       <div>
       <div className="container-fluid">
@@ -39,17 +45,22 @@ function StepFour (props) {
           </div>
         </div>
 
-          <div className="container step-bottom">
-          <div className="overall">
-
-          {props.result.map((val, index) => {
-              return <div key = {index} className="dragbox"  draggable = "true" id = {val.placeid}>
-                    <div className="col-md-8"><h4>{val.days}</h4> <h5>{val.placeid}</h5></div>
-                    </div>
-            })}
+        <div className="container">
+          <div className="stepthree_day">
+            <div className="row scrollmenu">
+            {tmp.map((val, index) => {
+              return <div key = {index} className="planbox">
+                <div className="day" onDrop = {props.Drop} onDragOver = {props.AllowDrop} id ={index+1}>Day {val+1}
+                        {props.details.map((vals, indexs) => {
+                            return (vals.days == index+1) ? <div key = {indexs} className="dragbox"><div className="col-md-3">
+                            <img className = "img-circle" src = {vals.picture} alt = {vals.name[0]} width="50" height="50"/></div>
+                            <div className="col-md-8"><h5>{vals.name[0]}</h5> <h6>{vals.city[0]}</h6></div>
+                            </div>
+                          : null })}
+                </div></div> })}
           </div>
         </div>
-
+      </div>
 
           <div className="col-md-offset-5 col-sm-offset-4 col-xs-offset-4 col-md-3 col-sm-4 col-xs-4 step-bottom " >
             <button  type = "submit" className = "button form-control">
@@ -75,7 +86,7 @@ StepFour.PropTypes = {
   name: PropTypes.string.isRequired,
   privacy: PropTypes.string.isRequired,
   result: PropTypes.object.isRequired,
-  places: PropTypes.object.isRequired
+  details: PropTypes.object.isRequired
 }
 
 export default StepFour
