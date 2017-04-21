@@ -1,15 +1,14 @@
 import React, {Component} from 'react'
 import {getIdToken} from '../lib/AuthService';
 import styles from '../styles'
-import MyTrip from '../components/MyTrip'
+import Favorite from '../components/Favorite'
 
-class MyTripContainer extends Component {
-
+class FavoriteContainer extends Component {
   constructor () {
     super()
     this.state = {
       username: '',
-      mytrip: []
+      favtrip: []
     }
   }
 
@@ -20,7 +19,8 @@ class MyTripContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/mytrips`, {
+
+    fetch(`http://localhost:1200/myfavorite`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -35,32 +35,20 @@ class MyTripContainer extends Component {
     var myObj = JSON.parse(body);
     if (myObj.message === undefined) {
       this.setState({
-          mytrip: myObj
+          favtrip: myObj
       });
     }
       else { console.log(myObj.message)}
 
-    }.bind(this))
+  }.bind(this))
   }
 
-  handleUpdateLike(like) {
-  fetch(`http://localhost:1200/like`, {
-      method: 'POST',
-      headers:{
-      'Content-Type': 'application/json'
-    },
-      body: JSON.stringify({
-        name: like
-      })
-  })
-}
 
   render() {
     return(
-     <MyTrip
+     <Favorite
      username = {this.state.username}
-     mytrip = {this.state.mytrip}
-     onUpdateLike = {(event) => this.handleUpdateLike(event)}
+     favtrip = {this.state.favtrip}
       />
     )
   }
@@ -70,4 +58,5 @@ MyTripContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default MyTripContainer
+
+export default FavoriteContainer

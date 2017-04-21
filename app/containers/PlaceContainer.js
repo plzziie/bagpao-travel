@@ -33,6 +33,17 @@ class PlaceContainer extends Component {
       }
     }.bind(this))
   }
+  handleUpdateView(view) {
+  fetch(`http://localhost:1200/view`, {
+  method: 'POST',
+  headers:{
+  'Content-Type': 'application/json'
+},
+  body: JSON.stringify({
+    name: view
+  })
+})
+}
 
   SeeDetails(id) {
     this.context.router.push('/places-details/'+ id)
@@ -44,6 +55,7 @@ class PlaceContainer extends Component {
       SeeDetails = {(event) => this.SeeDetails(event)}
       header = {this.props.route.header}
       show = {this.state.show}
+      UpdateView = {(event) => this.handleUpdateView(event)}
       />
     )
   }

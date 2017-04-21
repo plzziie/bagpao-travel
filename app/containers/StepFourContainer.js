@@ -82,7 +82,7 @@ class StepFourContainer extends Component {
         })
       })
       this.context.router.push({
-        pathname: '/mytrip'
+        pathname: '/profile'
       })
     }
 

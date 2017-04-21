@@ -27,8 +27,8 @@ function TripForm (props) {
         	</div>
         </div>
 
-                <div className="col-md-offset-5">
-                  <a className="btn btn-success col-md-3" href="/trips" role="button">Back</a>
+                <div className="col-md-offset-5 step-bottom">
+                  <a className="btn btn-success col-md-3 ste" href="/trips" role="button">Back</a>
                 </div>
     </div>
     )

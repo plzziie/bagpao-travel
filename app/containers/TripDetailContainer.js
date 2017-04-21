@@ -36,7 +36,7 @@ class TripDetailContainer extends Component {
 
   render() {
     return(
-      
+
      <TripDetail
      show = {this.state.show}
      />
