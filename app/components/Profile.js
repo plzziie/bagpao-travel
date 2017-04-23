@@ -6,8 +6,6 @@ import style from '../styles/mytrip.css'
 import MyTripContainer from '../containers/MyTripContainer'
 import FavoriteContainer from '../containers/FavoriteContainer'
 
-
-
 function Profile (props) {
 	console.log(props);
 	return (
@@ -19,7 +17,9 @@ function Profile (props) {
   			 <div><Link to = "/editprofile">Edit Profile</Link></div>
   			 <div style = {styles.gapp}>
   				 <h4><u>Interest</u></h4>
-  				 <div className = 'textbox'>{val.interest}</div>
+					 { val.interest.map((vals, indexs) => {
+						 return <div>{vals}</div>
+					 })}
   			 </div>
   			 <div style = {styles.gapp}>
   				 <h4><u>Bio</u></h4>

@@ -78,8 +78,15 @@ class EditProfileContainer extends Component {
   }
   handleUpdateInterest(event) {
     var cat = event.target.value
+
+    if (this.state.interest.indexOf(cat) === -1) {
+        this.state.interest = this.state.interest.concat(cat)
+    }
+    else {
+      this.state.interest.splice(this.state.interest.indexOf(cat), 1)
+    }
     this.setState({
-      interest: this.state.interest.concat(cat)
+      interest: this.state.interest
     });
   }
   handleUpdateBio(event) {
@@ -110,7 +117,6 @@ class EditProfileContainer extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      console.log(myObj);
       location.replace('/profile');
   })
 }

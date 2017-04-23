@@ -38,10 +38,13 @@ class FavoriteContainer extends Component {
           favtrip: myObj
       });
     }
-      else { console.log(myObj.message)}
+      else {
+        console.log(myObj.message)
+        }
 
-  }.bind(this))
+    }.bind(this))
   }
+
   handleRemoveFav(fav) {
   fetch(`http://localhost:1200/favorite`, {
       method: 'POST',
@@ -55,7 +58,7 @@ class FavoriteContainer extends Component {
   })
   .then(function (body) {
     location.replace('/profile');
-})
+  })
   }
 
 

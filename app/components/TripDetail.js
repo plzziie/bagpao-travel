@@ -41,16 +41,12 @@ var tmp = [];
               <div className="inday">Day {val+1}</div>
                 <div className="planbox">
                      {props.show.map((vals, indexs) => {
-                          var tmp2 = [];
-                          for (var j = 0; j < vals.place.length; j++) {
-                          tmp2.push(j);
-                         }
                         return <div key= {indexs}>
-                        {tmp2.map((j, indexj) => {
-                           return (vals.place[j].days == index+1) ?
+                        {vals.place.map((j, indexj) => {
+                           return (j.days == index+1) ?
                               <div key = {indexj} className="dragbox"><div className="col-md-3">
-                              <img className = "img-circle" src = {vals.place[j].picture} alt = {vals.place[j].name[0]} width="50" height="50"/></div>
-                              <div className="col-md-8"><h5>{vals.place[j].name[0]}</h5> <h6>{vals.place[j].city[0]}</h6></div>
+                              <img className = "img-circle" src = {j.picture} alt = {j.name[0]} width="50" height="50"/></div>
+                              <div className="col-md-8"><h5>{j.name[0]}</h5> <h6>{j.city[0]}</h6></div>
                               </div>
                           : null
                         })}
