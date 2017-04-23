@@ -111,10 +111,10 @@ class Admin_member extends Component {
       { this.state.profile.map((val, index) => {
        return <tr key = {index}><td>{val.username}</td>
        <td>
-       <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditMember(val.username)}>
+       <button type="button" className="btn btn-xs btn-info">
          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
        </button>&nbsp;
-       <button type="button" className="btn btn-xs btn-danger">
+       <button type="button" className="btn btn-xs btn-danger" onClick={() => this.DeleteMember(val.username)}>
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
        </button></td></tr>
 

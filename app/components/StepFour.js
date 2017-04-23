@@ -58,7 +58,7 @@ function StepFour (props) {
                             <div className="col-md-8"><h5>{vals.name[0]}</h5> <h6>{vals.city[0]}</h6></div>
                             </div>
                           : null })}
-                          
+
                 </div></div> })}
           </div>
         </div>

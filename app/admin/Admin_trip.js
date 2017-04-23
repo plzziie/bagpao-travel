@@ -115,7 +115,7 @@ class Admin_trip extends Component {
               { this.state.trips.map((val, index) => {
                return <tr key = {index}><td>{val.name}</td>
                <td><button type="button" className="btn btn-xs btn-info">
-                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true" onClick={() => this.EditTrip(val.name)}></span>
+                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                </button>&nbsp;
                <button type="button" className="btn btn-xs btn-danger">
                  <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteTrip(val.name)}></span>

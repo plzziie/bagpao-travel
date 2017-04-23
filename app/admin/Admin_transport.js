@@ -240,10 +240,10 @@ DeleteTransport(ev) {
                          <td>{val.type}</td><td>{val.route}</td><td>{val.name}</td><td>{val.origin}</td><td>{val.stationstart}</td>
                          <td>{val.depart}</td><td>{val.destination}</td><td>{val.stationend}</td><td>{val.arrive}</td><td>{val.price}</td>
                          <td>
-                          <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditTransport(val._id)}>
+                          <button type="button" className="btn btn-xs btn-info">
                              <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                            </button>&nbsp;
-                           <button type="button" className="btn btn-xs btn-danger">
+                           <button type="button" className="btn btn-xs btn-danger" onClick={() => this.DeleteTransport(val._id)}>
                              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                            </button>
                          </td>

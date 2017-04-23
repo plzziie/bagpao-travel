@@ -243,7 +243,7 @@ class Admin_place extends Component {
                  <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
                    <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
                  </button>&nbsp;
-                 <button type="button" className = "btn btn-xs btn-danger">
+                 <button type="button" className = "btn btn-xs btn-danger" onClick={() => this.DeletePlace(val.name[0])}>
                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
                  </button>
                </td></tr>
