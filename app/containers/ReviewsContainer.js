@@ -21,7 +21,7 @@ class ReviewsContainer extends Component {
       },
       body: JSON.stringify({
         // tripname: this.props.params.id
-        tripname: "gocnx5"
+        tripname: "Go to chiangmai"
       })
     })
     .then(function (response) {
@@ -50,7 +50,6 @@ class ReviewsContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        // tripname: this.props.params.id,
         tripname: "gocnx5",
         comment: this.state.comment,
         username: getIdToken()

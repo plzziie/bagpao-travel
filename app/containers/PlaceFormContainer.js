@@ -7,8 +7,27 @@ class PlaceFormContainer extends Component {
     super()
     this.state = {
       name: '',
-      show: []
+      show: [],
+      map: []
     }
+  }
+
+  componentWillMount() {
+    fetch(`http://localhost:1200/apigeo/?lat=13.8056762&lng=100.6930041`, {
+      method: 'GET',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+        this.setState({
+            map: myObj
+        });
+        console.log(this.state.map);
+    }.bind(this))
   }
 
   componentDidMount() {
