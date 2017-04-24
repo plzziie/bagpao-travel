@@ -12,7 +12,7 @@ function MyTrip (props) {
 			<div className = "row">
 						{ props.mytrip.map((val, index) => {
 						 return  <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0 photo " >
-											 <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251"/>
+											 <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeDetails(val.name)}/>
 											 <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
 											 <div className="boxtrip"></div>
 											 <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
@@ -33,7 +33,8 @@ MyTrip.PropTypes = {
 	username: PropTypes.string.isRequired,
 	mytrip: PropTypes.object.isRequired,
 	onUpdateLike: PropTypes.func.isRequired,
-	onAddFav: PropTypes.func.isRequired
+	onAddFav: PropTypes.func.isRequired,
+	SeeDetails: PropTypes.func.isRequired
 }
 
 export default MyTrip

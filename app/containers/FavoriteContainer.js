@@ -42,6 +42,10 @@ class FavoriteContainer extends Component {
 
   }.bind(this))
   }
+
+  SeeDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
+  }
   handleRemoveFav(fav) {
   fetch(`http://localhost:1200/favorite`, {
       method: 'POST',
@@ -65,6 +69,7 @@ class FavoriteContainer extends Component {
      username = {this.state.username}
      favtrip = {this.state.favtrip}
      onRemoveFav = {(event) => this.handleRemoveFav(event)}
+     SeeDetails={(event) => this.SeeDetails(event)}
       />
     )
   }

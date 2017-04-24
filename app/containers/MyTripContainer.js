@@ -44,6 +44,9 @@ class MyTripContainer extends Component {
 
     }.bind(this))
   }
+  SeeDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
+  }
 
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
@@ -79,6 +82,7 @@ fetch(`http://localhost:1200/favorite`, {
      mytrip = {this.state.mytrip}
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
      onAddFav = {(event) => this.handleAddFav(event)}
+     SeeDetails={(event) => this.SeeDetails(event)}
       />
     )
   }
