@@ -13,9 +13,10 @@ class EditProfileContainer extends Component {
       birthday: '',
       currentcity: '',
       interest: [],
-      picture: '',
+      picture: [],
       bio: '',
       err: '',
+      table: '',
       member: []
     }
   }
@@ -61,6 +62,13 @@ class EditProfileContainer extends Component {
       password: event.target.value
     });
   }
+  handleUpdatePicture(event) {
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    this.setState({
+      picture: file
+    });
+  }
   handleUpdateEmail(event) {
     this.setState({
       email: event.target.value
@@ -97,7 +105,7 @@ class EditProfileContainer extends Component {
 
   handleSubmitEdit(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/editprofile`, {
+    fetch(`http://localhost:1200/upload`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -110,6 +118,7 @@ class EditProfileContainer extends Component {
         currentcity: this.state.currentcity,
         interest: this.state.interest,
         picture: this.state.picture,
+        table: 'member',
         bio: this.state.bio
         })
     })
@@ -126,6 +135,7 @@ render() {
    <EditProfile
    onSubmitEdit={(event) => this.handleSubmitEdit(event)}
    onUpdatePassword={(event) => this.handleUpdatePassword(event)}
+   onUpdatePicture={(event) => this.handleUpdatePicture(event)}
    onUpdateCity={(event) => this.handleUpdateCity(event)}
    onUpdateEmail={(event) => this.handleUpdateEmail(event)}
    onUpdateBirthday={(event) => this.handleUpdateBirthday(event)}

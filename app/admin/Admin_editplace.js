@@ -57,6 +57,19 @@ class Admin_editplace extends Component {
         console.log("error");
       }
     }.bind(this))
+    .then(function (set) {
+      this.setState({
+        name: this.state.places[0].name[0],
+        place: this.state.places[0].place,
+        city: this.state.places[0].city,
+        latitude: this.state.places[0].latitude,
+        longitude: this.state.places[0].longitude,
+        category: this.state.places[0].category,
+        picture: this.state.places[0].picture,
+        description: this.state.places[0].description,
+        contact: this.state.places[0].contact
+      });
+    }.bind(this))
   }
 
   handleUpdatePlace(event) {
@@ -180,7 +193,7 @@ class Admin_editplace extends Component {
               <input type = "checkbox" value = "other" onChange = {this.handleUpdateCategory} />Other
             </label>
             <label className = "checkbox-inline">
-              <input type = "checkbox" value = "accomodation" onChange = {this.handleUpdateCategory} />Accomodation
+              <input type = "checkbox" value = "accommodation" onChange = {this.handleUpdateCategory} />Accommodation
             </label>
             <label className = "checkbox-inline">
               <input type = "checkbox" value = "restaurant" onChange = {this.handleUpdateCategory} />Restaurant
