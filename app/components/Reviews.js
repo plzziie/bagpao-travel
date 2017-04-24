@@ -9,14 +9,14 @@ function Reviews (props) {
     <div className="review-size">
       <div className="container">
         { props.show.map((vals, index) => {
-          return <div className="container commentbox" key = {index}>
-          <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
-          &nbsp;<div className="username col-md-10 col-sm-10"><b>{vals.user}</b></div>
-          <div className="comment col-md-11 col-sm-10">{vals.comment}</div>
-      </div>
+            return <div  key = {index} className="container commentbox">
+            <div className="col-md-1 col-sm-1 imggap"><img src = {vals.picture} alt = {vals.name}  width="40" height="40"/></div>
+            &nbsp;<div className="username col-md-10 col-sm-10"><b>{vals.user}</b></div>
+            <div className="comment col-md-11 col-sm-10">{vals.comment}</div>
+          </div>
 
        })}
-       
+
     	<ul className = "breadcrumb" style = {styles.space}>
   			<li className = "active"><a href="#">1</a></li>
   			<li><a href="#">2</a></li>
@@ -33,11 +33,8 @@ function Reviews (props) {
                />
         </div>
         <div className = "form-group col-xs-4 col-xs-offset-4">
-              <button
-                className = "btn btn-block btn-success"
-                type = "submit">
-                  Send
-              </button>
+              <button  className = "btn btn-block btn-success" type = "submit">
+                  Send  </button>
         </div>
         </form>
       </div>
@@ -75,7 +72,8 @@ function Reviews (props) {
 
  Reviews.PropTypes = {
  onUpdateReview: PropTypes.func.isRequired,
- onUpdateComment: PropTypes.func.isRequired
+ onUpdateComment: PropTypes.func.isRequired,
+ show: PropTypes.object.isRequired
 
  }
 

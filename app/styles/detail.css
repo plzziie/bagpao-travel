@@ -25,6 +25,16 @@
  cursor: default;
 }
 
+.stepthree_daysum {
+  width: 100%;
+  background-color: #eff0f1; /*light grey*/
+  height: 420px;
+  float: left;
+  padding-left: 20px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
 .planboxx{
   width: 40%;
   min-width: 200px;

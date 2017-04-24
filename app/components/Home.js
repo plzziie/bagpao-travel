@@ -27,7 +27,6 @@ function Home (props) {
                             <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
                             <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                             <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
-
                           </div>
                         </div>
 

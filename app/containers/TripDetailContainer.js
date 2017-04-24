@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import TripDetail from '../components/TripDetail'
+import {getIdToken} from '../lib/AuthService';
 
 class TripDetailContainer extends Component {
 
@@ -8,9 +9,18 @@ class TripDetailContainer extends Component {
     this.state = {
       name: '',
       show: [],
+      showw: [],
       comment: '',
-      daytrip: ''
+      daytrip: '',
+      username: '',
+      trip: ''
     }
+  }
+  componentWillMount() {
+    this.setState({
+        username: getIdToken()
+
+    });
   }
 
   componentDidMount() {
@@ -40,8 +50,49 @@ class TripDetailContainer extends Component {
         console.log(myObj.message);
       }
     }.bind(this))
+
+    fetch(`http://localhost:1200/reviews`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        // tripname: this.props.params.id
+        trip: this.props.params.id,
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            showw: myObj
+        });
+      }
+      
+    }.bind(this))
   }
 
+  handleUpdateReview(event) {
+    this.setState({
+      comment: event.target.value
+    });
+  }
+  handleSubmitComment(event) {
+    event.preventDefault();
+    fetch(`http://localhost:1200/addreviews`, {
+        method: 'POST',
+        headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        trip: this.props.params.id,
+        comment: this.state.comment,
+        username: getIdToken()
+        })
+    })
+  }
 
 
   render() {
@@ -51,6 +102,9 @@ class TripDetailContainer extends Component {
      daytrip = {this.state.daytrip}
      name = {this.state.name}
      picture = {this.state.picture}
+     showw = {this.state.showw}
+     onUpdateReview={(event) => this.handleUpdateReview(event)}
+     onUpdateComment={(event) => this.handleSubmitComment(event)}
      />
     )
   }

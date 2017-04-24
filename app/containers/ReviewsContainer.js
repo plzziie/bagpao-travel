@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {getIdToken} from '../lib/AuthService';
 import Reviews from '../components/Reviews'
 
+
 class ReviewsContainer extends Component {
 
   constructor () {
@@ -9,8 +10,15 @@ class ReviewsContainer extends Component {
     this.state = {
       show: [],
       comment: '',
-      tripname: ''
+      trip: '',
+      username: ''
     }
+  }
+
+  componentWillMount() {
+    this.setState({
+        username: getIdToken()
+    });
   }
 
   componentDidMount() {
@@ -21,7 +29,7 @@ class ReviewsContainer extends Component {
       },
       body: JSON.stringify({
         // tripname: this.props.params.id
-        tripname: "Go to chiangmai"
+        trip: "My city"
       })
     })
     .then(function (response) {
@@ -50,7 +58,7 @@ class ReviewsContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        tripname: "gocnx5",
+        trip: "My city",
         comment: this.state.comment,
         username: getIdToken()
         })
