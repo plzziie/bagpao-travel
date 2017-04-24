@@ -67,6 +67,9 @@ function EditProfile (props) {
           <div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "temple" />Temple</label>
 					</div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "other" />Other</label>
+          </div>
   				</div>
 			</div>
 			<div className = "form-group row">

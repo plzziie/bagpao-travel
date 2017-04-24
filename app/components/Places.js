@@ -99,6 +99,13 @@ function Places (props) {
                   <img src = "app/img/places/museum3.jpg"/>
                   <div className = "text museum">Museum</div>
                   </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("other")}>
+                  <img src = "https://travelingwithkrushworth.files.wordpress.com/2013/01/sunset-cowley-ridge.jpg"/>
+                  <img src = "http://www.lonelyplanet.com/news/wp-content/uploads/2016/07/1st-Prize-Winner-category-Travel-Basilica-of-Saint-Francis-of-Assisi-Umbria-Italy-by-fcatutto.jpg"/>
+                  <img src = "http://www.pdcdc.org/wp-content/uploads/2016/03/restaurant-939435_960_720.jpg"/>
+                  <div className = "text museum">Other</div>
+                  </div>
             </div>
 
             : props.show.map((val, index) => {
