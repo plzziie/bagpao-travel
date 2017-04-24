@@ -61,6 +61,9 @@ class FavoriteContainer extends Component {
   })
   }
 
+  SeeTripsDetails(id) {
+      this.context.router.push('/trips-details/'+ id)
+  }
 
   render() {
     return(
@@ -68,6 +71,7 @@ class FavoriteContainer extends Component {
      username = {this.state.username}
      favtrip = {this.state.favtrip}
      onRemoveFav = {(event) => this.handleRemoveFav(event)}
+     SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
       />
     )
   }

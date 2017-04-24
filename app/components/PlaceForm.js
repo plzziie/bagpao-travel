@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
-import ReactRouter from 'react-router'
+import ReactRouter,{browserHistory} from 'react-router'
 import styles from '../styles'
 import style from '../styles/detail.css'
 
@@ -20,8 +20,8 @@ console.log(props);
                </div></div>
          })}
        </div>
-         <div className="col-md-offset-5 col-xs-offset-5 col-sm-offset-5">
-           <a className="btn btn-success col-md-3 col-sm-2 col-xs-3" href="/places" role="button">Back</a>
+         <div className="col-md-offset-5 col-xs-offset-5 col-sm-offset-5" style = {styles.gapp}>
+           <button className="btn btn-success col-md-3 col-sm-2 col-xs-3" onClick = {browserHistory.goBack}>Back</button>
          </div>
     </div>
     )

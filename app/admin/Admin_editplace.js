@@ -134,30 +134,27 @@ class Admin_editplace extends Component {
     return (
 
       <div className = "container-fluid">
-
-
-      <div>
         <h2>Edit Place</h2>
         { this.state.places.map((val, index) => {
          return <form onSubmit = {this.handleSubmitEdit} key={index}>
 
         <div className="col-md-12"><label>Place</label>
-          <input type = "text" className = "col-md-3 form-control" placeholder = {val.name} onChange = {this.handleUpdatePlace} /></div>
+          <input type = "text" className = "col-md-3 form-control" defaultValue = {val.name} onChange = {this.handleUpdatePlace} /></div>
         <div className="col-md-12"><label>City</label>
-        <input type = "text" className = "col-md-3 form-control" placeholder = {val.city} onChange = {this.handleUpdateCity} /></div>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.city} onChange = {this.handleUpdateCity} /></div>
         <div className="col-md-12"><label>Latitude</label>
-        <input type = "text" className = "col-md-3 form-control" placeholder = {val.latitude}  onChange = {this.handleUpdateLatitude} /></div>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.latitude}  onChange = {this.handleUpdateLatitude} /></div>
         <div className="col-md-12"><label>Longitude</label>
-        <input type = "text" className = "col-md-3 form-control" placeholder = {val.longitude} onChange = {this.handleUpdateLongitude} /></div>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.longitude} onChange = {this.handleUpdateLongitude} /></div>
 
         <div className="col-md-12"><label>Picture</label>
-        <input type = "text" className = "col-md-3 form-control" placeholder = "Picture" onChange = {this.handleUpdatePicture} /></div>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.picture} onChange = {this.handleUpdatePicture} /></div>
         <div className = "col-md-12 form-group"><label>Contact</label>
-          <textarea className = 'form-control' placeholder = {val.contact} rows = '1' type='text' onChange = {this.handleUpdateContact} />
+          <textarea className = 'form-control' defaultValue = {val.contact} rows = '1' type='text' onChange = {this.handleUpdateContact} />
         </div>
         <div className = "col-md-12 form-group"><label>Description</label>
           <textarea
-            className = 'form-control' placeholder = {val.description} rows = '4'  type='text' onChange = {this.handleUpdateDescription} />
+            className = 'form-control' defaultValue = {val.description} rows = '4'  type='text' onChange = {this.handleUpdateDescription} />
         </div>
         <div className="col-md-12">
         <p>Choose the categories that fit in.</p>
@@ -184,7 +181,7 @@ class Admin_editplace extends Component {
         <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit" style={styles.space}>Save</button></div>
 
           </form> })}
-  </div>
+
 
   </div>
 

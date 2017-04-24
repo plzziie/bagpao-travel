@@ -64,6 +64,7 @@ Home.PropTypes = {
   poptrip: PropTypes.object.isRequired,
   popplace: PropTypes.object.isRequired,
   SeeDetails: PropTypes.func.isRequired,
+  SeeTripsDetails: PropTypes.func.isRequired,
   onUpdateLike: PropTypes.func.isRequired,
   UpdateView: PropTypes.func.isRequired,
   AddFav: PropTypes.func.isRequired

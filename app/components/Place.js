@@ -1,5 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
+import { browserHistory } from 'react-router'
 import styles from '../styles'
 import style from '../styles/trips.css'
 import sty from '../styles/places.css'
@@ -26,8 +27,8 @@ function Place (props) {
         </div>
         </div>
 
-        <div className="col-md-offset-5">
-          <a className="btn btn-success col-md-3" href="/places" role="button">Back</a>
+        <div className="col-md-offset-5" style = {styles.gapp}>
+          <button className="btn btn-success col-md-3" onClick = {browserHistory.goBack}>Back</button>
         </div>
   </div>
     )

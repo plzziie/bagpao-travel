@@ -1,5 +1,5 @@
 import React, {Component,PropTypes} from 'react'
-import ReactRouter from 'react-router'
+import ReactRouter, {browserHistory} from 'react-router'
 import style from '../styles/detail.css'
 import styles from '../styles'
 import styl from '../styles/stepfour.css'
@@ -60,7 +60,7 @@ var tmp = [];
       </div>
        </div>
          <div className="col-md-offset-5 buttongap" style = {styles.gapp}>
-           <a className="btn btn-success col-md-3" href="/trips" role="button">Back</a>
+           <button className="btn btn-success col-md-3" onClick = {browserHistory.goBack}>Back</button>
          </div>
     </div>
     )

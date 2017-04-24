@@ -113,7 +113,6 @@ SeeDetails(id) {
       render() {
         return(
           <Home
-
           SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}

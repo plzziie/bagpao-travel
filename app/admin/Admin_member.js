@@ -5,10 +5,6 @@ import style from '../admin/admin.css'
 
 class Admin_member extends Component {
 
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  }
-
   constructor () {
     super()
     this.state = {
@@ -58,7 +54,7 @@ class Admin_member extends Component {
 
   EditMember(ev) {
     event.preventDefault();
-    window.open("/editplace");
+    this.context.router.push('/editmember/'+ev);
   }
 
   DeleteMember(ev) {
@@ -78,7 +74,7 @@ class Admin_member extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      console.log(myObj);
+      window.location.reload()
   })
   }
 
@@ -112,7 +108,7 @@ class Admin_member extends Component {
        return <tr key = {index}><td>{val.username}</td>
        <td>
        <button type="button" className="btn btn-xs btn-info">
-         <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+         <span className="glyphicon glyphicon-eye-open" aria-hidden="true"  onClick={() => this.EditMember(val.username)}></span>
        </button>&nbsp;
        <button type="button" className="btn btn-xs btn-danger" onClick={() => this.DeleteMember(val.username)}>
          <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -128,6 +124,10 @@ class Admin_member extends Component {
 
       )
     }
+  }
+
+  Admin_member.contextTypes = {
+    router: React.PropTypes.object.isRequired
   }
 
 export default Admin_member

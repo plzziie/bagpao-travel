@@ -4,51 +4,112 @@ import style from '../admin/admin.css'
 
 class Admin_edittransport extends Component {
 
-    contextTypes: {
-      router: React.PropTypes.object.isRequired
+  constructor () {
+    super()
+    this.state = {
+      type: '',
+      route: '',
+      name: '',
+      origin: '',
+      stationstart: '',
+      depart: '',
+      destination: '',
+      stationend: '',
+      arrive: '',
+      price: '',
+      transportation: []
     }
 
-    constructor () {
-      super()
-      this.state = {
-        name: '',
-        place: '',
-        city: '',
-        latitude: '',
-        longitude: '',
-        category: '',
-        picture: '',
-        description: '',
-        contact: '',
-        err: '',
-        places: []
-      }
-      this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
-      this.handleUpdatePlace = this.handleUpdatePlace.bind(this);
-      this.handleUpdateCity = this.handleUpdateCity.bind(this);
-      this.handleUpdateLatitude = this.handleUpdateLatitude.bind(this);
-      this.handleUpdateLongitude = this.handleUpdateLongitude.bind(this);
-      this.handleUpdateCategory = this.handleUpdateCategory.bind(this);
-      this.handleUpdatePicture = this.handleUpdatePicture.bind(this);
-      this.handleUpdateDescription = this.handleUpdateDescription.bind(this);
-      this.handleUpdateContact = this.handleUpdateContact.bind(this);
-      this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
-      this.handleSubmitNew = this.handleSubmitNew.bind(this);
-      this.DeletePlace = this.DeletePlace.bind(this);
-    }
+    this.handleUpdateType = this.handleUpdateType.bind(this);
+    this.handleUpdateRoute = this.handleUpdateRoute.bind(this);
+    this.handleUpdateName = this.handleUpdateName.bind(this);
+    this.handleUpdateOrigin = this.handleUpdateOrigin.bind(this);
+    this.handleUpdateDestination = this.handleUpdateDestination.bind(this);
+    this.handleUpdateStart = this.handleUpdateStart.bind(this);
+    this.handleUpdateStop = this.handleUpdateStop.bind(this);
+    this.handleUpdateDepart = this.handleUpdateDepart.bind(this);
+    this.handleUpdateArrive = this.handleUpdateArrive.bind(this);
+    this.handleUpdatePrice = this.handleUpdatePrice.bind(this);
+    this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
 
-    handleUpdateSearch(event) {
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:1200/admin`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        admin: "show",
+        types: "transport",
+        id: this.props.params.id
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
       this.setState({
-        name: event.target.value
+          transportation: myObj.message
       });
-    }
+    }.bind(this))
+  }
 
-  EditPlace(ev) {
-    event.preventDefault();
-    window.open("/places-details/"+ev);
-}
 
-  DeletePlace(ev) {
+  handleUpdateType(event) {
+    this.setState({
+      type: event.target.value
+    });
+  }
+  handleUpdateRoute(event) {
+    this.setState({
+      route: event.target.value
+    });
+  }
+  handleUpdateName(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+  handleUpdateOrigin(event) {
+    this.setState({
+      origin: event.target.value
+    });
+  }
+  handleUpdateDestination(event) {
+    this.setState({
+      destination: event.target.value
+    });
+  }
+  handleUpdateStart(event) {
+    this.setState({
+      stationstart: event.target.value
+    });
+  }
+  handleUpdateStop(event) {
+    this.setState({
+      stationend: event.target.value
+    });
+  }
+  handleUpdateDepart(event) {
+    this.setState({
+      depart: event.target.value
+    });
+  }
+  handleUpdateArrive(event) {
+    this.setState({
+      arrive: event.target.value
+    });
+  }
+  handleUpdatePrice(event) {
+    this.setState({
+      price: event.target.value
+    });
+  }
+
+  handleSubmitEdit(event) {
     event.preventDefault();
     fetch(`http://localhost:1200/admin`, {
         method: 'POST',
@@ -56,9 +117,19 @@ class Admin_edittransport extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        admin: "delete",
-        types: "place",
-        name: ev
+        admin: "update",
+        types: "trans",
+        id: this.props.params.id,
+        type: this.state.type,
+        route: this.state.route,
+        name: this.state.name,
+        origin: this.state.origin,
+        destination: this.state.destination,
+        stationstart: this.state.stationstart,
+        stationend: this.state.stationend,
+        depart: this.state.depart,
+        arrive: this.state.arrive,
+        price: this.state.price
         })
     })
     .then(function (response) {
@@ -66,58 +137,51 @@ class Admin_edittransport extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       console.log(myObj);
-      window.location.reload()
+      location.replace('/Admin_transport');
   })
 }
 
   render() {
+    console.log(this.props);
     return (
 
-      <div className="container-fluid"><form onSubmit = {this.handleSubmitNew}>
-      <div id="demo" className="collapse">
-        <h2>Add new Place</h2>
+      <div className = "container-fluid">
+        <h2>Edit Transportation</h2>
+        { this.state.transportation.map((val, index) => {
+         return <form onSubmit = {this.handleSubmitEdit} key={index}>
 
-        <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder = "Place Name" onChange = {this.handleUpdatePlace} required/></div>
-        <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="City Name" onChange = {this.handleUpdateCity} required/></div>
-        <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Latitude" onChange = {this.handleUpdateLatitude} required/></div>
-        <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} required/></div>
+        <div className="col-md-12"><label>Type</label>
+          <input type = "text" className = "col-md-3 form-control" defaultValue = {val.type} onChange = {this.handleUpdateType} /></div>
+        <div className="col-md-12"><label>Route</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.route} onChange = {this.handleUpdateRoute} /></div>
+        <div className="col-md-12"><label>Name</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.name}  onChange = {this.handleUpdateName} /></div>
+        <div className="col-md-12"><label>Origin</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.origin} onChange = {this.handleUpdateOrigin} /></div>
+        <div className="col-md-12"><label>Destination</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.destination} onChange = {this.handleUpdateDestination} /></div>
+        <div className="col-md-12"><label>From</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.stationstart} onChange = {this.handleUpdateStart} /></div>
+        <div className="col-md-12"><label>To</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.stationend} onChange = {this.handleUpdateStop} /></div>
+        <div className="col-md-12"><label>Depart</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.depart} onChange = {this.handleUpdateDepart} /></div>
+        <div className="col-md-12"><label>Arrive</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.arrive} onChange = {this.handleUpdateArrive} /></div>
+        <div className="col-md-12"><label>Price</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
 
-        <div className="col-md-5 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
-        <div className = "col-md-7 form-group">
-          <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} required/>
-        </div>
-        <div className = "col-md-5 form-group">
-          <textarea
-            className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
-        </div>
-        <div className="col-md-6">
-        <p>Choose the categories that fit in.</p>
-            <label className="radio-inline">
-              <input type="radio" value="National Park" onChange = {this.handleUpdateCategory}/>National Park
-            </label>
-            <label className="radio-inline">
-              <input type="radio" value="Temple" onChange = {this.handleUpdateCategory}/>Temple
-            </label>
-            <label className="radio-inline">
-              <input type="radio" value="Beach" onChange = {this.handleUpdateCategory}/>Beach
-            </label>
-            <label className="radio-inline">
-              <input type="radio" value="Safari" onChange = {this.handleUpdateCategory}/>Safari
-            </label>
-            <label className="radio-inline">
-              <input type="radio" value="Market" onChange = {this.handleUpdateCategory}/>Market
-            </label>
-            <label className="radio-inline">
-              <input type="radio" value="Museum" onChange = {this.handleUpdateCategory}/>Museum
-            </label>
-        </div>
-        <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
-  </div>
-</form>
+        <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit" style={styles.space}>Save</button></div>
 
-</div>
+          </form> })}
+    </div>
+
   )
 }
+}
+
+Admin_edittransport.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default Admin_edittransport

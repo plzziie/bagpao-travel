@@ -162,7 +162,6 @@ class Admin_place extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      console.log(myObj);
       window.location.reload()
   })
 }
