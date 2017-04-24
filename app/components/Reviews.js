@@ -9,22 +9,14 @@ function Reviews (props) {
     <div className="review-size">
       <div className="container">
         { props.show.map((vals, index) => {
-          console.log("test:",vals.comment);
-          return
-        <div className="container commentbox">
+          return <div className="container commentbox" key = {index}>
           <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
           &nbsp;<div className="username col-md-10 col-sm-10"><b>{vals.user}</b></div>
           <div className="comment col-md-11 col-sm-10">{vals.comment}</div>
       </div>
 
        })}
-      <div className="container commentbox">
-        <div className="col-md-1 col-sm-1 imggap"><img src = "app/img/places/000015.jpg" alt = "doisuthep"  width="40" height="40"/></div>
-        <div className="username col-md-10 col-sm-11"><b>arpa</b></div>
-        <div className="comment col-md-11 col-sm-11">First comment! ee eeeeeeeeeeeeeeeeeee	ประกาศ: เรียนผู้ใช้งานระบบ Internet ของสถาบัน ฯ ที่ใช้ Web Browser ที่ระบบ Authen ของสถาบันฯรองรับคือ IE10 หรือต่ำกว่า
-Mozilla, Firefox, Chrome ทางสำนักบริการคอมพิวเตอร์ของอภัยในความไม่สะดวก eeee eeeeeeeeeeeee eeeeeeeeeeeee</div>
-    </div>
-
+       
     	<ul className = "breadcrumb" style = {styles.space}>
   			<li className = "active"><a href="#">1</a></li>
   			<li><a href="#">2</a></li>
