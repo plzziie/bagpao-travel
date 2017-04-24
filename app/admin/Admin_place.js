@@ -190,12 +190,13 @@ class Admin_place extends Component {
 
                       <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
                       <div className = "col-md-7 form-group">
-                        <textarea className = 'form-control' placeholder = 'Contact' rows = '1' type='text' onChange = {this.handleUpdateContact} required/>
-                      </div>
-                      <div className = "col-md-5 form-group">
                         <textarea
                           className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
                       </div>
+                      <div className = "col-md-5 form-group">
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '4' type='text' onChange = {this.handleUpdateContact} required/>
+                      </div>
+
                       <div className="col-md-12">
                       <p>Choose the categories that fit in.</p>
                           <label className = "checkbox-inline">
@@ -216,8 +217,17 @@ class Admin_place extends Component {
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "museum" onChange = {this.handleUpdateCategory} />Museum
                           </label>
+                          <label className = "checkbox-inline">
+                            <input type = "checkbox" value = "other" onChange = {this.handleUpdateCategory} />Other
+                          </label>
+                          <label className = "checkbox-inline">
+                            <input type = "checkbox" value = "accomodation" onChange = {this.handleUpdateCategory} />Accomodation
+                          </label>
+                          <label className = "checkbox-inline">
+                            <input type = "checkbox" value = "restaurant" onChange = {this.handleUpdateCategory} />Restaurant
+                          </label>
                       </div>
-                      <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
+                      <div className="col-md-offset-4 col-md-3 step-bottom"><button type="submit" className = "btn btn-block btn-success"  type = "submit">Submit</button></div>
                 </div>
           </form>
       </div>
