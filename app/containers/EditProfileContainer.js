@@ -13,7 +13,7 @@ class EditProfileContainer extends Component {
       birthday: '',
       currentcity: '',
       interest: [],
-      picture: '',
+      picture: [],
       bio: '',
       err: '',
       member: []
@@ -59,6 +59,13 @@ class EditProfileContainer extends Component {
   handleUpdatePassword(event) {
     this.setState({
       password: event.target.value
+    });
+  }
+  handleUpdatePicture(event) {
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    this.setState({
+      picture: file
     });
   }
   handleUpdateEmail(event) {
@@ -110,7 +117,8 @@ class EditProfileContainer extends Component {
         currentcity: this.state.currentcity,
         interest: this.state.interest,
         picture: this.state.picture,
-        bio: this.state.bio
+        bio: this.state.bio,
+        picture: this.state.picture
         })
     })
     .then(function (response) {
@@ -126,6 +134,7 @@ render() {
    <EditProfile
    onSubmitEdit={(event) => this.handleSubmitEdit(event)}
    onUpdatePassword={(event) => this.handleUpdatePassword(event)}
+   onUpdatePicture={(event) => this.handleUpdatePicture(event)}
    onUpdateCity={(event) => this.handleUpdateCity(event)}
    onUpdateEmail={(event) => this.handleUpdateEmail(event)}
    onUpdateBirthday={(event) => this.handleUpdateBirthday(event)}

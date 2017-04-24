@@ -11,8 +11,8 @@ function EditProfile (props) {
          return <div key={index}>
            <div className="container step-bottom">
     	          <div className = "jumbotron col-xs-4 col-xs-offset-4 text-center">
-        	      <div><img className = "img-circle" src = "app/img/icon.png" alt = "profile" width = "200" height = "200"/></div>
-        	      <div><h4>Change</h4></div>
+        	      <div><img className = "img-circle" src = {val.picture} alt = "profile" width = "200" height = "200"/></div>
+                <input className = "fileInput" type="file" onChange = {(event) => props.onUpdatePicture(event)} />
       	        </div>
               </div>
       <form onSubmit = {props.onSubmitEdit} className = "col-md-offset-2">
@@ -89,6 +89,7 @@ function EditProfile (props) {
 EditProfile.PropTypes = {
 onUpdateBio: PropTypes.func.isRequired,
 onUpdatePassword: PropTypes.func.isRequired,
+onUpdatePicture: PropTypes.func.isRequired,
 onUpdateEmail: PropTypes.func.isRequired,
 onUpdateCity: PropTypes.func.isRequired,
 onUpdateBirthday: PropTypes.func.isRequired,
@@ -100,7 +101,7 @@ email: PropTypes.string.isRequired,
 birthday: PropTypes.string.isRequired,
 currentcity: PropTypes.string.isRequired,
 interest: PropTypes.string.isRequired,
-picture: PropTypes.string.isRequired,
+picture: PropTypes.object.isRequired,
 bio: PropTypes.string.isRequired
 }
 

@@ -27,6 +27,7 @@ function StepFour (props) {
       <h4 className="step4_header">Successful! This is your plan.</h4>
       <div className = "col-md-offset-2 col-md-2">
           <img className="img-circle" src="app/img/HKM_0353.jpg" width="100" height="100"/>
+          <input className = "fileInput" type="file" onChange = {(event) => props.onUpdatePicture(event)} />
       </div>
           <div className="col-md-5">
           <h5>Name</h5>
@@ -80,6 +81,7 @@ StepFour.PropTypes = {
   onSubmitTrip: PropTypes.func.isRequired,
   onUpdateName: PropTypes.func.isRequired,
   onUpdatePrivacy: PropTypes.func.isRequired,
+  onUpdatePicture: PropTypes.func.isRequired,
   depart: PropTypes.string.isRequired,
   return: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
@@ -88,7 +90,8 @@ StepFour.PropTypes = {
   name: PropTypes.string.isRequired,
   privacy: PropTypes.string.isRequired,
   result: PropTypes.object.isRequired,
-  details: PropTypes.object.isRequired
+  details: PropTypes.object.isRequired,
+  picture: PropTypes.object.isRequired
 }
 
 export default StepFour
