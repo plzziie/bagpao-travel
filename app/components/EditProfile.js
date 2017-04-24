@@ -13,6 +13,8 @@ function EditProfile (props) {
     	          <div className = "jumbotron col-xs-4 col-xs-offset-4 text-center">
         	      <div><img className = "img-circle" src = "app/img/icon.png" alt = "profile" width = "200" height = "200"/></div>
         	      <div><h4>Change</h4></div>
+                <div className="col-md-9"><input type="file" name="pic" accept="image/*"/></div>
+                <div className="col-md-3"><input type="submit"/></div>
       	        </div>
               </div>
       <form onSubmit = {props.onSubmitEdit} className = "col-md-offset-2">
@@ -31,48 +33,51 @@ function EditProfile (props) {
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Email</h4>
   				<div className = "col-sm-7">
-    				<input className = "form-control" type = "email" placeholder = {val.email} onChange = {props.onUpdateEmail} />
+    				<input className = "form-control" type = "email" defaultValue = {val.email} onChange = {props.onUpdateEmail} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Birthday</h4>
   				<div className = "col-sm-7">
-    				<input className = "form-control" type = "date" placeholder = {val.birthday} onChange = {props.onUpdateBirthday} />
+    				<input className = "form-control" type = "date" defaultValue = {val.birthday} onChange = {props.onUpdateBirthday} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Current City</h4>
   				<div className = "col-sm-7">
-    				<input className = "form-control" type = "text" placeholder = {val.currentcity} onChange = {props.onUpdateCity} />
+    				<input className = "form-control" type = "text" defaultValue = {val.currentcity} onChange = {props.onUpdateCity} />
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Interest</h4>
-  				<div className = "col-sm-7">
-    				<div className = "checkbox-inline" onChange = {props.onUpdateInterest}>
- 						<label><input type = "checkbox" value = "market"  />Market</label>
+  				<div className = "col-sm-7" onChange = {props.onUpdateInterest}>
+    				<div className = "checkbox-inline" >
+ 						<label><input type = "checkbox" value = "market" />Market</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "beach" onChange = {props.onUpdateInterest} />Beach</label>
+  						<label><input type = "checkbox" value = "beach" />Beach</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "museum"  onChange = {props.onUpdateInterest} />Museum</label>
+  						<label><input type = "checkbox" value = "museum" />Museum</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "nationalpark"  onChange = {props.onUpdateInterest} />National Park</label>
+  						<label><input type = "checkbox" value = "nationalpark" />National Park</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "safari"  onChange = {props.onUpdateInterest} />Safari</label>
+  						<label><input type = "checkbox" value = "safari" />Safari</label>
 					</div>
           <div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "temple"  onChange = {props.onUpdateInterest} />Temple</label>
+  						<label><input type = "checkbox" value = "temple" />Temple</label>
 					</div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "other" />Other</label>
+          </div>
   				</div>
 			</div>
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Bio</h4>
   				<div className = "col-sm-7">
-    				<textarea className = "form-control" rows = "5" type = "text" placeholder = {val.bio} onChange = {props.onUpdateBio} />
+    				<textarea className = "form-control" rows = "5" type = "text" defaultValue = {val.bio} onChange = {props.onUpdateBio} />
   				</div>
 			</div>
 			<div className = "form-group col-md-2 col-md-offset-4" style = {styles.gapp}>

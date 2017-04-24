@@ -27,8 +27,9 @@ import Admin_member from '../admin/Admin_member'
 import Admin_transport from '../admin/Admin_transport'
 import Admin_edittransport from '../admin/Admin_edittransport'
 import Admin_editplace from '../admin/Admin_editplace'
+import Admin_editmember from '../admin/Admin_editmember'
+import Admin_edittrip from '../admin/Admin_edittrip'
 import ReviewsContainer from '../containers/ReviewsContainer'
-import scroll from '../components/scrolltest'
 
 
 import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
@@ -52,7 +53,6 @@ var routes = (
       <Route path = 'places/:type' component = {Place}/>
       <Route path = 'profile' component={Profile} onEnter = {requireUser}/>
       <Route path = 'review' component = {ReviewsContainer}/>
-      <Route path = 'scroll' component = {scroll}/>
     </Route>
 
       <Route path = '/admin' component = {Admin} onEnter = {requireAdmin}>
@@ -61,7 +61,9 @@ var routes = (
         <Route path = '/admin_member' component = {Admin_member} onEnter = {requireAdmin}/>
         <Route path = '/admin_transport' component = {Admin_transport} onEnter = {requireAdmin}/>
         <Route path = '/editplace/:name' component = {Admin_editplace} onEnter = {requireAdmin}/>
-        <Route path = '/admin_edittransport' component = {Admin_edittransport} onEnter = {requireAdmin}/>
+        <Route path = '/edittransport/:id' component = {Admin_edittransport} onEnter = {requireAdmin}/>
+        <Route path = '/editmember/:username' component = {Admin_editmember} onEnter = {requireAdmin}/>
+        <Route path = '/edittrip/:name' component = {Admin_edittrip} onEnter = {requireAdmin}/>
       </Route>
   </Router>
 

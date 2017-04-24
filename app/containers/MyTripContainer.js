@@ -44,9 +44,6 @@ class MyTripContainer extends Component {
 
     }.bind(this))
   }
-  SeeDetails(id) {
-    this.context.router.push('/trips-details/'+ id)
-  }
 
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
@@ -59,6 +56,7 @@ class MyTripContainer extends Component {
       })
   })
 }
+
 handleAddFav(fav) {
 fetch(`http://localhost:1200/favorite`, {
     method: 'POST',
@@ -75,6 +73,10 @@ fetch(`http://localhost:1200/favorite`, {
   })
 }
 
+SeeTripsDetails(id) {
+    this.context.router.push('/trips-details/'+ id)
+  }
+
   render() {
     return(
      <MyTrip
@@ -82,7 +84,7 @@ fetch(`http://localhost:1200/favorite`, {
      mytrip = {this.state.mytrip}
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
      onAddFav = {(event) => this.handleAddFav(event)}
-     SeeDetails={(event) => this.SeeDetails(event)}
+     SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
       />
     )
   }

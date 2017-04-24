@@ -99,6 +99,13 @@ function Places (props) {
                   <img src = "app/img/places/museum3.jpg"/>
                   <div className = "text museum">Museum</div>
                   </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("other")}>
+                  <img src = "app/img/places/museum1.jpg"/>
+                  <img src = "app/img/places/museum2.jpg"/>
+                  <img src = "app/img/places/museum3.jpg"/>
+                  <div className = "text museum">Other</div>
+                  </div>
             </div>
 
             : props.show.map((val, index) => {

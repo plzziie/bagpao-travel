@@ -4,9 +4,6 @@ import style from '../admin/admin.css'
 
 
 class Admin_trip extends Component {
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  }
 
   constructor () {
     super()
@@ -57,7 +54,7 @@ class Admin_trip extends Component {
 
   EditTrip(ev) {
     event.preventDefault();
-    window.open("/editplace");
+    this.context.router.push('/edittrip/'+ev);
   }
 
   DeleteTrip(ev) {
@@ -77,9 +74,7 @@ class Admin_trip extends Component {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      console.log(myObj);
-  }).then(function (body) {
-    location.replace('/admin_trip');
+      window.location.reload()
   })
   }
 
@@ -115,7 +110,7 @@ class Admin_trip extends Component {
               { this.state.trips.map((val, index) => {
                return <tr key = {index}><td>{val.name}</td>
                <td><button type="button" className="btn btn-xs btn-info">
-                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                 <span className="glyphicon glyphicon-eye-open" aria-hidden="true" onClick={() => this.EditTrip(val.name)}></span>
                </button>&nbsp;
                <button type="button" className="btn btn-xs btn-danger">
                  <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteTrip(val.name)}></span>
@@ -133,6 +128,10 @@ class Admin_trip extends Component {
 
       )
     }
+  }
+
+  Admin_trip.contextTypes = {
+    router: React.PropTypes.object.isRequired
   }
 
 export default Admin_trip

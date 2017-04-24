@@ -4,9 +4,6 @@ import style from '../admin/admin.css'
 
 
 class Admin_transport extends Component {
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  }
 
   constructor () {
     super()
@@ -35,6 +32,7 @@ class Admin_transport extends Component {
     this.handleUpdatePrice = this.handleUpdatePrice.bind(this);
     this.handleSubmitNew = this.handleSubmitNew.bind(this);
     this.DeleteTransport = this.DeleteTransport.bind(this);
+    this.EditTransport = this.EditTransport.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
@@ -56,7 +54,6 @@ class Admin_transport extends Component {
         this.setState({
             transportation: myObj.message
         });
-        console.log(this.state.transportation);
     }.bind(this))
   }
 
@@ -138,12 +135,13 @@ class Admin_transport extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       console.log(myObj);
+      window.location.reload()
   })
 }
 
 EditTransport(ev) {
   event.preventDefault();
-  window.open("/editplace");
+  this.context.router.push('/edittransport/'+ev);
 }
 
 DeleteTransport(ev) {
@@ -163,7 +161,7 @@ DeleteTransport(ev) {
     return response.text()
   }).then(function (body) {
     var myObj = JSON.parse(body);
-    console.log(myObj);
+    window.location.reload()
 })
 }
 
@@ -241,7 +239,7 @@ DeleteTransport(ev) {
                          <td>{val.depart}</td><td>{val.destination}</td><td>{val.stationend}</td><td>{val.arrive}</td><td>{val.price}</td>
                          <td>
                           <button type="button" className="btn btn-xs btn-info">
-                             <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                             <span className="glyphicon glyphicon-edit" aria-hidden="true" onClick={() => this.EditTransport(val._id)}></span>
                            </button>&nbsp;
                            <button type="button" className="btn btn-xs btn-danger" onClick={() => this.DeleteTransport(val._id)}>
                              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -259,6 +257,10 @@ DeleteTransport(ev) {
 
       )
     }
+  }
+
+  Admin_transport.contextTypes = {
+    router: React.PropTypes.object.isRequired
   }
 
 export default Admin_transport
