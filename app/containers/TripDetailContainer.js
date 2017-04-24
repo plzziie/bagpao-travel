@@ -70,7 +70,7 @@ class TripDetailContainer extends Component {
             showw: myObj
         });
       }
-      
+
     }.bind(this))
   }
 
