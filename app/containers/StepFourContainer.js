@@ -63,6 +63,14 @@ class StepFourContainer extends Component {
     });
   }
 
+  handleUpdatePicture(event) {
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    this.setState({
+      picture: file
+    });
+  }
+
   handleSubmitTrip(event) {
     event.preventDefault();
     fetch(`http://localhost:1200/planning`, {
@@ -81,7 +89,8 @@ class StepFourContainer extends Component {
         return: this.state.return,
         name: this.state.name,
         privacy: this.state.privacy,
-        place: this.state.result
+        place: this.state.result,
+        picture: this.state.picture
         })
       })
       this.context.router.push({
@@ -95,6 +104,7 @@ class StepFourContainer extends Component {
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
      onUpdateName = {(event) => this.handleUpdateName(event)}
      onUpdatePrivacy = {(event) => this.handleUpdatePrivacy(event)}
+     onUpdatePicture={(event) => this.handleUpdatePicture(event)}
      depart = {this.state.depart}
      return = {this.state.return}
      origin = {this.state.origin}
