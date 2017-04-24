@@ -16,6 +16,7 @@ class EditProfileContainer extends Component {
       picture: '',
       bio: '',
       err: '',
+      table: '',
       member: []
     }
   }
@@ -97,7 +98,7 @@ class EditProfileContainer extends Component {
 
   handleSubmitEdit(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/editprofile`, {
+    fetch(`http://localhost:1200/upload`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -110,6 +111,7 @@ class EditProfileContainer extends Component {
         currentcity: this.state.currentcity,
         interest: this.state.interest,
         picture: this.state.picture,
+        table: 'member',
         bio: this.state.bio
         })
     })
