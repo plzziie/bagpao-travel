@@ -1,8 +1,5 @@
 export default [
-  {name: 'Bangkok'},
-  {name: 'Chiangmai'},
-  {name: 'Chonburi'},
-  {name: 'Krabi'},
-  {name: 'Khonkaen'},
-  {name: 'Phuket'}
+    { value: 'Bangkok', label: 'Bangkok' },
+    { value: 'Chiangmai', label: 'Chiangmai' },
+    { value: 'Khonkaen', label: 'Khonkaen' }
 ];

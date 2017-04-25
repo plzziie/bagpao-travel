@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import styles from '../styles'
 import CreatePlan from '../components/CreatePlan'
 
+const STATES = require('../lib/Country');
+
 class CreatePlanContainer extends Component {
 
   constructor () {
@@ -13,7 +15,10 @@ class CreatePlanContainer extends Component {
       destination: '',
       daytrip: '',
       multiple: false,
-      transportation: []
+      transportation: [],
+      disabled: false,
+      searchable: true,
+      clearable: true
     }
   }
 
@@ -34,6 +39,21 @@ class CreatePlanContainer extends Component {
       daytrip: event.target.value
     });
   }
+
+  SwitchCountry (event) {
+  var newCountry = event.target.value
+  this.setState({
+    country: newCountry,
+    selectValue: null
+  });
+}
+
+UpdateValue (newValue) {
+  console.log('State changed to ' + newValue);
+  this.setState({
+    selectValue: newValue
+  });
+}
 
   handleSubmitTrip(event) {
     event.preventDefault();
@@ -80,6 +100,12 @@ class CreatePlanContainer extends Component {
      daytrip = {this.state.daytrip}
      transportation = {this.state.transportation}
      multiple = {this.state.multiple}
+
+     disabled = {this.state.disabled}
+     searchable = {this.state.searchable}
+     clearable = {this.state.clearable}
+     country = {this.state.country}
+     selectValue = {this.state.selectValue}
      />
     )
   }

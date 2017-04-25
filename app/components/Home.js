@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
+import Select from 'react-select'
 import ReactRouter from 'react-router'
 import {Link} from 'react-router'
 import CreatePlan from '../containers/CreatePlanContainer'
