@@ -64,11 +64,16 @@ class StepFourContainer extends Component {
   }
 
   handleUpdatePicture(event) {
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    this.setState({
-      picture: file
-    });
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (upload) => {
+      this.setState({
+        picture: upload.target.result
+      });
+      var output = document.getElementById('output');
+      output.src = this.state.picture;
+    }
+    reader.readAsDataURL(file)
   }
 
   handleSubmitTrip(event) {

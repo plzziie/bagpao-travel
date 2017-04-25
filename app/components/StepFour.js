@@ -26,14 +26,14 @@ function StepFour (props) {
       <div className = "container step-bottom">
       <h4 className="step4_header">Successful! This is your plan.</h4>
       <div className = "col-md-offset-2 col-md-2">
-          <img className="img-circle" src="app/img/HKM_0353.jpg" width="100" height="100"/>
-          <input className = "fileInput" type="file" onChange = {(event) => props.onUpdatePicture(event)} />
+          <img className="img" id ="output" src="app/img/HKM_0353.jpg" width="200" height="134" className = "col-xs-offset-1"/>
+          <input type = "file" style = {styles.gap} onChange = {(event) => props.onUpdatePicture(event)} />
       </div>
-          <div className="col-md-5">
+          <div className="col-md-4 col-md-offset-1">
           <h5>Name</h5>
           <input type = "text" className = "form-control"  placeholder = "Name" onChange = {props.onUpdateName}/>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5 col-md-offset-1">
           <h5>Privacy</h5>
           <label className="radio-inline">
           <input type="radio" name="optradio" value = "private" onChange = {props.onUpdatePrivacy}/>Private

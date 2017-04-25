@@ -8,7 +8,9 @@ var styles = {
 	gapp: {
 		marginTop: '30px'
 	},
-
+	gap: {
+		marginTop: '10px'
+	},
 	marginCreate: {
 		marginTop: '100px',
 		padding: '30px'

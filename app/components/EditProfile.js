@@ -11,8 +11,8 @@ function EditProfile (props) {
          return <div key={index}>
            <div className="container step-bottom">
     	          <div className = "jumbotron col-xs-4 col-xs-offset-4 text-center">
-        	      <div><img className = "img-circle" src = {val.picture} alt = "profile" width = "200" height = "200"/></div>
-                <input className = "fileInput" type="file" onChange = {(event) => props.onUpdatePicture(event)} />
+        	      <div><img className = "img-circle" id ="output" src = {val.picture} alt = "profile" width = "200" height = "200"/></div>
+                <input type="file" className = "col-xs-offset-2" style = {styles.gapp} onChange = {(event) => props.onUpdatePicture(event)} />
       	        </div>
               </div>
       <form onSubmit = {props.onSubmitEdit} className = "col-md-offset-2">
@@ -67,9 +67,6 @@ function EditProfile (props) {
           <div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "temple" />Temple</label>
 					</div>
-          <div className = "checkbox-inline">
-              <label><input type = "checkbox" value = "other" />Other</label>
-          </div>
   				</div>
 			</div>
 			<div className = "form-group row">
@@ -104,8 +101,8 @@ email: PropTypes.string.isRequired,
 birthday: PropTypes.string.isRequired,
 currentcity: PropTypes.string.isRequired,
 interest: PropTypes.string.isRequired,
-picture: PropTypes.object.isRequired,
-bio: PropTypes.string.isRequired
+bio: PropTypes.string.isRequired,
+picture: PropTypes.string.isRequired
 }
 
 export default EditProfile

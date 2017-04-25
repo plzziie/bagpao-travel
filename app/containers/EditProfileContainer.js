@@ -13,7 +13,7 @@ class EditProfileContainer extends Component {
       birthday: '',
       currentcity: '',
       interest: [],
-      picture: [],
+      picture: '',
       bio: '',
       err: '',
       table: '',
@@ -51,8 +51,8 @@ class EditProfileContainer extends Component {
         email: this.state.member[0].email,
         birthday: this.state.member[0].birthday,
         currentcity: this.state.member[0].currentcity,
-        picture: this.state.member[0].picture,
-        bio: this.state.member[0].bio
+        bio: this.state.member[0].bio,
+        picture: this.state.member[0].picture
       });
     }.bind(this))
   }
@@ -63,11 +63,16 @@ class EditProfileContainer extends Component {
     });
   }
   handleUpdatePicture(event) {
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    this.setState({
-      picture: file
-    });
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (upload) => {
+      this.setState({
+        picture: upload.target.result
+      });
+      var output = document.getElementById('output');
+      output.src = this.state.picture;
+    }
+    reader.readAsDataURL(file)
   }
   handleUpdateEmail(event) {
     this.setState({
@@ -105,7 +110,7 @@ class EditProfileContainer extends Component {
 
   handleSubmitEdit(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/upload`, {
+    fetch(`http://localhost:1200/editprofile`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -117,10 +122,10 @@ class EditProfileContainer extends Component {
         birthday: this.state.birthday,
         currentcity: this.state.currentcity,
         interest: this.state.interest,
-        picture: this.state.picture,
         table: 'member',
-        bio: this.state.bio
-        })
+        bio: this.state.bio,
+        picture: this.state.picture
+      }),
     })
     .then(function (response) {
       return response.text()
@@ -146,9 +151,9 @@ render() {
    birthday = {this.state.birthday}
    currentcity = {this.state.currentcity}
    interest = {this.state.interest}
-   picture = {this.state.picture}
    bio = {this.state.bio}
    member = {this.state.member}
+   picture = {this.state.picture}
     />
   )
 }
