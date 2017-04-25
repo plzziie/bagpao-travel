@@ -41,7 +41,7 @@ function StepThree (props) {
                 <li><a href="#search" data-toggle = "tab">Search</a></li>
                 <li className = "active"><a href="#place" data-toggle = "tab">Place</a></li>
                 <li><a href="#restaurant" data-toggle = "tab">Restaurant</a></li>
-                <li><a href="#accommodation" data-toggle = "tab">Accommodation</a></li>
+                <li><a href="#accomodation" data-toggle = "tab">Accommodation</a></li>
               </ul>
 
                 <div className = "tab-content">
@@ -49,7 +49,7 @@ function StepThree (props) {
                     <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                       {props.places.map((val, index) => {
                           return (val.category != "restaurant")
-                            ? (val.category != "accommodation")
+                            ? (val.category != "accomodation")
                               ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
                                 <img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
@@ -59,6 +59,7 @@ function StepThree (props) {
                         })}
                     </div>
                   </div>
+                  
 
                   <div id = "restaurant" className = "tab-pane fade">
                     <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
@@ -73,10 +74,10 @@ function StepThree (props) {
                     </div>
                   </div>
 
-                  <div id = "accommodation" className = "tab-pane fade">
+                  <div id = "accomodation" className = "tab-pane fade">
                     <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                     {props.places.map((val, index) => {
-                        return (val.category == "accommodation")
+                        return (val.category == "accomodation")
                             ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
                               <img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                               <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
