@@ -55,6 +55,20 @@ class Admin_edittransport extends Component {
           transportation: myObj.message
       });
     }.bind(this))
+    .then(function (set) {
+      this.setState({
+        type: this.state.transportation[0].type,
+        route: this.state.transportation[0].route,
+        name: this.state.transportation[0].name,
+        origin: this.state.transportation[0].origin,
+        stationstart: this.state.transportation[0].stationstart,
+        depart: this.state.transportation[0].depart,
+        destination: this.state.transportation[0].stationstart,
+        stationend: this.state.transportation[0].stationend,
+        arrive: this.state.transportation[0].arrive,
+        price: this.state.transportation[0].price,
+      });
+    }.bind(this))
   }
 
 

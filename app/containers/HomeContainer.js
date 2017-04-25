@@ -65,7 +65,6 @@ class HomeContainer extends Component {
     }.bind(this))
   }
 
-
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
       method: 'POST',

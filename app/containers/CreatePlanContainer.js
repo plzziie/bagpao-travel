@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styles from '../styles'
 import CreatePlan from '../components/CreatePlan'
 
+
 class CreatePlanContainer extends Component {
 
   constructor () {
@@ -11,9 +12,7 @@ class CreatePlanContainer extends Component {
       numstep: 1,
       origin: '',
       destination: '',
-      daytrip: '',
-      multiple: false,
-      transportation: []
+      daytrip: ''
     }
   }
 
@@ -79,7 +78,6 @@ class CreatePlanContainer extends Component {
      destination = {this.state.destination}
      daytrip = {this.state.daytrip}
      transportation = {this.state.transportation}
-     multiple = {this.state.multiple}
      />
     )
   }

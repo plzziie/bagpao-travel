@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import styles from '../styles/createplan.css'
-import {Typeahead} from 'react-bootstrap-typeahead'
-import Country from '../lib/Country';
+
 
 function CreatePlan (props) {
   console.log(props);
@@ -10,14 +9,15 @@ function CreatePlan (props) {
       <div className = "container container_con col-md-10 col-md-offset-1">
         <div className="row">
         <form onSubmit = {props.onSubmitTrip}>
+
         <div className = "col-md-3 col-sm-6 col-xs-12" >
-            <h4 className="fontwhite">From</h4>
-            <input type = "text"
-            className = "form-control"
-            placeholder = "Enter your origin"
-            onChange = {props.onUpdateOrigin}
-            defaultValue = {props.origin}
-            required />
+          <h4 className="fontwhite">From</h4>
+          <input type = "text"
+          className = "form-control"
+          placeholder = "Enter your origin"
+          onChange = {props.onUpdateOrigin}
+          defaultValue = {props.origin}
+          required />
         </div>
 
         <div className = "col-md-3 col-sm-6 col-xs-12" >
@@ -67,8 +67,7 @@ function CreatePlan (props) {
   onUpdateDaytrip: PropTypes.func.isRequired,
   origin: PropTypes.string.isRequired,
   destination: PropTypes.string.isRequired,
-  daytrip: PropTypes.string.isRequired,
-  multiple: PropTypes.bool.isRequired
+  daytrip: PropTypes.string.isRequired
 }
 
 export default CreatePlan

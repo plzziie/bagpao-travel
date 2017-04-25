@@ -59,7 +59,7 @@ class Admin_editplace extends Component {
     }.bind(this))
     .then(function (set) {
       this.setState({
-        name: this.state.places[0].name,
+        name: this.state.places[0].name[0],
         place: this.state.places[0].place,
         city: this.state.places[0].city,
         latitude: this.state.places[0].latitude,
@@ -193,7 +193,7 @@ class Admin_editplace extends Component {
               <input type = "checkbox" value = "other" onChange = {this.handleUpdateCategory} />Other
             </label>
             <label className = "checkbox-inline">
-              <input type = "checkbox" value = "accomodation" onChange = {this.handleUpdateCategory} />Accomodation
+              <input type = "checkbox" value = "accommodation" onChange = {this.handleUpdateCategory} />Accommodation
             </label>
             <label className = "checkbox-inline">
               <input type = "checkbox" value = "restaurant" onChange = {this.handleUpdateCategory} />Restaurant
