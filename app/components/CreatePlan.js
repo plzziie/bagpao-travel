@@ -22,15 +22,8 @@ var options = STATES[props.country];
           onChange = {props.onUpdateOrigin}
           defaultValue = {props.origin}
           required />
-          <Select type = "text" autofocus options = {options} clearable = {props.clearable} name = "selected-state"
-          disabled = {props.disabled} value = {props.selectValue} onChange={props.UpdateValue}
-          searchable = {props.searchable} className = "col-md-3 col-sm-6 col-xs-12" />
         </div>
-
-
-
-
-
+        
         <div className = "col-md-3 col-sm-6 col-xs-12" >
           <h4 className="fontwhite">To</h4>
           <input type = "text"
