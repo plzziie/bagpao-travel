@@ -110,6 +110,7 @@ class EditProfileContainer extends Component {
 
   handleSubmitEdit(event) {
     event.preventDefault();
+
     fetch(`http://localhost:1200/editprofile`, {
         method: 'POST',
         headers:{
@@ -122,10 +123,9 @@ class EditProfileContainer extends Component {
         birthday: this.state.birthday,
         currentcity: this.state.currentcity,
         interest: this.state.interest,
-        table: 'member',
         bio: this.state.bio,
         picture: this.state.picture
-      }),
+      })
     })
     .then(function (response) {
       return response.text()
