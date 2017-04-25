@@ -218,7 +218,7 @@ class Admin_place extends Component {
                             <input type = "checkbox" value = "museum" onChange = {this.handleUpdateCategory} />Museum
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "accomodation" onChange = {this.handleUpdateCategory} />Accomodation
+                            <input type = "checkbox" value = "accommodation" onChange = {this.handleUpdateCategory} />Accommodation
                           </label>
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "restaurant" onChange = {this.handleUpdateCategory} />Restaurant
