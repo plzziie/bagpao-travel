@@ -105,7 +105,7 @@ class EditProfileContainer extends Component {
 
   handleSubmitEdit(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/upload`, {
+    fetch(`http://localhost:1200/EditProfile`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ class EditProfileContainer extends Component {
         picture: this.state.picture,
         table: 'member',
         bio: this.state.bio
-        })
+      })
     })
     .then(function (response) {
       return response.text()
@@ -129,6 +129,7 @@ class EditProfileContainer extends Component {
       location.replace('/profile');
   })
 }
+
 
 render() {
   return(
