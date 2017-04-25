@@ -24,13 +24,12 @@ import Admin from '../admin/Admin'
 import Admin_place from '../admin/Admin_place'
 import Admin_trip from '../admin/Admin_trip'
 import Admin_member from '../admin/Admin_member'
+import Admin_review from '../admin/Admin_review'
 import Admin_transport from '../admin/Admin_transport'
 import Admin_edittransport from '../admin/Admin_edittransport'
 import Admin_editplace from '../admin/Admin_editplace'
 import Admin_editmember from '../admin/Admin_editmember'
 import Admin_edittrip from '../admin/Admin_edittrip'
-import ReviewsContainer from '../containers/ReviewsContainer'
-
 
 import {requireAuth, requireAdmin, requireUser} from '../lib/AuthService';
 
@@ -52,7 +51,6 @@ var routes = (
       <Route path = 'stepfour' component = {StepFour} onEnter = {requireAuth}/>
       <Route path = 'places/:type' component = {Place}/>
       <Route path = 'profile' component={Profile} onEnter = {requireUser}/>
-      <Route path = 'review' component = {ReviewsContainer}/>
     </Route>
 
       <Route path = '/admin' component = {Admin} onEnter = {requireAdmin}>
@@ -64,6 +62,7 @@ var routes = (
         <Route path = '/edittransport/:id' component = {Admin_edittransport} onEnter = {requireAdmin}/>
         <Route path = '/editmember/:username' component = {Admin_editmember} onEnter = {requireAdmin}/>
         <Route path = '/edittrip/:name' component = {Admin_edittrip} onEnter = {requireAdmin}/>
+        <Route path = '/editreview/:name' component = {Admin_review} onEnter = {requireAdmin}/>
       </Route>
   </Router>
 

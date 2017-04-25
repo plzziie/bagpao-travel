@@ -14,6 +14,8 @@ class Admin_trip extends Component {
     }
     this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+    this.EditTrip = this.EditTrip.bind(this);
+    this.EditReview = this.EditReview.bind(this);
     this.DeleteTrip = this.DeleteTrip.bind(this);
   }
 
@@ -55,6 +57,11 @@ class Admin_trip extends Component {
   EditTrip(ev) {
     event.preventDefault();
     this.context.router.push('/edittrip/'+ev);
+  }
+
+  EditReview(ev) {
+    event.preventDefault();
+    this.context.router.push('/editreview/'+ev);
   }
 
   DeleteTrip(ev) {
@@ -111,6 +118,9 @@ class Admin_trip extends Component {
                return <tr key = {index}><td>{val.name}</td>
                <td><button type="button" className="btn btn-xs btn-info">
                  <span className="glyphicon glyphicon-eye-open" aria-hidden="true" onClick={() => this.EditTrip(val.name)}></span>
+               </button>&nbsp;
+               <button type="button" className="btn btn-xs btn-info">
+                 <span className="glyphicon glyphicon-edit" aria-hidden="true" onClick={() => this.EditReview(val.name)}></span>
                </button>&nbsp;
                <button type="button" className="btn btn-xs btn-danger">
                  <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteTrip(val.name)}></span>

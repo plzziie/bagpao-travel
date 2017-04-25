@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import TripDetail from '../components/TripDetail'
-import {getIdToken} from '../lib/AuthService';
+import {getIdToken} from '../lib/AuthService'
 
 class TripDetailContainer extends Component {
 
@@ -19,7 +19,6 @@ class TripDetailContainer extends Component {
   componentWillMount() {
     this.setState({
         username: getIdToken()
-
     });
   }
 
@@ -57,8 +56,7 @@ class TripDetailContainer extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        // tripname: this.props.params.id
-        trip: this.props.params.id,
+        trip: this.props.params.id
       })
     })
     .then(function (response) {
@@ -70,7 +68,6 @@ class TripDetailContainer extends Component {
             showw: myObj
         });
       }
-
     }.bind(this))
   }
 
@@ -79,6 +76,7 @@ class TripDetailContainer extends Component {
       comment: event.target.value
     });
   }
+
   handleSubmitComment(event) {
     event.preventDefault();
     fetch(`http://localhost:1200/addreviews`, {
@@ -91,9 +89,10 @@ class TripDetailContainer extends Component {
         comment: this.state.comment,
         username: getIdToken()
         })
+    }).then(function (body) {
+      location.replace('/trips');
     })
   }
-
 
   render() {
     return(

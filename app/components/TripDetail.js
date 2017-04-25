@@ -1,5 +1,6 @@
 import React, {Component,PropTypes} from 'react'
 import ReactRouter, {browserHistory} from 'react-router'
+import {getIdToken} from '../lib/AuthService'
 import style from '../styles/detail.css'
 import styles from '../styles'
 import styl from '../styles/stepfour.css'
@@ -98,8 +99,8 @@ var tmp = [];
                            />
                     </div>
                     <div className = "form-group col-xs-4 col-xs-offset-4">
-                          <button  className = "btn btn-block btn-success" type = "submit">
-                              Send  </button>
+                          { getIdToken()  ? <button  className = "btn btn-block btn-success" type = "submit">Send</button>
+                                          : <button  className = "btn btn-block btn-default" type = "button" disabled>Login first !</button> }
                     </div>
                     </form>
                   </div>

@@ -14,6 +14,7 @@ class Admin_member extends Component {
     }
     this.handleUpdateSearch = this.handleUpdateSearch.bind(this);
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+    this.EditMember = this.EditMember.bind(this);
     this.DeleteMember = this.DeleteMember.bind(this);
   }
 

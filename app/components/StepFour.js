@@ -31,7 +31,7 @@ function StepFour (props) {
       </div>
           <div className="col-md-4 col-md-offset-1">
           <h5>Name</h5>
-          <input type = "text" className = "form-control"  placeholder = "Name" onChange = {props.onUpdateName}/>
+          <input type = "text" className = "form-control"  placeholder = "Name" required onChange = {props.onUpdateName}/>
           </div>
           <div className="col-md-5 col-md-offset-1">
           <h5>Privacy</h5>

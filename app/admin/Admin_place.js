@@ -240,7 +240,7 @@ class Admin_place extends Component {
               <th>Place Name</th>
               <th>City</th>
               <th>Picture</th>
-              <th></th>
+              <th> </th>
             </tr></thead>
 
 {/*   ------------------------body-----------------*/}

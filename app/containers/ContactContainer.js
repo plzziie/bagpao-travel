@@ -15,10 +15,6 @@ class ContactContainer extends Component {
       isLoading: true
     }
   }
-  componentDidMount() {
-
-
-}
 
   handleUpdateName(event) {
     this.setState({
