@@ -239,6 +239,7 @@ class Admin_place extends Component {
             <thead className="bar"><tr>
               <th>Place Name</th>
               <th>City</th>
+              <th>Category</th>
               <th>Picture</th>
               <th> </th>
             </tr></thead>
@@ -248,7 +249,9 @@ class Admin_place extends Component {
             <tbody>
               { this.state.places.map((val, index) => {
                return <tr key = {index}><td>{val.name[0]}</td><td>{val.city[0]}</td>
+               <td>{val.category}</td>
                <td><img className = "img" src = {val.picture} alt = {val.name[0]} width="120" height="100"/></td>
+
                <td>
                  <button type="button" className="btn btn-xs btn-info" onClick={() => this.EditPlace(val.name[0])}>
                    <span className="glyphicon glyphicon-edit" aria-hidden="true"></span>
