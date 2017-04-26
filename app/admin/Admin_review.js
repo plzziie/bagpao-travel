@@ -46,15 +46,16 @@ class Admin_review extends Component {
       },
       body: JSON.stringify({
         admin: "delete",
-        types: "trip",
-        name: ev
+        types: "reviews",
+        name: this.props.params.name,
+        comment: ev
         })
     })
     .then(function (response) {
       return response.text()
     }).then(function (body) {
       var myObj = JSON.parse(body);
-      window.location.reload()
+      location.replace('/admin_trip');
   })
   }
 
@@ -80,7 +81,7 @@ class Admin_review extends Component {
               { this.state.comment.map((val, index) => {
                return <tr key = {index}><td>{val.user}</td><td>{val.comment}</td>
                <td><button type="button" className="btn btn-xs btn-danger">
-                 <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteComment(val.name)}></span>
+                 <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={() => this.DeleteComment(val.comment)}></span>
                </button>
              </td></tr>
 
