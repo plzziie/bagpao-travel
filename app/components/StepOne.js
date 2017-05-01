@@ -20,18 +20,18 @@ function StepOne (props) {
           <div className = "col-md-3 col-sm-4 col-sm-12 col-xs-11" >
             <h4>From</h4>
             <input type = "text"  className = "form-control" placeholder = "Enter your origin" onChange = {props.onUpdateOrigin}
-                        defaultValue = {props.origin}/>
+                        defaultValue = {props.origin} required/>
         </div>
         <div className = "col-md-3 col-sm-4 col-sm-12 col-xs-11" >
           <h4>To</h4>
             <input type = "text" className = "form-control" placeholder = "Enter your destination" onChange = {props.onUpdateDestination}
-                        defaultValue = {props.destination}/>
+                        defaultValue = {props.destination} required/>
         </div>
 
         <div className = "col-md-3 col-sm-4 col-sm-12 col-xs-12">
           <h4>Days</h4>
             <select style = {styles.left} type = "submit" id="howlong" className = "btn btn-default howlong" onChange = {props.onUpdateDaytrip}
-                        defaultValue = {props.daytrip}>
+                        defaultValue = {props.daytrip} required>
               <option>How many days?</option>
               <option>1</option>
               <option>2</option>

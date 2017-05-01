@@ -37,7 +37,8 @@ function CreatePlan (props) {
             id = "howlong"
             className = "btn btn-default howlong"
             onChange = {props.onUpdateDaytrip}
-            defaultValue = {props.daytrip}>
+            defaultValue = {props.daytrip}
+            required>
               <option>How many days?</option>
               <option>1</option>
               <option>2</option>

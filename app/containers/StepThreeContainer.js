@@ -13,8 +13,8 @@ class StepThreeContainer extends Component {
       found: true,
       places: [],
       place: [],
-      test: [],
-      result: []
+      result: [],
+      test: []
     }
   }
 
@@ -64,12 +64,24 @@ Drag(event) {
 
 Drop(event) {
     event.preventDefault();
+    var test = this.state.test
     var placeid = event.dataTransfer.getData("text");
     var days = event.target.id
     event.target.appendChild(document.getElementById(placeid));
+    this.state.test = test.concat({days,placeid})
+
+    var x = test.map(function(val,index){
+      return (val.placeid == placeid)
+              ? (val.days == days)
+                ? test.splice(index, 1)
+                : test.splice(index, 1)
+              : test.concat({days,placeid})
+    });
+
+    this.state.test = test.concat({days,placeid})
     this.setState({
-      result: this.state.result.concat([{days,placeid}])
-    })
+      result: this.state.test
+    });
 }
 
   handleGetSearch(event) {
