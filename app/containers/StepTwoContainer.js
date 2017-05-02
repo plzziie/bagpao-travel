@@ -11,7 +11,10 @@ class StepTwoContainer extends Component {
       vehiclesD: '',
       vehiclesR: '',
       depart: '',
-      return: ''
+      return: '',
+      prices: 0,
+      dep: [],
+      re: []
     }
   }
   componentWillMount(){
@@ -36,15 +39,31 @@ class StepTwoContainer extends Component {
   }
 
   handleUpdateDepart(event) {
+    var dep = []
     this.setState({
       depart: event.target.value
     });
+
+    dep = this.state.transportation.map(function(val,index) {
+      return (val.name == event.target.value)
+              ? val.price
+              : 0 })
+    dep = dep.reduce(function(total, num){ return total + num }, 0);
+    this.state.dep = dep
   }
 
   handleUpdateReturn(event) {
+    var re = []
     this.setState({
       return: event.target.value
     });
+
+    re = this.state.transportation.map(function(val,index) {
+      return (val.name == event.target.value)
+              ? val.price
+              : 0 })
+    re = re.reduce(function(total, num){ return total + num }, 0);
+    this.state.re = re
   }
 
   handleSubmitTrip(event) {
@@ -56,7 +75,8 @@ class StepTwoContainer extends Component {
         origin: this.state.origin,
         depart: this.state.depart,
         destination: this.state.destination,
-        return: this.state.return
+        return: this.state.return,
+        prices: this.state.dep + this.state.re
       }
     })
   }
@@ -77,6 +97,7 @@ class StepTwoContainer extends Component {
      vehiclesD = {this.state.vehiclesD}
      vehiclesR = {this.state.vehiclesR}
      transportation = {this.state.transportation}
+     prices = {this.state.prices}
      />
     )
   }

@@ -16,8 +16,8 @@ function StepThree (props) {
       <div>
         <div className="container-fluid">
           <ul className = "stepone nav nav-pills nav-justified">
-            <li><a href = "/stepone">Step 1</a></li>
-            <li><a href = "/steptwo">Step 2</a></li>
+            <li>Step 1</li>
+            <li>Step 2</li>
             <li className="active"><a href = "/stepthree">Step 3</a></li>
             <li><a href = "stepfour">Step 4</a></li>
           </ul>
@@ -117,7 +117,7 @@ function StepThree (props) {
             <div className="stepthree_select" style = {styles.gap}>
               <div className="where">Price</div>
               <ul className = "nav nav-pills nav-justified ">
-                <li>{props.prices}</li>
+                <h5>{props.prices}</h5>
               </ul>
             </div>
 

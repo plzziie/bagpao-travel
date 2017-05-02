@@ -15,9 +15,9 @@ function StepFour (props) {
       <div>
       <div className="container-fluid">
       <ul className = "stepone nav nav-pills nav-justified">
-        <li><a href = "/stepone">Step 1</a></li>
-        <li><a href = "/steptwo">Step 2</a></li>
-        <li><a href = "/stepthree">Step 3</a></li>
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
         <li className="active"><a href = "stepfour">Step 4</a></li>
       </ul>
     </div>
@@ -65,6 +65,10 @@ function StepFour (props) {
         </div>
       </div>
 
+      <div className="col-md-offset-4" style = {styles.gapp}>
+        <div className="day">Price : {props.prices}</div>
+      </div>
+
           <div className="col-md-offset-5 col-sm-offset-4 col-xs-offset-4 col-md-3 col-sm-4 col-xs-4 step-bottom " >
             <button  type = "submit" className = "button form-control">
                 Done</button>
@@ -91,7 +95,8 @@ StepFour.PropTypes = {
   privacy: PropTypes.string.isRequired,
   result: PropTypes.object.isRequired,
   details: PropTypes.object.isRequired,
-  picture: PropTypes.object.isRequired
+  picture: PropTypes.object.isRequired,
+  prices: PropTypes.number.isRequired
 }
 
 export default StepFour

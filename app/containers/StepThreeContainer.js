@@ -11,7 +11,6 @@ class StepThreeContainer extends Component {
       numstep: 2,
       search: '',
       found: true,
-      prices : 0,
       places: [],
       place: [],
       result: [],
@@ -26,7 +25,8 @@ class StepThreeContainer extends Component {
       destination: this.props.location.state.destination,
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
-      return: this.props.location.state.return
+      return: this.props.location.state.return,
+      prices: this.props.location.state.prices
     })
   }
 
@@ -96,12 +96,6 @@ Drop(event) {
       dragn.splice(dragn.indexOf(placeid),1),
       this.state.prices = this.state.prices-prices
     }
-console.log(dragn);
-  //  console.log(this.state.prices);
-  //  console.log(prices);
-
-
-
 
     this.setState({
       result: this.state.test,
@@ -150,7 +144,8 @@ console.log(dragn);
         destination: this.state.destination,
         return: this.state.return,
         result: this.state.result,
-        places: this.state.places
+        places: this.state.places,
+        prices: this.state.prices
       }
     })
   }

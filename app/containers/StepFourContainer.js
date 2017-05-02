@@ -23,7 +23,8 @@ class StepFourContainer extends Component {
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return,
-      result: this.props.location.state.result
+      result: this.props.location.state.result,
+      prices: this.props.location.state.prices
     })
   }
 
@@ -95,7 +96,8 @@ class StepFourContainer extends Component {
         name: this.state.name,
         privacy: this.state.privacy,
         place: this.state.result,
-        picture: this.state.picture
+        picture: this.state.picture,
+        prices: this.state.prices
         })
       })
       this.context.router.push({
@@ -119,6 +121,7 @@ class StepFourContainer extends Component {
      privacy = {this.state.privacy}
      result = {this.state.result}
      details = {this.state.details}
+     prices = {this.state.prices}
      />
     )
   }
