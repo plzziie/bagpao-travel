@@ -29,7 +29,8 @@ function StepThree (props) {
             {tmp.map((val, index) => {
               return <div key = {index} className="day" id ={index+1}>
                 <div className="inday">Day {val+1}</div>
-                <div className="planbox" id = {index+1} onDrop = {props.Drop} onDragOver = {props.AllowDrop} ></div>
+                <div className="planbox" id = {index+1} onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                </div>
                 </div>})}
           </div>
         </div>
@@ -46,12 +47,12 @@ function StepThree (props) {
 
                 <div className = "tab-content">
                   <div id = "place" className = "tab-pane fade in active">
-                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                       {props.places.map((val, index) => {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
-                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
-                                <img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
+                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}  data-toggle="modal" data-target="#myModal">
+                                <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 </div>
                               : null
@@ -62,7 +63,7 @@ function StepThree (props) {
 
 
                   <div id = "restaurant" className = "tab-pane fade">
-                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                     {props.places.map((val, index) => {
                         return (val.category == "restaurant")
                             ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
@@ -75,7 +76,7 @@ function StepThree (props) {
                   </div>
 
                   <div id = "accommodation" className = "tab-pane fade">
-                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                     {props.places.map((val, index) => {
                         return (val.category == "accommodation")
                             ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
@@ -98,7 +99,7 @@ function StepThree (props) {
                     </div>
                   </form>
                   </div>
-                    <div className="planboxright" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxright" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                       {props.found
                         ? props.place.map((val, index) => {
                           return <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">
@@ -113,6 +114,13 @@ function StepThree (props) {
                 </div>
             </div>
 
+            <div className="stepthree_select" style = {styles.gap}>
+              <div className="where">Price</div>
+              <ul className = "nav nav-pills nav-justified ">
+                <li>{props.prices}</li>
+              </ul>
+            </div>
+
             <form onSubmit = {props.onSubmitTrip}>
             <div className="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4 step-bottom">
              <button type = "submit" className = "button form-control">
@@ -120,6 +128,23 @@ function StepThree (props) {
              </button>
             </div>
             </form>
+
+            <div id="myModal" className="modal fade" role="dialog">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <button type="button" className="close" data-dismiss="modal">&times;</button>
+                    <h4 className="modal-title">Modal Header</h4>
+                  </div>
+                  <div className="modal-body">
+                    <p>Some text in the modal.</p>
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
     </div>
     </div>
     )
@@ -141,7 +166,8 @@ StepThree.PropTypes = {
   place: PropTypes.object.isRequired,
   found: PropTypes.bool.isRequired,
   test: PropTypes.object.isRequired,
-  result: PropTypes.object.isRequired
+  result: PropTypes.object.isRequired,
+  prices: PropTypes.number.isRequired
 }
 
 export default StepThree

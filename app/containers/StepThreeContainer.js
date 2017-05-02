@@ -11,10 +11,12 @@ class StepThreeContainer extends Component {
       numstep: 2,
       search: '',
       found: true,
+      prices : 0,
       places: [],
       place: [],
       result: [],
-      test: []
+      test: [],
+      dragn : []
     }
   }
 
@@ -65,22 +67,46 @@ Drag(event) {
 Drop(event) {
     event.preventDefault();
     var test = this.state.test
+    var dragn = this.state.dragn
+    var prices = []
     var placeid = event.dataTransfer.getData("text");
     var days = event.target.id
     event.target.appendChild(document.getElementById(placeid));
-    this.state.test = test.concat({days,placeid})
 
-    var x = test.map(function(val,index){
+    prices = this.state.places.map(function(vals,indexs) {
+      return (vals.placeid == placeid)
+              ? vals.price
+              : 0 })
+    prices = prices.reduce(function(total, num){ return total + num }, 0);
+
+    var x = test.map(function(val,index) {
       return (val.placeid == placeid)
-              ? (val.days == days)
-                ? test.splice(index, 1)
-                : test.splice(index, 1)
-              : test.concat({days,placeid})
-    });
+              ? test.splice(index, 1)
+              : null });
 
-    this.state.test = test.concat({days,placeid})
+    if (days != 0) {
+      this.state.test = test.concat({days,placeid})
+      if (dragn.indexOf(placeid) == -1) {
+        this.state.prices = this.state.prices+prices,
+        dragn = dragn.concat(placeid)
+      }
+    }
+    else {
+      this.state.test = test,
+      dragn.splice(dragn.indexOf(placeid),1),
+      this.state.prices = this.state.prices-prices
+    }
+console.log(dragn);
+  //  console.log(this.state.prices);
+  //  console.log(prices);
+
+
+
+
     this.setState({
-      result: this.state.test
+      result: this.state.test,
+      prices: this.state.prices,
+      dragn: dragn
     });
 }
 
@@ -149,6 +175,7 @@ Drop(event) {
      found = {this.state.found}
      test = {this.state.test}
      result = {this.state.result}
+     prices = {this.state.prices}
      />
     )
   }
