@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PlaceForm from '../components/PlaceForm'
 
+
 class PlaceFormContainer extends Component {
 
   constructor () {
@@ -8,28 +9,14 @@ class PlaceFormContainer extends Component {
     this.state = {
       name: '',
       show: [],
-      map: []
+      map: [],
+      lat: '',
+      lng: '',
+      place: ''
     }
   }
 
-  componentWillMount() {
-    fetch(`http://localhost:1200/apigeo/?lat=13.8056762&lng=100.6930041`, {
-      method: 'GET',
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(function (response) {
-      return response.text()
-    }).then(function (body) {
-      var myObj = JSON.parse(body);
-        this.setState({
-            map: myObj
-        });
-        console.log(this.state.map);
-    }.bind(this))
-  }
-
+  
   componentDidMount() {
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
@@ -47,7 +34,10 @@ class PlaceFormContainer extends Component {
       var myObj = JSON.parse(body);
       if (myObj.message === undefined) {
         this.setState({
-            show: myObj
+            show: myObj,
+            place: myObj[0].name[0],
+            lat: myObj[0].latitude,
+            lng: myObj[0].longitude
         });
       }
     }.bind(this))
@@ -57,6 +47,10 @@ class PlaceFormContainer extends Component {
     return(
      <PlaceForm
       show = {this.state.show}
+      place = {this.state.place}
+      lat = {this.state.lat}
+      lng = {this.state.lng}
+
       />
     )
   }

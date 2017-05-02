@@ -5,9 +5,10 @@ import styles from '../styles'
 import style from '../styles/detail.css'
 import SimpleMap from '../lib/Map';
 
-var map = funtion(lat,lng,name);
+
 
 function PlaceForm (props) {
+// var map = mapgeo(props.lat,props.lng,props.place);
 console.log(props);
   return(
     <div className="container-fluid step-bottom">
@@ -27,7 +28,6 @@ console.log(props);
                  </div>,
                  </div>
                </div>
-               
          })
       }
        </div>
