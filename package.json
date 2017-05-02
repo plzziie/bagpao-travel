@@ -20,6 +20,7 @@
     "express": "^4.14.1",
     "express-session": "^1.15.0",
     "firebase": "^3.7.1",
+    "google-map-react": "^0.24.0",
     "jwt-decode": "^2.2.0",
     "mongodb": "^2.2.22",
     "node-uuid": "^1.4.7",

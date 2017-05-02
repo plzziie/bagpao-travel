@@ -3,6 +3,9 @@ import {PropTypes} from 'react'
 import ReactRouter,{browserHistory} from 'react-router'
 import styles from '../styles'
 import style from '../styles/detail.css'
+import SimpleMap from '../lib/Map';
+
+var map = funtion(lat,lng,name);
 
 function PlaceForm (props) {
 console.log(props);
@@ -17,9 +20,19 @@ console.log(props);
                  <label>Description</label>
                  <p>{val.description}</p>
                  <label>Contact</label> <p>{val.contact}</p>
-               </div></div>
-         })}
+                     
+                 <div style={{width: '100%', height: '300px' , position: 'relative'}}> 
+                   <SimpleMap/>
+                   <b>lat :</b>{val.latitude} <b>lng :</b>{val.longitude}
+                 </div>,
+                 </div>
+               </div>
+               
+         })
+      }
        </div>
+
+
          <div className="col-md-offset-5 col-xs-offset-5 col-sm-offset-5" style = {styles.gapp}>
            <button className="btn btn-success col-md-3 col-sm-2 col-xs-3" onClick = {browserHistory.goBack}>Back</button>
          </div>
@@ -32,3 +45,4 @@ console.log(props);
   }
 
 export default PlaceForm
+
