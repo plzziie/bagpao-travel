@@ -103,8 +103,9 @@ class Admin_transport extends Component {
     });
   }
   handleUpdatePrice(event) {
+    var x = Number(event.target.value)
     this.setState({
-      price: event.target.value
+      price: x
     });
   }
 
@@ -205,7 +206,7 @@ DeleteTransport(ev) {
                           <input type="text" className="form-control" placeholder="Arrive" onChange = {this.handleUpdateArrive}/>
                         </div>
                         <div className="form-group">
-                          <input type="text" className="form-control" placeholder="Price" onChange = {this.handleUpdatePrice}/>
+                          <input type="number" className="form-control" placeholder="Price" onChange = {this.handleUpdatePrice}/>
                         </div>
                         <button type="submit" className="btn btn-default">Submit</button>
                       </form>

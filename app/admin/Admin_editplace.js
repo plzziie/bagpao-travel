@@ -85,13 +85,15 @@ class Admin_editplace extends Component {
     });
   }
   handleUpdateLatitude(event) {
+    var x = Number(event.target.value)
     this.setState({
-      latitude: event.target.value
+      latitude: x
     });
   }
   handleUpdateLongitude(event) {
+    var x = Number(event.target.value)
     this.setState({
-      longitude: event.target.value
+      longitude: x
     });
   }
   handleUpdateCategory(event) {
@@ -100,8 +102,9 @@ class Admin_editplace extends Component {
     });
   }
   handleUpdatePrice(event) {
+    var x = Number(event.target.value)
     this.setState({
-      price: event.target.value
+      price: x
     });
   }
   handleUpdatePicture(event) {
@@ -160,7 +163,7 @@ class Admin_editplace extends Component {
          return <form onSubmit = {this.handleSubmitEdit} key={index}>
 
         <div className="col-md-12"><label>Place</label>
-          <input type = "text" className = "col-md-3 form-control" defaultValue = {val.name} onChange = {this.handleUpdatePlace} /></div>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.name} onChange = {this.handleUpdatePlace} /></div>
         <div className="col-md-12"><label>City</label>
         <input type = "text" className = "col-md-3 form-control" defaultValue = {val.city} onChange = {this.handleUpdateCity} /></div>
         <div className="col-md-12"><label>Latitude</label>
@@ -171,7 +174,7 @@ class Admin_editplace extends Component {
         <div className="col-md-12"><label>Picture</label>
         <input type = "text" className = "col-md-3 form-control" defaultValue = {val.picture} onChange = {this.handleUpdatePicture} /></div>
         <div className="col-md-12"><label>Price</label>
-        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
+        <input type = "number" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
         <div className = "col-md-12 form-group"><label>Contact</label>
           <textarea className = 'form-control' defaultValue = {val.contact} rows = '1' type='text' onChange = {this.handleUpdateContact} />
         </div>

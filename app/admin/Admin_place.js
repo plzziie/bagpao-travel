@@ -53,18 +53,21 @@ class Admin_place extends Component {
       });
     }
     handleUpdatePrice(event) {
+      var x = Number(event.target.value)
       this.setState({
-        price: event.target.value
+        price: x
       });
     }
     handleUpdateLatitude(event) {
+      var x = Number(event.target.value)
       this.setState({
-        latitude: event.target.value
+        latitude: x
       });
     }
     handleUpdateLongitude(event) {
+      var x = Number(event.target.value)
       this.setState({
-        longitude: event.target.value
+        longitude: x
       });
     }
     handleUpdateCategory(event) {
@@ -197,7 +200,7 @@ class Admin_place extends Component {
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} required/></div>
 
                       <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
-                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Price" onChange = {this.handleUpdatePrice} required/></div>
+                      <div className="col-md-3 addmore"><input type = "number" className = "col-md-3 form-control" placeholder="Price" onChange = {this.handleUpdatePrice} required/></div>
                       <div className = "col-md-9 form-group">
                         <textarea className = 'form-control' placeholder = 'Contact' rows = '2' type='text' onChange = {this.handleUpdateContact} required/>
                       </div>

@@ -16,7 +16,7 @@ class Admin_edittransport extends Component {
       destination: '',
       stationend: '',
       arrive: '',
-      price: '',
+      price: 0,
       transportation: []
     }
 
@@ -118,8 +118,9 @@ class Admin_edittransport extends Component {
     });
   }
   handleUpdatePrice(event) {
+    var x = Number(event.target.value)
     this.setState({
-      price: event.target.value
+      price: x
     });
   }
 
@@ -183,7 +184,7 @@ class Admin_edittransport extends Component {
         <div className="col-md-12"><label>Arrive</label>
         <input type = "text" className = "col-md-3 form-control" defaultValue = {val.arrive} onChange = {this.handleUpdateArrive} /></div>
         <div className="col-md-12"><label>Price</label>
-        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
+        <input type = "number" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
 
         <div className="col-md-3"><button type="submit" className = "btn btn-block btn-success"  type = "submit" style={styles.space}>Save</button></div>
 
