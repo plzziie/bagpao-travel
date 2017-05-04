@@ -10,8 +10,9 @@ class Admin_editplace extends Component {
       name: '',
       place: '',
       city: '',
-      latitude: '',
-      longitude: '',
+      latitude: 0,
+      longitude: 0,
+      price: 0,
       category: '',
       picture: '',
       description: '',
@@ -67,7 +68,8 @@ class Admin_editplace extends Component {
         category: this.state.places[0].category,
         picture: this.state.places[0].picture,
         description: this.state.places[0].description,
-        contact: this.state.places[0].contact
+        contact: this.state.places[0].contact,
+        place: this.state.places[0].price
       });
     }.bind(this))
   }
@@ -95,6 +97,11 @@ class Admin_editplace extends Component {
   handleUpdateCategory(event) {
     this.setState({
       category: event.target.value
+    });
+  }
+  handleUpdatePrice(event) {
+    this.setState({
+      price: event.target.value
     });
   }
   handleUpdatePicture(event) {
@@ -130,7 +137,8 @@ class Admin_editplace extends Component {
         category: this.state.category,
         picture: this.state.picture,
         description: this.state.description,
-        contact: this.state.contact
+        contact: this.state.contact,
+        price: this.state.price
         })
     })
     .then(function (response) {
@@ -162,6 +170,8 @@ class Admin_editplace extends Component {
 
         <div className="col-md-12"><label>Picture</label>
         <input type = "text" className = "col-md-3 form-control" defaultValue = {val.picture} onChange = {this.handleUpdatePicture} /></div>
+        <div className="col-md-12"><label>Price</label>
+        <input type = "text" className = "col-md-3 form-control" defaultValue = {val.price} onChange = {this.handleUpdatePrice} /></div>
         <div className = "col-md-12 form-group"><label>Contact</label>
           <textarea className = 'form-control' defaultValue = {val.contact} rows = '1' type='text' onChange = {this.handleUpdateContact} />
         </div>

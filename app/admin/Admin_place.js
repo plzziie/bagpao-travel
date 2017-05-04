@@ -11,12 +11,13 @@ class Admin_place extends Component {
         name: '',
         place: '',
         city: '',
-        latitude: '',
-        longitude: '',
+        latitude: 0,
+        longitude: 0,
         category: '',
         picture: '',
         description: '',
         contact: '',
+        price: 0,
         err: '',
         places: []
       }
@@ -27,6 +28,7 @@ class Admin_place extends Component {
       this.handleUpdateLongitude = this.handleUpdateLongitude.bind(this);
       this.handleUpdateCategory = this.handleUpdateCategory.bind(this);
       this.handleUpdatePicture = this.handleUpdatePicture.bind(this);
+      this.handleUpdatePrice = this.handleUpdatePrice.bind(this);
       this.handleUpdateDescription = this.handleUpdateDescription.bind(this);
       this.handleUpdateContact = this.handleUpdateContact.bind(this);
       this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
@@ -48,6 +50,11 @@ class Admin_place extends Component {
     handleUpdateCity(event) {
       this.setState({
         city: event.target.value
+      });
+    }
+    handleUpdatePrice(event) {
+      this.setState({
+        price: event.target.value
       });
     }
     handleUpdateLatitude(event) {
@@ -128,7 +135,8 @@ class Admin_place extends Component {
           category: this.state.category,
           picture: this.state.picture,
           description: this.state.description,
-          contact: this.state.contact
+          contact: this.state.contact,
+          price: this.state.price
           })
       })
       .then(function (response) {
@@ -189,14 +197,14 @@ class Admin_place extends Component {
                       <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Longitude" onChange = {this.handleUpdateLongitude} required/></div>
 
                       <div className="col-md-6 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Picture" onChange = {this.handleUpdatePicture} required/></div>
-                      <div className = "col-md-7 form-group">
+                      <div className="col-md-3 addmore"><input type = "text" className = "col-md-3 form-control" placeholder="Price" onChange = {this.handleUpdatePrice} required/></div>
+                      <div className = "col-md-9 form-group">
+                        <textarea className = 'form-control' placeholder = 'Contact' rows = '2' type='text' onChange = {this.handleUpdateContact} required/>
+                      </div>
+                      <div className = "col-md-12 form-group">
                         <textarea
                           className = 'form-control' placeholder = 'Description' rows = '4'  type='text' onChange = {this.handleUpdateDescription} required/>
                       </div>
-                      <div className = "col-md-5 form-group">
-                        <textarea className = 'form-control' placeholder = 'Contact' rows = '4' type='text' onChange = {this.handleUpdateContact} required/>
-                      </div>
-
                       <div className="col-md-12">
                       <p>Choose the categories that fit in.</p>
                           <label className = "checkbox-inline">

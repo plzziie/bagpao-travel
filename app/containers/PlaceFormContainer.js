@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PlaceForm from '../components/PlaceForm'
-import {SimpleMap} from '../lib/Map'
 
 class PlaceFormContainer extends Component {
 
