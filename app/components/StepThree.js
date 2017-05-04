@@ -51,7 +51,7 @@ function StepThree (props) {
                       {props.places.map((val, index) => {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
-                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}  data-toggle="modal" data-target="#myModal">
+                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}>
                                 <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 </div>
@@ -117,7 +117,7 @@ function StepThree (props) {
             <div className="stepthree_select" style = {styles.gap}>
               <div className="where">Price</div>
               <ul className = "nav nav-pills nav-justified ">
-                <h5>{props.prices}</h5>
+                <h5>{props.prices} Baht</h5>
               </ul>
             </div>
 
@@ -129,18 +129,18 @@ function StepThree (props) {
             </div>
             </form>
 
-            <div id="myModal" className="modal fade" role="dialog">
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <button type="button" className="close" data-dismiss="modal">&times;</button>
-                    <h4 className="modal-title">Modal Header</h4>
+            <div id = "myModal" className = "modal fade" role = "dialog">
+              <div className = "modal-dialog">
+                <div className = "modal-content">
+                  <div className = "modal-header">
+                    <button type = "button" className = "close" data-dismiss = "modal">&times;</button>
+                    <h4 className = "modal-title">Time</h4>
                   </div>
-                  <div className="modal-body">
-                    <p>Some text in the modal.</p>
+                  <div className = "modal-body">
+                    <input className = "form-control" placeholder = 'Time' onChange = {props.onUpdateTime} type = 'time'/>
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type = "button" className = "btn btn-default" data-dismiss = "modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -152,6 +152,7 @@ function StepThree (props) {
 
 StepThree.PropTypes = {
   onSubmitTrip: PropTypes.func.isRequired,
+  onUpdateTime: PropTypes.func.isRequired,
   onUpdateSearch: PropTypes.func.isRequired,
   onGetSearch: PropTypes.func.isRequired,
   AllowDrop: PropTypes.func.isRequired,

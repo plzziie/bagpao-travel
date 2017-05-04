@@ -66,10 +66,10 @@ function StepFour (props) {
       </div>
 
       <div className="col-md-offset-4" style = {styles.gapp}>
-        <div className="day">Price : {props.prices}</div>
+        <div className="day">Price : {props.prices} Baht</div>
       </div>
 
-          <div className="col-md-offset-5 col-sm-offset-4 col-xs-offset-4 col-md-3 col-sm-4 col-xs-4 step-bottom " >
+          <div className="col-md-offset-5 col-sm-offset-3 col-xs-offset-3 col-md-3 col-sm-4 col-xs-4 step-bottom " >
             <button  type = "submit" className = "button form-control">
                 Done</button>
           </div>

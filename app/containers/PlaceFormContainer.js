@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PlaceForm from '../components/PlaceForm'
-
+import {SimpleMap} from '../lib/Map'
 
 class PlaceFormContainer extends Component {
 
@@ -9,14 +9,11 @@ class PlaceFormContainer extends Component {
     this.state = {
       name: '',
       show: [],
-      map: [],
-      lat: '',
-      lng: '',
-      place: ''
+      center: {lat: 0, lng: 0},
+      zoom: 16
     }
   }
 
-  
   componentDidMount() {
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
@@ -35,9 +32,7 @@ class PlaceFormContainer extends Component {
       if (myObj.message === undefined) {
         this.setState({
             show: myObj,
-            place: myObj[0].name[0],
-            lat: myObj[0].latitude,
-            lng: myObj[0].longitude
+            center: {lat: myObj[0].latitude, lng: myObj[0].longitude}
         });
       }
     }.bind(this))
@@ -47,10 +42,8 @@ class PlaceFormContainer extends Component {
     return(
      <PlaceForm
       show = {this.state.show}
-      place = {this.state.place}
-      lat = {this.state.lat}
-      lng = {this.state.lng}
-
+      center = {this.state.center}
+      zoom = {this.state.zoom}
       />
     )
   }

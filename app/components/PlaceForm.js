@@ -1,15 +1,30 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
 import ReactRouter,{browserHistory} from 'react-router'
+import GoogleMapReact from 'google-map-react';
 import styles from '../styles'
 import style from '../styles/detail.css'
-import SimpleMap from '../lib/Map';
-
-
 
 function PlaceForm (props) {
-// var map = mapgeo(props.lat,props.lng,props.place);
-console.log(props);
+  console.log(props);
+
+  const AnyReactComponent = ({ text }) => (
+    <div style={{
+      position: 'relative',
+      height: 40, width: 60, top: -20, left: -30,
+      border: '5px solid #f44336',
+      borderRadius: 100,
+      backgroundColor: 'white',
+      textAlign: 'center',
+      color: '#3f51b5',
+      fontSize: 12,
+      fontWeight: 'bold',
+      padding: 1
+    }}>
+      {text}
+    </div>
+  );
+
   return(
     <div className="container-fluid step-bottom">
       <div className="container step-bottom ">
@@ -21,18 +36,27 @@ console.log(props);
                  <label>Description</label>
                  <p>{val.description}</p>
                  <label>Contact</label> <p>{val.contact}</p>
-                     
-                 <div style={{width: '100%', height: '300px' , position: 'relative'}}> 
-                   <SimpleMap/>
-                   <b>lat :</b>{val.latitude} <b>lng :</b>{val.longitude}
-                 </div>,
+
+                 <div style = {{width: '100%', height: '300px'}}>
+                    <GoogleMapReact
+                    defaultCenter = {props.center}
+                    defaultZoom = {props.zoom}
+                    bootstrapURLKeys={{
+                      key: 'AIzaSyDFGpXiv2ChtHrhkxeEj9aV6v3C9ZDDJDI',
+                      language: 'en'
+                    }} >
+                    <AnyReactComponent
+                      lat = {val.latitude}
+                      lng = {val.longitude}
+                      text = {val.name[0]}
+                    />
+                    </GoogleMapReact>
+                  </div>
                  </div>
                </div>
          })
       }
        </div>
-
-
          <div className="col-md-offset-5 col-xs-offset-5 col-sm-offset-5" style = {styles.gapp}>
            <button className="btn btn-success col-md-3 col-sm-2 col-xs-3" onClick = {browserHistory.goBack}>Back</button>
          </div>
@@ -41,8 +65,9 @@ console.log(props);
   }
 
   PlaceForm.PropTypes = {
-  show: PropTypes.object.isRequired
+  show: PropTypes.object.isRequired,
+  center: PropTypes.object.isRequired,
+  zoom: PropTypes.number.isRequired
   }
 
 export default PlaceForm
-
