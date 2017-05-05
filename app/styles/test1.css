@@ -161,3 +161,28 @@ cursor: pointer;
 .share{
   opacity: 0;
 }
+
+.unrotate {
+    transform: rotate(45deg);
+    padding-top: 20px;
+}
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #FE7569;
+  position: absolute;
+  transform: rotate(-45deg);
+  margin: -20px 0 0 -20px;
+}
+.pin:after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #2f2f2f;
+  position: absolute;
+  border-radius: 50%;
+  left:0;
+  top:0;
+}

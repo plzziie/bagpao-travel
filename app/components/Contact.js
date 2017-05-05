@@ -23,6 +23,7 @@ function Contact (props) {
           <img className = "img img-circle" src="app/img/plengtrip.jpg" alt = "Pleng" width = "200" height = "200"/>
           <h4 style = {styles.gapp}>Soravee</h4>
         </div>
+
       </div>
       </div>
 
