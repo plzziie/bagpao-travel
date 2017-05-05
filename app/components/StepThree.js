@@ -99,7 +99,7 @@ function StepThree (props) {
                     </div>
                   </form>
                   </div>
-                    <div className="planboxright" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
+                    <div className="planboxrights" id = "0" onDrop = {props.Drop} onDragOver = {props.AllowDrop}>
                       {props.found
                         ? props.place.map((val, index) => {
                           return <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}><div className="col-md-3">

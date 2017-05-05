@@ -161,6 +161,9 @@ cursor: pointer;
 .share{
   opacity: 0;
 }
+.gapmap{
+  margin-bottom: 40px;
+}
 
 .unrotate {
     transform: rotate(45deg);

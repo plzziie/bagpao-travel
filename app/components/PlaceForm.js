@@ -24,7 +24,7 @@ function PlaceForm (props) {
                  <div className = "contentdetail col-md-offset-3 col-md-6">
                  <label>Description</label>
                  <p>{val.description}</p>
-                 <label>Contact</label> <p>{val.contact}</p>
+                 <label>Contact</label> <p className="gapmap">{val.contact}</p>
 
 
                  <div style = {{width: '100%', height: '300px'}}>
