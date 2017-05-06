@@ -63,7 +63,7 @@ input[type=checkbox] + .heartfav {
 input[type=checkbox]:checked + .heartfav {
   background-position: 0px 0px;
 }
-.glyphicon-trash {
+.trash {
   cursor: pointer;
   margin-left: 15px;
 }

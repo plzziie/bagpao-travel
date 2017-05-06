@@ -19,10 +19,10 @@ function MyTrip (props) {
 											 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
 											 <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.onAddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
 											 <label className="col-md-offset-8 text-right" onClick={() => props.deletetrip(val.name)}>
-			                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			                    <span className="glyphicon glyphicon-trash trash" aria-hidden="true"></span>
 											</label>
 
-									
+
 						      </div>
 								</div>
 					 })
