@@ -58,9 +58,12 @@ input[type=checkbox] + .heartfav {
   background-repeat:no-repeat;
   background-position: 0px -20px;
   font-size:16px;
-
   cursor:pointer;
 }
 input[type=checkbox]:checked + .heartfav {
   background-position: 0px 0px;
+}
+.glyphicon-trash {
+  cursor: pointer;
+  margin-left: 15px;
 }

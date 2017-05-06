@@ -130,6 +130,9 @@ margin: 8px auto;
    background-size: 20px 38px;
  }
 
+input[type=checkbox] {
+    transform: scale(2);
+}
 input[type=checkbox] + .heart {
   padding-left:20px;
   height:20px;
@@ -158,8 +161,11 @@ input[type=checkbox]:checked + .like {
 text-decoration-line: underline;
 cursor: pointer;
 }*/
-.share{
+.share {
   opacity: 0;
+}
+.deletetrip {
+
 }
 .gapmap{
   margin-bottom: 40px;

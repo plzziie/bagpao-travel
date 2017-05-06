@@ -18,8 +18,11 @@ function MyTrip (props) {
 											 <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
 											 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
 											 <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.onAddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
-											 <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
+											 <label className="col-md-offset-8 text-right" onClick={() => props.deletetrip(val.name)}>
+			                    <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+											</label>
 
+									
 						      </div>
 								</div>
 					 })
@@ -34,7 +37,8 @@ MyTrip.PropTypes = {
 	mytrip: PropTypes.object.isRequired,
 	onUpdateLike: PropTypes.func.isRequired,
 	onAddFav: PropTypes.func.isRequired,
-	SeeTripsDetails: PropTypes.func.isRequired
+	SeeTripsDetails: PropTypes.func.isRequired,
+	deletetrip: PropTypes.func.isRequired
 }
 
 export default MyTrip
