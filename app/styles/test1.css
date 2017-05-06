@@ -116,6 +116,7 @@ margin: 8px auto;
   left: 58px;
   cursor: pointer;
   opacity: 0;
+  transform: scale(2);
 }
 .checklike {
   position: absolute;
@@ -123,6 +124,7 @@ margin: 8px auto;
   left: 23px;
   cursor: pointer;
   opacity: 0;
+  transform: scale(2);
 }
 
  .heart {
@@ -130,9 +132,7 @@ margin: 8px auto;
    background-size: 20px 38px;
  }
 
-input[type=checkbox] {
-    transform: scale(2);
-}
+
 input[type=checkbox] + .heart {
   padding-left:20px;
   height:20px;

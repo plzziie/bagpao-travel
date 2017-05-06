@@ -42,7 +42,7 @@ class Admin_edittrip extends Component {
     console.log(this.props);
     return (
       <div className = "container-fluid">
-        <h2>View Member</h2>
+        <h2>View Trip</h2>
         { this.state.trip.map((val, index) => {
          return <form key={index}>
         <div className="col-md-12"><label>Name</label>
