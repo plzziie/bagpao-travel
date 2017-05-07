@@ -182,6 +182,13 @@
   list-style: none;
 }
 
+.time{
+  font-size: 12px;
+  margin-left: 3px;
+  width: 90%;
+  margin-top: 13px;
+}
+
 /*step 4*/
  .step4_header {
   font-family: monospace;

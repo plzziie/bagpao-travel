@@ -52,8 +52,10 @@ function StepThree (props) {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
                               ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}>
+                                <div className="col-md-3"><input className="time" placeholder="Time"/>
+                                </div>
+                                <div className="col-md-6"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
-                                <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 </div>
                               : null
                             : null
