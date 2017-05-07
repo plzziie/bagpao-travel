@@ -11,6 +11,7 @@ class StepThreeContainer extends Component {
       numstep: 2,
       search: '',
       found: true,
+      showModal: false,
       places: [],
       place: [],
       result: [],
@@ -50,6 +51,18 @@ class StepThreeContainer extends Component {
           });
       }
   }.bind(this))
+}
+
+close(){
+  this.setState({
+    showModal: false
+  });
+}
+
+open(){
+  this.setState({
+    showModal: true
+  });
 }
 
 AllowDrop(event) {
@@ -105,22 +118,9 @@ Drop(event) {
 }
 
   handleUpdateTime(event) {
-    <div id = "myModal" className = "modal fade" role = "dialog">
-      <div className = "modal-dialog">
-        <div className = "modal-content">
-          <div className = "modal-header">
-            <button type = "button" className = "close" data-dismiss = "modal">&times;</button>
-            <h4 className = "modal-title">Time</h4>
-          </div>
-          <div className = "modal-body">
-            <input className = "form-control" placeholder = 'Time' type = 'time'/>
-          </div>
-          <div className="modal-footer">
-            <button type = "button" className = "btn btn-default" data-dismiss = "modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    this.setState({
+      times: event.target.value
+    });
   }
 
   handleUpdateSearch(event) {
@@ -185,6 +185,8 @@ Drop(event) {
      AllowDrop = {(event) => this.AllowDrop(event)}
      Drop = {(event) => this.Drop(event)}
      Drag = {(event) => this.Drag(event)}
+     open = {(event) => this.open()}
+     close = {(event) => this.close()}
      depart = {this.state.depart}
      return = {this.state.return}
      origin = {this.state.origin}
@@ -197,6 +199,8 @@ Drop(event) {
      test = {this.state.test}
      result = {this.state.result}
      prices = {this.state.prices}
+     showModal = {this.state.showModal}
+     times = {this.state.times}
      />
     )
   }

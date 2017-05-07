@@ -27,6 +27,7 @@
     "node-uuid": "^1.4.7",
     "prop-types": "^15.5.8",
     "react": "^15.4.2",
+    "react-bootstrap": "^0.31.0",
     "react-bootstrap-typeahead": "^1.3.0",
     "react-bootstrap-validation": "^0.1.11",
     "react-count": "^0.2.4",

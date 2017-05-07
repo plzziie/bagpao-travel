@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {PropTypes} from 'react'
-import ReactDOM, {findDOMNode} from 'react-dom';
+import ReactDOM, {findDOMNode} from 'react-dom'
+import {Modal} from 'react-bootstrap'
 import styles from '../styles'
 import style from '../styles/step.css'
 
@@ -51,7 +52,7 @@ function StepThree (props) {
                       {props.places.map((val, index) => {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
-                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid}>
+                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid} onClick={props.open}>
                                 <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 </div>
@@ -129,22 +130,18 @@ function StepThree (props) {
             </div>
             </form>
 
-            <div id = "myModal" className = "modal fade" role = "dialog">
-              <div className = "modal-dialog">
-                <div className = "modal-content">
-                  <div className = "modal-header">
-                    <button type = "button" className = "close" data-dismiss = "modal">&times;</button>
-                    <h4 className = "modal-title">Time</h4>
-                  </div>
-                  <div className = "modal-body">
-                    <input className = "form-control" placeholder = 'Time' onChange = {props.onUpdateTime} type = 'time'/>
-                  </div>
-                  <div className="modal-footer">
-                    <button type = "button" className = "btn btn-default" data-dismiss = "modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Modal show = {props.showModal} onHide = {props.close}>
+              <Modal.Header closeButton>
+                <Modal.Title>Time</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div>Put time</div>
+                <input type = "time" onChange = {props.onUpdateTime} defaultValue = {props.times} />
+              </Modal.Body>
+              <Modal.Footer>
+                <button onClick = {props.close}>Close</button>
+              </Modal.Footer>
+            </Modal>
     </div>
     </div>
     )
@@ -158,6 +155,8 @@ StepThree.PropTypes = {
   AllowDrop: PropTypes.func.isRequired,
   Drop: PropTypes.func.isRequired,
   Drag: PropTypes.func.isRequired,
+  open: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
   depart: PropTypes.string.isRequired,
   return: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
@@ -168,7 +167,8 @@ StepThree.PropTypes = {
   found: PropTypes.bool.isRequired,
   test: PropTypes.object.isRequired,
   result: PropTypes.object.isRequired,
-  prices: PropTypes.number.isRequired
+  prices: PropTypes.number.isRequired,
+  showModal: PropTypes.bool.isRequired
 }
 
 export default StepThree
