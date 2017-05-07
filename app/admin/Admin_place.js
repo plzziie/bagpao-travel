@@ -211,7 +211,7 @@ class Admin_place extends Component {
                       <div className="col-md-12">
                       <p>Choose the categories that fit in.</p>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "national Park" onChange = {this.handleUpdateCategory} />National Park
+                            <input type = "checkbox" value = "nationalpark" onChange = {this.handleUpdateCategory} />National Park
                           </label>
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "temple" onChange = {this.handleUpdateCategory} />Temple

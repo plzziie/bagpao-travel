@@ -12,11 +12,16 @@ class StepThreeContainer extends Component {
       search: '',
       found: true,
       showModal: false,
+      tmr: '',
       places: [],
       place: [],
       result: [],
       test: [],
-      dragn : []
+      dragn : [],
+      timess : [],
+      tme: [],
+      wayla: [],
+      temp: []
     }
   }
 
@@ -53,18 +58,6 @@ class StepThreeContainer extends Component {
   }.bind(this))
 }
 
-close(){
-  this.setState({
-    showModal: false
-  });
-}
-
-open(){
-  this.setState({
-    showModal: true
-  });
-}
-
 AllowDrop(event) {
     event.preventDefault();
     if (event.target.getAttribute("draggable") == "true")
@@ -79,7 +72,7 @@ Drag(event) {
 
 Drop(event) {
     event.preventDefault();
-    var test = this.state.test
+    var test = this.state.result
     var dragn = this.state.dragn
     var prices = []
     var placeid = event.dataTransfer.getData("text");
@@ -117,11 +110,45 @@ Drop(event) {
     });
 }
 
-  handleUpdateTime(event) {
-    this.setState({
-      times: event.target.value
-    });
-  }
+handleUpdateTime(event) {
+  var placeid = this.state.tmr
+  var time = event.target.value
+  var wayla = this.state.result
+  var days = 0
+
+  var x = wayla.map(function(val,index) {
+    return (val.placeid == placeid)
+            ? days = val.days
+            : null });
+
+            var y = wayla.map(function(vals,indexs) {
+              return (vals.placeid == placeid)
+                      ? wayla.splice(indexs, 1)
+                      : null });
+
+  wayla = wayla.concat({placeid,time,days}),
+  this.state.timess = this.state.timess.concat(placeid)
+
+  this.setState({
+  //  tme: this.state.wayla,
+    timess: this.state.timess,
+    result: wayla
+  //console.log(this.state.result);
+  })
+}
+
+close(){
+  this.setState({
+    showModal: false
+  });
+}
+
+open(e){
+  this.setState({
+    showModal: true,
+    tmr: e
+  });
+}
 
   handleUpdateSearch(event) {
     this.setState({
@@ -185,7 +212,7 @@ Drop(event) {
      AllowDrop = {(event) => this.AllowDrop(event)}
      Drop = {(event) => this.Drop(event)}
      Drag = {(event) => this.Drag(event)}
-     open = {(event) => this.open()}
+     open = {(event) => this.open(event)}
      close = {(event) => this.close()}
      depart = {this.state.depart}
      return = {this.state.return}
@@ -200,7 +227,10 @@ Drop(event) {
      result = {this.state.result}
      prices = {this.state.prices}
      showModal = {this.state.showModal}
-     times = {this.state.times}
+     time = {this.state.time}
+     timess = {this.state.timess}
+     wayla = {this.state.wayla}
+     temp = {this.state.temp}
      />
     )
   }

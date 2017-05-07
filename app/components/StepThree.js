@@ -52,7 +52,12 @@ function StepThree (props) {
                       {props.places.map((val, index) => {
                           return (val.category != "restaurant")
                             ? (val.category != "accommodation")
-                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid} onClick={props.open}>
+                              ? <div key = {index} className="dragbox"  draggable = "true" onDragStart = {props.Drag} id = {val.placeid} onClick={() => props.open(val.placeid)}>
+                                {(props.result.map((vals, indexs) => {
+                                  return (vals.placeid == val.placeid)
+                                    ? <div key={indexs}>{vals.time}</div>
+                                    : null
+                                }))}
                                 <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 <div className="col-md-8"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
                                 </div>
@@ -168,7 +173,11 @@ StepThree.PropTypes = {
   test: PropTypes.object.isRequired,
   result: PropTypes.object.isRequired,
   prices: PropTypes.number.isRequired,
-  showModal: PropTypes.bool.isRequired
+  showModal: PropTypes.bool.isRequired,
+  time: PropTypes.object.isRequired,
+  timess: PropTypes.object.isRequired,
+  wayla: PropTypes.object.isRequired,
+  temp: PropTypes.object.isRequired
 }
 
 export default StepThree
