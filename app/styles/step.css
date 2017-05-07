@@ -48,6 +48,18 @@
   white-space: nowrap;
 }
 
+.planboxrights{
+  width: 99%;
+  min-width: 200px;
+  height: 265px;
+  background-color: #eff0f1;
+  margin: auto;
+  display: inline-block;
+  text-align: center;
+  margin: 3px;
+  padding-bottom:40px;
+  overflow: auto;
+}
 .planboxright{
   width: 99%;
   min-width: 200px;
@@ -59,8 +71,8 @@
   margin: 3px;
   padding-bottom:40px;
   overflow: auto;
-
 }
+
  .day{
   width: 48%;
   min-width: 300px;

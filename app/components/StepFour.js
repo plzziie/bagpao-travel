@@ -65,12 +65,14 @@ function StepFour (props) {
         </div>
       </div>
 
-      <div className="col-md-offset-4" style = {styles.gapp}>
-        <div className="day">Price : {props.prices} Baht</div>
+      <div className="col-md-offset-2 col-md-3" style = {styles.gapp}>
+        <div className="pricetotal">Price total: {props.prices}฿</div>
+      </div>
+      <div className="col-md-offset-4 col-md-5" >
       </div>
 
-          <div className="col-md-offset-5 col-sm-offset-3 col-xs-offset-3 col-md-3 col-sm-4 col-xs-4 step-bottom " >
-            <button  type = "submit" className = "button form-control">
+          <div className="col-md-offset-4 col-sm-offset-3 col-xs-offset-3 col-md-3 col-sm-4 col-xs-4 step-bottom " >
+            <button  type = "submit" className = "button form-control buttonstep4">
                 Done</button>
           </div>
         </form>

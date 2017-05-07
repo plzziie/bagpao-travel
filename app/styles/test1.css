@@ -116,6 +116,7 @@ margin: 8px auto;
   left: 58px;
   cursor: pointer;
   opacity: 0;
+  transform: scale(2);
 }
 .checklike {
   position: absolute;
@@ -123,12 +124,14 @@ margin: 8px auto;
   left: 23px;
   cursor: pointer;
   opacity: 0;
+  transform: scale(2);
 }
 
  .heart {
    background-image: url("http://csscheckbox.com/checkboxes/u/csscheckbox_1437560032a3e1345ce3a7bb5fec77cc.png");
    background-size: 20px 38px;
  }
+
 
 input[type=checkbox] + .heart {
   padding-left:20px;
@@ -158,6 +161,37 @@ input[type=checkbox]:checked + .like {
 text-decoration-line: underline;
 cursor: pointer;
 }*/
-.share{
+.share {
   opacity: 0;
+}
+.deletetrip {
+
+}
+.gapmap{
+  margin-bottom: 40px;
+}
+
+.unrotate {
+    transform: rotate(45deg);
+    padding-top: 20px;
+}
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #FE7569;
+  position: absolute;
+  transform: rotate(-45deg);
+  margin: -20px 0 0 -20px;
+}
+.pin:after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #2f2f2f;
+  position: absolute;
+  border-radius: 50%;
+  left:0;
+  top:0;
 }

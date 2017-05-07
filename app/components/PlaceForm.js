@@ -9,19 +9,8 @@ function PlaceForm (props) {
   console.log(props);
 
   const AnyReactComponent = ({ text }) => (
-    <div style={{
-      position: 'relative',
-      height: 40, width: 60, top: -20, left: -30,
-      border: '5px solid #f44336',
-      borderRadius: 100,
-      backgroundColor: 'white',
-      textAlign: 'center',
-      color: '#3f51b5',
-      fontSize: 12,
-      fontWeight: 'bold',
-      padding: 1
-    }}>
-      {text}
+    <div className="pin">
+      <h5 className="unrotate">{text}</h5>
     </div>
   );
 
@@ -35,7 +24,8 @@ function PlaceForm (props) {
                  <div className = "contentdetail col-md-offset-3 col-md-6">
                  <label>Description</label>
                  <p>{val.description}</p>
-                 <label>Contact</label> <p>{val.contact}</p>
+                 <label>Contact</label> <p className="gapmap">{val.contact}</p>
+
 
                  <div style = {{width: '100%', height: '300px'}}>
                     <GoogleMapReact

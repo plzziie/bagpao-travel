@@ -45,6 +45,7 @@ class MyTripContainer extends Component {
     }.bind(this))
   }
 
+
   handleUpdateLike(like) {
   fetch(`http://localhost:1200/like`, {
       method: 'POST',
@@ -55,6 +56,27 @@ class MyTripContainer extends Component {
         name: like
       })
   })
+}
+
+DeleteTrip(ev) {
+  event.preventDefault();
+  fetch(`http://localhost:1200/admin`, {
+      method: 'POST',
+      headers:{
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      admin: "delete",
+      types: "trip",
+      name: ev
+      })
+  })
+  .then(function (response) {
+    return response.text()
+  }).then(function (body) {
+    var myObj = JSON.parse(body);
+    window.location.reload()
+})
 }
 
 handleAddFav(fav) {
@@ -82,6 +104,7 @@ SeeTripsDetails(id) {
      <MyTrip
      username = {this.state.username}
      mytrip = {this.state.mytrip}
+     deletetrip = {(event) => this.DeleteTrip(event)}
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
      onAddFav = {(event) => this.handleAddFav(event)}
      SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
