@@ -74,7 +74,7 @@
 }
 
  .day{
-  width: 55%;
+  width: 58%;
   min-width: 300px;
   display: inline-block;
   text-align: center;
@@ -108,7 +108,7 @@
 }
 
 .stepthree_select {
-  width: 37%;
+  width: 35%;
   min-width: 300px;
   margin-left: 3%;
   height: auto;

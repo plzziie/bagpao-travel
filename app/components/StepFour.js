@@ -54,12 +54,12 @@ function StepFour (props) {
 
                         {props.details.map((vals, indexs) => {
                             return (vals.days == index+1) ?
-                            <div key = {indexs} className="dragbox"><div className="col-md-3">
-                            <img className = "img-circle" src = {vals.picture} alt = {vals.name[0]} width="50" height="50"/></div>
-                            <div className="col-md-8"><h5>{vals.name[0]}</h5> <h6>{vals.city[0]}</h6></div>
+                            <div key = {indexs} className="dragbox">
+                            <div className="col-md-3"><h5>{vals.time}</h5></div>
+                            <div className="col-md-6"><h5>{vals.name[0]}</h5> <h6>{vals.city[0]}</h6></div>
+                            <div className="col-md-3"><img className = "img-circle" src = {vals.picture} alt = {vals.name[0]} width="50" height="50"/></div>
                             </div>
                           : null })}
-
                 </div></div> })}
           </div>
         </div>
