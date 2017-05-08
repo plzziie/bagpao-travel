@@ -39,7 +39,7 @@
 
 /* step three */
 .stepthree_day {
-  width: 62%;
+  width: 60%;
   background-color: #eff0f1; /*light grey*/
   height: 420px;
   float: left;
@@ -108,7 +108,7 @@
 }
 
 .stepthree_select {
-  width: 35%;
+  width: 37%;
   min-width: 300px;
   margin-left: 3%;
   height: auto;
