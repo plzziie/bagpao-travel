@@ -42,6 +42,8 @@ function LoginForm (props) {
               Login
             </button>
           </div>
+          <div className="col-xs-3"><a href="/forget">forget password?</a></div>
+
           <div className = "col-xs-12 text-center">
             <h4>Do not have an account ?<a href = "/signup"> Signup Here </a></h4>
           </div>

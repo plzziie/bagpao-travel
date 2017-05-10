@@ -58,53 +58,75 @@ function Places (props) {
                         })
                       : <h4>{props.err}</h4>
           : props.sort
-          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("nationalpark")}>
-                  <img src = "app/img/places/HKM_9050.jpg"/>
-                  <img src = "app/img/places/000027.jpg"/>
-                  <img src = "app/img/places/000030.jpg"/>
-                  <div className = "text national">National Park</div>
-                  </div>
-
-                  <div className = "photoo" onClick={() => props.ChangeCategories("temple")}>
-                  <img src = "app/img/places/000008.jpg"/>
-                  <img src = "app/img/places/000018.jpg"/>
-                  <img src = "app/img/places/000031.jpg"/>
-                  <div className = "text temple">Temple</div>
+          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/recreational-tours/dreamworld/allParagraphs/tourbt/BucketList/04/image2/bangkok-dream-world.jpg"/>
+                  <img src = "https://coconuts.co/wp-content/uploads/2016/11/dinosaur_header.jpg"/>
+                  <img src = "http://static.asiawebdirect.com/m/bangkok/portals/pattaya-bangkok-com/homepage/attractions/cartoon-network-amazone-waterpark/pagePropertiesImage/cartoon-network-amazone-pattaya.jpg"/>
+                  <div className = "textbox">Amusement Park</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
-                  <img src = "app/img/places/HKM_0504.jpg"/>
-                  <img src = "app/img/places/HKM_0353.jpg"/>
-                  <img src = "app/img/places/000015.jpg"/>
-                  <div className = "text beach">Beach</div>
+                  <img src = "app/img/places/beach1.jpg"/>
+                  <img src = "app/img/places/beach2.jpg"/>
+                  <img src = "app/img/places/beach3.jpg"/>
+                  <div className = "textbox">Beach</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("safari")}>
-                  <img src = "app/img/places/safari.jpg"/>
-                  <img src = "app/img/places/safari2.jpg"/>
-                  <img src = "app/img/places/safari3.jpg"/>
-                  <div className = "text safari">Safari</div>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "https://www.brandbuffet.in.th/wp-content/uploads/2016/09/Resize-MBK-805.jpg"/>
+                  <img src = "http://rachabodin.com/wp-content/uploads/2010/03/IMG_0193_4_5Auto.jpg"/>
+                  <img src = "http://upic.me/i/6e/6-central.jpg"/>
+                  <div className = "textbox">Department Store</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("market")}>
                   <img src = "app/img/places/market1.jpg"/>
                   <img src = "app/img/places/market2.jpg"/>
                   <img src = "app/img/places/market3.jpg"/>
-                  <div className = "text market">Market</div>
+                  <div className = "textbox">Market</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("museum")}>
                   <img src = "app/img/places/museum1.jpg"/>
                   <img src = "app/img/places/museum2.jpg"/>
                   <img src = "app/img/places/museum3.jpg"/>
-                  <div className = "text museum">Museum</div>
+                  <div className = "textbox">Museum</div>
                   </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("nationalpark")}>
+                  <img src = "app/img/places/national1.jpg"/>
+                  <img src = "app/img/places/national2.jpg"/>
+                  <img src = "app/img/places/national3.jpg"/>
+                  <div className = "textbox">National Park</div>
+                  </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <img src = "http://suvarnabhumiairport.com/uploads/profiles/0000000003/filemanager/images/IMG_4822.jpg"/>
+                  <img src = "http://www.aroi.com/medias/140605101156/140605101348/140605101348.jpg"/>
+                  <img src = "http://thinkofliving.com/wp-content/uploads/2015/04/park21-10.jpg"/>
+                  <div className = "textbox">Public Park</div>
+                  </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("safari")}>
+                  <img src = "app/img/places/zoo1.jpg"/>
+                  <img src = "app/img/places/zoo2.jpg"/>
+                  <img src = "app/img/places/zoo3.jpg"/>
+                  <div className = "textbox">Zoo</div>
+                  </div>
+
+                  <div className = "photoo" onClick={() => props.ChangeCategories("temple")}>
+                  <img src = "app/img/places/temple1.jpg"/>
+                  <img src = "app/img/places/temple2.jpg"/>
+                  <img src = "app/img/places/temple3.jpg"/>
+                  <div className = "textbox">Temple</div>
+                  </div>
+
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("other")}>
                   <img src = "https://travelingwithkrushworth.files.wordpress.com/2013/01/sunset-cowley-ridge.jpg"/>
                   <img src = "http://www.lonelyplanet.com/news/wp-content/uploads/2016/07/1st-Prize-Winner-category-Travel-Basilica-of-Saint-Francis-of-Assisi-Umbria-Italy-by-fcatutto.jpg"/>
                   <img src = "http://www.pdcdc.org/wp-content/uploads/2016/03/restaurant-939435_960_720.jpg"/>
-                  <div className = "text museum">Other</div>
+                  <div className = "textbox">Other</div>
                   </div>
             </div>
 
