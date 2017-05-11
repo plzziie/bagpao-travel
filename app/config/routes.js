@@ -7,6 +7,7 @@ import { IndexRoute } from 'react-router'
 import Main from '../components/Main'
 import Home from '../containers/HomeContainer'
 import LoginForm from '../containers/LoginFormContainer'
+import Forget from '../components/Forget'
 import SignupForm from '../containers/SignupFormContainer'
 import Profile from '../containers/ProfileContainer'
 import Trips from '../containers/TripsContainer'
@@ -41,6 +42,7 @@ var routes = (
       <Route path = 'places' header = 'Find the places' component = {Places}/>
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
       <Route path = 'login' header = 'Login' component = {LoginForm}/>
+      <Route path = 'forget' header = 'Forget Password' component = {Forget}/>
       <Route path = 'signup' header = 'Sign Up' component = {SignupForm}/>
       <Route path = 'editprofile' component = {EditProfile} onEnter = {requireUser}/>
       <Route path = 'trips-details/:id' component = {TripForm}/>

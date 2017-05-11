@@ -6,6 +6,7 @@ import {Link} from 'react-router'
 import CreatePlan from '../containers/CreatePlanContainer'
 import styles from '../styles/home.css'
 import style from '../styles'
+import { login, logout, isLoggedIn, getIdToken} from '../lib/AuthService'
 
 function Home (props) {
   console.log(props);
@@ -15,7 +16,29 @@ function Home (props) {
     <CreatePlan/>
   </div>
 
-  <div className="container-fluid">
+
+
+  <div className="container-fluid">{(isLoggedIn()) ?
+    <div className = "col-md-offset-1 col-md-10 transparentBg">
+      <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Recommend Trips</h3>
+        <div className = "row">
+             {props.poptrip.map((val, index) => {
+                  return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+                            <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeTripsDetails(val.name)}/>
+                            <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
+                            <div className="boxtrip"></div>
+                            <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
+                            <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
+                            <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
+                          </div>
+                        </div>
+
+             })}
+        </div>
+      </div>
+   : null }  </div>
+
+  <div className="container-fluid padding">
     <div className = "col-md-offset-1 col-md-10 transparentBg">
       <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Popular Trips</h3>
         <div className = "row">
@@ -26,7 +49,11 @@ function Home (props) {
                             <div className="boxtrip"></div>
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                             <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
-                            <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
+
+                            {(isLoggedIn()) ?  <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>: null } &nbsp;&nbsp;
+                            <label className="heart"></label>
+
+                            <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
                           </div>
                         </div>
 

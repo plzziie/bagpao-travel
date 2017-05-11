@@ -1,26 +1,29 @@
 .photoo {
-  width: 100%;
+  width: 98%;
   height: auto;
   margin: auto;
   position: relative;
-  margin-bottom: 10px;
-
-
+  margin-bottom: 5px;
 }
 
 .photoo img {
     width: 32%;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 10px;
 }
 
-.photoo .text {
- color: white;
- font-size: 50px;
- font-family: monospace;
- opacity: 0;
-
+.textbox {
+  position: absolute;
+  top: 40%;
+  width: 98%;
+  height: 70px;
+  color: white;
+  font-size: 50px;
+  font-family: monospace;
+  opacity: 0;
+  text-align: center;
 }
+
 .national {
   position: absolute;
   top: 40%;
@@ -46,16 +49,16 @@
 .market {
   position: absolute;
   top: 40%;
-  left: 43%;
+  left: 41%;
 }
 
 .museum {
   position: absolute;
   top: 40%;
-  left: 43%;
+  left: 41%;
 }
 
-.photoo:hover .text{
+.photoo:hover .textbox{
   opacity: 1;
   cursor: pointer;
 }
