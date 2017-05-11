@@ -26,8 +26,7 @@ function Home (props) {
                             <div className="boxtrip"></div>
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                             <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
-                            <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
-                            <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
+                            <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                           </div>
                         </div>
 
@@ -67,7 +66,8 @@ Home.PropTypes = {
   SeeTripsDetails: PropTypes.func.isRequired,
   onUpdateLike: PropTypes.func.isRequired,
   UpdateView: PropTypes.func.isRequired,
-  AddFav: PropTypes.func.isRequired
+  AddFav: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired
 }
 
 export default Home

@@ -120,6 +120,7 @@ SeeDetails(id) {
           AddFav = {(event) => this.handleAddFav(event)}
           UpdateView = {(event) => this.handleUpdateView(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
+          username = {this.state.username}
           />
         )
       }
