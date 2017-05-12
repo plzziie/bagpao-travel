@@ -1,5 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
+import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function EditProfile (props) {
@@ -25,9 +26,36 @@ function EditProfile (props) {
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Password</h4>
   				<div className = "col-sm-7">
-    				<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
-  				</div>
+    			<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
+        </div>
+        <div className="col-sm-2"><a data-toggle="collapse" data-target="#demo">Change Password</a></div>
 			</div>
+
+        <div id="demo" className="collapse" data-toggle = "validator">
+          <div className = "col-sm-offset-2 form-group row">
+      				<h4 className = "col-sm-2">Old-Password</h4>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password"  placeholder = 'old password'/>
+            </div>
+    			</div>
+          <div className = "col-sm-offset-2 form-group row">
+      				<h4 className = "col-sm-2">New-Password</h4>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password" placeholder = 'new password' type = 'password'
+              id = 'pass' data-error = "Please enter your password" />  <div className = "help-block with-errors"></div>
+            </div>
+    			</div>
+          <div className = "col-sm-offset-2 form-group row">
+      				<h4 className = "col-sm-2">Re-Password</h4>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password" placeholder = 're-password'
+              type = 'password' data-match = "#pass" data-match-error = "Your password is not match"
+              data-error = "Please enter your password again" />  <div className = "help-block with-errors"></div>
+            </div>
+    			</div>
+
+        </div>
+
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Email</h4>
   				<div className = "col-sm-7">
@@ -80,7 +108,7 @@ function EditProfile (props) {
               </button>
             </div>
             </form>
-            </div>
+          </div>
           })}
 		</div>
     )

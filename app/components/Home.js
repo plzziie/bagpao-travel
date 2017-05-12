@@ -51,7 +51,7 @@ function Home (props) {
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
                             <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
 
-                            {(isLoggedIn()) ?  <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>: null } &nbsp;&nbsp;
+                            {(isLoggedIn()) ?  <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>: null } &nbsp;&nbsp;
                             <label className="heart"></label>
 
                             <label className="col-md-offset-8 text-right"><div className="share">share</div></label>

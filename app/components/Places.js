@@ -62,14 +62,14 @@ function Places (props) {
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/recreational-tours/dreamworld/allParagraphs/tourbt/BucketList/04/image2/bangkok-dream-world.jpg"/>
                   <img src = "https://coconuts.co/wp-content/uploads/2016/11/dinosaur_header.jpg"/>
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/pattaya-bangkok-com/homepage/attractions/cartoon-network-amazone-waterpark/pagePropertiesImage/cartoon-network-amazone-pattaya.jpg"/>
-                  <div className = "textbox">Amusement Park</div>
+                  <div className = "textbox2">Amusement Park</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
                   <img src = "app/img/places/beach1.jpg"/>
                   <img src = "app/img/places/beach2.jpg"/>
                   <img src = "app/img/places/beach3.jpg"/>
-                  <div className = "textbox">Beach</div>
+                  <div className = "textbox2">Beach</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
@@ -83,42 +83,42 @@ function Places (props) {
                   <img src = "app/img/places/market1.jpg"/>
                   <img src = "app/img/places/market2.jpg"/>
                   <img src = "app/img/places/market3.jpg"/>
-                  <div className = "textbox">Market</div>
+                  <div className = "textbox2">Market</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("museum")}>
                   <img src = "app/img/places/museum1.jpg"/>
                   <img src = "app/img/places/museum2.jpg"/>
                   <img src = "app/img/places/museum3.jpg"/>
-                  <div className = "textbox">Museum</div>
+                  <div className = "textbox2">Museum</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("nationalpark")}>
                   <img src = "app/img/places/national1.jpg"/>
                   <img src = "app/img/places/national2.jpg"/>
                   <img src = "app/img/places/national3.jpg"/>
-                  <div className = "textbox">National Park</div>
+                  <div className = "textbox2">National Park</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
                   <img src = "http://suvarnabhumiairport.com/uploads/profiles/0000000003/filemanager/images/IMG_4822.jpg"/>
                   <img src = "http://www.aroi.com/medias/140605101156/140605101348/140605101348.jpg"/>
                   <img src = "http://thinkofliving.com/wp-content/uploads/2015/04/park21-10.jpg"/>
-                  <div className = "textbox">Public Park</div>
+                  <div className = "textbox2">Public Park</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("safari")}>
                   <img src = "app/img/places/zoo1.jpg"/>
                   <img src = "app/img/places/zoo2.jpg"/>
                   <img src = "app/img/places/zoo3.jpg"/>
-                  <div className = "textbox">Zoo</div>
+                  <div className = "textbox2">Zoo</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("temple")}>
                   <img src = "app/img/places/temple1.jpg"/>
                   <img src = "app/img/places/temple2.jpg"/>
                   <img src = "app/img/places/temple3.jpg"/>
-                  <div className = "textbox">Temple</div>
+                  <div className = "textbox2">Temple</div>
                   </div>
 
 
@@ -126,7 +126,7 @@ function Places (props) {
                   <img src = "https://travelingwithkrushworth.files.wordpress.com/2013/01/sunset-cowley-ridge.jpg"/>
                   <img src = "http://www.lonelyplanet.com/news/wp-content/uploads/2016/07/1st-Prize-Winner-category-Travel-Basilica-of-Saint-Francis-of-Assisi-Umbria-Italy-by-fcatutto.jpg"/>
                   <img src = "http://www.pdcdc.org/wp-content/uploads/2016/03/restaurant-939435_960_720.jpg"/>
-                  <div className = "textbox">Other</div>
+                  <div className = "textbox2">Other</div>
                   </div>
             </div>
 
