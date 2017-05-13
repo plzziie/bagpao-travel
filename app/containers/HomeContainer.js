@@ -11,6 +11,7 @@ class HomeContainer extends Component {
       do: 'th',
       poptrip: [],
       popplace: [],
+      rectrip:[],
       name: '',
       username: ''
     }
@@ -23,6 +24,27 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
+
+    fetch(`http://localhost:1200/recommend`, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.state.username
+      })
+    })
+    .then(function (response) {
+      return response.text()
+    }).then(function (body) {
+      var myObj = JSON.parse(body);
+      if (myObj.message === undefined) {
+        this.setState({
+            rectrip: myObj
+        });
+      }
+    }.bind(this))
+
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
       headers:{
@@ -116,6 +138,7 @@ SeeDetails(id) {
           SeeDetails = {(event) => this.SeeDetails(event)}
           poptrip = {this.state.poptrip}
           popplace = {this.state.popplace}
+          rectrip = {this.state.rectrip}
           onUpdateLike = {(event) => this.handleUpdateLike(event)}
           AddFav = {(event) => this.handleAddFav(event)}
           UpdateView = {(event) => this.handleUpdateView(event)}

@@ -22,7 +22,7 @@ function Home (props) {
     <div className = "col-md-offset-1 col-md-10 transparentBg">
       <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Recommended Trips</h3>
         <div className = "row">
-             {props.poptrip.map((val, index) => {
+             {props.rectrip.map((val, index) => {
                   return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
                             <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeTripsDetails(val.name)}/>
                             <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
