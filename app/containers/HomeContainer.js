@@ -12,7 +12,8 @@ class HomeContainer extends Component {
       poptrip: [],
       popplace: [],
       name: '',
-      username: ''
+      username: '',
+      like: false
     }
 
   }
@@ -42,7 +43,6 @@ class HomeContainer extends Component {
         });
       }
     }.bind(this))
-
 
     fetch(`http://localhost:1200/show`, {
       method: 'POST',

@@ -48,10 +48,18 @@ function Home (props) {
                             <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                             <div className="boxtrip"></div>
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
-                            <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
+                            { val.liker.map((vals, indexs) => {
+                              return (vals == props.username)
+                                ? <input key={indexs} type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/>
+                                : null
+                            })} <label className="like">Like</label>
 
-                            {(isLoggedIn()) ?  <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>: null } &nbsp;&nbsp;
-                            <label className="heart"></label>
+                            { val.favname.map((valss, indexss) => {
+                              return (valss == props.username)
+                                ? <input key={indexss} type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>
+                                : null
+                            })}
+                            &nbsp;&nbsp; <label className="heart"></label>
 
                             <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
                           </div>
