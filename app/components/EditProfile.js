@@ -26,35 +26,35 @@ function EditProfile (props) {
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Password</h4>
   				<div className = "col-sm-7">
-    			<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
+    			<input className = "form-control" type = "password" value = {val.password}  disabled />
         </div>
-        <div className="col-sm-2"><a data-toggle="collapse" data-target="#demo">Change Password</a></div>
+        <a className="col-sm-2 cursor" data-toggle="collapse" data-target="#demo">Change Password</a>
 			</div>
 
-        <div id="demo" className="collapse" data-toggle = "validator">
-          <div className = "col-sm-offset-2 form-group row">
+        <form id="demo" className="collapse" data-toggle = "validator">
+          {/*<div className = "col-sm-offset-2 form-group row">
       				<h4 className = "col-sm-2">Old-Password</h4>
       				<div className = "col-sm-6">
         			<input className = "form-control" type = "password"  placeholder = 'old password'/>
             </div>
-    			</div>
+    			</div> */}
           <div className = "col-sm-offset-2 form-group row">
-      				<h4 className = "col-sm-2">New-Password</h4>
+      				<h5 className = "col-sm-2 text-right"> New-Password:</h5>
       				<div className = "col-sm-6">
-        			<input className = "form-control" type = "password" placeholder = 'new password' type = 'password'
-              id = 'pass' data-error = "Please enter your password" />  <div className = "help-block with-errors"></div>
+        			<input className = "form-control" type = "password" placeholder = 'new password' type = 'password' onChange = {props.onUpdatePassword}
+              id = 'pass' data-error = "Please enter your password" required />  <div className = "help-block with-errors"></div>
             </div>
     			</div>
           <div className = "col-sm-offset-2 form-group row">
-      				<h4 className = "col-sm-2">Re-Password</h4>
+      				<h5 className = "col-sm-2 text-right">Re-Password:</h5>
       				<div className = "col-sm-6">
         			<input className = "form-control" type = "password" placeholder = 're-password'
               type = 'password' data-match = "#pass" data-match-error = "Your password is not match"
-              data-error = "Please enter your password again" />  <div className = "help-block with-errors"></div>
+              data-error = "Please enter your password again" required />  <div className = "help-block with-errors"></div>
             </div>
     			</div>
 
-        </div>
+        </form>
 
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Email</h4>
