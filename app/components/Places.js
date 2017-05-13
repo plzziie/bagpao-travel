@@ -58,7 +58,7 @@ function Places (props) {
                         })
                       : <h4>{props.err}</h4>
           : props.sort
-          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("amusement park")}>
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/recreational-tours/dreamworld/allParagraphs/tourbt/BucketList/04/image2/bangkok-dream-world.jpg"/>
                   <img src = "https://coconuts.co/wp-content/uploads/2016/11/dinosaur_header.jpg"/>
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/pattaya-bangkok-com/homepage/attractions/cartoon-network-amazone-waterpark/pagePropertiesImage/cartoon-network-amazone-pattaya.jpg"/>
@@ -72,11 +72,11 @@ function Places (props) {
                   <div className = "textbox2">Beach</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("department store")}>
                   <img src = "https://www.brandbuffet.in.th/wp-content/uploads/2016/09/Resize-MBK-805.jpg"/>
                   <img src = "http://rachabodin.com/wp-content/uploads/2010/03/IMG_0193_4_5Auto.jpg"/>
                   <img src = "http://upic.me/i/6e/6-central.jpg"/>
-                  <div className = "textbox">Department Store</div>
+                  <div className = "textbox2">Department Store</div>
                   </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("market")}>
@@ -100,19 +100,13 @@ function Places (props) {
                   <div className = "textbox2">National Park</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("beach")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("public park")}>
                   <img src = "http://suvarnabhumiairport.com/uploads/profiles/0000000003/filemanager/images/IMG_4822.jpg"/>
                   <img src = "http://www.aroi.com/medias/140605101156/140605101348/140605101348.jpg"/>
                   <img src = "http://thinkofliving.com/wp-content/uploads/2015/04/park21-10.jpg"/>
                   <div className = "textbox2">Public Park</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("safari")}>
-                  <img src = "app/img/places/zoo1.jpg"/>
-                  <img src = "app/img/places/zoo2.jpg"/>
-                  <img src = "app/img/places/zoo3.jpg"/>
-                  <div className = "textbox2">Zoo</div>
-                  </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("temple")}>
                   <img src = "app/img/places/temple1.jpg"/>
@@ -121,6 +115,12 @@ function Places (props) {
                   <div className = "textbox2">Temple</div>
                   </div>
 
+                  <div className = "photoo" onClick={() => props.ChangeCategories("zoo")}>
+                  <img src = "app/img/places/zoo1.jpg"/>
+                  <img src = "app/img/places/zoo2.jpg"/>
+                  <img src = "app/img/places/zoo3.jpg"/>
+                  <div className = "textbox2">Zoo</div>
+                  </div>
 
                   <div className = "photoo" onClick={() => props.ChangeCategories("other")}>
                   <img src = "https://travelingwithkrushworth.files.wordpress.com/2013/01/sunset-cowley-ridge.jpg"/>

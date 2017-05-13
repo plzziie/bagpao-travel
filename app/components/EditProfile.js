@@ -78,23 +78,32 @@ function EditProfile (props) {
   				<h4 className = "col-sm-2">Interest</h4>
   				<div className = "col-sm-7" onChange = {props.onUpdateInterest}>
     				<div className = "checkbox-inline" >
- 						<label><input type = "checkbox" value = "market" />Market</label>
+ 						<label><input type = "checkbox" value = "amusement park" />Amusement Park</label>
 					</div>
 					<div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "beach" />Beach</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "museum" />Museum</label>
+  						<label><input type = "checkbox" value = "department store" />Department Store</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "nationalpark" />National Park</label>
+  						<label><input type = "checkbox" value = "market" />Market</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "safari" />Safari</label>
+  						<label><input type = "checkbox" value = "meseum" />Museum</label>
 					</div>
           <div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "temple" />Temple</label>
+  						<label><input type = "checkbox" value = "national park" />National Park</label>
 					</div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "public park" />Public Park</label>
+          </div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "temple" />Temple</label>
+          </div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "zoo" />Zoo</label>
+          </div>
   				</div>
 			</div>
 			<div className = "form-group row">
