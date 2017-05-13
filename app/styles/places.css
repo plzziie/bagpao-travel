@@ -12,7 +12,7 @@
     margin-top: 10px;
 }
 
-.textbox {
+.textbox2 {
   position: absolute;
   top: 40%;
   width: 98%;
@@ -58,7 +58,7 @@
   left: 41%;
 }
 
-.photoo:hover .textbox{
+.photoo:hover .textbox2{
   opacity: 1;
   cursor: pointer;
 }

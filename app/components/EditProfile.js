@@ -1,5 +1,6 @@
 import React from 'react'
 import {PropTypes} from 'react'
+import validator from 'bootstrap-validator'
 import styles from '../styles'
 
 function EditProfile (props) {
@@ -25,9 +26,36 @@ function EditProfile (props) {
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Password</h4>
   				<div className = "col-sm-7">
-    				<input className = "form-control" type = "password" value = {val.password} onChange = {props.onUpdatePassword} disabled />
-  				</div>
+    			<input className = "form-control" type = "password" value = {val.password}  disabled />
+        </div>
+        <a className="col-sm-2 cursor" data-toggle="collapse" data-target="#demo">Change Password</a>
 			</div>
+
+        <form id="demo" className="collapse" data-toggle = "validator">
+          {/*<div className = "col-sm-offset-2 form-group row">
+      				<h4 className = "col-sm-2">Old-Password</h4>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password"  placeholder = 'old password'/>
+            </div>
+    			</div> */}
+          <div className = "col-sm-offset-2 form-group row">
+      				<h5 className = "col-sm-2 text-right"> New-Password:</h5>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password" placeholder = 'new password' type = 'password' onChange = {props.onUpdatePassword}
+              id = 'pass' data-error = "Please enter your password" required />  <div className = "help-block with-errors"></div>
+            </div>
+    			</div>
+          <div className = "col-sm-offset-2 form-group row">
+      				<h5 className = "col-sm-2 text-right">Re-Password:</h5>
+      				<div className = "col-sm-6">
+        			<input className = "form-control" type = "password" placeholder = 're-password'
+              type = 'password' data-match = "#pass" data-match-error = "Your password is not match"
+              data-error = "Please enter your password again" required />  <div className = "help-block with-errors"></div>
+            </div>
+    			</div>
+
+        </form>
+
 			<div className = "form-group row">
   				<h4 className = "col-sm-2">Email</h4>
   				<div className = "col-sm-7">
@@ -50,23 +78,32 @@ function EditProfile (props) {
   				<h4 className = "col-sm-2">Interest</h4>
   				<div className = "col-sm-7" onChange = {props.onUpdateInterest}>
     				<div className = "checkbox-inline" >
- 						<label><input type = "checkbox" value = "market" />Market</label>
+ 						<label><input type = "checkbox" value = "amusement park" />Amusement Park</label>
 					</div>
 					<div className = "checkbox-inline">
   						<label><input type = "checkbox" value = "beach" />Beach</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "museum" />Museum</label>
+  						<label><input type = "checkbox" value = "department store" />Department Store</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "nationalpark" />National Park</label>
+  						<label><input type = "checkbox" value = "market" />Market</label>
 					</div>
 					<div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "safari" />Safari</label>
+  						<label><input type = "checkbox" value = "meseum" />Museum</label>
 					</div>
           <div className = "checkbox-inline">
-  						<label><input type = "checkbox" value = "temple" />Temple</label>
+  						<label><input type = "checkbox" value = "national park" />National Park</label>
 					</div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "public park" />Public Park</label>
+          </div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "temple" />Temple</label>
+          </div>
+          <div className = "checkbox-inline">
+              <label><input type = "checkbox" value = "zoo" />Zoo</label>
+          </div>
   				</div>
 			</div>
 			<div className = "form-group row">
@@ -80,7 +117,7 @@ function EditProfile (props) {
               </button>
             </div>
             </form>
-            </div>
+          </div>
           })}
 		</div>
     )

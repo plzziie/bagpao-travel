@@ -67,3 +67,8 @@ input[type=checkbox]:checked + .heartfav {
   cursor: pointer;
   margin-left: 15px;
 }
+
+.cursor {
+  cursor: pointer;
+  margin-top: 6px;
+  }

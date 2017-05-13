@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {getIdToken} from '../lib/AuthService';
 import styles from '../styles'
+import validator from 'bootstrap-validator'
 import EditProfile from '../components/EditProfile'
 
 class EditProfileContainer extends Component {
