@@ -12,7 +12,7 @@ class TripDetailContainer extends Component {
       showw: [],
       comment: '',
       daytrip: '',
-      username: '',
+      username: getIdToken(),
       trip: ''
     }
   }
@@ -83,7 +83,7 @@ class TripDetailContainer extends Component {
       body: JSON.stringify({
         trip: this.props.params.id,
         comment: this.state.comment,
-        username: getIdToken()
+        username: this.state.username
         })
     }).then(function (body) {
       location.replace('/trips');

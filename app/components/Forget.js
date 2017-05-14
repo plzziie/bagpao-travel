@@ -40,21 +40,23 @@ function Forget (props) {
             <a className="col-md-2 cursor" onClick={() => props.onCheckdata(event)}>check</a>
 
 
-      <div className = "form-group col-md-10">
+      {props.pass ? <div className = "form-group col-md-10">
         <input
           className = 'form-control' placeholder = 'New Password' type = 'password' id = 'pass'
           defaultValue = {props.password} onChange = {props.onUpdatePassword}
           data-error = "Please enter your password" required />
         <div className = "help-block with-errors"></div>
       </div>
+      : null}
 
-      <div className = "form-group col-md-10">
+      {props.pass ? <div className = "form-group col-md-10">
         <input
           className = 'form-control' placeholder = 're-password' type = 'password'
           data-match = "#pass" data-match-error = "Your password is not match"
           data-error = "Please enter your password again" required />
         <div className = "help-block with-errors"></div>
       </div>
+      : null}
 
     {props.pass ?   <div className = "form-group col-xs-4 col-xs-offset-2" >
          <button

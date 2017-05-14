@@ -13,15 +13,10 @@ class HomeContainer extends Component {
       popplace: [],
       rectrip:[],
       name: '',
-      username: '',
+      username: getIdToken(),
       like: false
     }
 
-  }
-  componentWillMount() {
-    this.setState({
-        username: getIdToken()
-    });
   }
 
   componentDidMount() {
@@ -122,6 +117,18 @@ fetch(`http://localhost:1200/favorite`, {
     })
   })
 }
+handleRemoveFav(fav) {
+fetch(`http://localhost:1200/favorite`, {
+    method: 'POST',
+    headers:{
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: fav,
+      username: this.state.username
+    })
+  })
+}
 
 SeeTripsDetails(id) {
     this.context.router.push('/trips-details/'+ id)
@@ -141,6 +148,7 @@ SeeDetails(id) {
           rectrip = {this.state.rectrip}
           onUpdateLike = {(event) => this.handleUpdateLike(event)}
           AddFav = {(event) => this.handleAddFav(event)}
+          onRemoveFav = {(event) => this.handleRemoveFav(event)}
           UpdateView = {(event) => this.handleUpdateView(event)}
           SeeDetails = {(event) => this.SeeDetails(event)}
           username = {this.state.username}

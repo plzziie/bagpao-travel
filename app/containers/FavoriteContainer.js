@@ -7,15 +7,9 @@ class FavoriteContainer extends Component {
   constructor () {
     super()
     this.state = {
-      username: '',
+      username: getIdToken(),
       favtrip: []
     }
-  }
-
-  componentWillMount() {
-    this.setState({
-        username: getIdToken()
-    });
   }
 
   componentDidMount() {

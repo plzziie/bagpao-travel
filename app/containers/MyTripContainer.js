@@ -8,17 +8,13 @@ class MyTripContainer extends Component {
   constructor () {
     super()
     this.state = {
-      username: '',
+      username: getIdToken(),
       name: '',
+      nme: '',
       mytrip: [],
-      add: ''
+      add: '',
+      showModal: false
     }
-  }
-
-  componentWillMount() {
-    this.setState({
-        username: getIdToken()
-    });
   }
 
   componentDidMount() {
@@ -58,7 +54,7 @@ class MyTripContainer extends Component {
   })
 }
 
-DeleteTrip(ev) {
+DeleteTrip() {
   event.preventDefault();
   fetch(`http://localhost:1200/admin`, {
       method: 'POST',
@@ -68,7 +64,7 @@ DeleteTrip(ev) {
     body: JSON.stringify({
       admin: "delete",
       types: "trip",
-      name: ev
+      name: this.state.nme
       })
   })
   .then(function (response) {
@@ -99,6 +95,19 @@ SeeTripsDetails(id) {
     this.context.router.push('/trips-details/'+ id)
   }
 
+close(){
+  this.setState({
+    showModal: false
+  });
+}
+
+open(e){
+  this.setState({
+    showModal: true,
+    nme: e
+  });
+}
+
   render() {
     return(
      <MyTrip
@@ -108,6 +117,9 @@ SeeTripsDetails(id) {
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
      onAddFav = {(event) => this.handleAddFav(event)}
      SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
+     open = {(event) => this.open(event)}
+     close = {(event) => this.close()}
+     showModal = {this.state.showModal}
       />
     )
   }

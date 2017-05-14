@@ -15,7 +15,7 @@ class TripsContainer extends Component {
       found: '',
       err: '',
       sort: true,
-      username: ''
+      username: getIdToken()
     }
   }
 
@@ -114,7 +114,7 @@ class TripsContainer extends Component {
     },
       body: JSON.stringify({
         name: fav,
-        username: getIdToken(),
+        username: this.state.username,
         add: "add"
       })
     })
@@ -129,7 +129,7 @@ class TripsContainer extends Component {
     },
       body: JSON.stringify({
         name: like,
-        username: getIdToken()
+        username: this.state.username
       })
   })
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import {PropTypes} from 'react'
 import {Link} from 'react-router'
+import {Modal} from 'react-bootstrap'
 import styles from '../styles'
 import style from '../styles/mytrip.css'
 
@@ -18,7 +19,7 @@ function MyTrip (props) {
 											 <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
 											 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
 											 <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.onAddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
-											 <label className="col-md-offset-8 text-right" onClick={() => props.deletetrip(val.name)}>
+											 <label className="col-md-offset-8 text-right" onClick={() => props.open(val.name)}>
 			                    <span className="glyphicon glyphicon-trash trash" aria-hidden="true"></span>
 											</label>
 
@@ -28,6 +29,20 @@ function MyTrip (props) {
 					 })
 				 }
 			      </div>
+
+						<Modal show = {props.showModal} onHide = {props.close}>
+              <Modal.Header closeButton>
+                <Modal.Title>Are you sure</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div>Do you want to delete this trip ?</div>
+              </Modal.Body>
+              <Modal.Footer>
+                <button onClick = {props.deletetrip}>Delete</button>
+								<button onClick = {props.close}>Cancel</button>
+              </Modal.Footer>
+            </Modal>
+
     </div>
     )
   }
@@ -38,7 +53,10 @@ MyTrip.PropTypes = {
 	onUpdateLike: PropTypes.func.isRequired,
 	onAddFav: PropTypes.func.isRequired,
 	SeeTripsDetails: PropTypes.func.isRequired,
-	deletetrip: PropTypes.func.isRequired
+	open: PropTypes.func.isRequired,
+	close: PropTypes.func.isRequired,
+	deletetrip: PropTypes.func.isRequired,
+	showModal: PropTypes.bool.isRequired
 }
 
 export default MyTrip

@@ -51,16 +51,16 @@ function Home (props) {
 
                             { val.liker.map((vals, indexs) => {
                               return (vals == props.username)
-                                ? <input key={indexs} type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/>
-                                : null
+                                ? <input key={indexs} type="checkbox" value={val.name} className="checklike" checked/>
+                                : <input key={indexs} type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/>
                             })} <label className="like">Like</label>
 
                             { val.favname.map((valss, indexss) => {
                               return (valss == props.username)
-                                ? <input key={indexss} type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>
-                                : null
+                                ? <input key={indexss} type="checkbox" id="fav" className="cb_position" onClick={() => props.onRemoveFav(val.name)} defaultChecked/>
+                                : <input key={indexss} type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>
                             })}
-                            &nbsp;&nbsp; <label className="heart"></label>
+                            &nbsp;&nbsp; {(val.favname.length == 0 ? <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/> : null )}<label className="heart"></label>
 
 
                             <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
@@ -104,6 +104,7 @@ Home.PropTypes = {
   onUpdateLike: PropTypes.func.isRequired,
   UpdateView: PropTypes.func.isRequired,
   AddFav: PropTypes.func.isRequired,
+  onRemoveFav: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired
 }
 
