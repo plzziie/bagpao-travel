@@ -133,7 +133,8 @@ class TripsContainer extends Component {
       'Content-Type': 'application/json'
     },
       body: JSON.stringify({
-        name: like
+        name: like,
+        username: this.state.username
       })
   })
 }
