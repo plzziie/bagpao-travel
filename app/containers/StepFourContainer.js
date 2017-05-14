@@ -95,7 +95,7 @@ class StepFourContainer extends Component {
         return: this.state.return,
         name: this.state.name,
         privacy: this.state.privacy,
-        place: this.state.result,
+        place: this.state.details,
         picture: this.state.picture,
         prices: this.state.prices
         })

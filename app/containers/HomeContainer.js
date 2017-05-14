@@ -25,7 +25,6 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-
    fetch(`http://localhost:1200/recommend`, {
       method: 'POST',
       headers:{
@@ -45,8 +44,6 @@ class HomeContainer extends Component {
         });
       }
     }.bind(this))
-
-
 
     fetch(`http://localhost:1200/show`, {
       method: 'POST',

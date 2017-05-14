@@ -16,11 +16,6 @@ class TripDetailContainer extends Component {
       trip: ''
     }
   }
-  componentWillMount() {
-    this.setState({
-        username: getIdToken()
-    });
-  }
 
   componentDidMount() {
     fetch(`http://localhost:1200/show`, {
@@ -42,7 +37,8 @@ class TripDetailContainer extends Component {
             show: myObj,
             daytrip: myObj[0].daytrip,
             name: myObj[0].name,
-            picture: myObj[0].picture
+            picture: myObj[0].picture,
+            prices: myObj[0].prices
         });
       }
       else {
@@ -101,6 +97,7 @@ class TripDetailContainer extends Component {
      daytrip = {this.state.daytrip}
      name = {this.state.name}
      picture = {this.state.picture}
+     prices = {this.state.prices}
      showw = {this.state.showw}
      onUpdateReview={(event) => this.handleUpdateReview(event)}
      onUpdateComment={(event) => this.handleSubmitComment(event)}

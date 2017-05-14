@@ -58,7 +58,7 @@ function StepThree (props) {
                                     ? <div className="col-md-2"><h5>{vals.time}</h5></div>
                                     : null
                                 }))}
-                                <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
+                                <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.price} baht</h6></div>
                                 <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                                 </div>
                               : null
@@ -78,7 +78,7 @@ function StepThree (props) {
                               ? <div className="col-md-2"><h5>{vals.time}</h5></div>
                               : null
                           }))}
-                          <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
+                          <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.price} baht</h6></div>
                           <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                               </div>
                             : null
@@ -96,7 +96,7 @@ function StepThree (props) {
                               ? <div className="col-md-2"><h5>{vals.time}</h5></div>
                               : null
                           }))}
-                          <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.city[0]}</h6></div>
+                          <div className="col-md-7"><h5>{val.name[0]}</h5> <h6>{val.price} baht</h6></div>
                           <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                               </div>
                             : null
@@ -124,7 +124,7 @@ function StepThree (props) {
                                 ? <div className="col-md-2"><h5>{vals.time}</h5></div>
                                 : null
                             }))}
-                            <div className="col-md-7"><h6>{val.name[0]}</h6> <h6>{val.city[0]}</h6></div>
+                            <div className="col-md-7"><h6>{val.name[0]}</h6> <h6>{val.price} baht</h6></div>
                             <div className="col-md-3"><img className = "img-circle" src = {val.picture} alt = {val.name[0]} width="50" height="50"/></div>
                             </div>
                               })

@@ -54,9 +54,10 @@ var tmp = [];
                                     return <div key= {indexs}>
                                     {vals.place.map((j, indexj) => {
                                         return (j.days == index+1) ?
-                                          <div key = {indexj} className="dragbox"><div className="col-md-3">
-                                          <img className = "img-circle" src = {j.picture} alt = {j.name[0]} width="50" height="50"/></div>
-                                          <div className="col-md-8"><h5>{j.name[0]}</h5> <h6>{j.city[0]}</h6></div>
+                                          <div key = {indexj} className="dragbox">
+                                          <div className="col-md-3"><h5>{j.time}</h5></div>
+                                          <div className="col-md-6"><h5>{j.name[0]}</h5> <h6>{j.city[0]}</h6></div>
+                                          <div className="col-md-3"><img className = "img-circle" src = {j.picture} alt = {j.name[0]} width="50" height="50"/></div>
                                           </div>
                                           : null
                                         })}
@@ -68,6 +69,10 @@ var tmp = [];
 
                 </div>
                 </div>
+              </div>
+
+              <div className="col-md-offset-2 col-md-3" style = {styles.gapp}>
+                <div className="pricetotal">Price total: {props.prices}฿</div>
               </div>
 
               <div id = "reviews" className = "tab-pane fade">
@@ -125,6 +130,7 @@ var tmp = [];
   daytrip: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
+  prices: PropTypes.number.isRequired,
   onUpdateReview: PropTypes.func.isRequired,
   onUpdateComment: PropTypes.func.isRequired,
   showw: PropTypes.object.isRequired
