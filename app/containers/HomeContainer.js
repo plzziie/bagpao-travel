@@ -26,7 +26,7 @@ class HomeContainer extends Component {
 
   componentDidMount() {
 
-    fetch(`http://localhost:1200/recommend`, {
+   fetch(`http://localhost:1200/recommend`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -45,6 +45,8 @@ class HomeContainer extends Component {
         });
       }
     }.bind(this))
+
+
 
     fetch(`http://localhost:1200/show`, {
       method: 'POST',
@@ -94,7 +96,8 @@ class HomeContainer extends Component {
       'Content-Type': 'application/json'
     },
       body: JSON.stringify({
-        name: like
+        name: like,
+        username: this.state.username
       })
   })
 }
