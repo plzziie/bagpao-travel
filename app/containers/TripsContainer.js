@@ -18,11 +18,6 @@ class TripsContainer extends Component {
       username: ''
     }
   }
-  componentWillMount() {
-    this.setState({
-        username: getIdToken()
-    });
-  }
 
   componentDidMount() {
     fetch(`http://localhost:1200/show`, {
@@ -119,7 +114,7 @@ class TripsContainer extends Component {
     },
       body: JSON.stringify({
         name: fav,
-        username: this.state.username,
+        username: getIdToken(),
         add: "add"
       })
     })
@@ -134,7 +129,7 @@ class TripsContainer extends Component {
     },
       body: JSON.stringify({
         name: like,
-        username: this.state.username
+        username: getIdToken()
       })
   })
 }
