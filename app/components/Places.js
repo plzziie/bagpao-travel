@@ -58,7 +58,7 @@ function Places (props) {
                         })
                       : <h4>{props.err}</h4>
           : props.sort
-          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("amusement park")}>
+          ? <div> <div className = "photoo" onClick={() => props.ChangeCategories("amusementpark")}>
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/homepage/recreational-tours/dreamworld/allParagraphs/tourbt/BucketList/04/image2/bangkok-dream-world.jpg"/>
                   <img src = "https://coconuts.co/wp-content/uploads/2016/11/dinosaur_header.jpg"/>
                   <img src = "http://static.asiawebdirect.com/m/bangkok/portals/pattaya-bangkok-com/homepage/attractions/cartoon-network-amazone-waterpark/pagePropertiesImage/cartoon-network-amazone-pattaya.jpg"/>
@@ -72,7 +72,7 @@ function Places (props) {
                   <div className = "textbox2">Beach</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("department store")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("departmentstore")}>
                   <img src = "https://www.brandbuffet.in.th/wp-content/uploads/2016/09/Resize-MBK-805.jpg"/>
                   <img src = "http://rachabodin.com/wp-content/uploads/2010/03/IMG_0193_4_5Auto.jpg"/>
                   <img src = "http://upic.me/i/6e/6-central.jpg"/>
@@ -100,7 +100,7 @@ function Places (props) {
                   <div className = "textbox2">National Park</div>
                   </div>
 
-                  <div className = "photoo" onClick={() => props.ChangeCategories("public park")}>
+                  <div className = "photoo" onClick={() => props.ChangeCategories("publicpark")}>
                   <img src = "http://suvarnabhumiairport.com/uploads/profiles/0000000003/filemanager/images/IMG_4822.jpg"/>
                   <img src = "http://www.aroi.com/medias/140605101156/140605101348/140605101348.jpg"/>
                   <img src = "http://thinkofliving.com/wp-content/uploads/2015/04/park21-10.jpg"/>

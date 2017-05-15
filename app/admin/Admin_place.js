@@ -211,13 +211,13 @@ class Admin_place extends Component {
                       <div className="col-md-12">
                       <p>Choose the categories that fit in.</p>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "amusement park" onChange = {this.handleUpdateCategory} />Amusement Park
+                            <input type = "checkbox" value = "amusementpark" onChange = {this.handleUpdateCategory} />Amusement Park
                           </label>
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "beach" onChange = {this.handleUpdateCategory} />Beach
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "department store" onChange = {this.handleUpdateCategory} />Department Store
+                            <input type = "checkbox" value = "departmentstore" onChange = {this.handleUpdateCategory} />Department Store
                           </label>
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "market" onChange = {this.handleUpdateCategory} />Market
@@ -226,10 +226,10 @@ class Admin_place extends Component {
                             <input type = "checkbox" value = "museum" onChange = {this.handleUpdateCategory} />Museum
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "national park" onChange = {this.handleUpdateCategory}/>National Park
+                            <input type = "checkbox" value = "nationalpark" onChange = {this.handleUpdateCategory}/>National Park
                           </label>
                           <label className = "checkbox-inline">
-                            <input type = "checkbox" value = "public park" onChange = {this.handleUpdateCategory}/>Public Park
+                            <input type = "checkbox" value = "publicpark" onChange = {this.handleUpdateCategory}/>Public Park
                           </label>
                           <label className = "checkbox-inline">
                             <input type = "checkbox" value = "temple" onChange = {this.handleUpdateCategory} />Temple
