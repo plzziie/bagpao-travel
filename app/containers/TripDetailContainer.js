@@ -33,6 +33,9 @@ class TripDetailContainer extends Component {
     }).then(function (body) {
       var myObj = JSON.parse(body);
       if (myObj.message === undefined) {
+          this.state.show = myObj.sort(function (a, b) {
+            return new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time);
+          });
         this.setState({
             show: myObj,
             daytrip: myObj[0].daytrip,
