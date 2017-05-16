@@ -17,9 +17,17 @@ function MyTrip (props) {
 											 <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
 											 <div className="boxtrip"></div>
 											 <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
-											 <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
-											 <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.onAddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
-											 <label className="col-md-offset-8 text-right" onClick={() => props.open(val.name)}>
+
+											 { val.liker.map((vals, indexs) => {
+												 return (vals == props.username)
+													 ? <input key={indexs} type="checkbox" value={val.name} className="like_position" checked/>
+													 : <input key={indexs} type="checkbox" value={val.name} className="like_position" onClick={() => props.onUpdateLike(val.name)}/>
+											 })} <label className="like"></label>
+
+
+												 <input type="checkbox" id="fav" className="cb_position" onClick={() => props.onAddFav(val.name)}/> <label className="heart"></label>
+
+												 <label className="col-md-offset-8 text-right" onClick={() => props.open(val.name)}>
 			                    <span className="glyphicon glyphicon-trash trash" aria-hidden="true"></span>
 											</label>
 
@@ -52,6 +60,7 @@ MyTrip.PropTypes = {
 	mytrip: PropTypes.object.isRequired,
 	onUpdateLike: PropTypes.func.isRequired,
 	onAddFav: PropTypes.func.isRequired,
+	onRemoveFav: PropTypes.func.isRequired,
 	SeeTripsDetails: PropTypes.func.isRequired,
 	open: PropTypes.func.isRequired,
 	close: PropTypes.func.isRequired,

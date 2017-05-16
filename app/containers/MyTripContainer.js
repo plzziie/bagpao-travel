@@ -49,7 +49,8 @@ class MyTripContainer extends Component {
       'Content-Type': 'application/json'
     },
       body: JSON.stringify({
-        name: like
+        name: like,
+        username: this.state.username
       })
   })
 }
@@ -90,6 +91,18 @@ fetch(`http://localhost:1200/favorite`, {
     location.replace('/profile');
   })
 }
+handleRemoveFav(fav) {
+fetch(`http://localhost:1200/favorite`, {
+    method: 'POST',
+    headers:{
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: fav,
+      username: this.state.username
+    })
+  })
+}
 
 SeeTripsDetails(id) {
     this.context.router.push('/trips-details/'+ id)
@@ -116,6 +129,7 @@ open(e){
      deletetrip = {(event) => this.DeleteTrip(event)}
      onUpdateLike = {(event) => this.handleUpdateLike(event)}
      onAddFav = {(event) => this.handleAddFav(event)}
+     onRemoveFav = {(event) => this.handleRemoveFav(event)}
      SeeTripsDetails = {(event) => this.SeeTripsDetails(event)}
      open = {(event) => this.open(event)}
      close = {(event) => this.close()}

@@ -17,7 +17,6 @@ function Home (props) {
   </div>
 
 
-
   <div className="container-fluid">{(isLoggedIn()) ?
     <div className = "col-md-offset-1 col-md-10 transparentBg">
       <h3 className = "col-xs-offset-1 col-md-offset-0 col-sm-offset-0 title">Recommended For You</h3>
@@ -28,7 +27,7 @@ function Home (props) {
                             <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                             <div className="boxtrip"></div>
                             <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
-                            <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
+                            <input type="checkbox" value={val.name} className="like_position" onClick={() => props.onUpdateLike(val.name)}/><label className="like"></label>
                             <input type="checkbox" id="fav" className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                           </div>
                         </div>
@@ -51,9 +50,9 @@ function Home (props) {
 
                             { val.liker.map((vals, indexs) => {
                               return (vals == props.username)
-                                ? <input key={indexs} type="checkbox" value={val.name} className="checklike" checked/>
-                                : <input key={indexs} type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/>
-                            })} <label className="like">Like</label>
+                                ? <input key={indexs} type="checkbox" value={val.name} className="like_position" checked/>
+                                : <input key={indexs} type="checkbox" value={val.name} className="like_position" onClick={() => props.onUpdateLike(val.name)}/>
+                            })} <label className="like"></label>
 
                             { val.favname.map((valss, indexss) => {
                               return (valss == props.username)

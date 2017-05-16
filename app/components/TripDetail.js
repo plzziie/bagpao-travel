@@ -69,11 +69,12 @@ var tmp = [];
 
                 </div>
                 </div>
+                <div className="col-md-offset-2 col-md-3" style = {styles.gapp}>
+                  <div className="pricetotal">Price total: {props.prices}฿</div>
+                </div>
               </div>
 
-              <div className="col-md-offset-2 col-md-3" style = {styles.gapp}>
-                <div className="pricetotal">Price total: {props.prices}฿</div>
-              </div>
+
 
               <div id = "reviews" className = "tab-pane fade">
               <center>

@@ -54,7 +54,13 @@ function Trips (props) {
                     <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                     <div className="boxtrip"></div>
                     <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
-                    <input type="checkbox" value={val.name} className="checklike" onClick={() => props.onUpdateLike(val.name)}/><label className="like">Like</label>
+
+                    { val.liker.map((vals, indexs) => {
+                      return (vals == props.username)
+                        ? <input key={indexs} type="checkbox" value={val.name} className="like_position" checked/>
+                        : <input key={indexs} type="checkbox" value={val.name} className="like_position" onClick={() => props.onUpdateLike(val.name)}/>
+                    })} <label className="like"></label>
+
                     <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                     <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
 
@@ -70,7 +76,7 @@ function Trips (props) {
                   <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
                   <div className="boxtrip"></div>
                   <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
-                  <input type="checkbox" id="like" className="checklike" onClick={() => props.onUpdateLike(val.name)}/ ><label className="like">Like</label>
+                  <input type="checkbox" id="like" className="like_position" onClick={() => props.onUpdateLike(val.name)}/ ><label className="like"></label>
                   <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                   <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
 
