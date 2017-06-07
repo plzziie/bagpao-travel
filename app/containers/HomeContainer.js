@@ -20,7 +20,7 @@ class HomeContainer extends Component {
   }
 
   componentDidMount() {
-   fetch(`http://localhost:1200/recommend`, {
+   fetch(`http://128.199.106.245/recommend`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ class HomeContainer extends Component {
       }
     }.bind(this))
 
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ class HomeContainer extends Component {
       }
     }.bind(this))
 
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ class HomeContainer extends Component {
   }
 
   handleUpdateLike(like) {
-  fetch(`http://localhost:1200/like`, {
+  fetch(`http://128.199.106.245/like`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ class HomeContainer extends Component {
   })
 }
     handleUpdateView(view) {
-    fetch(`http://localhost:1200/view`, {
+    fetch(`http://128.199.106.245/view`, {
     method: 'POST',
     headers:{
     'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ class HomeContainer extends Component {
 })
 }
 handleAddFav(fav) {
-fetch(`http://localhost:1200/favorite`, {
+fetch(`http://128.199.106.245/favorite`, {
     method: 'POST',
     headers:{
     'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ fetch(`http://localhost:1200/favorite`, {
   })
 }
 handleRemoveFav(fav) {
-fetch(`http://localhost:1200/favorite`, {
+fetch(`http://128.199.106.245/favorite`, {
     method: 'POST',
     headers:{
     'Content-Type': 'application/json'
