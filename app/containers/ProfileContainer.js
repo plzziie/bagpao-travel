@@ -19,7 +19,7 @@ class ProfileContainer extends Component {
   }
 
   componentDidMount() {
-      fetch(`http://128.199.106.245/show`, {
+      fetch(`http://128.199.106.245:8999/show`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

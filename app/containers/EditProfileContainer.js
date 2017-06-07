@@ -23,7 +23,7 @@ class EditProfileContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://128.199.106.245/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ class EditProfileContainer extends Component {
   handleSubmitEdit(event) {
     event.preventDefault();
 
-    fetch(`http://128.199.106.245/editprofile`, {
+    fetch(`http://128.199.106.245:8999/editprofile`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

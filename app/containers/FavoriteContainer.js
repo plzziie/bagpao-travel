@@ -14,7 +14,7 @@ class FavoriteContainer extends Component {
 
   componentDidMount() {
 
-    fetch(`http://128.199.106.245/myfavorite`, {
+    fetch(`http://128.199.106.245:8999/myfavorite`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ class FavoriteContainer extends Component {
   }
 
   handleRemoveFav(fav) {
-  fetch(`http://128.199.106.245/favorite`, {
+  fetch(`http://128.199.106.245:8999/favorite`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'

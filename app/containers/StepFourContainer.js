@@ -29,7 +29,7 @@ class StepFourContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://128.199.106.245/getplaces`, {
+    fetch(`http://128.199.106.245:8999/getplaces`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ class StepFourContainer extends Component {
 
   handleSubmitTrip(event) {
     event.preventDefault();
-    fetch(`http://128.199.106.245/planning`, {
+    fetch(`http://128.199.106.245:8999/planning`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

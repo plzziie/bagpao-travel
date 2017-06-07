@@ -18,7 +18,7 @@ class MyTripContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://128.199.106.245/mytrips`, {
+    fetch(`http://128.199.106.245:8999/mytrips`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ class MyTripContainer extends Component {
 
 
   handleUpdateLike(like) {
-  fetch(`http://128.199.106.245/like`, {
+  fetch(`http://128.199.106.245:8999/like`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ class MyTripContainer extends Component {
 
 DeleteTrip() {
   event.preventDefault();
-  fetch(`http://128.199.106.245/admin`, {
+  fetch(`http://128.199.106.245:8999/admin`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ DeleteTrip() {
 }
 
 handleAddFav(fav) {
-fetch(`http://128.199.106.245/favorite`, {
+fetch(`http://128.199.106.245:8999/favorite`, {
     method: 'POST',
     headers:{
     'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ fetch(`http://128.199.106.245/favorite`, {
   })
 }
 handleRemoveFav(fav) {
-fetch(`http://128.199.106.245/favorite`, {
+fetch(`http://128.199.106.245:8999/favorite`, {
     method: 'POST',
     headers:{
     'Content-Type': 'application/json'

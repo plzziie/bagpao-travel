@@ -35,7 +35,7 @@ class ForgetContainer extends Component {
   }
 
   handleUpdateMail(event) {
-    fetch(`http://128.199.106.245/login`, {
+    fetch(`http://128.199.106.245:8999/login`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ class ForgetContainer extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch(`http://128.199.106.245/editpassword`, {
+    fetch(`http://128.199.106.245:8999/editpassword`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
