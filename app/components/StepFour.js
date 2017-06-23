@@ -18,7 +18,8 @@ function StepFour (props) {
         <li>Step 1</li>
         <li>Step 2</li>
         <li>Step 3</li>
-        <li className="active"><a href = "stepfour">Step 4</a></li>
+        <li>Step 4</li>
+        <li className="active"><a href = "/stepfive">Step 5</a></li>
       </ul>
     </div>
     <div className="container">

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles'
-import StepThree from '../components/StepThree'
+import StepHotel from '../components/StepHotel'
 
-class StepThreeContainer extends Component {
+class StepHotelContainer extends Component {
 
   constructor () {
     super()
@@ -18,9 +18,6 @@ class StepThreeContainer extends Component {
       result: [],
       test: [],
       dragn : [],
-      timess : [],
-      tme: [],
-      wayla: [],
       temp: []
     }
   }
@@ -32,7 +29,8 @@ class StepThreeContainer extends Component {
       daytrip: this.props.location.state.daytrip,
       depart: this.props.location.state.depart,
       return: this.props.location.state.return,
-      prices: this.props.location.state.prices
+      prices: this.props.location.state.prices,
+      result: this.props.location.state.result
     })
   }
 
@@ -86,21 +84,32 @@ Drop(event) {
     prices = prices.reduce(function(total, num){ return total + num }, 0);
 
     var x = test.map(function(val,index) {
-      return (val.placeid == placeid)
+      return (val.days == days)
               ? test.splice(index, 1)
               : null });
 
     if (days != 0) {
       this.state.test = test.concat({days,placeid})
-      if (dragn.indexOf(placeid) == -1) {
+      if (dragn.indexOf(days) == -1) {
         this.state.prices = this.state.prices+prices,
-        dragn = dragn.concat(placeid)
+        dragn = dragn.concat(days)
+        this.setState({
+          showModal: false
+        });
+      }
+      else {
+        this.setState({
+          showModal: true
+        });
       }
     }
     else {
       this.state.test = test,
-      dragn.splice(dragn.indexOf(placeid),1),
+      dragn.splice(dragn.indexOf(days),1),
       this.state.prices = this.state.prices-prices
+      this.setState({
+        showModal: false
+      });
     }
 
     this.setState({
@@ -108,44 +117,6 @@ Drop(event) {
       prices: this.state.prices,
       dragn: dragn
     });
-}
-
-handleUpdateTime(event) {
-  var placeid = this.state.tmr
-  var time = event.target.value
-  var wayla = this.state.result
-  var days = 0
-
-  var x = wayla.map(function(val,index) {
-    return (val.placeid == placeid)
-            ? days = val.days
-            : null });
-
-            var y = wayla.map(function(vals,indexs) {
-              return (vals.placeid == placeid)
-                      ? wayla.splice(indexs, 1)
-                      : null });
-
-  wayla = wayla.concat({placeid,time,days}),
-  this.state.timess = this.state.timess.concat(placeid)
-
-  this.setState({
-    timess: this.state.timess,
-    result: wayla
-  })
-}
-
-close(){
-  this.setState({
-    showModal: false
-  });
-}
-
-open(e){
-  this.setState({
-    showModal: true,
-    tmr: e
-  });
 }
 
   handleUpdateSearch(event) {
@@ -186,7 +157,7 @@ open(e){
   handleSubmitTrip(event) {
     event.preventDefault()
     this.context.router.push({
-      pathname: '/stepfour',
+      pathname: '/stepfive',
       state: {
         daytrip: this.state.daytrip,
         origin: this.state.origin,
@@ -201,9 +172,8 @@ open(e){
 
   render() {
     return(
-     <StepThree
+     <StepHotel
      onSubmitTrip = {(event) => this.handleSubmitTrip(event)}
-     onUpdateTime = {(event) => this.handleUpdateTime(event)}
      onUpdateSearch = {(event) => this.handleUpdateSearch(event)}
      onGetSearch = {(event) => this.handleGetSearch(event)}
      AllowDrop = {(event) => this.AllowDrop(event)}
@@ -224,17 +194,14 @@ open(e){
      result = {this.state.result}
      prices = {this.state.prices}
      showModal = {this.state.showModal}
-     time = {this.state.time}
-     timess = {this.state.timess}
-     wayla = {this.state.wayla}
      temp = {this.state.temp}
      />
     )
   }
 }
 
-StepThreeContainer.contextTypes = {
+StepHotelContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-export default StepThreeContainer
+export default StepHotelContainer

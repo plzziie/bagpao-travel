@@ -47,21 +47,20 @@ function Trips (props) {
       <div className="container-fluid footergap">
       <div className = "col-md-offset-1 col-md-10 transparentBg">
       {props.searching
-        ? props.found ? props.trips.map((val, index) => {
-
-          return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
-                    <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeDetails(val.name)}/>
-                    <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>
+        ? props.found ? props.trips.map((valx, indexx) => {
+          return <div key = {indexx}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
+                    <img className = "img favgap" src = {valx.picture} alt = {valx.name} width="376" height="251" onClick={() => props.SeeDetails(valx.name)}/>
+                    <div className="bottomlefttrip1">{valx.name.toUpperCase()}</div>
                     <div className="boxtrip"></div>
-                    <div className="bottomlefttrip2">by {val.creator.toUpperCase()}</div>
+                    <div className="bottomlefttrip2">by {valx.creator.toUpperCase()}</div>
 
-                    { val.liker.map((vals, indexs) => {
+                    { valx.liker.map((vals, indexs) => {
                       return (vals == props.username)
-                        ? <input key={indexs} type="checkbox" value={val.name} className="like_position" checked/>
-                        : <input key={indexs} type="checkbox" value={val.name} className="like_position" onClick={() => props.onUpdateLike(val.name)}/>
+                        ? <input key={indexs} type="checkbox" value={valx.name} className="like_position" checked/>
+                        : <input key={indexs} type="checkbox" value={valx.name} className="like_position" onClick={() => props.onUpdateLike(valx.name)}/>
                     })} <label className="like"></label>
 
-                    <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(val.name)}/>&nbsp;&nbsp;<label className="heart"></label>
+                    <input type="checkbox" id="fav"  className="cb_position" onClick={() => props.AddFav(valx.name)}/>&nbsp;&nbsp;<label className="heart"></label>
                     <label className="col-md-offset-8 text-right"><div className="share">share</div></label>
 
                   </div>
@@ -70,7 +69,6 @@ function Trips (props) {
                     : <h4>{props.err}</h4>
 
       : props.show.map((val, index) => {
-
         return <div key = {index}><div className = "col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 photo">
                   <img className = "img favgap" src = {val.picture} alt = {val.name} width="376" height="251" onClick={() => props.SeeDetails(val.name)}/>
                   <div className="bottomlefttrip1">{val.name.toUpperCase()}</div>

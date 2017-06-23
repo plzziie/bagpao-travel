@@ -12,6 +12,7 @@ function StepOne (props) {
         <li><a href = "/steptwo">Step 2</a></li>
         <li><a href = "/stepthree">Step 3</a></li>
         <li><a href = "/stepfour">Step 4</a></li>
+        <li><a href = "/stepfive">Step 5</a></li>
       </ul>
 
         <form onSubmit = {props.onSubmitTrip}>

@@ -21,6 +21,7 @@ import StepOne from '../containers/StepOneContainer'
 import StepTwo from '../containers/StepTwoContainer'
 import StepThree from '../containers/StepThreeContainer'
 import StepFour from '../containers/StepFourContainer'
+import StepHotel from '../containers/StepHotelContainer'
 import Admin from '../admin/Admin'
 import Admin_place from '../admin/Admin_place'
 import Admin_trip from '../admin/Admin_trip'
@@ -50,7 +51,8 @@ var routes = (
       <Route path = 'stepone' component = {StepOne} onEnter = {requireAuth}/>
       <Route path = 'steptwo' component = {StepTwo} onEnter = {requireAuth}/>
       <Route path = 'stepthree' component = {StepThree} onEnter = {requireAuth}/>
-      <Route path = 'stepfour' component = {StepFour} onEnter = {requireAuth}/>
+      <Route path = 'stepfour' component = {StepHotel} onEnter = {requireAuth}/>
+      <Route path = 'stepfive' component = {StepFour} onEnter = {requireAuth}/>
       <Route path = 'places/:type' component = {Place}/>
       <Route path = 'profile' component={Profile} onEnter = {requireUser}/>
     </Route>
