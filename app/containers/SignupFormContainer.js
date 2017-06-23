@@ -40,7 +40,7 @@ class SignupFormContainer extends Component {
     var password = this.state.password;
     var email = this.state.email;
 
-    fetch(`http://localhost:1200/signup`, {
+    fetch(`http://128.199.106.245:8999/signup`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

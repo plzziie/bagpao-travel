@@ -37,7 +37,7 @@ class StepThreeContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/planning`, {
+    fetch(`http://128.199.106.245:8999/planning`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -156,7 +156,7 @@ open(e){
 
   handleGetSearch(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/planning`, {
+    fetch(`http://128.199.106.245:8999/planning`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

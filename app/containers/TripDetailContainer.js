@@ -18,7 +18,7 @@ class TripDetailContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ class TripDetailContainer extends Component {
       }
     }.bind(this))
 
-    fetch(`http://localhost:1200/reviews`, {
+    fetch(`http://128.199.106.245:8999/reviews`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ class TripDetailContainer extends Component {
 
   handleSubmitComment(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/addreviews`, {
+    fetch(`http://128.199.106.245:8999/addreviews`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

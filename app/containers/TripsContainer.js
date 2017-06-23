@@ -20,7 +20,7 @@ class TripsContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ class TripsContainer extends Component {
   }
 
   ChangeSort(event) {
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ class TripsContainer extends Component {
 
   handleSubmitUser(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/trips`, {
+    fetch(`http://128.199.106.245:8999/trips`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ class TripsContainer extends Component {
   }
 
   handleAddFav(fav) {
-  fetch(`http://localhost:1200/favorite`, {
+  fetch(`http://128.199.106.245:8999/favorite`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ class TripsContainer extends Component {
 
 
   handleUpdateLike(like) {
-  fetch(`http://localhost:1200/like`, {
+  fetch(`http://128.199.106.245:8999/like`, {
       method: 'POST',
       headers:{
       'Content-Type': 'application/json'

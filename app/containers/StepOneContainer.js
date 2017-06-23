@@ -36,7 +36,7 @@ class StepOneContainer extends Component {
 
   handleSubmitTrip(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/planning`, {
+    fetch(`http://128.199.106.245:8999/planning`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

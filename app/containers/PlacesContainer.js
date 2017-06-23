@@ -19,7 +19,7 @@ class PlacesContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ class PlacesContainer extends Component {
 
   handleSubmitUser(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/places`, {
+    fetch(`http://128.199.106.245:8999/places`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ class PlacesContainer extends Component {
     }.bind(this))
   }
   handleUpdateView(view) {
-  fetch(`http://localhost:1200/view`, {
+  fetch(`http://128.199.106.245:8999/view`, {
   method: 'POST',
   headers:{
   'Content-Type': 'application/json'

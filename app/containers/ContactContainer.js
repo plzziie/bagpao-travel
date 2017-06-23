@@ -47,7 +47,7 @@ class ContactContainer extends Component {
     var subject = this.state.subject;
     var message = this.state.message;
 
-    fetch(`http://localhost:1200/contactus`, {
+    fetch(`http://128.199.106.245:8999/contactus`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
