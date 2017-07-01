@@ -27,7 +27,7 @@ class Admin_trip extends Component {
 
   handleSubmitSearch(event) {
     event.preventDefault();
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ class Admin_trip extends Component {
 
   DeleteTrip(ev) {
     event.preventDefault();
-    fetch(`http://localhost:1200/admin`, {
+    fetch(`http://128.199.106.245:8999/admin`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

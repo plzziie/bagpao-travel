@@ -13,7 +13,7 @@ class Admin_editmember extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/show`, {
+    fetch(`http://128.199.106.245:8999/show`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'

@@ -17,7 +17,7 @@ class Admin_review extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:1200/reviews`, {
+    fetch(`http://128.199.106.245:8999/reviews`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ class Admin_review extends Component {
 
   DeleteComment(ev) {
     event.preventDefault();
-    fetch(`http://localhost:1200/admin`, {
+    fetch(`http://128.199.106.245:8999/admin`, {
         method: 'POST',
         headers:{
         'Content-Type': 'application/json'
