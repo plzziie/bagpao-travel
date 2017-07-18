@@ -17,7 +17,7 @@ function Places (props) {
                 className = "form-control"
                 placeholder = 'Place/ City'
                 onChange = {props.onUpdateSearch}
-                defaultValue = {props.username}
+                defaultValue = 'Place/ City'
                 type = 'text' />
             </div>
             <div className = "form-group col-md-1 col-xs-2">

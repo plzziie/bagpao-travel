@@ -16,7 +16,7 @@ function CreatePlan (props) {
           className = "form-control"
           placeholder = "Enter your origin"
           onChange = {props.onUpdateOrigin}
-          defaultValue = {props.origin}
+          defaultValue = "Enter your origin"
           required />
         </div>
 
@@ -26,7 +26,7 @@ function CreatePlan (props) {
           className = "form-control"
           placeholder = "Enter your destination"
           onChange = {props.onUpdateDestination}
-          defaultValue = {props.destination}
+          defaultValue = "Enter your destination"
           required />
         </div>
 

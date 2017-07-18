@@ -16,7 +16,7 @@ function SignupForm (props) {
               className = 'form-control'
               placeholder = 'username'
               onChange = {props.onUpdateUsername}
-              defaultValue = {props.username}
+              defaultValue = 'username'
               type = 'text'
               data-error = "Please enter your username"
               required />
@@ -27,7 +27,7 @@ function SignupForm (props) {
               className = 'form-control'
               placeholder = 'password'
               onChange = {props.onUpdatePassword}
-              defaultValue = {props.password}
+              defaultValue = 'password'
               type = 'password'
               id = 'pass'
               data-error = "Please enter your password"
@@ -38,6 +38,7 @@ function SignupForm (props) {
             <input
               className = 'form-control'
               placeholder = 're-password'
+              defaultValue = 'password'
               type = 'password'
               data-match = "#pass"
               data-match-error = "Your password is not match"
@@ -50,7 +51,7 @@ function SignupForm (props) {
               className = 'form-control'
               placeholder = 'email'
               onChange = {props.onUpdateEmail}
-              defaultValue = {props.email}
+              defaultValue = 'email@email.com'
               type='email'
               data-error = "Email address is invalid"
               required />

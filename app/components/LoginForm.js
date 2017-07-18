@@ -18,7 +18,7 @@ function LoginForm (props) {
               className = 'form-control'
               placeholder = 'username'
               onChange = {props.onUpdateUsername}
-              defaultValue = {props.username}
+              defaultValue = 'username'
               type = 'text'
               data-error = "Please enter your username"
               required />
@@ -29,7 +29,7 @@ function LoginForm (props) {
               className = 'form-control'
               placeholder = 'password'
               onChange = {props.onUpdatePassword}
-              defaultValue = {props.password}
+              defaultValue = 'password'
               type = 'password'
               data-error = "Please enter your password"
               required />

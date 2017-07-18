@@ -38,7 +38,7 @@ function Contact (props) {
                 className = 'form-control'
                 placeholder = 'Name'
                 onChange = {props.onUpdateName}
-                defaultValue = {props.name}
+                defaultValue = 'Name'
                 type = 'text'
                 data-error = "Please enter your name"
                 required />
@@ -49,7 +49,7 @@ function Contact (props) {
                 className = 'form-control'
                 placeholder = 'E-mail'
                 onChange = {props.onUpdateEmail}
-                defaultValue = {props.email}
+                defaultValue = 'email@email.com'
                 type = 'email'
                 data-error = "Email address is invalid"
                 required />
@@ -60,7 +60,7 @@ function Contact (props) {
                 className = 'form-control'
                 placeholder = 'Subject'
                 onChange = {props.onUpdateSubject}
-                defaultValue = {props.subject}
+                defaultValue = 'Subject'
                 type = 'text'
                 data-error = "Please Enter Subject"
                 required />
@@ -72,7 +72,7 @@ function Contact (props) {
                 placeholder = 'Message'
                 rows = '5'
                 onChange = {props.onUpdateMsg}
-                defaultValue = {props.message}
+                defaultValue = 'Message'
                 type='text'
                 data-error = "Please Enter Message"
                 required />

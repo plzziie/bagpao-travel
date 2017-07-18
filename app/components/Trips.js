@@ -16,7 +16,7 @@ function Trips (props) {
                 className = "form-control"
                 placeholder = 'Trip Name/ City/ Place'
                 onChange = {props.onUpdateSearch}
-                defaultValue = {props.name}
+                defaultValue = 'Trip Name/ City/ Place'
                 type = 'text' />
             </div>
             <div className = "form-group col-xs-2 col-md-1">
